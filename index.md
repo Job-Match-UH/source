@@ -97,4 +97,6 @@ Mockup: <img class="ui large image" src="../images/companyPFP.png">
 
 Company Connector is designed and implemented by Larissa Tsai, Michelle Leano, Eda Cadiena, Gaila Galano, Cameron Arakaki.
 
+[Team Contract Google Doc](https://docs.google.com/document/d/1xsRcfiE0334OsBBOehHa-V0ejjmF4cmbaKmLs2_oX2E/edit?usp=sharing)
+
 

@@ -20,11 +20,21 @@ Instead of sending out announcements each year, a company can create a page in t
 * A brief overview of the company.
 * Geographic location of the company.
 * A list of positions that they commonly recruit for from new UH graduates. Each position has a brief description, a set of skills, whether it’s an internship, permanent position, or both, how many people they would like to hire, and salary range.
-* Links to pages for additional information.
-* Contact email(s) for followup.
+* Links to the company’s main website for additional information.
+* Contact email(s)/text messages for followup.
 * Students who visit the site can create a profile with their interests (skills), preferred geographic location, and link to their professional portfolio page.
 
 Admins can monitor the site for inappropriate content and create new categories of skills and geographic locations.
+
+## Developer Guide
+
+The following will be used to create the app:
+
+Meteor for Javascript-based implementation of client and server code.
+React for component-based UI implementation and routing.
+Semantic UI React CSS Framework for UI design.
+Uniforms for React and Semantic UI-based form design and display.
+
 
 
 ## User Guide
@@ -39,28 +49,33 @@ Upon entering the site, users can:
 * Login or Sign Up
 * Read an About Us
 
-### Create Profile Page
+### Create Student Profile Page
 
+New student users need to register a student account. New users need to finish creating certain aspects of their account before gaining access to the entire site and companies.
 
+### Create Company Profile Page
 
-### Student home page (Projects, Profiles, Interests)
+New company users need to register a company account. New users need to finish creating certain aspects of their account before gaining access to the entire site and companies.
 
-Students will 
+### Student home page
+
+The student home page suggests companies that are hiring according to their desired interests.
 
 ### Company home page
 
-The Company profile page allows companies to talk about their organization, post jobs, and more.
+The company home page lists all the students whose interests, experience, and skills match their company’s needs. The page will be organized by job position and have the option to filter the group of students who matched the job description.
 
 ### Admin home page
 
+Edit feature to control profiles and/or delete any “false” profiles or violating profiles.
 
-### Student profile page
+### Student profile page (Projects, Profiles, Interests)
 
 The Student profile page showcases a student’s interests, prior/current experience, and more. On this page, signed in students can edit and add to their profile. 
 
-### Company profile page
+### Company profile 
 
-Company administrators can add to their job section, edit their description, etc.
+The Company profile page allows companies to talk about their organization, post jobs, and more. Company administrators can add to their job section, edit their description, etc.
 
 ## Our Team
 

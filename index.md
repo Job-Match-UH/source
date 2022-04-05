@@ -49,33 +49,49 @@ Upon entering the site, users can:
 * Login or Sign Up
 * Read an About Us
 
+Mockup: <img class="ui large image" src="../images/landing.jpg">
+
 ### Create Student Profile Page
 
 New student users need to register a student account. New users need to finish creating certain aspects of their account before gaining access to the entire site and companies.
+
+Mockup: <img class="ui large image" src="../images/createStuPFP.png">
 
 ### Create Company Profile Page
 
 New company users need to register a company account. New users need to finish creating certain aspects of their account before gaining access to the entire site and companies.
 
+Mockup: <img class="ui large image" src="../images/createCOPFP.png">
+
 ### Student home page
 
 The student home page suggests companies that are hiring according to their desired interests.
+
+Mockup: <img class="ui large image" src="../images/studentHP.png">
 
 ### Company home page
 
 The company home page lists all the students whose interests, experience, and skills match their company’s needs. The page will be organized by job position and have the option to filter the group of students who matched the job description.
 
+Mockup: <img class="ui large image" src="../images/companyHP.png">
+
 ### Admin home page
 
 Edit feature to control profiles and/or delete any “false” profiles or violating profiles.
+
+Mockup: <img class="ui large image" src="../images/adminHP.png">
 
 ### Student profile page (Projects, Profiles, Interests)
 
 The Student profile page showcases a student’s interests, prior/current experience, and more. On this page, signed in students can edit and add to their profile. 
 
+Mockup: <img class="ui large image" src="../images/studentPFP.png">
+
 ### Company profile 
 
 The Company profile page allows companies to talk about their organization, post jobs, and more. Company administrators can add to their job section, edit their description, etc.
+
+Mockup: <img class="ui large image" src="../images/companyPFP.png">
 
 ## Our Team
 

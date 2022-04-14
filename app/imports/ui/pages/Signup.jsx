@@ -150,7 +150,7 @@ class Signup extends React.Component {
                     <Form.Input fluid label='Phone Number' placeholder='(xxx) xxx - xxxx' />
                   </Form.Group>
                   <Form.TextArea label='About' placeholder='Tell us more about you...' />
-                  <Form.Input fluid label='Profile Picture' placeholder='URL image'></Form.Input>
+                  <Form.Input fluid label='Profile Picture' placeholder='URL image'/>
                 </Form>
               </Grid.Column>
             </Grid.Row>

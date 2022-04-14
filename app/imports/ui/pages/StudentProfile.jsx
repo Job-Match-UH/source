@@ -1,14 +1,13 @@
 import React from 'react';
-import { Container, Grid, Image, Button, Header, Menu, Segment } from 'semantic-ui-react';
+import { Container, Grid, Image, Header, Menu, Segment, Button } from 'semantic-ui-react';
 
-export class StudentProfile extends React.Component {
-  state = { activeItem: 'home' };
+class StudentProfile extends React.Component {
+  state = { activeItem: 'home' }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
   render() {
     const { activeItem } = this.state;
-
     return (
       <Container>
         <Grid celled='internally'>
@@ -16,16 +15,17 @@ export class StudentProfile extends React.Component {
             <Grid.Column width={3}>
               <Image src='https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png' />
               <Button.Group fluid style={ { marginTop: 10 } }>
+
                 <Button primary>Edit</Button>
                 <Button secondary>Add</Button>
               </Button.Group>
             </Grid.Column>
             <Grid.Column width={10}>
               <Header as='h1'>Johnny Appleseed</Header>
-              <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+              <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png'/>
             </Grid.Column>
             <Grid.Column width={3}>
-              <Header as='h3'>Education</Header>
+              <Header>Education</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
             </Grid.Column>
           </Grid.Row>
@@ -36,7 +36,7 @@ export class StudentProfile extends React.Component {
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
             </Grid.Column>
             <Grid.Column width={10}>
-              <Menu attached='top' tabular>
+              <Menu pointing>
                 <Menu.Item
                   name='interests'
                   active={activeItem === 'interests'}
@@ -45,6 +45,11 @@ export class StudentProfile extends React.Component {
                 <Menu.Item
                   name='honors/certifications'
                   active={activeItem === 'honors/certifications'}
+                  onClick={this.handleItemClick}
+                />
+                <Menu.Item
+                  name='skills'
+                  active={activeItem === 'skills'}
                   onClick={this.handleItemClick}
                 />
                 <Menu.Item
@@ -62,7 +67,7 @@ export class StudentProfile extends React.Component {
               <Header as='h3'>Experience</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
 
-              <Header as='h3'>Contact Information</Header>
+              <Header style={ { marginTop: 100 } }>Contact Information</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
             </Grid.Column>
           </Grid.Row>

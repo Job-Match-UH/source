@@ -14,12 +14,14 @@ class NavBar extends React.Component {
       <Menu style={menuStyle} attached="top" borderless inverted>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
           <Header inverted as='h1'>Job Match&apos;UH</Header>
+          <Header inverted as='h1'>Job MatchUH</Header>
         </Menu.Item>
         {this.props.currentUser ? (
           [
             <Menu.Item as={NavLink} activeClassName="active" exact to="/companyprofile" key='companyprofile'>Company Profile</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/studentprofile" key='studentprofile'>Student Profile</Menu.Item>,
             <Menu.Item as={NavLink} activeClassName="active" exact to="/studenthomepage" key='studenthomepage'>Student Home</Menu.Item>,
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/comapnyhomepage" key='companyhomepage'>Company Home</Menu.Item>,
           ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (

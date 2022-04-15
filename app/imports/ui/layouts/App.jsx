@@ -16,6 +16,7 @@ import CompanyProfile from '../pages/CompanyProfile';
 import StudentProfile from '../pages/StudentProfile';
 import SignupCompany from '../pages/SignupCompany';
 import StudentHomePage from '../pages/StudentHomePage';
+import CompanyHomePage from '../pages/CompanyHomePage';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -32,6 +33,7 @@ class App extends React.Component {
             <Route path="/companyprofile" component={CompanyProfile}/>
             <Route path="/studentprofile" component={StudentProfile}/>
             <Route path="/studenthomepage" component={StudentHomePage}/>
+            <Route path="/companyhomepage" component={CompanyHomePage}/>
             <Route path="/companysignup" component={SignupCompany}/>
             <AdminProtectedRoute path="/admin" component={AdminHomePage}/>
             <Route component={NotFound}/>

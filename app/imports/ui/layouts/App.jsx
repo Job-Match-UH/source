@@ -5,18 +5,18 @@ import 'semantic-ui-css/semantic.css';
 import { Roles } from 'meteor/alanning:roles';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from '../components/NavBar';
-import Footer from '../components/Footer';
-import Landing from '../pages/Landing';
-import NotFound from '../pages/NotFound';
-import Signin from '../pages/Signin';
-import Signup from '../pages/Signup';
-import Signout from '../pages/Signout';
 import AdminHomePage from '../pages/AdminHomePage';
 import CompanyProfile from '../pages/CompanyProfile';
 import StudentProfile from '../pages/StudentProfile';
 import SignupCompany from '../pages/SignupCompany';
 import StudentHomePage from '../pages/StudentHomePage';
 import CompanyHomePage from '../pages/CompanyHomePage';
+import Footer from '../components/Footer';
+import Landing from '../pages/Landing';
+import NotFound from '../pages/NotFound';
+import Signin from '../pages/Signin';
+import Signup from '../pages/Signup';
+import Signout from '../pages/Signout';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -32,8 +32,8 @@ class App extends React.Component {
             <Route path="/signout" component={Signout}/>
             <Route path="/companyprofile" component={CompanyProfile}/>
             <Route path="/studentprofile" component={StudentProfile}/>
-            <Route path="/studenthomepage" component={StudentHomePage}/>
             <Route path="/companyhomepage" component={CompanyHomePage}/>
+            <Route path="/studenthomepage" component={StudentHomePage}/>
             <Route path="/companysignup" component={SignupCompany}/>
             <AdminProtectedRoute path="/admin" component={AdminHomePage}/>
             <Route component={NotFound}/>

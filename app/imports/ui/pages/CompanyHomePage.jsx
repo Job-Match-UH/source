@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Container, Button, Dropdown, Card, Image, Header } from 'semantic-ui-react';
+import { Grid, Container, Button, Card, Image, Header, Dropdown } from 'semantic-ui-react';
 
 const options = [
   { key: 'angular', text: 'Angular', value: 'angular' },
@@ -19,17 +19,18 @@ class CompanyHomePage extends React.Component {
   render() {
     return (
       <Container>
-        <Grid textAlign='center' columns='equal'>
-          <Grid.Row><Header>Filter Student Profiles</Header></Grid.Row>
+        <Grid textAlign='center'>
           <Grid.Row>
-            <Dropdown placeholder='Date Posted' compact multiple selection options={options} />
-            <Dropdown placeholder='Qualification Match' compact multiple selection options={options} />
+            <Header as='h2'>Filter Student Profiles by:</Header>
+          </Grid.Row>
+          <Grid.Row>
             <Dropdown placeholder='Certification' compact multiple selection options={options} />
-            <Dropdown placeholder='Shift & Schedule' compact multiple selection options={options} />
+            <Dropdown placeholder='Availability' compact multiple selection options={options} />
+            <Dropdown placeholder='Qualifications' compact multiple selection options={options} />
             <Dropdown placeholder='Experience Level' compact multiple selection options={options} />
           </Grid.Row>
           <Grid.Row>
-            <Header as='h2'>Job Matches:</Header>
+            <Header as='h2'>Student Candidate Matches:</Header>
           </Grid.Row>
           <Grid.Row>
             <Card.Group>
@@ -106,9 +107,6 @@ class CompanyHomePage extends React.Component {
                 </Card.Content>
               </Card>
             </Card.Group>
-          </Grid.Row>
-          <Grid.Row>
-            <Header as='h2'>Check out Recommended Candidates:</Header>
           </Grid.Row>
           <Grid.Row>
             <Card.Group>

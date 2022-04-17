@@ -23,9 +23,12 @@ export class CompanyProfile extends React.Component {
               <Image style={ { margin: 10 } } src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
             </Grid.Column>
           </Grid.Row>
-
           <Grid.Row>
             <Grid.Column width={3}>
+              <Button.Group widths={2}>
+                <Button color='green' >Match Me!</Button>
+                <Button color='black' >No Thanks!</Button>
+              </Button.Group>
             </Grid.Column>
             <Grid.Column width={10}>
               <List divided relaxed>

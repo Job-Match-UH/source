@@ -8,6 +8,7 @@ class StudentProfile extends React.Component {
 
   render() {
     const { activeItem } = this.state;
+    const studentStyle = { color: '#6dcf6d' };
     return (
       <Container>
         <Grid celled='internally'>
@@ -21,18 +22,18 @@ class StudentProfile extends React.Component {
               </Button.Group>
             </Grid.Column>
             <Grid.Column width={10}>
-              <Header as='h1'>Johnny Appleseed</Header>
+              <Header as='h1' style={studentStyle}>Johnny Appleseed</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png'/>
             </Grid.Column>
             <Grid.Column width={3}>
-              <Header>Education</Header>
+              <Header style={studentStyle}>Education</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
             </Grid.Column>
           </Grid.Row>
 
           <Grid.Row>
             <Grid.Column width={3}>
-              <Header as='h3'>Additional Notes</Header>
+              <Header as='h3' style={studentStyle}>Additional Notes</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
             </Grid.Column>
             <Grid.Column width={10}>
@@ -64,10 +65,10 @@ class StudentProfile extends React.Component {
               </Segment>
             </Grid.Column>
             <Grid.Column width={3}>
-              <Header as='h3'>Experience</Header>
+              <Header as='h3' style={studentStyle}>Experience</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
 
-              <Header style={ { marginTop: 100 } }>Contact Information</Header>
+              <Header style={ { marginTop: 100, color: '#6dcf6d' } } >Contact Information</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
             </Grid.Column>
           </Grid.Row>

@@ -4,11 +4,12 @@ import { Header, Card, Button, Image, Container } from 'semantic-ui-react';
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class AdminHomePage extends React.Component {
   render() {
+    const adminStyle = { backgroundColor: '#6dcf6d' };
     return (
       <Container textAlign='center'>
-        <Header as='h1'>Admin Home Page</Header>
+        <Header inverted as='h1' style={adminStyle}>Admin Home Page</Header>
         <Card.Group centered>
-          <Card>
+          <Card color='green'>
             <Card.Content>
               <Image
                 floated='right'
@@ -32,7 +33,7 @@ class AdminHomePage extends React.Component {
               </div>
             </Card.Content>
           </Card>
-          <Card>
+          <Card color='green'>
             <Card.Content>
               <Image
                 floated='right'
@@ -56,7 +57,7 @@ class AdminHomePage extends React.Component {
               </div>
             </Card.Content>
           </Card>
-          <Card>
+          <Card color='green'>
             <Card.Content>
               <Image
                 floated='right'

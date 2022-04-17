@@ -11,10 +11,10 @@
   color: white;
 }
 
-.ui.header.cp-text, .ui.black.button.cp-text, .ui.green.button.cp-text, .ui.button.cp-text {
+.ui.header.cp-text, .ui.black.button.cp-text, .ui.green.button.cp-text, .ui.button.cp-text, .ui.list.cp-text {
   font-family: 'Playfair Display', serif;
 }
 
-.ui.list .list > .item a.header, .ui.list > .item a.header {
+.ui.list .list > .item a.header:hover, .ui.list > .item a.header {
   font-family: 'Playfair Display', serif;
 }

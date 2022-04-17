@@ -12,7 +12,7 @@ export class CompanyProfile extends React.Component {
               <Button circular fluid className='cp-text'>Website Link</Button>
             </Grid.Column>
             <Grid.Column width={10}>
-              <Header as='h1' className='cp-text'>Pear</Header>
+              <Header style={ { fontSize: 30 } } className='cp-text'>Pear</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
             </Grid.Column>
             <Grid.Column width={3}>

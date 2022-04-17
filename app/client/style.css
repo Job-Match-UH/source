@@ -10,3 +10,11 @@
   font-family: 'Playfair Display', serif;
   color: white;
 }
+
+.ui.header.cp-text, .ui.black.button.cp-text, .ui.green.button.cp-text, .ui.button.cp-text {
+  font-family: 'Playfair Display', serif;
+}
+
+.ui.list .list > .item a.header, .ui.list > .item a.header {
+  font-family: 'Playfair Display', serif;
+}

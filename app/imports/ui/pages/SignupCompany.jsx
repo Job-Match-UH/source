@@ -1,9 +1,7 @@
 import React from 'react';
-import { Button, Form, Placeholder, Tab } from 'semantic-ui-react';
+import { Button, Form, Icon, Input, Placeholder, Tab } from 'semantic-ui-react';
 
 const panes = [
-
-  { menuItem: 'Page Preview', render: () => <Tab.Pane>Page Review Content</Tab.Pane> },
 
   { menuItem: 'Company Description', render: () => <Tab.Pane>
     <Form>
@@ -16,20 +14,48 @@ const panes = [
       <Form.Input fluid label='Company Name:' placeholder='Company' />
       <Form.Input fluid label='Website:' placeholder='Website URL' />
       <Form.TextArea label='Company Description:' placeholder='Tell us a little bit about the company...' />
+      <Form.Button content='Submit' />
     </Form>
   </Tab.Pane> },
 
   { menuItem: 'Company Details', render: () => <Tab.Pane>
     <Form>
-      <Form.Input fluid label='Address:' placeholder='Address' />
-      <Form.Input fluid label='State:' placeholder='State' />
-      <Form.Input fluid label='Phone Number:' placeholder='(xxx) xxx - xxxx' />
+      <Form.Group unstackable widths={2}>
+        <Form.Input fluid label='Address:' placeholder='Address'/>
+        <Form.Input fluid label='State:' placeholder='State'/>
+      </Form.Group>
+      <Form.Group inline>
+        <Form.Field>
+          <label>Phone Number:</label>
+          <Input placeholder='(xxx)' />
+        </Form.Field>
+        <Form.Field>
+          <Input placeholder='xxx' />
+        </Form.Field>
+        <Form.Field>
+          <Input placeholder='xxx' />
+        </Form.Field>
+      </Form.Group>
       <Form.Input fluid label='Number of employees:' />
       <Form.Input fluid label='Year Established:' />
+      <Form.Button content='Submit' />
     </Form>
   </Tab.Pane> },
 
-  { menuItem: 'Job Postings', render: () => <Tab.Pane>Job Postings Content</Tab.Pane> },
+  { menuItem: 'Job Postings', render: () => <Tab.Pane>
+    <Form>
+      <Form.Input fluid label='Position:' placeholder='Position' />
+      <Form.Input fluid label='Job ID:' placeholder='Job ID' />
+      <Form.TextArea label='Job Description:' placeholder='Job Description' />
+      <Form.TextArea label='Qualifications:' placeholder='Qualifications' />
+      <Button icon size='mini'>
+        <Icon name='plus' />
+        Add Another Job?
+      </Button>
+      <Form.Button content='Submit' />
+    </Form>
+  </Tab.Pane>,
+  },
 ];
 
 const SignupCompany = () => (

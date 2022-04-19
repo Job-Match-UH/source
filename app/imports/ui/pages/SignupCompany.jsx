@@ -48,10 +48,10 @@ const panes = [
       <Form.Input fluid label='Job ID:' placeholder='Job ID' />
       <Form.TextArea label='Job Description:' placeholder='Job Description' />
       <Form.TextArea label='Qualifications:' placeholder='Qualifications' />
-      <Button icon size='mini'>
+      <Form.Button icon size='mini'>
         <Icon name='plus' />
         Add Another Job?
-      </Button>
+      </Form.Button>
       <Form.Button content='Submit' />
     </Form>
   </Tab.Pane>,

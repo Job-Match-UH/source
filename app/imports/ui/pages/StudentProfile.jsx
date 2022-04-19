@@ -15,7 +15,6 @@ class StudentProfile extends React.Component {
             <Grid.Column width={3}>
               <Image src='https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png' />
               <Button.Group fluid style={ { marginTop: 10 } }>
-
                 <Button primary>Edit</Button>
                 <Button secondary>Add</Button>
               </Button.Group>

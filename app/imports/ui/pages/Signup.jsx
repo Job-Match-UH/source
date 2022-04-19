@@ -131,7 +131,7 @@ class Signup extends React.Component {
     const panes = [
       {
         menuItem: 'Personal Info', render: () => <Tab.Pane>
-          <Form>
+          <Form className='cp-text'>
             <Form.Group widths='equal'>
               <Form.Input fluid label='First name' placeholder='First name'/>
               <Form.Input fluid label='Last name' placeholder='Last name'/>
@@ -155,7 +155,7 @@ class Signup extends React.Component {
                 onChange={this.fileChange}
               />
             </Form.Input>
-            <Form.Button>Submit</Form.Button>
+            <Form.Button className ='cp-text'>Submit</Form.Button>
           </Form>
         </Tab.Pane>,
       },
@@ -239,13 +239,31 @@ class Signup extends React.Component {
           <Form.Button>Submit</Form.Button>
         </Form>
       </Tab.Pane> },
-      { menuItem: 'Documents', render: () => <Tab.Pane></Tab.Pane> },
+      { menuItem: 'Documents', render: () => <Tab.Pane>
+        <Form>
+          <Form.Input fluid label='Upload documents' placeholder='Upload file'>
+            <Form.Button
+              content="Choose File"
+              labelPosition="left"
+              icon="file"
+              onClick={() => this.fileInputRef.current.click()}
+            />
+            <input
+              ref={this.fileInputRef}
+              type="file"
+              hidden
+              onChange={this.fileChange}
+            />
+          </Form.Input>
+          <Form.Button className ='cp-text'>Submit</Form.Button>
+        </Form>
+      </Tab.Pane> },
     ];
 
     return (
       <div>
         <Container>
-          <Header as='h1'>Create Student Profile</Header>
+          <Header className='cp-text' as='h1'>Create Student Profile</Header>
           <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes}/>
         </Container>
       </div>

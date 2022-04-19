@@ -27,7 +27,7 @@ export class CompanyProfile extends React.Component {
             <Grid.Column width={3}>
               <Button.Group widths={2}>
                 <Button color='green' className='cp-text'>Match Me!</Button>
-                <Button color='black' className='cp-text'>No Thanks</Button>
+                <Button color='black'>No Thanks</Button>
               </Button.Group>
             </Grid.Column>
             <Grid.Column width={10}>

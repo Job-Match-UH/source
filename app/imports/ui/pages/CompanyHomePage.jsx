@@ -13,7 +13,6 @@ const options = [
 ];
 
 const pfp = 'https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg';
-const companyStyle = { color: '#6dcf6d' };
 
 /** Renders the Page. */
 class CompanyHomePage extends React.Component {
@@ -22,7 +21,7 @@ class CompanyHomePage extends React.Component {
       <Container>
         <Grid textAlign='center'>
           <Grid.Row>
-            <Header as='h2' style={companyStyle}>Filter Student Profiles by:</Header>
+            <Header as='h2' className='cp-text'>Filter Student Profiles by:</Header>
           </Grid.Row>
           <Grid.Row>
             <Dropdown placeholder='Certification' compact multiple selection options={options} />
@@ -31,7 +30,7 @@ class CompanyHomePage extends React.Component {
             <Dropdown placeholder='Experience Level' compact multiple selection options={options} />
           </Grid.Row>
           <Grid.Row>
-            <Header as='h2' style={companyStyle}>Student Candidate Matches:</Header>
+            <Header as='h2' className='cp-text'>Student Candidate Matches:</Header>
           </Grid.Row>
           <Grid.Row>
             <Card.Group>

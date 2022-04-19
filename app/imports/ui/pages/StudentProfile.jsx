@@ -8,7 +8,6 @@ class StudentProfile extends React.Component {
 
   render() {
     const { activeItem } = this.state;
-    const studentStyle = { color: '#6dcf6d' };
     return (
       <Container>
         <Grid celled='internally'>
@@ -22,18 +21,18 @@ class StudentProfile extends React.Component {
               </Button.Group>
             </Grid.Column>
             <Grid.Column width={10}>
-              <Header as='h1' style={studentStyle}>Johnny Appleseed</Header>
+              <Header as='h1' className='cp-text'>Johnny Appleseed</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png'/>
             </Grid.Column>
             <Grid.Column width={3}>
-              <Header style={studentStyle}>Education</Header>
+              <Header className='cp-text'>Education</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
             </Grid.Column>
           </Grid.Row>
 
           <Grid.Row>
             <Grid.Column width={3}>
-              <Header as='h3' style={studentStyle}>Additional Notes</Header>
+              <Header as='h3' className='cp-text'>Additional Notes</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
             </Grid.Column>
             <Grid.Column width={10}>
@@ -65,10 +64,10 @@ class StudentProfile extends React.Component {
               </Segment>
             </Grid.Column>
             <Grid.Column width={3}>
-              <Header as='h3' style={studentStyle}>Experience</Header>
+              <Header as='h3' className='cp-text'>Experience</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
 
-              <Header style={ { marginTop: 100, color: '#6dcf6d' } } >Contact Information</Header>
+              <Header className='cp-text' style={ { marginTop: 100 } } >Contact Information</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
             </Grid.Column>
           </Grid.Row>

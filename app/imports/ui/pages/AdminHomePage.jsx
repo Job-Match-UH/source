@@ -4,10 +4,9 @@ import { Header, Card, Button, Image, Container } from 'semantic-ui-react';
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class AdminHomePage extends React.Component {
   render() {
-    const adminStyle = { color: '#6dcf6d' };
     return (
       <Container textAlign='center'>
-        <Header inverted as='h1' style={adminStyle}>Admin Home Page</Header>
+        <Header as='h1' className='cp-text'>Admin Home Page</Header>
         <Card.Group centered>
           <Card color='green'>
             <Card.Content>

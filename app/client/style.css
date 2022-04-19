@@ -19,3 +19,12 @@
 .ui.list .list > .item a.header:hover, .ui.list > .item a.header {
   font-family: 'Playfair Display', serif;
 }
+
+.ui.buttons > .ui.button:not(.basic):not(.inverted), .ui.buttons:not(.basic):not(.inverted) > .button  {
+  font-family: 'Playfair Display', serif;
+}
+
+.ui.cards > .card > .content > .header:not(.ui), .ui.card > .content > .header:not(.ui) {
+  font-family: 'Playfair Display', serif;
+  color: #145714;
+}

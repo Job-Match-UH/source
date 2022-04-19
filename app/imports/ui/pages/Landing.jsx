@@ -6,7 +6,7 @@ class Landing extends React.Component {
   render() {
     return (
       <div className='landing'>
-        <Grid verticalAlign='middle' textAlign='center'>
+        <Grid textAlign='center' style={{ paddingTop: '180px' }}>
           <Grid.Row column={2}>
             <Grid.Column width={4}>
               <Header className='landing-text' style={ { fontSize: 'xxx-large' } }> About Us </Header>

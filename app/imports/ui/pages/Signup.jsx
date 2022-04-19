@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Form, Header, Tab, Icon, Dropdown } from 'semantic-ui-react';
+import { Container, Form, Header, Tab, Icon, Dropdown, Label } from 'semantic-ui-react';
 
 class Signup extends React.Component {
 
@@ -159,7 +159,9 @@ class Signup extends React.Component {
           </Form>
         </Tab.Pane>,
       },
-      { menuItem: 'Interests', render: () => <Tab.Pane><Dropdown placeholder='Pick multiple interests' fluid multiple selection options={interests} /></Tab.Pane> },
+      { menuItem: 'Interests', render: () => <Tab.Pane>
+        <Form.Dropdown label='Add interests' placeholder='Pick multiple interests' fluid multiple selection options={interests} />
+      </Tab.Pane> },
       { menuItem: 'Projects', render: () => <Tab.Pane>
         <Form>
           <Form.Input fluid label='Name of project' placeholder='Ex. Company Connector'/>

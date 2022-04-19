@@ -1,6 +1,5 @@
 import React from 'react';
-import { Container, Grid, Image, Header, Menu, Segment, Card, Button } from 'semantic-ui-react';
-import ClassSchedule from './ClassScheduleForm';
+import { Container, Grid, Image, Header, Menu, Segment, Button } from 'semantic-ui-react';
 
 class StudentProfile extends React.Component {
   state = { activeItem: 'home' }
@@ -35,9 +34,6 @@ class StudentProfile extends React.Component {
             <Grid.Column width={3}>
               <Header as='h3' style={studentStyle}>Additional Notes</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
-              <Card fluid>
-                <ClassSchedule/>
-              </Card>
             </Grid.Column>
             <Grid.Column width={10}>
               <Menu pointing>

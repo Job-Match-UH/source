@@ -15,24 +15,23 @@ class StudentProfile extends React.Component {
             <Grid.Column width={3}>
               <Image src='https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png' />
               <Button.Group fluid style={ { marginTop: 10 } }>
-
                 <Button primary>Edit</Button>
                 <Button secondary>Add</Button>
               </Button.Group>
             </Grid.Column>
             <Grid.Column width={10}>
-              <Header as='h1'>Johnny Appleseed</Header>
+              <Header as='h1' className='cp-text'>Johnny Appleseed</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png'/>
             </Grid.Column>
             <Grid.Column width={3}>
-              <Header>Education</Header>
+              <Header className='cp-text'>Education</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
             </Grid.Column>
           </Grid.Row>
 
           <Grid.Row>
             <Grid.Column width={3}>
-              <Header as='h3'>Additional Notes</Header>
+              <Header as='h3' className='cp-text'>Additional Notes</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
             </Grid.Column>
             <Grid.Column width={10}>
@@ -64,10 +63,10 @@ class StudentProfile extends React.Component {
               </Segment>
             </Grid.Column>
             <Grid.Column width={3}>
-              <Header as='h3'>Experience</Header>
+              <Header as='h3' className='cp-text'>Experience</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
 
-              <Header style={ { marginTop: 100 } }>Contact Information</Header>
+              <Header className='cp-text' style={ { marginTop: 100 } } >Contact Information</Header>
               <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
             </Grid.Column>
           </Grid.Row>

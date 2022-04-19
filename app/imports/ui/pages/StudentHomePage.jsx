@@ -63,7 +63,7 @@ class StudentHomePage extends React.Component {
               />
             </Grid.Column>
             <Grid.Column width={2}>
-              <Button>Find Jobs</Button>
+              <Button className='cp-text'>Find Jobs</Button>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
@@ -77,7 +77,7 @@ class StudentHomePage extends React.Component {
             <Dropdown placeholder='Experience Level' compact multiple selection options={options} />
           </Grid.Row>
           <Grid.Row>
-            <Header as='h2'>Job Matches:</Header>
+            <Header as='h2' className='cp-text'>Job Matches:</Header>
           </Grid.Row>
           <Grid.Row>
             <Card.Group>
@@ -156,7 +156,7 @@ class StudentHomePage extends React.Component {
             </Card.Group>
           </Grid.Row>
           <Grid.Row>
-            <Header as='h2'>Check out more Recommended:</Header>
+            <Header as='h2' className ='cp-text'>Check out more Recommended:</Header>
           </Grid.Row>
           <Grid.Row>
             <Card.Group>

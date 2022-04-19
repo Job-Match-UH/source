@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Form, Header, Tab } from 'semantic-ui-react';
+import { Container, Form, Header, Tab, Icon, Dropdown } from 'semantic-ui-react';
 
 class Signup extends React.Component {
 
@@ -82,6 +82,52 @@ class Signup extends React.Component {
       },
     ];
 
+    const employmentType = [
+      {
+        key: 'Full-time',
+        text: 'Full-time',
+        value: 'Full-time',
+      },
+      {
+        key: 'Part-time',
+        text: 'Part-time',
+        value: 'Part-time',
+      },
+      {
+        key: 'Self-employed',
+        text: 'Self-employed',
+        value: 'Self-employed',
+      },
+      {
+        key: 'Seasonal',
+        text: 'Seasonal',
+        value: 'Seasonal',
+      },
+      {
+        key: 'Internship',
+        text: 'Internship',
+        value: 'Internship',
+      },
+    ];
+
+    const interests = [
+      {
+        key: 'default',
+        text: 'default',
+        value: 'default',
+      },
+      {
+        key: 'default2',
+        text: 'default2',
+        value: 'default2',
+      },
+      {
+        key: 'default3',
+        text: 'default3',
+        value: 'default3',
+      },
+    ];
+
     const panes = [
       {
         menuItem: 'Personal Info', render: () => <Tab.Pane>
@@ -95,14 +141,71 @@ class Signup extends React.Component {
               <Form.Input fluid label='Phone Number' placeholder='(xxx) xxx - xxxx'/>
             </Form.Group>
             <Form.TextArea label='About' placeholder='Tell us more about you...'/>
-            <Form.Input fluid label='Profile Picture' placeholder='Upload Image'/>
+            <Form.Input fluid label='Profile Picture' placeholder='Upload Image'>
+              <Form.Button
+                content="Choose File"
+                labelPosition="left"
+                icon="file"
+                onClick={() => this.fileInputRef.current.click()}
+              />
+              <input
+                ref={this.fileInputRef}
+                type="file"
+                hidden
+                onChange={this.fileChange}
+              />
+            </Form.Input>
             <Form.Button>Submit</Form.Button>
           </Form>
         </Tab.Pane>,
       },
-      { menuItem: 'Interests', render: () => <Tab.Pane></Tab.Pane> },
-      { menuItem: 'Projects', render: () => <Tab.Pane></Tab.Pane> },
-      { menuItem: 'Experience', render: () => <Tab.Pane></Tab.Pane> },
+      { menuItem: 'Interests', render: () => <Tab.Pane><Dropdown placeholder='Pick multiple interests' fluid multiple selection options={interests} /></Tab.Pane> },
+      { menuItem: 'Projects', render: () => <Tab.Pane>
+        <Form>
+          <Form.Input fluid label='Name of project' placeholder='Ex. Company Connector'/>
+          <Form.TextArea label='Summary' placeholder='Briefly summarize your project'/>
+          <Form.Button><Icon name='plus' />Add project</Form.Button>
+          <Form.Button>Submit</Form.Button>
+        </Form>
+      </Tab.Pane> },
+      { menuItem: 'Experience', render: () => <Tab.Pane>
+        <Form>
+          <Form.Input fluid label='Title' placeholder='Ex. Retail Manager'/>
+          <Form.Select
+            fluid label='Employment type'
+            options={employmentType}
+            placeholder='Select Type'
+          />
+          <Form.Input fluid label='Name of company' placeholder='Ex.  Walmart'/>
+          <Form.TextArea label='Job description' placeholder='What were your responsibilities...'/>
+          <Form.Group widths='equal'>
+            <Form.Select
+              label='Start month'
+              options={startMonths}
+              placeholder='Select Month'
+            />
+            <Form.Select
+              label='Start year'
+              options={listYears}
+              placeholder='select year'
+            />
+          </Form.Group>
+          <Form.Group widths='equal'>
+            <Form.Select
+              label='End month (or expected)'
+              options={startMonths}
+              placeholder='Select Month'
+            />
+            <Form.Select
+              label='End year (or expected)'
+              options={listYears}
+              placeholder='select year'
+            />
+          </Form.Group>
+          <Form.Button><Icon name='plus' />Add experience</Form.Button>
+          <Form.Button>Submit</Form.Button>
+        </Form>
+      </Tab.Pane> },
       { menuItem: 'Education', render: () => <Tab.Pane>
         <Form>
           <Form.Input fluid label='School' placeholder='Ex. UH Manoa'/>
@@ -132,7 +235,8 @@ class Signup extends React.Component {
               placeholder='select year'
             />
           </Form.Group>
-          <Form.Button>Add Education</Form.Button>
+          <Form.Button><Icon name='plus' />Add education</Form.Button>
+          <Form.Button>Submit</Form.Button>
         </Form>
       </Tab.Pane> },
       { menuItem: 'Documents', render: () => <Tab.Pane></Tab.Pane> },

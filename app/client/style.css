@@ -3,7 +3,7 @@
 .landing {
   background-size: cover;
   background: url('https://d1l18ops95qbzp.cloudfront.net/wp-content/2014/11/Rainbow-Manoa.jpg') no-repeat fixed center center;
-  padding: 190px 0 190px 0;
+  height: 500px;
 }
 
 .ui.header.landing-text {
@@ -13,8 +13,23 @@
 
 .ui.header.cp-text, .ui.black.button.cp-text, .ui.green.button.cp-text, .ui.button.cp-text, .ui.list.cp-text {
   font-family: 'Playfair Display', serif;
+  color: #145714;
 }
 
 .ui.list .list > .item a.header:hover, .ui.list > .item a.header {
   font-family: 'Playfair Display', serif;
+}
+
+.ui.buttons > .ui.button:not(.basic):not(.inverted), .ui.buttons:not(.basic):not(.inverted) > .button  {
+  font-family: 'Playfair Display', serif;
+}
+
+.ui.cards > .card > .content > .header:not(.ui), .ui.card > .content > .header:not(.ui) {
+  font-family: 'Playfair Display', serif;
+  color: #145714;
+}
+
+.ui.menu .item {
+  font-family: 'Playfair Display', serif;
+  color: #145714;
 }

@@ -15,7 +15,7 @@ class SignupCompany extends React.Component {
               </Placeholder>
             </Form.Input>
             <Button compact size='mini'>Select Photo</Button>
-            <Form.Input fluid label='Company Name:' placeholder='Company'/>
+            <Form.Input fluid label='Company Name:' placeholder='Ex: Company Connector'/>
             <Form.Input fluid label='Website:' placeholder='Website URL'/>
             <Form.TextArea label='Company Description:' placeholder='Tell us a little bit about the company...'/>
             <Form.Button content='Submit'/>
@@ -28,7 +28,7 @@ class SignupCompany extends React.Component {
           <Form>
             <Form.Group unstackable widths={2}>
               <Form.Input fluid label='Address:' placeholder='Address'/>
-              <Form.Input fluid label='State:' placeholder='State'/>
+              <Form.Input fluid label='State:' placeholder='Ex: HI'/>
             </Form.Group>
             <Form.Group inline>
               <Form.Field>
@@ -42,8 +42,7 @@ class SignupCompany extends React.Component {
                 <Input placeholder='xxx'/>
               </Form.Field>
             </Form.Group>
-            <Form.Input fluid label='Number of employees:'/>
-            <Form.Input fluid label='Year Established:'/>
+            <Form.Input fluid label='Year Established:' placeholder='Ex: 2000'/>
             <Form.Button content='Submit'/>
           </Form>
         </Tab.Pane>,
@@ -52,10 +51,12 @@ class SignupCompany extends React.Component {
       {
         menuItem: 'Job Postings', render: () => <Tab.Pane>
           <Form>
-            <Form.Input fluid label='Position:' placeholder='Position'/>
+            <Form.Input fluid label='Job Title:' placeholder='Job Title'/>
             <Form.Input fluid label='Job ID:' placeholder='Job ID'/>
-            <Form.TextArea label='Job Description:' placeholder='Job Description'/>
-            <Form.TextArea label='Qualifications:' placeholder='Qualifications'/>
+            <Form.Input fluid label='Pay:' placeholder='Estimated salary'/>
+            <Form.Input fluid label='Location:' placeholder='Location'/>
+            <Form.TextArea label='Job Description:' placeholder='Give a small description about the job position...'/>
+            <Form.TextArea label='Qualifications:' placeholder='List the desired interests for this position...'/>
             <Form.Button icon size='mini'>
               <Icon name='plus'/>
               Add Another Job?
@@ -69,7 +70,7 @@ class SignupCompany extends React.Component {
     return (
       <div>
         <Container>
-          <Header className='cp-text' as='h1' textAlign="center">Create Company Profile</Header>
+          <Header className='cp-text' as='h1'>Create Company Profile</Header>
           <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes}/>
         </Container>
       </div>

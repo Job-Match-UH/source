@@ -1,13 +1,14 @@
 import React from 'react';
-import { Header, Card, Button, Image, Container } from 'semantic-ui-react';
+import { Header, Card, Button, Image, Container, Tab } from 'semantic-ui-react';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class AdminHomePage extends React.Component {
+
   render() {
-    return (
-      <Container textAlign='center'>
-        <Header as='h1' className='cp-text'>Admin Home Page</Header>
-        <Card.Group centered>
+    const panes = [
+
+      {
+        menuItem: 'Company Profile', render: () => <Tab.Pane>
           <Card color='green'>
             <Card.Content>
               <Image
@@ -18,20 +19,25 @@ class AdminHomePage extends React.Component {
               <Card.Header>Pear Inc.</Card.Header>
               <Card.Meta>Company</Card.Meta>
               <Card.Description>
-            Overpriced tech retail store.
+                Overpriced tech retail store.
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
               <div className='ui two buttons'>
                 <Button basic color='grey'>
-              View
+            View
                 </Button>
                 <Button basic color='red'>
-              Delete
+            Delete
                 </Button>
               </div>
             </Card.Content>
           </Card>
+        </Tab.Pane>,
+      },
+
+      {
+        menuItem: 'Student Profile', render: () => <Tab.Pane>
           <Card color='green'>
             <Card.Content>
               <Image
@@ -48,10 +54,10 @@ class AdminHomePage extends React.Component {
             <Card.Content extra>
               <div className='ui two buttons'>
                 <Button basic color='grey'>
-              View
+            View
                 </Button>
                 <Button basic color='red'>
-              Delete
+            Delete
                 </Button>
               </div>
             </Card.Content>
@@ -72,16 +78,25 @@ class AdminHomePage extends React.Component {
             <Card.Content extra>
               <div className='ui two buttons'>
                 <Button basic color='grey'>
-              View
+            View
                 </Button>
                 <Button basic color='red'>
-              Delete
+            Delete
                 </Button>
               </div>
             </Card.Content>
           </Card>
-        </Card.Group>
-      </Container>
+        </Tab.Pane>,
+      },
+    ];
+
+    return (
+      <div>
+        <Container textAlign='center'>
+          <Header as='h1' className='cp-text'>Admin Home Page</Header>
+          <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes}/>
+        </Container>
+      </div>
     );
   }
 }

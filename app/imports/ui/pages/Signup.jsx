@@ -1,13 +1,42 @@
 import React from 'react';
-import { Container, Form, Header, Tab, Icon, Dropdown, Label } from 'semantic-ui-react';
+import { Container, Form, Header, Tab, Icon } from 'semantic-ui-react';
+import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
+import swal from 'sweetalert';
+import SimpleSchema from 'simpl-schema';
+import { Students } from '../../api/student/Student';
+
+const formSchema = new SimpleSchema({
+  firstName: String,
+  lastName: String,
+  about: String,
+  email: String,
+  password: String,
+});
+
+const bridge = new SimpleSchema2Bridge(formSchema);
 
 class Signup extends React.Component {
 
+  // On submit, insert the data.
+  submit(data, formRef) {
+    const { firstName, lastName, about, email, password } = data;
+    Students.collection.insert({ firstName, lastName, about, email, password },
+      (error) => {
+        if (error) {
+          swal('Error', error.message, 'error');
+        } else {
+          swal('Success', 'Item added successfully', 'success');
+          formRef.reset();
+        }
+      });
+  }
+
   render() {
     const listYears = [];
-
+    let fRef = null;
     let currentYear = new Date().getFullYear();
     const startYear = currentYear - 20;
+
     while (currentYear >= startYear) {
       listYears.push(
         {
@@ -131,7 +160,7 @@ class Signup extends React.Component {
     const panes = [
       {
         menuItem: 'Personal Info', render: () => <Tab.Pane>
-          <Form className='cp-text'>
+          <Form className='cp-text' ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
             <Form.Group widths='equal'>
               <Form.Input fluid label='First name' placeholder='First name'/>
               <Form.Input fluid label='Last name' placeholder='Last name'/>

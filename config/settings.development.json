@@ -10,8 +10,8 @@
   ],
 
   "defaultCompanies": [
-    { "companyName": "Pear Inc", "website": "google.com", "description": "We are the Pear Company!" },
-    { "companyName": "Facebook", "website": "facebook.com", "description": "We are the Facebook!" },
-    { "companyName": "UH Manoa", "website": "manoa.com", "description": "We are Manoa!" }
+    { "companyName": "Pear Inc", "website": "google.com", "description": "We are the Pear Company!", "owner": "admin@foo.com" },
+    { "companyName": "Facebook", "website": "facebook.com", "description": "We are the Facebook!", "owner": "admin@foo.com" },
+    { "companyName": "UH Manoa", "website": "manoa.com", "description": "We are Manoa!", "owner": "john@foo.com" }
   ]
 }

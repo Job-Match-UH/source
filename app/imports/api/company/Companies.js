@@ -16,6 +16,7 @@ class CompaniesCollection {
       companyName: String,
       website: String,
       description: String,
+      owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
@@ -26,7 +27,7 @@ class CompaniesCollection {
 }
 
 /**
- * The singleton instance of the StuffsCollection.
- * @type {StuffsCollection}
+ * The singleton instance of the CompaniesCollection.
+ * @type {CompaniesCollection}
  */
 export const Companies = new CompaniesCollection();

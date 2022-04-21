@@ -1,20 +1,17 @@
-/*
 import { Meteor } from 'meteor/meteor';
-// import { Stuffs } from '../../api/stuff/Stuff.js';
+import { Class } from '../../api/class/Class';
 
-/!* eslint-disable no-console *!/
+/* eslint-disable no-console */
 
 // Initialize the database with a default data document.
-function addData(data) {
-  console.log(`  Adding: ${data.name} (${data.owner})`);
-  Stuffs.collection.insert(data);
+function addClass(data) {
+  console.log(`  Adding: ${data.className} (${data.courseNumber})`);
+  Class.collection.insert(data);
 }
 
-// Initialize the StuffsCollection if empty.
-if (Stuffs.collection.find().count() === 0) {
+if (Class.collection.find().count() === 0) {
   if (Meteor.settings.defaultData) {
-    console.log('Creating default data.');
-    Meteor.settings.defaultData.map(data => addData(data));
+    console.log('Creating default class data.');
+    Meteor.settings.defaultData.map(data => addClass(data));
   }
 }
-*/

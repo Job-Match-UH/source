@@ -7,5 +7,10 @@
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "email": "john@foo.com", "password": "changeme" }
+  ],
+
+  "defaultClasses": [
+    { "className": "ICS314", "courseNumber": "1234", "startMonth": "January", "endMonth": "May", "startYear": "2022", "endYear": "2022" },
+    { "className": "ICS311", "courseNumber": "5678", "startMonth": "January", "endMonth": "May", "startYear": "2022", "endYear": "2022" }
   ]
 }

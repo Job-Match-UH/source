@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Form, Header, Tab, Icon } from 'semantic-ui-react';
+import { Container, Form, Header, Tab, Icon, Button } from 'semantic-ui-react';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import swal from 'sweetalert';
 import SimpleSchema from 'simpl-schema';
@@ -8,9 +8,10 @@ import { Students } from '../../api/student/Student';
 const formSchema = new SimpleSchema({
   firstName: String,
   lastName: String,
+  address: String,
+  phone: Number,
   about: String,
   email: String,
-  password: String,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -19,8 +20,8 @@ class Signup extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { firstName, lastName, about, email, password } = data;
-    Students.collection.insert({ firstName, lastName, about, email, password },
+    const { firstName, lastName, about, phone, address, email } = data;
+    Students.collection.insert({ firstName, lastName, about, phone, email, address },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -160,7 +161,7 @@ class Signup extends React.Component {
     const panes = [
       {
         menuItem: 'Personal Info', render: () => <Tab.Pane>
-          <Form className='cp-text' ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
+          <Form className='cp-text'>
             <Form.Group widths='equal'>
               <Form.Input fluid label='First name' placeholder='First name'/>
               <Form.Input fluid label='Last name' placeholder='Last name'/>
@@ -184,7 +185,6 @@ class Signup extends React.Component {
                 onChange={this.fileChange}
               />
             </Form.Input>
-            <Form.Button className ='cp-text'>Submit</Form.Button>
           </Form>
         </Tab.Pane>,
       },
@@ -196,7 +196,6 @@ class Signup extends React.Component {
           <Form.Input fluid label='Name of project' placeholder='Ex. Company Connector'/>
           <Form.TextArea label='Summary' placeholder='Briefly summarize your project'/>
           <Form.Button><Icon name='plus' />Add project</Form.Button>
-          <Form.Button>Submit</Form.Button>
         </Form>
       </Tab.Pane> },
       { menuItem: 'Experience', render: () => <Tab.Pane>
@@ -234,7 +233,6 @@ class Signup extends React.Component {
             />
           </Form.Group>
           <Form.Button><Icon name='plus' />Add experience</Form.Button>
-          <Form.Button>Submit</Form.Button>
         </Form>
       </Tab.Pane> },
       { menuItem: 'Education', render: () => <Tab.Pane>
@@ -267,7 +265,6 @@ class Signup extends React.Component {
             />
           </Form.Group>
           <Form.Button><Icon name='plus' />Add education</Form.Button>
-          <Form.Button>Submit</Form.Button>
         </Form>
       </Tab.Pane> },
       { menuItem: 'Documents', render: () => <Tab.Pane>
@@ -286,7 +283,6 @@ class Signup extends React.Component {
               onChange={this.fileChange}
             />
           </Form.Input>
-          <Form.Button className ='cp-text'>Submit</Form.Button>
         </Form>
       </Tab.Pane> },
     ];
@@ -296,6 +292,7 @@ class Signup extends React.Component {
         <Container>
           <Header className='cp-text' as='h1'>Create Student Profile</Header>
           <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes}/>
+          <Button ref={ref => { fRef = ref; }} schema={bridge} onClick={data => this.submit(data, fRef)}>Submit</Button>
         </Container>
       </div>
     );

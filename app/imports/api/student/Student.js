@@ -8,7 +8,7 @@ import { Tracker } from 'meteor/tracker';
 class StudentCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'StuffsCollection';
+    this.name = 'StudentCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
@@ -16,9 +16,9 @@ class StudentCollection {
       firstName: String,
       lastName: String,
       address: String,
+      phone: Number,
       about: String,
       email: String,
-      password: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);

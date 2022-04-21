@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
+import { Tags } from '../../api/tags/Tags';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -17,6 +18,14 @@ Meteor.publish(Stuffs.userPublicationName, function () {
 Meteor.publish(Stuffs.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Stuffs.collection.find();
+  }
+  return this.ready();
+});
+
+// If logged in as company or student, publish all tag documents to user
+Meteor.publish(Tags.userPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin' || 'company' || 'student')) {
+    return Tags.collection.find();
   }
   return this.ready();
 });

@@ -1,20 +1,16 @@
-/*
 import { Meteor } from 'meteor/meteor';
-// import { Stuffs } from '../../api/stuff/Stuff.js';
-
-/!* eslint-disable no-console *!/
+import { Companies } from '../../api/company/Companies';
 
 // Initialize the database with a default data document.
-function addData(data) {
+function addCompanies(data) {
   console.log(`  Adding: ${data.name} (${data.owner})`);
-  Stuffs.collection.insert(data);
+  Companies.collection.insert(data);
 }
 
-// Initialize the StuffsCollection if empty.
-if (Stuffs.collection.find().count() === 0) {
+// Initialize the CompaniesCollection if empty.
+if (Companies.collection.find().count() === 0) {
   if (Meteor.settings.defaultData) {
-    console.log('Creating default data.');
-    Meteor.settings.defaultData.map(data => addData(data));
+    console.log('Creating default company data.');
+    Meteor.settings.defaultCompanies.map(data => addCompanies(data));
   }
 }
-*/

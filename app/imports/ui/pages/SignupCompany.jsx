@@ -1,7 +1,35 @@
 import React from 'react';
 import { Button, Container, Form, Header, Icon, Input, Placeholder, Tab } from 'semantic-ui-react';
+import { AutoForm, SubmitField } from 'uniforms-semantic';
+import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
+import SimpleSchema from 'simpl-schema';
+import { Meteor } from 'meteor/meteor';
+import swal from 'sweetalert';
+import { Companies } from '../../api/company/Companies';
+
+const formSchema = new SimpleSchema({
+  companyName: String,
+  website: String,
+  description: String,
+});
+
+const bridge = new SimpleSchema2Bridge(formSchema);
 
 class SignupCompany extends React.Component {
+
+  // On submit, insert data.
+  submit(data, formRef) {
+    const { companyName, website, description } = data;
+    Companies.collection.insert({ companyName, website, description },
+      (error) => {
+        if (error) {
+          swal('Error', error.message, 'error');
+        } else {
+          swal('Success', 'Item added successfully', 'success');
+          formRef.reset();
+        }
+      });
+  }
 
   render() {
     const panes = [
@@ -15,10 +43,9 @@ class SignupCompany extends React.Component {
               </Placeholder>
             </Form.Input>
             <Button compact size='mini'>Select Photo</Button>
-            <Form.Input fluid label='Company Name:' placeholder='Ex: Company Connector'/>
-            <Form.Input fluid label='Website:' placeholder='Website URL'/>
-            <Form.TextArea label='Company Description:' placeholder='Tell us a little bit about the company...'/>
-            <Form.Button content='Submit'/>
+            <Form.Input fluid label='Company Name:' placeholder='Ex: Company Connector' name='companyName'/>
+            <Form.Input fluid label='Website:' placeholder='Website URL' name='website'/>
+            <Form.TextArea label='Company Description:' placeholder='Tell us a little bit about the company...' name='description'/>
           </Form>
         </Tab.Pane>,
       },
@@ -43,7 +70,6 @@ class SignupCompany extends React.Component {
               </Form.Field>
             </Form.Group>
             <Form.Input fluid label='Year Established:' placeholder='Ex: 2000'/>
-            <Form.Button content='Submit'/>
           </Form>
         </Tab.Pane>,
       },
@@ -61,19 +87,21 @@ class SignupCompany extends React.Component {
               <Icon name='plus'/>
               Add Another Job?
             </Form.Button>
-            <Form.Button content='Submit'/>
           </Form>
         </Tab.Pane>,
       },
     ];
 
+    let fRef = null;
+
     return (
-      <div>
+      <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
         <Container>
           <Header className='cp-text' as='h1'>Create Company Profile</Header>
           <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes}/>
         </Container>
-      </div>
+        <SubmitField value='Submit'/>
+      </AutoForm>
     );
   }
 }

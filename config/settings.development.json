@@ -7,5 +7,11 @@
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "email": "john@foo.com", "password": "changeme" }
+  ],
+
+  "defaultCompanies": [
+    { "companyName": "Pear Inc", "website": "google.com", "description": "We are the Pear Company!" },
+    { "companyName": "Facebook", "website": "facebook.com", "description": "We are the Facebook!" },
+    { "companyName": "UH Manoa", "website": "manoa.com", "description": "We are Manoa!" }
   ]
 }

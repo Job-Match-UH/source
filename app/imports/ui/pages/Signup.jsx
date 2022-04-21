@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Form, Header, Tab, Icon, Dropdown, Label } from 'semantic-ui-react';
+import { Container, Form, Header, Tab, Icon } from 'semantic-ui-react';
+import zipCode from '../../../client/zipCodes';
 
 class Signup extends React.Component {
 
@@ -272,5 +273,9 @@ class Signup extends React.Component {
     );
   }
 }
+
+const options = zipCode.map((location) => ({ zip: location.zip, city: location.city }));
+
+console.log(options);
 
 export default Signup;

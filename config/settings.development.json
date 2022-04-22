@@ -16,5 +16,10 @@
       "phone": "8080980909", "year": "2002", "jobTitle": "office", "jobID": "1738", "pay": "1000", "location": "here", "jobDescription": "work for us", "qualifications": "be cool" },
     { "companyName": "UH Manoa", "website": "manoa.com", "description": "We are Manoa!", "owner": "john@foo.com", "address": "f", "state": "HI",
       "phone": "8080980909", "year": "2002", "jobTitle": "office", "jobID": "1738", "pay": "1000", "location": "here", "jobDescription": "work for us", "qualifications": "be very cool" }
+  ],
+
+  "defaultTags": [
+    { "name": "Kapaa", "typeOf": "Location", "owner": "larissa@foo.com" },
+    { "name": "Cyber Security", "typeOf": "Interest", "owner": "larissa@foo.com" }
   ]
 }

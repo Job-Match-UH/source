@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Form, Header, Tab, Icon, Dropdown, Label } from 'semantic-ui-react';
+import { Container, Form, Header, Tab, Icon } from 'semantic-ui-react';
 
 class Signup extends React.Component {
 

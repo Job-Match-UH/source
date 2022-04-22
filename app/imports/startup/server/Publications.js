@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
+import { Students } from '../../api/student/Student';
 import { Companies } from '../../api/company/Companies';
 import { Tags } from '../../api/tags/Tags';
 
@@ -10,6 +11,14 @@ Meteor.publish(Stuffs.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Stuffs.collection.find({ owner: username });
+  }
+  return this.ready();
+});
+
+Meteor.publish(Students.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Students.collection.find({ owner: username });
   }
   return this.ready();
 });
@@ -32,11 +41,19 @@ Meteor.publish(Stuffs.adminPublicationName, function () {
   return this.ready();
 });
 
+Meteor.publish(Students.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Students.collection.find();
+  }
+  return this.ready();
+});
+
 // If logged in and with admin role, then publish all documents from all users. Otherwise publish nothing.
 Meteor.publish(Companies.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Companies.collection.find();
   }
+  return this.ready();
 });
 
 // If logged in as company or student, publish all tag documents to user

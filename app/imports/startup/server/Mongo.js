@@ -4,7 +4,7 @@ import { Students } from '../../api/student/Student';
 // Initialize the database with a default data document.
 function addStudent(data) {
   // eslint-disable-next-line no-console
-  console.log(`  Adding: ${data.name} (${data.owner})`);
+  console.log(`  Adding: ${data.firstName} (${data.lastName})`);
   Students.collection.insert(data);
 }
 

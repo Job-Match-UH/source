@@ -11,10 +11,10 @@
   ],
 
   "defaultStudentData": [
-    { "firstName":  "Larissa", "lastName":  "Tsai", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data"},
-    { "firstName":  "Michelle", "lastName":  "Leano", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data"},
-    { "firstName":  "Eda", "lastName":  "Cadiena", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data"},
-    { "firstName":  "Gaila", "lastName":  "Galano", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data"},
-    { "firstName":  "Cameron", "lastName":  "Arakaki", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data"}
+    { "firstName":  "Larissa", "lastName":  "Tsai", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data", "email":  "uh@gmail.com"},
+    { "firstName":  "Michelle", "lastName":  "Leano", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data", "email":  "uh@gmail.com"},
+    { "firstName":  "Eda", "lastName":  "Cadiena", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data", "email":  "uh@gmail.com"},
+    { "firstName":  "Gaila", "lastName":  "Galano", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data", "email":  "uh@gmail.com"},
+    { "firstName":  "Cameron", "lastName":  "Arakaki", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data", "email":  "uh@gmail.com"}
   ]
 }

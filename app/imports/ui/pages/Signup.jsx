@@ -3,6 +3,7 @@ import { Container, Form, Header, Tab, Icon, Button } from 'semantic-ui-react';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import swal from 'sweetalert';
 import SimpleSchema from 'simpl-schema';
+import { SubmitField } from 'uniforms-semantic';
 import { Students } from '../../api/student/Student';
 
 const formSchema = new SimpleSchema({
@@ -185,6 +186,7 @@ class Signup extends React.Component {
                 onChange={this.fileChange}
               />
             </Form.Input>
+            <SubmitField value='Submit'/>
           </Form>
         </Tab.Pane>,
       },

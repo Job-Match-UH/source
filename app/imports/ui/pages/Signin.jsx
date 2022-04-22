@@ -113,7 +113,7 @@ export default class Signin extends React.Component {
                 />
                 <Button id="signin-form-submit" content='Login' primary />
                 <Message attached color='green'>
-                  <Link to="/signup">Click here to Register as a Company</Link>
+                  <Link to="/companysignup">Click here to Register as a Company</Link>
                 </Message>
                 {this.state.error === '' ? (
                   ''

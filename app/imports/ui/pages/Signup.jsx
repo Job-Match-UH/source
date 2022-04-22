@@ -274,7 +274,7 @@ class Signup extends React.Component {
   }
 }
 
-const options = zipCode.map((location) => ({ zip: location.zip, city: location.city }));
+const options = zipCode.map((location) => ({ key: location.city, text: location.city, value: location.city }));
 
 console.log(options);
 

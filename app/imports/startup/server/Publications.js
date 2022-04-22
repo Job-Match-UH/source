@@ -37,7 +37,7 @@ Meteor.publish(Class.adminPublicationName, function () {
   return this.ready();
 });
 
-// alanning:roles publication
+// Planning:roles publication
 // Recommended code to publish roles for each user.
 Meteor.publish(null, function () {
   if (this.userId) {

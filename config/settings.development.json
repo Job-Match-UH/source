@@ -10,7 +10,7 @@
   ],
 
   "defaultClasses": [
-    { "className": "ICS314", "courseNumber": "1234", "startMonth": "January", "endMonth": "May", "startYear": "2022", "endYear": "2022" },
-    { "className": "ICS311", "courseNumber": "5678", "startMonth": "January", "endMonth": "May", "startYear": "2022", "endYear": "2022" }
+    { "className": "Software Engineering I", "courseNumber": "ICS 314", "startMonth": "January", "endMonth": "May", "startYear": "2022", "endYear": "2022" },
+    { "className": "Algorithms", "courseNumber": "ICS 311", "startMonth": "January", "endMonth": "May", "startYear": "2022", "endYear": "2022" }
   ]
 }

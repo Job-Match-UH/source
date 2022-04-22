@@ -1,9 +1,9 @@
 import React from 'react';
-import { Container, Form, Header, Tab, Icon, Button } from 'semantic-ui-react';
+import { Container, Form, Header, Tab, Icon } from 'semantic-ui-react';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import swal from 'sweetalert';
 import SimpleSchema from 'simpl-schema';
-import { SubmitField } from 'uniforms-semantic';
+import { AutoForm, SubmitField } from 'uniforms-semantic';
 import { Students } from '../../api/student/Student';
 
 const formSchema = new SimpleSchema({
@@ -186,7 +186,6 @@ class Signup extends React.Component {
                 onChange={this.fileChange}
               />
             </Form.Input>
-            <SubmitField value='Submit'/>
           </Form>
         </Tab.Pane>,
       },
@@ -293,8 +292,10 @@ class Signup extends React.Component {
       <div>
         <Container>
           <Header className='cp-text' as='h1'>Create Student Profile</Header>
-          <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes}/>
-          <Button ref={ref => { fRef = ref; }} schema={bridge} onClick={data => this.submit(data, fRef)}>Submit</Button>
+          <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
+            <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes}/>
+            <SubmitField value='Submit'/>
+          </AutoForm>
         </Container>
       </div>
     );

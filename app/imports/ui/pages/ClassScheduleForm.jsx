@@ -1,8 +1,8 @@
 import React from 'react';
-import { Container, Header, Form, Button, Input } from 'semantic-ui-react';
+import { Container, Header, Input } from 'semantic-ui-react';
+import { AutoForm, SubmitField, TextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
-import { Meteor } from 'meteor/meteor';
-import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
+import SimpleSchema2Bridge from 'uniAutoforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
 import { Class } from '../../api/class/Class';
 
@@ -19,8 +19,7 @@ const bridge = new SimpleSchema2Bridge(formSchema);
 
 class ClassScheduleForm extends React.Component {
   submit(data, formRef) {
-    const { className, courseNumber, startMonth, endMonth, startYear, endYear } = data;
-    const owner = Meteor.user().username;
+    const { className, courseNumber, startMonth, endMonth, startYear, endYear, owner } = data;
     Class.collection.insert({ className, courseNumber, startMonth, endMonth, startYear, endYear, owner },
       (error) => {
         if (error) {
@@ -37,45 +36,45 @@ class ClassScheduleForm extends React.Component {
     return (
       <Container>
         <Header as='h1' textAlign='center'>Class Schedule</Header>
-        <Form ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
-          <Form.Field>
+        <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
+          <TextField>
             <label>Course Title</label>
             <input placeholder='Input class title here i.e. World History' />
-          </Form.Field>
-          <Form.Field>
+          </TextField>
+          <TextField>
             <label>Course Number</label>
             <input placeholder='Input course number here i.e. HIST101' />
-          </Form.Field>
-          <Form.Group widths='equal'>
-            <Form.Field
+          </TextField>
+          <AutoForm.Group widths='equal'>
+            <TextField
               id='class-schedule-start-date'
               control={Input}
               label='Start Month'
               placeholder='Month'
             />
-            <Form.Field
+            <TextField
               id='class-schedule-start-date'
               control={Input}
               label='Start Year'
               placeholder='Year'
             />
-          </Form.Group>
-          <Form.Group widths='equal'>
-            <Form.Field
+          </AutoForm.Group>
+          <AutoForm.Group widths='equal'>
+            <TextField
               id='class-schedule-end-date'
               control={Input}
               label='End Month'
               placeholder='Month'
             />
-            <Form.Field
+            <TextField
               id='class-schedule-end-date'
               control={Input}
               label='End Year'
               placeholder='Year'
             />
-          </Form.Group>
-        </Form>
-        <Button type='submit'>Add Class to Schedule</Button>
+          </AutoForm.Group>
+        </AutoForm>
+        <SubmitField value='Add Class'/>
       </Container>
     );
   }

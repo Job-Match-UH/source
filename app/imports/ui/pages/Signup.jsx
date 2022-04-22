@@ -2,8 +2,8 @@ import React from 'react';
 import { Container, Header, Tab, Form } from 'semantic-ui-react';
 import { AutoForm, LongTextField, SubmitField, TextField, NumField } from 'uniforms-semantic';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
+// import { Meteor } from 'meteor/meteor';
 import swal from 'sweetalert';
-import { Meteor } from 'meteor/meteor';
 import SimpleSchema from 'simpl-schema';
 import { Students } from '../../api/student/Student';
 
@@ -23,8 +23,8 @@ class Signup extends React.Component {
   // On submit, insert the data.
   submit(data, formRef) {
     const { firstName, lastName, about, phone, address, email } = data;
-    const owner = Meteor.user().username;
-    Students.collection.insert({ firstName, lastName, about, phone, email, address, owner },
+    // const owner = Meteor.user().username;
+    Students.collection.insert({ firstName, lastName, about, phone, email, address },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -167,14 +167,15 @@ class Signup extends React.Component {
         menuItem: 'Personal Info', render: () => <Tab.Pane>
           <Form>
             <Form.Group widths='equal'>
-              <TextField fluid label='First name' placeholder='First name'/>
-              <TextField fluid label='Last name' placeholder='Last name'/>
+              <TextField fluid label='First name' placeholder='First name' name='firstName'/>
+              <TextField fluid label='Last name' placeholder='Last name' name='lastName'/>
+              <TextField fluid label='Email' placeholder='johnfoo@email.com' name='email'/>
             </Form.Group>
             <Form.Group widths='equal'>
-              <TextField fluid label='Address' placeholder='Address'/>
-              <NumField fluid label='Phone Number' placeholder='(xxx) xxx - xxxx'/>
+              <TextField fluid label='Address' placeholder='Address' name='address'/>
+              <NumField fluid label='Phone Number' placeholder='(xxx) xxx - xxxx' name='phone'/>
             </Form.Group>
-            <LongTextField label='About' placeholder='Tell us more about you...'/>
+            <LongTextField label='About' placeholder='Tell us more about you...' name='about'/>
           </Form>
         </Tab.Pane>,
       },
@@ -301,7 +302,7 @@ class Signup extends React.Component {
           <Header className='cp-text' as='h1'>Create Student Profile</Header>
           <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
             <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes}/>
-            <SubmitField value='Submit'/>
+            <SubmitField value='Submit' />
           </AutoForm>
         </Container>
       </div>

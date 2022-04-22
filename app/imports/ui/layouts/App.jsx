@@ -18,6 +18,8 @@ import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import ClassScheduleForm from '../pages/ClassScheduleForm';
+import ViewStudentMatches from '../pages/ViewStudentMatches';
+import ViewCompanyMatches from '../pages/ViewCompanyMatches';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -37,7 +39,9 @@ class App extends React.Component {
             <Route path="/scheduleform" component={ClassScheduleForm}/>
             <Route path="/companysignup" component={SignupCompany}/>
             <StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/>
+            <StudentProtectedRoute path="/viewcompanymatches" component={ViewCompanyMatches}/>
             <CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/>
+            <CompanyProtectedRoute path="/viewstudentmatches" component={ViewStudentMatches}/>
             <AdminProtectedRoute path="/admin" component={AdminHomePage}/>
             <Route component={NotFound}/>
           </Switch>

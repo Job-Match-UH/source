@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid, Container, Button, Card, Image, Header, Dropdown } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
 
 const options = [
   { key: 'angular', text: 'Angular', value: 'angular' },
@@ -34,7 +35,7 @@ class CompanyHomePage extends React.Component {
           </Grid.Row>
           <Grid.Row>
             <Card.Group>
-              <Card>
+              <Card as={NavLink} exact to="/studentprofile">
                 <Card.Content>
                   <Image
                     floated='right'
@@ -58,7 +59,7 @@ class CompanyHomePage extends React.Component {
                   </div>
                 </Card.Content>
               </Card>
-              <Card>
+              <Card as={NavLink} exact to="/studentprofile">
                 <Card.Content>
                   <Image
                     floated='right'
@@ -82,7 +83,7 @@ class CompanyHomePage extends React.Component {
                   </div>
                 </Card.Content>
               </Card>
-              <Card>
+              <Card as={NavLink} exact to="/studentprofile">
                 <Card.Content>
                   <Image
                     floated='right'
@@ -110,7 +111,7 @@ class CompanyHomePage extends React.Component {
           </Grid.Row>
           <Grid.Row>
             <Card.Group>
-              <Card>
+              <Card as={NavLink} exact to="/studentprofile">
                 <Card.Content>
                   <Image
                     floated='right'
@@ -134,7 +135,7 @@ class CompanyHomePage extends React.Component {
                   </div>
                 </Card.Content>
               </Card>
-              <Card>
+              <Card as={NavLink} exact to="/studentprofile">
                 <Card.Content>
                   <Image
                     floated='right'
@@ -158,7 +159,7 @@ class CompanyHomePage extends React.Component {
                   </div>
                 </Card.Content>
               </Card>
-              <Card>
+              <Card as={NavLink} exact to="/studentprofile">
                 <Card.Content>
                   <Image
                     floated='right'

@@ -14,9 +14,9 @@ class StudentProfile extends React.Component {
           <Grid.Row>
             <Grid.Column width={3}>
               <Image src='https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png' />
-              <Button.Group fluid style={ { marginTop: 10 } }>
-                <Button primary>Edit</Button>
-                <Button secondary>Add</Button>
+              <Button.Group widths={2} style={ { marginTop: '30px' } } >
+                <Button color='green' className='cp-text'>Match Me!</Button>
+                <Button color='black'>No Thanks</Button>
               </Button.Group>
             </Grid.Column>
             <Grid.Column width={10}>

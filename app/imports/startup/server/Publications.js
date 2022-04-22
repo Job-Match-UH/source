@@ -2,6 +2,8 @@ import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
 import { Students } from '../../api/student/Student';
+import { Companies } from '../../api/company/Companies';
+import { Tags } from '../../api/tags/Tags';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -21,6 +23,15 @@ Meteor.publish(Students.userPublicationName, function () {
   return this.ready();
 });
 
+// If logged in, then publish documents owned by this user. Otherwise publish nothing.
+Meteor.publish(Companies.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Companies.collection.find({ owner: username });
+  }
+  return this.ready();
+});
+
 // Admin-level publication.
 // If logged in and with admin role, then publish all documents from all users. Otherwise publish nothing.
 Meteor.publish(Stuffs.adminPublicationName, function () {
@@ -33,6 +44,22 @@ Meteor.publish(Stuffs.adminPublicationName, function () {
 Meteor.publish(Students.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Students.collection.find();
+  }
+  return this.ready();
+});
+
+// If logged in and with admin role, then publish all documents from all users. Otherwise publish nothing.
+Meteor.publish(Companies.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Companies.collection.find();
+  }
+  return this.ready();
+});
+
+// If logged in as company or student, publish all tag documents to user
+Meteor.publish(Tags.userPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin' || 'company' || 'student')) {
+    return Tags.collection.find();
   }
   return this.ready();
 });

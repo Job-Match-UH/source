@@ -15,7 +15,11 @@ class CompaniesCollection {
     this.schema = new SimpleSchema({
       companyName: String,
       website: String,
-      description: String,
+      description: { type: String, optional: true, defaultValue: '' },
+      address: String,
+      state: String,
+      phone: Number,
+      year: Number,
       owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.

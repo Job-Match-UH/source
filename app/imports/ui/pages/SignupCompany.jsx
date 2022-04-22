@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Form, Header, Icon, Placeholder, Tab } from 'semantic-ui-react';
+import { Button, Container, Form, Header, Placeholder, Tab } from 'semantic-ui-react';
 import { AutoForm, SubmitField, TextField, LongTextField, NumField } from 'uniforms-semantic';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
@@ -14,12 +14,6 @@ const formSchema = new SimpleSchema({
   state: String,
   phone: Number,
   year: Number,
-  jobTitle: String,
-  jobID: Number,
-  pay: String,
-  location: String,
-  jobDescription: { type: String, optional: true, defaultValue: '' },
-  qualifications: String,
   owner: String,
 });
 
@@ -30,8 +24,8 @@ class SignupCompany extends React.Component {
 
   // On submit, insert data.
   submit(data, formRef) {
-    const { companyName, website, description, address, state, phone, year, jobTitle, jobID, pay, location, jobDescription, qualifications, owner } = data;
-    Companies.collection.insert({ companyName, website, description, address, state, phone, year, jobTitle, jobID, pay, location, jobDescription, qualifications, owner },
+    const { companyName, website, description, address, state, phone, year, owner } = data;
+    Companies.collection.insert({ companyName, website, description, address, state, phone, year, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -44,7 +38,7 @@ class SignupCompany extends React.Component {
 
   render() {
     let fRef = null;
-    const panes = [
+    const companyPanes = [
 
       {
         menuItem: 'Company Description', render: () => <Tab.Pane>
@@ -79,6 +73,9 @@ class SignupCompany extends React.Component {
         </Tab.Pane>,
       },
 
+    ];
+    /*
+    const jobsPane = [
       {
         menuItem: 'Job Postings', render: () => <Tab.Pane>
           <Form>
@@ -96,12 +93,13 @@ class SignupCompany extends React.Component {
         </Tab.Pane>,
       },
     ];
+     */
 
     return (
       <Container>
         <Header className='cp-text' as='h1'>Create Company Profile</Header>
         <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
-          <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes}/>
+          <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={companyPanes}/>
           <SubmitField value='Submit'/>
         </AutoForm>
       </Container>

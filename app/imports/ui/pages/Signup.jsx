@@ -3,6 +3,7 @@ import { Container, Header, Tab, Form } from 'semantic-ui-react';
 import { AutoForm, LongTextField, SubmitField, TextField, NumField } from 'uniforms-semantic';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import swal from 'sweetalert';
+import { Meteor } from 'meteor/meteor';
 import SimpleSchema from 'simpl-schema';
 import { Students } from '../../api/student/Student';
 
@@ -22,7 +23,8 @@ class Signup extends React.Component {
   // On submit, insert the data.
   submit(data, formRef) {
     const { firstName, lastName, about, phone, address, email } = data;
-    Students.collection.insert({ firstName, lastName, about, phone, email, address },
+    const owner = Meteor.user().username;
+    Students.collection.insert({ firstName, lastName, about, phone, email, address, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');

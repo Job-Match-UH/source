@@ -9,11 +9,17 @@ import { Companies } from '../../api/company/Companies';
 const formSchema = new SimpleSchema({
   companyName: String,
   website: String,
-  description: String,
+  description: { type: String, optional: true, defaultValue: '' },
   address: String,
   state: String,
   phone: Number,
   year: Number,
+  jobTitle: String,
+  jobID: Number,
+  pay: String,
+  location: String,
+  jobDescription: { type: String, optional: true, defaultValue: '' },
+  qualifications: String,
   owner: String,
 });
 
@@ -24,8 +30,8 @@ class SignupCompany extends React.Component {
 
   // On submit, insert data.
   submit(data, formRef) {
-    const { companyName, website, description, address, state, phone, year, owner } = data;
-    Companies.collection.insert({ companyName, website, description, address, state, phone, year, owner },
+    const { companyName, website, description, address, state, phone, year, jobTitle, jobID, pay, location, jobDescription, qualifications, owner } = data;
+    Companies.collection.insert({ companyName, website, description, address, state, phone, year, jobTitle, jobID, pay, location, jobDescription, qualifications, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -68,7 +74,7 @@ class SignupCompany extends React.Component {
                 <NumField placeholder='(xxx)' name='phone'/>
               </Form.Field>
             </Form.Group>
-            <TextField fluid label='Year Established:' placeholder='Ex: 2000' name='year'/>
+            <NumField fluid label='Year Established:' placeholder='Ex: 2000' name='year'/>
           </Form>
         </Tab.Pane>,
       },
@@ -76,12 +82,12 @@ class SignupCompany extends React.Component {
       {
         menuItem: 'Job Postings', render: () => <Tab.Pane>
           <Form>
-            <Form.Input fluid label='Job Title:' placeholder='Job Title'/>
-            <Form.Input fluid label='Job ID:' placeholder='Job ID'/>
-            <Form.Input fluid label='Pay:' placeholder='Estimated salary'/>
-            <Form.Input fluid label='Location:' placeholder='Location'/>
-            <Form.TextArea label='Job Description:' placeholder='Give a small description about the job position...'/>
-            <Form.TextArea label='Qualifications:' placeholder='List the desired interests for this position...'/>
+            <TextField fluid label='Job Title:' placeholder='Job Title' name='jobTitle'/>
+            <TextField fluid label='Job ID:' placeholder='Job ID' name='jobID'/>
+            <NumField fluid label='Pay:' placeholder='Estimated salary' name='pay'/>
+            <TextField fluid label='Location:' placeholder='Location' name='location'/>
+            <LongTextField label='Job Description:' placeholder='Give a small description about the job position...' name='jobDescription'/>
+            <LongTextField label='Qualifications:' placeholder='List the desired interests for this position...' name='qualifications'/>
             <Form.Button icon size='mini'>
               <Icon name='plus'/>
               Add Another Job?

@@ -14,12 +14,11 @@ class ClassCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       className: String,
-      courseNumber: Number,
+      courseNumber: String,
       startMonth: String,
       endMonth: String,
       startYear: Number,
       endYear: Number,
-      owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);

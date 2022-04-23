@@ -10,8 +10,8 @@ function addClass(data) {
 }
 
 if (Class.collection.find().count() === 0) {
-  if (Meteor.settings.defaultData) {
+  if (Meteor.settings.defaultClasses) {
     console.log('Creating default class data.');
-    Meteor.settings.defaultData.map(data => addClass(data));
+    Meteor.settings.defaultClasses.map(data => addClass(data));
   }
 }

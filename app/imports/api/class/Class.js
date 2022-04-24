@@ -15,10 +15,8 @@ class ClassCollection {
     this.schema = new SimpleSchema({
       className: String,
       courseNumber: String,
-      startMonth: String,
-      endMonth: String,
-      startYear: Number,
-      endYear: Number,
+      class_start: { type: Date, defaultValue: new Date() },
+      class_end: { type: Date, defaultValue: new Date() },
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);

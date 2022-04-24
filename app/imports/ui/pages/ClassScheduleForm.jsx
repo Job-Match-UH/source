@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container, Header, Input } from 'semantic-ui-react';
-import { AutoForm, NumField, SubmitField, TextField } from 'uniforms-semantic';
+import { Container, Header, Form } from 'semantic-ui-react';
+import { AutoForm, DateField, SubmitField, TextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
@@ -9,18 +9,16 @@ import { Class } from '../../api/class/Class';
 const formSchema = new SimpleSchema({
   className: String,
   courseNumber: String,
-  startMonth: String,
-  endMonth: String,
-  startYear: Number,
-  endYear: Number,
+  class_start: Date,
+  class_end: Date,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
 class ClassScheduleForm extends React.Component {
   submit(data, formRef) {
-    const { className, courseNumber, startMonth, endMonth, startYear, endYear } = data;
-    Class.collection.insert({ className, courseNumber, startMonth, endMonth, startYear, endYear },
+    const { className, courseNumber, class_start, class_end } = data;
+    Class.collection.insert({ className, courseNumber, class_start, class_end },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -45,38 +43,16 @@ class ClassScheduleForm extends React.Component {
             name='courseNumber'
             label='Course Number'
             placeholder='Input course number here i.e. HIST101'/>
-          <AutoForm.Group widths='equal'>
-            <TextField
-              name='startMonth'
-              id='class-schedule-start-date'
-              control={Input}
-              label='Start Month'
-              placeholder='Month'
+          <Form.Group widths='equal'>
+            <DateField
+              label='Start Date'
+              name='class_start'
             />
-            <NumField
-              name='startYear'
-              id='class-schedule-start-date'
-              control={Input}
-              label='Start Year'
-              placeholder='Year'
+            <DateField
+              label='End Date'
+              name='class_end'
             />
-          </AutoForm.Group>
-          <AutoForm.Group widths='equal'>
-            <TextField
-              name='endMonth'
-              id='class-schedule-end-date'
-              control={Input}
-              label='End Month'
-              placeholder='Month'
-            />
-            <NumField
-              name='endYear'
-              id='class-schedule-end-date'
-              control={Input}
-              label='End Year'
-              placeholder='Year'
-            />
-          </AutoForm.Group>
+          </Form.Group>
           <SubmitField value='Add Class'/>
         </AutoForm>
       </Container>

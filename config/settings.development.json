@@ -30,5 +30,9 @@
   "defaultTags": [
     { "name": "Kapaa", "typeOf": "Location", "owner": "larissa@foo.com" },
     { "name": "Cyber Security", "typeOf": "Interest", "owner": "larissa@foo.com" }
+  ],
+
+  "defaultExperiences": [
+    {}
   ]
 }

@@ -39,7 +39,7 @@ if (Companies.collection.find().count() === 0) {
   }
 }
 
-// Initialize the StuffsCollection if empty.
+// Initialize the TagsCollection if empty.
 if (Tags.collection.find().count() === 0) {
   if (Meteor.settings.defaultTags) {
     console.log('Creating default tags.');

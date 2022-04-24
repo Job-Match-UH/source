@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Header, Input } from 'semantic-ui-react';
-import { AutoForm, SubmitField, TextField } from 'uniforms-semantic';
+import { AutoForm, NumField, SubmitField, TextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
@@ -53,7 +53,7 @@ class ClassScheduleForm extends React.Component {
               label='Start Month'
               placeholder='Month'
             />
-            <TextField
+            <NumField
               name='startYear'
               id='class-schedule-start-date'
               control={Input}
@@ -69,7 +69,7 @@ class ClassScheduleForm extends React.Component {
               label='End Month'
               placeholder='Month'
             />
-            <TextField
+            <NumField
               name='endYear'
               id='class-schedule-end-date'
               control={Input}

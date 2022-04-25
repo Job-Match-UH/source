@@ -1,12 +1,12 @@
 import React from 'react';
 import { Container, Header, Tab, Form } from 'semantic-ui-react';
-import { AutoForm, LongTextField, SubmitField, TextField, NumField, SelectField, DateField } from 'uniforms-semantic';
+import { AutoForm, LongTextField, SubmitField, TextField, NumField } from 'uniforms-semantic';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Meteor } from 'meteor/meteor';
 import swal from 'sweetalert';
 import SimpleSchema from 'simpl-schema';
 import { Students } from '../../api/student/Student';
-import { Experiences } from '../../api/experience/Experience';
+import AddExperience from './AddExperience';
 
 const formSchema = new SimpleSchema({
   firstName: String,
@@ -15,18 +15,6 @@ const formSchema = new SimpleSchema({
   phone: Number,
   about: String,
   email: String,
-  title: String,
-  type: String,
-  company: String,
-  role: String,
-  description: String,
-  startMonth: String,
-  startYear: Number,
-  endYear: Number,
-  endMonth: String,
-  stateOfEmployment: Boolean,
-  exp_start: Date,
-  exp_end: Date,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -35,23 +23,14 @@ class Signup extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { firstName, lastName, about, phone, address, email, title, type, company, role, description, stateOfEmployment, exp_start, exp_end } = data;
+    const { firstName, lastName, about, phone, address, email } = data;
     const owner = Meteor.user().username;
-    Students.collection.insert({ firstName, lastName, about, phone, email, address },
+    Students.collection.insert({ firstName, lastName, about, phone, email, address, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Item added successfully', 'success');
-          formRef.reset();
-        }
-      });
-    Experiences.collection.insert({ title, type, company, role, description, stateOfEmployment, exp_start, exp_end },
-      (error) => {
-        if (error) {
-          swal('Error', error.message, 'error');
-        } else {
-          swal('Success', 'Item added successfully', 'success');
+          swal('Success', 'Profile created!', 'success');
           formRef.reset();
         }
       });
@@ -59,9 +38,6 @@ class Signup extends React.Component {
 
   render() {
     let fRef = null;
-
-    const employmentType = ['Full-time', 'Part-time', 'Internship', 'Seasonal', 'Self-employed'];
-
     /*
     const interests = [
       {
@@ -109,35 +85,9 @@ class Signup extends React.Component {
       </Tab.Pane> },
       */
       { menuItem: 'Experience', render: () => <Tab.Pane>
-        <Form.Group widths='equal'>
-          <TextField fluid="true" label='Title' placeholder='Ex. Retail Manager' name='title'/>
-          <SelectField fluid="true" placeholder='Ex. Full-time' name='type' allowedValues={employmentType}/>
-        </Form.Group>
-        <TextField fluid="true" label='Name of company' placeholder='Ex.  Walmart' name='company'/>
-        <LongTextField label='Job description' placeholder='What were your responsibilities...' name='description'/>
-        <DateField name='exp_start' label='Start Date'/>
-        <DateField name='exp_start' label='End Date'/>
-        <SubmitField icon='plus' value='Add Experience'/>
+        <AddExperience owner={Meteor.user().username}/>
       </Tab.Pane> },
       /*
-
-      <Form.Select
-              label='Start year'
-              options={listYears}
-              placeholder='select year'
-            />
-          </Form.Group>
-          <Form.Group widths='equal'>
-            <Form.Select
-              label='End month (or expected)'
-              options={months}
-              placeholder='Select Month'
-            />
-            <Form.Select
-              label='End year (or expected)'
-              options={listYears}
-              placeholder='select year'
-            />
       { menuItem: 'Education', render: () => <Tab.Pane>
         <Form>
           <TextField fluid label='School' placeholder='Ex. UH Manoa'/>

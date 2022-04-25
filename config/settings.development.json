@@ -10,7 +10,29 @@
   ],
 
   "defaultClasses": [
-    { "className": "Software Engineering I", "courseNumber": "ICS 314", "startMonth": "January", "endMonth": "May", "startYear": "2022", "endYear": "2022" },
-    { "className": "Algorithms", "courseNumber": "ICS 311", "startMonth": "January", "endMonth": "May", "startYear": "2022", "endYear": "2022" }
+    { "className": "Software Engineering I", "courseNumber": "ICS 314", "class_start": "2022-01-10 00:00:00", "class_End": "2022-05-03 00:00:00" },
+    { "className": "Algorithms", "courseNumber": "ICS 311", "class_start": "2022-01-10 00:00:00", "class_End": "2022-05-03 00:00:00" }
+  ],
+
+  "defaultStudentData": [
+    { "firstName":  "Larissa", "lastName":  "Tsai", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data", "email":  "uh@gmail.com"},
+    { "firstName":  "Michelle", "lastName":  "Leano", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data", "email":  "uh@gmail.com"},
+    { "firstName":  "Eda", "lastName":  "Cadiena", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data", "email":  "uh@gmail.com"},
+    { "firstName":  "Gaila", "lastName":  "Galano", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data", "email":  "uh@gmail.com"},
+    { "firstName":  "Cameron", "lastName":  "Arakaki", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data", "email":  "uh@gmail.com"}
+  ],
+
+  "defaultCompanies": [
+    { "companyName": "Pear Inc", "website": "google.com", "description": "We are the Pear Company!", "owner": "admin@foo.com", "address": "f", "state": "HI",
+      "phone": "8080980909", "year": "2002" },
+    { "companyName": "Facebook", "website": "facebook.com", "description": "We are the Facebook!", "owner": "admin@foo.com", "address": "f", "state": "HI",
+      "phone": "8080980909", "year": "2002" },
+    { "companyName": "UH Manoa", "website": "manoa.com", "description": "We are Manoa!", "owner": "john@foo.com", "address": "f", "state": "HI",
+      "phone": "8080980909", "year": "2002" }
+  ],
+
+  "defaultTags": [
+    { "name": "Kapaa", "typeOf": "Location", "owner": "larissa@foo.com" },
+    { "name": "Cyber Security", "typeOf": "Interest", "owner": "larissa@foo.com" }
   ]
 }

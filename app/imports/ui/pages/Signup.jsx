@@ -1,13 +1,46 @@
 import React from 'react';
-import { Container, Form, Header, Tab, Icon, Dropdown, Label } from 'semantic-ui-react';
+import { Container, Header, Tab, Form } from 'semantic-ui-react';
+import { AutoForm, LongTextField, SubmitField, TextField, NumField } from 'uniforms-semantic';
+import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
+// import { Meteor } from 'meteor/meteor';
+import swal from 'sweetalert';
+import SimpleSchema from 'simpl-schema';
+import { Students } from '../../api/student/Student';
+
+const formSchema = new SimpleSchema({
+  firstName: String,
+  lastName: String,
+  address: String,
+  phone: Number,
+  about: String,
+  email: String,
+});
+
+const bridge = new SimpleSchema2Bridge(formSchema);
 
 class Signup extends React.Component {
 
-  render() {
-    const listYears = [];
+  // On submit, insert the data.
+  submit(data, formRef) {
+    const { firstName, lastName, about, phone, address, email } = data;
+    // const owner = Meteor.user().username;
+    Students.collection.insert({ firstName, lastName, about, phone, email, address },
+      (error) => {
+        if (error) {
+          swal('Error', error.message, 'error');
+        } else {
+          swal('Success', 'Item added successfully', 'success');
+          formRef.reset();
+        }
+      });
+  }
 
+  render() {
+    let fRef = null;
+    /* const listYears = [];
     let currentYear = new Date().getFullYear();
     const startYear = currentYear - 20;
+
     while (currentYear >= startYear) {
       listYears.push(
         {
@@ -127,59 +160,45 @@ class Signup extends React.Component {
         value: 'default3',
       },
     ];
+    */
 
     const panes = [
       {
         menuItem: 'Personal Info', render: () => <Tab.Pane>
-          <Form className='cp-text'>
+          <Form>
             <Form.Group widths='equal'>
-              <Form.Input fluid label='First name' placeholder='First name'/>
-              <Form.Input fluid label='Last name' placeholder='Last name'/>
+              <TextField fluid label='First name' placeholder='First name' name='firstName'/>
+              <TextField fluid label='Last name' placeholder='Last name' name='lastName'/>
+              <TextField fluid label='Email' placeholder='johnfoo@email.com' name='email'/>
             </Form.Group>
             <Form.Group widths='equal'>
-              <Form.Input fluid label='Address' placeholder='Address'/>
-              <Form.Input fluid label='Phone Number' placeholder='(xxx) xxx - xxxx'/>
+              <TextField fluid label='Address' placeholder='Address' name='address'/>
+              <NumField fluid label='Phone Number' placeholder='(xxx) xxx - xxxx' name='phone'/>
             </Form.Group>
-            <Form.TextArea label='About' placeholder='Tell us more about you...'/>
-            <Form.Input fluid label='Profile Picture' placeholder='Upload Image'>
-              <Form.Button
-                content="Choose File"
-                labelPosition="left"
-                icon="file"
-                onClick={() => this.fileInputRef.current.click()}
-              />
-              <input
-                ref={this.fileInputRef}
-                type="file"
-                hidden
-                onChange={this.fileChange}
-              />
-            </Form.Input>
-            <Form.Button className ='cp-text'>Submit</Form.Button>
+            <LongTextField label='About' placeholder='Tell us more about you...' name='about'/>
           </Form>
         </Tab.Pane>,
       },
-      { menuItem: 'Interests', render: () => <Tab.Pane>
+      /* { menuItem: 'Interests', render: () => <Tab.Pane>
         <Form.Dropdown label='Add interests' placeholder='Pick multiple interests' fluid multiple selection options={interests} />
       </Tab.Pane> },
       { menuItem: 'Projects', render: () => <Tab.Pane>
         <Form>
-          <Form.Input fluid label='Name of project' placeholder='Ex. Company Connector'/>
-          <Form.TextArea label='Summary' placeholder='Briefly summarize your project'/>
+          <TextField fluid label='Name of project' placeholder='Ex. Company Connector'/>
+          <LongTextField label='Summary' placeholder='Briefly summarize your project'/>
           <Form.Button><Icon name='plus' />Add project</Form.Button>
-          <Form.Button>Submit</Form.Button>
         </Form>
       </Tab.Pane> },
-      { menuItem: 'Experience', render: () => <Tab.Pane>
+       { menuItem: 'Experience', render: () => <Tab.Pane>
         <Form>
-          <Form.Input fluid label='Title' placeholder='Ex. Retail Manager'/>
-          <Form.Select
+          <TextField fluid label='Title' placeholder='Ex. Retail Manager'/>
+          <ListAddField
             fluid label='Employment type'
             options={employmentType}
             placeholder='Select Type'
           />
-          <Form.Input fluid label='Name of company' placeholder='Ex.  Walmart'/>
-          <Form.TextArea label='Job description' placeholder='What were your responsibilities...'/>
+          <TextField fluid label='Name of company' placeholder='Ex.  Walmart'/>
+          <LongTextField label='Job description' placeholder='What were your responsibilities...'/>
           <Form.Group widths='equal'>
             <Form.Select
               label='Start month'
@@ -205,14 +224,13 @@ class Signup extends React.Component {
             />
           </Form.Group>
           <Form.Button><Icon name='plus' />Add experience</Form.Button>
-          <Form.Button>Submit</Form.Button>
         </Form>
       </Tab.Pane> },
       { menuItem: 'Education', render: () => <Tab.Pane>
         <Form>
-          <Form.Input fluid label='School' placeholder='Ex. UH Manoa'/>
-          <Form.Input fluid label='Degree' placeholder='Ex. Bachelor&apos;s'/>
-          <Form.Input fluid label='Field of study' placeholder='Ex. Computer Science'/>
+          <TextField fluid label='School' placeholder='Ex. UH Manoa'/>
+          <TextField fluid label='Degree' placeholder='Ex. Bachelor&apos;s'/>
+          <TextField fluid label='Field of study' placeholder='Ex. Computer Science'/>
           <Form.Group widths='equal'>
             <Form.Select
               label='Start month'
@@ -238,7 +256,6 @@ class Signup extends React.Component {
             />
           </Form.Group>
           <Form.Button><Icon name='plus' />Add education</Form.Button>
-          <Form.Button>Submit</Form.Button>
         </Form>
       </Tab.Pane> },
       { menuItem: 'Documents', render: () => <Tab.Pane>
@@ -257,16 +274,36 @@ class Signup extends React.Component {
               onChange={this.fileChange}
             />
           </Form.Input>
-          <Form.Button className ='cp-text'>Submit</Form.Button>
         </Form>
       </Tab.Pane> },
+      */
     ];
+
+    /*
+    <Form.Input fluid label='Profile Picture' placeholder='Upload Image'>
+            <Form.Button
+              content="Choose File"
+              labelPosition="left"
+              icon="file"
+              onClick={() => this.fileInputRef.current.click()}
+            />
+            <input
+              ref={this.fileInputRef}
+              type="file"
+              hidden
+              onChange={this.fileChange}
+            />
+          </Form.Input>
+     */
 
     return (
       <div>
         <Container>
           <Header className='cp-text' as='h1'>Create Student Profile</Header>
-          <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes}/>
+          <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
+            <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes}/>
+            <SubmitField value='Submit' />
+          </AutoForm>
         </Container>
       </div>
     );

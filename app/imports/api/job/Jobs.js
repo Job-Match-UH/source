@@ -16,6 +16,16 @@ class JobsCollection {
       jobTitle: String,
       jobID: Number,
       pay: Number,
+      payType: {
+        type: String,
+        defaultValue: 'hourly',
+        allowedValues: ['hourly', 'annually'],
+      },
+      type: {
+        type: String,
+        defaultValue: 'Full-time',
+        allowedValues: ['Full-time', 'Part-time', 'Internship', 'Seasonal'],
+      },
       location: String,
       jobDescription: String,
       qualifications: String,

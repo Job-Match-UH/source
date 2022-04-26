@@ -3,33 +3,26 @@ import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /**
- * The CompaniesCollection. It encapsulates state and variable values for stuff.
+ * The ExperienceCollection. It encapsulates state and variable values for stuff.
  */
-class JobsCollection {
+class EducationCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'JobsCollection';
+    this.name = 'EducationCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      jobTitle: String,
-      jobID: Number,
-      pay: Number,
-      payType: {
+      school: String,
+      degree: {
         type: String,
-        defaultValue: 'hourly',
-        allowedValues: ['hourly', 'annually'],
+        defaultValue: 'High School Diploma',
+        allowedValues: ['High School Diploma', 'Associates', 'Bachelors', 'Masters'],
       },
-      type: {
-        type: String,
-        defaultValue: 'Full-time',
-        allowedValues: ['Full-time', 'Part-time', 'Internship', 'Seasonal'],
-      },
-      location: String,
-      jobDescription: String,
-      qualifications: String,
+      field: String,
       owner: String,
+      startDate: { type: Date, defaultValue: new Date() },
+      endDate: { type: Date, defaultValue: new Date() },
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
@@ -40,7 +33,7 @@ class JobsCollection {
 }
 
 /**
- * The singleton instance of the CompaniesCollection.
- * @type {CompaniesCollection}
+ * The singleton instance of the EducationCollection.
+ * @type {EducationCollection}
  */
-export const Jobs = new JobsCollection();
+export const Education = new EducationCollection();

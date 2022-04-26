@@ -6,7 +6,6 @@ import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
 import swal from 'sweetalert';
 import { Companies } from '../../api/company/Companies';
-import { Jobs } from '../../api/job/Jobs';
 
 const companySchema = new SimpleSchema({
   companyName: String,
@@ -18,17 +17,7 @@ const companySchema = new SimpleSchema({
   year: Number,
 });
 
-const jobSchema = new SimpleSchema({
-  jobTitle: String,
-  jobID: Number,
-  pay: Number,
-  location: String,
-  jobDescription: String,
-  qualifications: String,
-});
-
 const companyBridge = new SimpleSchema2Bridge(companySchema);
-const jobBridge = new SimpleSchema2Bridge(jobSchema);
 
 /* Renders the Page for adding a company. */
 class SignupCompany extends React.Component {
@@ -47,20 +36,6 @@ class SignupCompany extends React.Component {
         }
       });
 
-  }
-
-  submitJob(data, formRef) {
-    const { jobTitle, jobID, pay, location, jobDescription, qualifications } = data;
-    const owner = Meteor.user().username;
-    Jobs.collection.insert({ jobTitle, jobID, pay, location, jobDescription, qualifications, owner },
-      (error) => {
-        if (error) {
-          swal('Error', error.message, 'error');
-        } else {
-          swal('Success', 'Item added successfully', 'success');
-          formRef.reset();
-        }
-      });
   }
 
   render() {
@@ -90,26 +65,11 @@ class SignupCompany extends React.Component {
             </Form.Group>
             <Form.Group inline>
               <Form.Field>
-                <label>Phone Number:</label>
-                <NumField placeholder='(xxx)' name='phone'/>
+                <NumField placeholder='1234567890' name='phone'/>
               </Form.Field>
             </Form.Group>
             <NumField fluid label='Year Established:' placeholder='Ex: 2000' name='year'/>
           </Form>
-        </Tab.Pane>,
-      },
-
-      {
-        menuItem: 'Job Postings', render: () => <Tab.Pane>
-          <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={jobBridge} onSubmit={data => this.submitJob(data, fRef)}>
-            <TextField fluid label='Job Title:' placeholder='Job Title' name='jobTitle'/>
-            <TextField fluid label='Job ID:' placeholder='Job ID' name='jobID'/>
-            <NumField fluid label='Pay:' placeholder='Estimated salary' name='pay'/>
-            <TextField fluid label='Location:' placeholder='Location' name='location'/>
-            <LongTextField label='Job Description:' placeholder='Give a small description about the job position...' name='jobDescription'/>
-            <LongTextField label='Qualifications:' placeholder='List the desired interests for this position...' name='qualifications'/>
-            <SubmitField value='Submit Job'/>
-          </AutoForm>
         </Tab.Pane>,
       },
     ];

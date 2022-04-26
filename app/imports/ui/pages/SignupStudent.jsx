@@ -7,6 +7,7 @@ import swal from 'sweetalert';
 import SimpleSchema from 'simpl-schema';
 import { Students } from '../../api/student/Student';
 import AddExperience from './AddExperience';
+import AddEducation from './AddEducation';
 
 const formSchema = new SimpleSchema({
   firstName: String,
@@ -14,6 +15,11 @@ const formSchema = new SimpleSchema({
   address: String,
   phone: Number,
   about: String,
+  school: String,
+  degree: String,
+  field: String,
+  startDate: Date,
+  endDate: Date,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -66,7 +72,7 @@ class SignupStudent extends React.Component {
           </Form.Group>
           <Form.Group widths='equal'>
             <TextField fluid label='Address' placeholder='Address' name='address'/>
-            <NumField fluid label='Phone Number' placeholder='(xxx) xxx - xxxx' name='phone'/>
+            <NumField fluid label='Phone Number' placeholder='1234567890' name='phone'/>
           </Form.Group>
           <LongTextField label='About' placeholder='Tell us more about you...' name='about'/>
         </Tab.Pane>,
@@ -85,39 +91,10 @@ class SignupStudent extends React.Component {
       { menuItem: 'Experience', render: () => <Tab.Pane>
         <AddExperience owner={Meteor.user().username}/>
       </Tab.Pane> },
-      /*
       { menuItem: 'Education', render: () => <Tab.Pane>
-        <Form>
-          <TextField fluid label='School' placeholder='Ex. UH Manoa'/>
-          <TextField fluid label='Degree' placeholder='Ex. Bachelor&apos;s'/>
-          <TextField fluid label='Field of study' placeholder='Ex. Computer Science'/>
-          <Form.Group widths='equal'>
-            <Form.Select
-              label='Start month'
-              options={startMonths}
-              placeholder='Select Month'
-            />
-            <Form.Select
-              label='Start year'
-              options={listYears}
-              placeholder='select year'
-            />
-          </Form.Group>
-          <Form.Group widths='equal'>
-            <Form.Select
-              label='End month (or expected)'
-              options={startMonths}
-              placeholder='Select Month'
-            />
-            <Form.Select
-              label='End year (or expected)'
-              options={listYears}
-              placeholder='select year'
-            />
-          </Form.Group>
-          <Form.Button><Icon name='plus' />Add education</Form.Button>
-        </Form>
+        <AddEducation owner={Meteor.user().username}/>
       </Tab.Pane> },
+      /*
       { menuItem: 'Documents', render: () => <Tab.Pane>
         <Form>
           <Form.Input fluid label='Upload documents' placeholder='Upload file'>

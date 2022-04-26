@@ -23,12 +23,7 @@
   ],
 
   "defaultCompanies": [
-    { "companyName": "Pear Inc", "website": "google.com", "description": "We are the Pear Company!", "owner": "admin@foo.com", "address": "f", "state": "HI",
-      "phone": "8080980909", "year": "2002" },
-    { "companyName": "Facebook", "website": "facebook.com", "description": "We are the Facebook!", "owner": "admin@foo.com", "address": "f", "state": "HI",
-      "phone": "8080980909", "year": "2002" },
-    { "companyName": "UH Manoa", "website": "manoa.com", "description": "We are Manoa!", "owner": "john@foo.com", "address": "f", "state": "HI",
-      "phone": "8080980909", "year": "2002" }
+    {}
   ],
 
   "defaultTags": [
@@ -37,14 +32,7 @@
   ],
 
   "defaultJobs": [
-    { "jobTitle": "Teacher",
-      "jobID": "0001",
-      "pay": "1000" ,
-      "location": "POST 318A",
-      "jobDescription": "Teach college students how to code",
-      "qualifications": "Computer Science",
-      "owner": "john@foo.com"
-    }
+    {}
   ],
 
   "defaultExperiences": [

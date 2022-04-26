@@ -5,6 +5,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Students } from '../../api/student/Student';
 import { Experiences } from '../../api/experience/Experience';
+import { Education } from '../../api/education/Education';
 
 class StudentProfile extends React.Component {
   state = { isOpen: false }
@@ -46,8 +47,6 @@ class StudentProfile extends React.Component {
             </Grid.Column>
             <Grid.Column width={3}>
               <Header className='cp-text'>Education</Header>
-              <Item>
-              </Item>
             </Grid.Column>
           </Grid.Row>
 
@@ -91,13 +90,6 @@ class StudentProfile extends React.Component {
             </Grid.Column>
             <Grid.Column width={3}>
               <Header as='h3' className='cp-text'>Experience</Header>
-              <Item>
-                {this.props.experience.map((exp, index) => <Item.Description
-                  key={index}
-                  experience={exp}
-                />)}
-              </Item>
-
               <Header className='cp-text' style={ { marginTop: 100 } } >Contact Information</Header>
               <Item>
                 <Item.Description>{this.props.profile.owner}</Item.Description>
@@ -114,6 +106,7 @@ class StudentProfile extends React.Component {
 StudentProfile.propTypes = {
   profile: PropTypes.object,
   experience: PropTypes.array,
+  education: PropTypes.array,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -123,14 +116,17 @@ export default withTracker(({ match }) => {
   // Get access to documents.
   const subscription1 = Meteor.subscribe(Students.userPublicationName);
   const subscription2 = Meteor.subscribe(Experiences.userPublicationName);
+  const subscription3 = Meteor.subscribe(Education.userPublicationName);
   // Determine if the subscription is ready
-  const ready = subscription1.ready() && subscription2.ready();
+  const ready = subscription1.ready() && subscription2.ready() && subscription3.ready();
   // Get the documents
   const profile = Students.collection.findOne(documentId);
   const experience = Experiences.collection.findOne(documentId);
+  const education = Education.collection.findOne(documentId);
   return {
     profile,
     experience,
+    education,
     ready,
   };
 })(StudentProfile);

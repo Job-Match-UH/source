@@ -1,15 +1,20 @@
 import { Selector } from 'testcafe';
 import { navBar } from './navbar.component';
 
-class SignupPage {
+class SignupCompanyPage {
   constructor() {
-    this.pageId = '#signup-page';
+    this.pageId = '#signup-comapny-page';
     this.pageSelector = Selector(this.pageId);
   }
 
   /** Checks that this page is currently displayed. */
   async isDisplayed(testController) {
     await testController.expect(this.pageSelector.exists).ok();
+  }
+
+  /** Returns to sign in page. */
+  async returnToSignin(testController) {
+    await testController.click('#view-signin-page');
   }
 
   /** Signs up a new user, then checks to see that they are logged in by checking the navbar. */
@@ -22,4 +27,4 @@ class SignupPage {
   }
 }
 
-export const signupPage = new SignupPage();
+export const signupCompany = new SignupCompanyPage();

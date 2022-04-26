@@ -73,7 +73,7 @@ export default class Signin extends React.Component {
                 />
                 <Button id="signin-form-submit" content='Login' primary />
                 <Message attached color='green'>
-                  <Link to="/student_signup">Click here to Register as a Student</Link>
+                  <Link id='view-signup-student' to="/student_signup">Click here to Register as a Student</Link>
                 </Message>
                 {this.state.error === '' ? (
                   ''
@@ -96,7 +96,7 @@ export default class Signin extends React.Component {
                   icon='user'
                   iconPosition='left'
                   label='Email'
-                  id="signin-form-email"
+                  id="signin-company-form-email"
                   name="email"
                   type="email"
                   placeholder="E-mail address"
@@ -107,14 +107,14 @@ export default class Signin extends React.Component {
                   iconPosition='left'
                   label='Password'
                   type='password'
-                  id="signin-form-password"
+                  id="signin-company-form-password"
                   name="password"
                   placeholder="Password"
                   onChange={this.handleChange}
                 />
-                <Button id="signin-form-submit" content='Login' primary />
+                <Button id="signin-company-form-submit" content='Login' primary />
                 <Message attached color='green'>
-                  <Link to="/company_signup">Click here to Register as a Company</Link>
+                  <Link id='view-signup-company' to="/company_signup">Click here to Register as a Company</Link>
                 </Message>
                 {this.state.error === '' ? (
                   ''

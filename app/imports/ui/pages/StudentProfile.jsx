@@ -1,12 +1,31 @@
 import React from 'react';
-import { Container, Grid, Image, Header, Menu, Segment, Button } from 'semantic-ui-react';
+import { Container, Grid, Image, Header, Menu, Segment, Button, Loader, Item } from 'semantic-ui-react';
+import { Meteor } from 'meteor/meteor';
+import { withTracker } from 'meteor/react-meteor-data';
+import PropTypes from 'prop-types';
+import { Students } from '../../api/student/Student';
+import { Experiences } from '../../api/experience/Experience';
 
 class StudentProfile extends React.Component {
-  state = { activeItem: 'home' }
+  state = { isOpen: false }
+
+  handleOpen = () => {
+    this.setState({ isOpen: true });
+  }
+
+  handleClose = () => {
+    this.setState({ isOpen: false });
+  }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
+  // If the subscription(s) have been received, render the page, otherwise show a loading icon.
   render() {
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+  }
+
+  // Render student profile page according to current user
+  renderPage() {
     const { activeItem } = this.state;
     return (
       <Container>
@@ -20,12 +39,15 @@ class StudentProfile extends React.Component {
               </Button.Group>
             </Grid.Column>
             <Grid.Column width={10}>
-              <Header as='h1' className='cp-text'>Johnny Appleseed</Header>
-              <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png'/>
+              <Header as='h1' className='cp-text'>{this.props.profile.firstName} {this.props.profile.lastName}</Header>
+              <Item>
+                <Item.Description>{this.props.profile.about}</Item.Description>
+              </Item>
             </Grid.Column>
             <Grid.Column width={3}>
               <Header className='cp-text'>Education</Header>
-              <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+              <Item>
+              </Item>
             </Grid.Column>
           </Grid.Row>
 
@@ -69,10 +91,18 @@ class StudentProfile extends React.Component {
             </Grid.Column>
             <Grid.Column width={3}>
               <Header as='h3' className='cp-text'>Experience</Header>
-              <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+              <Item>
+                {this.props.experience.map((exp, index) => <Item.Description
+                  key={index}
+                  experience={exp}
+                />)}
+              </Item>
 
               <Header className='cp-text' style={ { marginTop: 100 } } >Contact Information</Header>
-              <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+              <Item>
+                <Item.Description>{this.props.profile.owner}</Item.Description>
+                <Item.Description>{this.props.profile.phone}</Item.Description>
+              </Item>
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -81,4 +111,26 @@ class StudentProfile extends React.Component {
   }
 }
 
-export default StudentProfile;
+StudentProfile.propTypes = {
+  profile: PropTypes.object,
+  experience: PropTypes.array,
+  ready: PropTypes.bool.isRequired,
+};
+
+export default withTracker(({ match }) => {
+  // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
+  const documentId = match.params._id;
+  // Get access to documents.
+  const subscription1 = Meteor.subscribe(Students.userPublicationName);
+  const subscription2 = Meteor.subscribe(Experiences.userPublicationName);
+  // Determine if the subscription is ready
+  const ready = subscription1.ready() && subscription2.ready();
+  // Get the documents
+  const profile = Students.collection.findOne(documentId);
+  const experience = Experiences.collection.findOne(documentId);
+  return {
+    profile,
+    experience,
+    ready,
+  };
+})(StudentProfile);

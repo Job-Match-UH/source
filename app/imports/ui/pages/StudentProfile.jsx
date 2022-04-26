@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Grid, Image, Header, Menu, Segment, Button } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
 
 class StudentProfile extends React.Component {
   state = { activeItem: 'home' }
@@ -54,6 +55,11 @@ class StudentProfile extends React.Component {
                 <Menu.Item
                   name='projects'
                   active={activeItem === 'projects'}
+                  onClick={this.handleItemClick}
+                />
+                <Menu.Item
+                  name='classes'
+                  active={activeItem === 'classes'}
                   onClick={this.handleItemClick}
                 />
               </Menu>

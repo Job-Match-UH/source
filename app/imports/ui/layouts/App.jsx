@@ -37,7 +37,6 @@ class App extends React.Component {
             <Route path="/studentprofile" component={StudentProfile}/>
             <Route path="/classform" component={ClassScheduleForm}/>
             <Route path="/studenthomepage" component={StudentHomePage}/>
-            <Route path="/scheduleform" component={ClassScheduleForm}/>
             <Route path="/companysignup" component={SignupCompany}/>
             <StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/>
             <StudentProtectedRoute path="/viewcompanymatches" component={ViewCompanyMatches}/>

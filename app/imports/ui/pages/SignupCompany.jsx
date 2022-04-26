@@ -28,14 +28,13 @@ class SignupCompany extends React.Component {
     const { companyName, website, description, address, state, phone, year } = data;
     const owner = Meteor.user().username;
     Companies.collection.insert({ companyName, website, description, address, state, phone, year, owner },
-      // eslint-disable-next-line consistent-return
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
           swal('Success', 'Item added successfully', 'success');
           formRef.reset();
-          return <Redirect to="/companyprofile"/>;
+          <Redirect to="/companyprofile"/>;
         }
       });
   }

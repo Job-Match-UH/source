@@ -27,7 +27,6 @@ class SignupStudent extends React.Component {
     const { firstName, lastName, about, phone, address } = data;
     const owner = Meteor.user().username;
     Students.collection.insert({ firstName, lastName, about, phone, address, owner },
-      // eslint-disable-next-line consistent-return
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Button, Container, Form, Header, Placeholder, Tab, Icon } from 'semantic-ui-react';
+import { Button, Container, Form, Header, Placeholder, Tab } from 'semantic-ui-react';
 import { AutoForm, SubmitField, TextField, LongTextField, NumField } from 'uniforms-semantic';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
@@ -108,10 +108,6 @@ class SignupCompany extends React.Component {
             <TextField fluid label='Location:' placeholder='Location' name='location'/>
             <LongTextField label='Job Description:' placeholder='Give a small description about the job position...' name='jobDescription'/>
             <LongTextField label='Qualifications:' placeholder='List the desired interests for this position...' name='qualifications'/>
-            <Form.Button icon size='mini'>
-              <Icon name='plus'/>
-              Add Another Job?
-            </Form.Button>
             <SubmitField value='Submit Job'/>
           </AutoForm>
         </Tab.Pane>,

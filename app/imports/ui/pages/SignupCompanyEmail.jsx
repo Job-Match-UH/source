@@ -16,6 +16,7 @@ class SignupCompanyEmail extends React.Component {
 
   /* Update the form controls each time the user interacts with them. */
   handleChange = (e, { name, value }) => {
+    this.setState({ role: 'company' });
     this.setState({ [name]: value });
   }
 

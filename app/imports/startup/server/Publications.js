@@ -1,17 +1,15 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
-import { Stuffs } from '../../api/stuff/Stuff';
+import { Class } from '../../api/class/Class';
 import { Students } from '../../api/student/Student';
 import { Companies } from '../../api/company/Companies';
 import { Tags } from '../../api/tags/Tags';
 import { Experiences } from '../../api/experience/Experience';
 
-// User-level publication.
-// If logged in, then publish documents owned by this user. Otherwise publish nothing.
-Meteor.publish(Stuffs.userPublicationName, function () {
+Meteor.publish(Class.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
-    return Stuffs.collection.find({ owner: username });
+    return Class.collection.find({ owner: username });
   }
   return this.ready();
 });
@@ -41,13 +39,14 @@ Meteor.publish(Experiences.userPublicationName, function () {
 
 // Admin-level publication.
 // If logged in and with admin role, then publish all documents from all users. Otherwise publish nothing.
-Meteor.publish(Stuffs.adminPublicationName, function () {
+Meteor.publish(Class.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Stuffs.collection.find();
+    return Class.collection.find();
   }
   return this.ready();
 });
 
+// Planning:roles publication
 Meteor.publish(Students.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Students.collection.find();

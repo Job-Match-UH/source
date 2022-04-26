@@ -6,8 +6,12 @@
 
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme", "role": "student"  },
-    { "email": "lisa@foo.com", "password": "changeme", "role": "company"  }
+    { "email": "john@foo.com", "password": "changeme" }
+  ],
+
+  "defaultClasses": [
+    { "className": "Software Engineering I", "courseNumber": "ICS 314", "class_start": "2022-01-10 00:00:00", "class_End": "2022-05-03 00:00:00" },
+    { "className": "Algorithms", "courseNumber": "ICS 311", "class_start": "2022-01-10 00:00:00", "class_End": "2022-05-03 00:00:00" }
   ],
 
   "defaultStudentData": [

@@ -99,12 +99,9 @@ class SignupCompany extends React.Component {
         </Tab.Pane>,
       },
 
-    ];
-
-    const jobsPane = [
       {
         menuItem: 'Job Postings', render: () => <Tab.Pane>
-          <Form>
+          <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={jobBridge} onSubmit={data => this.submitJob(data, fRef)}>
             <TextField fluid label='Job Title:' placeholder='Job Title' name='jobTitle'/>
             <TextField fluid label='Job ID:' placeholder='Job ID' name='jobID'/>
             <NumField fluid label='Pay:' placeholder='Estimated salary' name='pay'/>
@@ -115,7 +112,8 @@ class SignupCompany extends React.Component {
               <Icon name='plus'/>
               Add Another Job?
             </Form.Button>
-          </Form>
+            <SubmitField value='Submit Job'/>
+          </AutoForm>
         </Tab.Pane>,
       },
     ];
@@ -125,11 +123,7 @@ class SignupCompany extends React.Component {
         <Header className='cp-text' as='h1'>Create Company Profile</Header>
         <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={companyBridge} onSubmit={data => this.submit(data, fRef)}>
           <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={companyPanes}/>
-          <SubmitField value='Submit'/>
-        </AutoForm>
-        <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={jobBridge} onSubmit={data => this.submitJob(data, fRef)}>
-          <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={jobsPane}/>
-          <SubmitField value='Post Job'/>
+          <SubmitField value='Submit Profile'/>
         </AutoForm>
       </Container>
     );

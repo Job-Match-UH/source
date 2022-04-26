@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Header, Tab, Form } from 'semantic-ui-react';
-import { AutoForm, LongTextField, SubmitField, TextField, NumField, DateField } from 'uniforms-semantic';
+import { AutoForm, LongTextField, SubmitField, TextField, NumField } from 'uniforms-semantic';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Meteor } from 'meteor/meteor';
 import swal from 'sweetalert';
@@ -72,7 +72,7 @@ class SignupStudent extends React.Component {
           </Form.Group>
           <Form.Group widths='equal'>
             <TextField fluid label='Address' placeholder='Address' name='address'/>
-            <NumField fluid label='Phone Number' placeholder='(xxx) xxx - xxxx' name='phone'/>
+            <NumField fluid label='Phone Number' placeholder='1234567890' name='phone'/>
           </Form.Group>
           <LongTextField label='About' placeholder='Tell us more about you...' name='about'/>
         </Tab.Pane>,

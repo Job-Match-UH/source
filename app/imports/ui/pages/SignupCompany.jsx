@@ -6,7 +6,7 @@ import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
 import swal from 'sweetalert';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router';
+//import { Redirect } from 'react-router';
 import { Companies } from '../../api/company/Companies';
 
 const companySchema = new SimpleSchema({
@@ -40,11 +40,11 @@ class SignupCompany extends React.Component {
 
   render() {
     let fRef = null;
-
+/*
     if (this.state.redirectToReferer) {
       return <Redirect to={'/companyprofile'}/>;
     }
-
+*/
     const companyPanes = [
       {
         menuItem: 'Company Description', render: () => <Tab.Pane>

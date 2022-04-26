@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { Button, Form, Grid, Header, Message, Segment, Divider, Container } from 'semantic-ui-react';
+import { HiddenField } from 'uniforms-semantic';
 
 /**
  * Signin page overrides the form’s submit event and call Meteor’s loginWithPassword().
@@ -13,7 +14,7 @@ export default class Signin extends React.Component {
   // Initialize component state with properties for login and redirection.
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '', redirectToReferer: false };
+    this.state = { email: '', password: '', role: '', error: '', redirectToReferer: false };
   }
 
   // Update the form controls each time the user interacts with them.
@@ -23,8 +24,8 @@ export default class Signin extends React.Component {
 
   // Handle Signin submission using Meteor's account mechanism.
   submit = () => {
-    const { email, password } = this.state;
-    Meteor.loginWithPassword(email, password, (err) => {
+    const { email, password, role } = this.state;
+    Meteor.loginWithPassword(email, password, role, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
@@ -35,11 +36,16 @@ export default class Signin extends React.Component {
 
   // Render the signin form.
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/' } };
+    // const { from } = this.props.location.state || { from: { pathname: '/' } };
+
     // if correct authentication, redirect to page instead of login screen
-    if (this.state.redirectToReferer) {
-      return <Redirect to={from}/>;
+    if (this.state.redirectToReferer && this.state.role === 'student') {
+      return <Redirect to={'studenthomepage'}/>;
     }
+    if (this.state.redirectToReferer && this.state.role === 'company') {
+      return <Redirect to={'companyhomepage'}/>;
+    }
+
     // Otherwise return the Login form.
     // eslint-disable-next-line no-return-assign
     return (
@@ -71,6 +77,7 @@ export default class Signin extends React.Component {
                   placeholder="Password"
                   onChange={this.handleChange}
                 />
+                <HiddenField name="role" value='student'/>
                 <Button id="signin-form-submit" content='Login' primary />
                 <Message attached color='green'>
                   <Link to="/student_signup">Click here to Register as a Student</Link>
@@ -112,6 +119,7 @@ export default class Signin extends React.Component {
                   placeholder="Password"
                   onChange={this.handleChange}
                 />
+                <HiddenField name="role" value='company'/>
                 <Button id="signin-form-submit" content='Login' primary />
                 <Message attached color='green'>
                   <Link to="/company_signup">Click here to Register as a Company</Link>

@@ -7,11 +7,11 @@ import { Accounts } from 'meteor/accounts-base';
 /**
  * SignupStudentEmail component is similar to signin component, but we create a new user instead.
  */
-class SignupStudentEmail extends React.Component {
+class SignupCompanyEmail extends React.Component {
   /* Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '', redirectToReferer: false };
+    this.state = { email: '', password: '', role: 'company', error: '', redirectToReferer: false };
   }
 
   /* Update the form controls each time the user interacts with them. */
@@ -90,8 +90,8 @@ class SignupStudentEmail extends React.Component {
 }
 
 /* Ensure that the React Router location object is available in case we need to redirect. */
-SignupStudentEmail.propTypes = {
+SignupCompanyEmail.propTypes = {
   location: PropTypes.object,
 };
 
-export default SignupStudentEmail;
+export default SignupCompanyEmail;

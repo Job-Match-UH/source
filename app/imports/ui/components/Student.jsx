@@ -1,21 +1,34 @@
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
+import { Button, Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Student extends React.Component {
   render() {
     return (
-      <Card>
+      <Card as={NavLink} exact to="/studentprofile">
         <Card.Content>
-          <Image floated='right' size='mini' src={'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'}/>
-          <Card.Header>
-            {this.props.student.firstName} {this.props.student.lastName}
-          </Card.Header>
+          <Image
+            floated='right'
+            size='mini'
+            src='https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg'
+          />
+          <Card.Header>{this.props.student.firstName} {this.props.student.lastName}</Card.Header>
+          <Card.Meta>{this.props.student.owner}</Card.Meta>
           <Card.Description>
             {this.props.student.about}
           </Card.Description>
+        </Card.Content>
+        <Card.Content extra>
+          <div className='ui two buttons'>
+            <Button basic color='green'>
+              Add to Interested
+            </Button>
+            <Button basic color='red'>
+              Not Interested
+            </Button>
+          </div>
         </Card.Content>
       </Card>
     );

@@ -23,6 +23,7 @@ import ViewCompanyMatches from '../pages/ViewCompanyMatches';
 import AddExperience from '../pages/AddExperience';
 import SignupStudentEmail from '../pages/SignupStudentEmail';
 import SignupCompanyEmail from '../pages/SignupCompanyEmail';
+import AddProject from '../pages/AddProject';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -44,6 +45,7 @@ class App extends React.Component {
             <Route path="/studenthomepage" component={StudentHomePage}/>
             <Route path="/companysignup" component={SignupCompany}/>
             <ProtectedRoute path="/addexp" component={AddExperience}/>
+            <ProtectedRoute path="/addproject" component={AddProject}/>
             <StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/>
             <StudentProtectedRoute path="/viewcompanymatches" component={ViewCompanyMatches}/>
             <CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/>

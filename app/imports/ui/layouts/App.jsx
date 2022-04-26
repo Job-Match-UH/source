@@ -25,6 +25,7 @@ import SignupStudentEmail from '../pages/SignupStudentEmail';
 import SignupCompanyEmail from '../pages/SignupCompanyEmail';
 import JobPostings from '../pages/JobPostings';
 import AddEducation from '../pages/AddEducation';
+import AddProject from '../pages/AddProject';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -47,6 +48,7 @@ class App extends React.Component {
             <Route path="/classform" component={ClassScheduleForm}/>
             <ProtectedRoute path="/addexp" component={AddExperience}/>
             <ProtectedRoute path="/addedu" component={AddEducation}/>
+            <ProtectedRoute path="/addproject" component={AddProject}/>
             <StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/>
             <CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/>
             <AdminProtectedRoute path="/admin" component={AdminHomePage}/>

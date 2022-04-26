@@ -9,6 +9,7 @@ import { Redirect } from 'react-router';
 import { Students } from '../../api/student/Student';
 import AddExperience from './AddExperience';
 import AddEducation from './AddEducation';
+import AddProject from './AddProject';
 
 const formSchema = new SimpleSchema({
   firstName: String,
@@ -77,17 +78,15 @@ class SignupStudent extends React.Component {
       /* { menuItem: 'Interests', render: () => <Tab.Pane>
         <Form.Dropdown label='Add interests' placeholder='Pick multiple interests' fluid multiple selection options={interests} />
       </Tab.Pane> },
+       */
       { menuItem: 'Projects', render: () => <Tab.Pane>
-        <Form>
-          <TextField fluid label='Name of project' placeholder='Ex. Company Connector'/>
-          <LongTextField label='Summary' placeholder='Briefly summarize your project'/>
-          <Form.Button><Icon name='plus' />Add project</Form.Button>
-        </Form>
+        <AddProject owner={Meteor.user().username}/>
       </Tab.Pane> },
-      */
+
       { menuItem: 'Experience', render: () => <Tab.Pane>
         <AddExperience owner={Meteor.user().username}/>
       </Tab.Pane> },
+
       { menuItem: 'Education', render: () => <Tab.Pane>
         <AddEducation owner={Meteor.user().username}/>
       </Tab.Pane> },

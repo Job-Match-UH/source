@@ -15,11 +15,15 @@ import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
-import Signup from '../pages/Signup';
+import SignupStudent from '../pages/SignupStudent';
 import Signout from '../pages/Signout';
 import ClassScheduleForm from '../pages/ClassScheduleForm';
 import ViewStudentMatches from '../pages/ViewStudentMatches';
 import ViewCompanyMatches from '../pages/ViewCompanyMatches';
+import AddExperience from '../pages/AddExperience';
+import SignupStudentEmail from '../pages/SignupStudentEmail';
+import SignupCompanyEmail from '../pages/SignupCompanyEmail';
+
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -31,13 +35,16 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Landing}/>
             <Route path="/signin" component={Signin}/>
-            <Route path="/signup" component={Signup}/>
+            <Route path="/student_signup" component={SignupStudentEmail}/>
+            <Route path="/company_signup" component={SignupCompanyEmail}/>
+            <Route path="/studentsignup" component={SignupStudent}/>
             <Route path="/signout" component={Signout}/>
             <Route path="/companyprofile" component={CompanyProfile}/>
             <Route path="/studentprofile" component={StudentProfile}/>
             <Route path="/classform" component={ClassScheduleForm}/>
             <Route path="/studenthomepage" component={StudentHomePage}/>
             <Route path="/companysignup" component={SignupCompany}/>
+            <ProtectedRoute path="/addexp" component={AddExperience}/>
             <StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/>
             <StudentProtectedRoute path="/viewcompanymatches" component={ViewCompanyMatches}/>
             <CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/>
@@ -51,6 +58,24 @@ class App extends React.Component {
     );
   }
 }
+
+/**
+ * ProtectedRoute (see React Router v4 sample)
+ * Checks for Meteor login before routing to the requested page, otherwise goes to signin page.
+ * @param {any} { component: Component, ...rest }
+ */
+const ProtectedRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={(props) => {
+      const isLogged = Meteor.userId() !== null;
+      return isLogged ?
+        (<Component {...props} />) :
+        (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
+        );
+    }}
+  />
+);
 
 /**
  * ProtectedRoute (see React Router v4 sample)
@@ -108,6 +133,12 @@ const AdminProtectedRoute = ({ component: Component, ...rest }) => (
     }}
   />
 );
+
+// Require a component and location to be passed to each ProtectedRoute.
+ProtectedRoute.propTypes = {
+  component: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
+  location: PropTypes.object,
+};
 
 // Require a component and location to be passed to each ProtectedRoute.
 StudentProtectedRoute.propTypes = {

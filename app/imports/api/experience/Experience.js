@@ -3,23 +3,28 @@ import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /**
- * The StudentCollection. It encapsulates state and variable values for stuff.
+ * The ExperienceCollection. It encapsulates state and variable values for stuff.
  */
-class StudentCollection {
+class ExperienceCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'StudentCollection';
+    this.name = 'ExperienceCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      firstName: String,
-      lastName: String,
-      address: String,
-      phone: Number,
-      about: String,
-      email: String,
-      owner: String,
+      title: String,
+      type: {
+        type: String,
+        defaultValue: 'Full-time',
+        allowedValues: ['Full-time', 'Part-time', 'Internship', 'Seasonal', 'Self-employed'],
+      },
+      company: String,
+      role: String,
+      description: String,
+      contactId: String,
+      exp_start: { type: Date, defaultValue: new Date() },
+      exp_end: { type: Date, defaultValue: new Date() },
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
@@ -33,4 +38,4 @@ class StudentCollection {
  * The singleton instance of the StudentCollection.
  * @type {StudentCollection}
  */
-export const Students = new StudentCollection();
+export const Experiences = new ExperienceCollection();

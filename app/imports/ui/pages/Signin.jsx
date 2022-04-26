@@ -41,6 +41,7 @@ export default class Signin extends React.Component {
       return <Redirect to={from}/>;
     }
     // Otherwise return the Login form.
+    // eslint-disable-next-line no-return-assign
     return (
       <Container>
         <Segment placeholder id="signin-page">
@@ -72,7 +73,7 @@ export default class Signin extends React.Component {
                 />
                 <Button id="signin-form-submit" content='Login' primary />
                 <Message attached color='green'>
-                  <Link to="/signup">Click here to Register as a Student</Link>
+                  <Link to="/student_signup">Click here to Register as a Student</Link>
                 </Message>
                 {this.state.error === '' ? (
                   ''
@@ -113,7 +114,7 @@ export default class Signin extends React.Component {
                 />
                 <Button id="signin-form-submit" content='Login' primary />
                 <Message attached color='green'>
-                  <Link to="/companysignup">Click here to Register as a Company</Link>
+                  <Link to="/company_signup">Click here to Register as a Company</Link>
                 </Message>
                 {this.state.error === '' ? (
                   ''

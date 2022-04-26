@@ -34,13 +34,17 @@ class SignupCompany extends React.Component {
         } else {
           swal('Success', 'Item added successfully', 'success');
           formRef.reset();
-          <Redirect to="/companyprofile"/>;
         }
       });
   }
 
   render() {
     let fRef = null;
+
+    if (this.state.redirectToReferer) {
+      return <Redirect to={'/companyprofile'}/>;
+    }
+
     const companyPanes = [
       {
         menuItem: 'Company Description', render: () => <Tab.Pane>

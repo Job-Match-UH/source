@@ -34,13 +34,16 @@ class SignupStudent extends React.Component {
         } else {
           swal('Success', 'Profile created!', 'success');
           formRef.reset();
-          <Redirect to="/studentprofile"/>;
         }
       });
   }
 
   render() {
     let fRef = null;
+
+    if (this.state.redirectToReferer) {
+      return <Redirect to={'/studentprofile'}/>;
+    }
     /*
     const interests = [
       {

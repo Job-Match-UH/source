@@ -45,5 +45,9 @@
       "qualifications": "Computer Sciense",
       "owner": "john@foo.com"
     }
+  ],
+    
+  "defaultExperiences": [
+    {}
   ]
 }

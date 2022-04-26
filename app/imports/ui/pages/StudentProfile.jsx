@@ -56,6 +56,11 @@ class StudentProfile extends React.Component {
                   active={activeItem === 'projects'}
                   onClick={this.handleItemClick}
                 />
+                <Menu.Item
+                  name='classes'
+                  active={activeItem === 'classes'}
+                  onClick={this.handleItemClick}
+                />
               </Menu>
 
               <Segment>

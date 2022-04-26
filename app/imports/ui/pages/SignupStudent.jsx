@@ -2,10 +2,11 @@ import React from 'react';
 import { Container, Header, Tab, Form } from 'semantic-ui-react';
 import { AutoForm, LongTextField, SubmitField, TextField, NumField } from 'uniforms-semantic';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-// import { Meteor } from 'meteor/meteor';
+import { Meteor } from 'meteor/meteor';
 import swal from 'sweetalert';
 import SimpleSchema from 'simpl-schema';
 import { Students } from '../../api/student/Student';
+import AddExperience from './AddExperience';
 
 const formSchema = new SimpleSchema({
   firstName: String,
@@ -18,18 +19,18 @@ const formSchema = new SimpleSchema({
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
-class Signup extends React.Component {
+class SignupStudent extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
     const { firstName, lastName, about, phone, address, email } = data;
-    // const owner = Meteor.user().username;
-    Students.collection.insert({ firstName, lastName, about, phone, email, address },
+    const owner = Meteor.user().username;
+    Students.collection.insert({ firstName, lastName, about, phone, email, address, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Item added successfully', 'success');
+          swal('Success', 'Profile created!', 'success');
           formRef.reset();
         }
       });
@@ -37,112 +38,7 @@ class Signup extends React.Component {
 
   render() {
     let fRef = null;
-    /* const listYears = [];
-    let currentYear = new Date().getFullYear();
-    const startYear = currentYear - 20;
-
-    while (currentYear >= startYear) {
-      listYears.push(
-        {
-          key: currentYear,
-          text: currentYear,
-          value: currentYear,
-        },
-      );
-      currentYear--;
-    }
-
-    const startMonths = [
-      {
-        key: 'January',
-        text: 'January',
-        value: 'January',
-      },
-      {
-        key: 'February',
-        text: 'February',
-        value: 'February',
-      },
-      {
-        key: 'March',
-        text: 'March',
-        value: 'March',
-      },
-      {
-        key: 'April',
-        text: 'April',
-        value: 'April',
-      },
-      {
-        key: 'May',
-        text: 'May',
-        value: 'May',
-      },
-      {
-        key: 'June',
-        text: 'June',
-        value: 'June',
-      },
-      {
-        key: 'July',
-        text: 'July',
-        value: 'July',
-      },
-      {
-        key: 'August',
-        text: 'August',
-        value: 'August',
-      },
-      {
-        key: 'September',
-        text: 'September',
-        value: 'September',
-      },
-      {
-        key: 'October',
-        text: 'October',
-        value: 'October',
-      },
-      {
-        key: 'November',
-        text: 'November',
-        value: 'November',
-      },
-      {
-        key: 'December',
-        text: 'December',
-        value: 'December',
-      },
-    ];
-
-    const employmentType = [
-      {
-        key: 'Full-time',
-        text: 'Full-time',
-        value: 'Full-time',
-      },
-      {
-        key: 'Part-time',
-        text: 'Part-time',
-        value: 'Part-time',
-      },
-      {
-        key: 'Self-employed',
-        text: 'Self-employed',
-        value: 'Self-employed',
-      },
-      {
-        key: 'Seasonal',
-        text: 'Seasonal',
-        value: 'Seasonal',
-      },
-      {
-        key: 'Internship',
-        text: 'Internship',
-        value: 'Internship',
-      },
-    ];
-
+    /*
     const interests = [
       {
         key: 'default',
@@ -160,23 +56,21 @@ class Signup extends React.Component {
         value: 'default3',
       },
     ];
-    */
+*/
 
     const panes = [
       {
         menuItem: 'Personal Info', render: () => <Tab.Pane>
-          <Form>
-            <Form.Group widths='equal'>
-              <TextField fluid label='First name' placeholder='First name' name='firstName'/>
-              <TextField fluid label='Last name' placeholder='Last name' name='lastName'/>
-              <TextField fluid label='Email' placeholder='johnfoo@email.com' name='email'/>
-            </Form.Group>
-            <Form.Group widths='equal'>
-              <TextField fluid label='Address' placeholder='Address' name='address'/>
-              <NumField fluid label='Phone Number' placeholder='(xxx) xxx - xxxx' name='phone'/>
-            </Form.Group>
-            <LongTextField label='About' placeholder='Tell us more about you...' name='about'/>
-          </Form>
+          <Form.Group widths='equal'>
+            <TextField fluid label='First name' placeholder='First name' name='firstName'/>
+            <TextField fluid label='Last name' placeholder='Last name' name='lastName'/>
+            <TextField fluid label='Email' placeholder='johnfoo@email.com' name='email'/>
+          </Form.Group>
+          <Form.Group widths='equal'>
+            <TextField fluid label='Address' placeholder='Address' name='address'/>
+            <NumField fluid label='Phone Number' placeholder='(xxx) xxx - xxxx' name='phone'/>
+          </Form.Group>
+          <LongTextField label='About' placeholder='Tell us more about you...' name='about'/>
         </Tab.Pane>,
       },
       /* { menuItem: 'Interests', render: () => <Tab.Pane>
@@ -189,43 +83,11 @@ class Signup extends React.Component {
           <Form.Button><Icon name='plus' />Add project</Form.Button>
         </Form>
       </Tab.Pane> },
-       { menuItem: 'Experience', render: () => <Tab.Pane>
-        <Form>
-          <TextField fluid label='Title' placeholder='Ex. Retail Manager'/>
-          <ListAddField
-            fluid label='Employment type'
-            options={employmentType}
-            placeholder='Select Type'
-          />
-          <TextField fluid label='Name of company' placeholder='Ex.  Walmart'/>
-          <LongTextField label='Job description' placeholder='What were your responsibilities...'/>
-          <Form.Group widths='equal'>
-            <Form.Select
-              label='Start month'
-              options={startMonths}
-              placeholder='Select Month'
-            />
-            <Form.Select
-              label='Start year'
-              options={listYears}
-              placeholder='select year'
-            />
-          </Form.Group>
-          <Form.Group widths='equal'>
-            <Form.Select
-              label='End month (or expected)'
-              options={startMonths}
-              placeholder='Select Month'
-            />
-            <Form.Select
-              label='End year (or expected)'
-              options={listYears}
-              placeholder='select year'
-            />
-          </Form.Group>
-          <Form.Button><Icon name='plus' />Add experience</Form.Button>
-        </Form>
+      */
+      { menuItem: 'Experience', render: () => <Tab.Pane>
+        <AddExperience owner={Meteor.user().username}/>
       </Tab.Pane> },
+      /*
       { menuItem: 'Education', render: () => <Tab.Pane>
         <Form>
           <TextField fluid label='School' placeholder='Ex. UH Manoa'/>
@@ -310,4 +172,4 @@ class Signup extends React.Component {
   }
 }
 
-export default Signup;
+export default SignupStudent;

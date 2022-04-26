@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Grid, Image, Header, Menu, Segment, Button } from 'semantic-ui-react';
-import { NavLink } from 'react-router-dom';
 
 class StudentProfile extends React.Component {
   state = { activeItem: 'home' }

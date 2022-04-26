@@ -13,8 +13,8 @@ class AddExperience extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { contactId, title, type, company, role, description, stateOfEmployment, exp_start, exp_end } = data;
-    Experiences.collection.insert({ contactId, title, type, company, role, description, stateOfEmployment, exp_start, exp_end },
+    const { contactId, title, type, company, role, description, exp_start, exp_end, owner } = data;
+    Experiences.collection.insert({ contactId, title, type, company, role, description, exp_start, exp_end, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -36,7 +36,10 @@ class AddExperience extends React.Component {
           <TextField fluid="true" label='Title' placeholder='Ex. Retail Manager' name='title'/>
           <SelectField fluid="true" placeholder='Full-time' name='type' allowedValues={employmentType}/>
         </Form.Group>
-        <TextField fluid="true" label='Name of company' placeholder='Ex.  Walmart' name='company'/>
+        <Form.Group widths='equal'>
+          <TextField fluid="true" label='Name of company' placeholder='Ex.  Walmart' name='company'/>
+          <TextField fluid="true" label='Role' placeholder='Crew Member' name='role'/>
+        </Form.Group>
         <LongTextField label='Job description' placeholder='What were your responsibilities...' name='description'/>
         <DateField name='exp_start' label='Start Date'/>
         <DateField name='exp_end' label='End Date'/>

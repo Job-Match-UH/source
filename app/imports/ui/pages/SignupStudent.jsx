@@ -14,7 +14,6 @@ const formSchema = new SimpleSchema({
   address: String,
   phone: Number,
   about: String,
-  email: String,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -23,9 +22,9 @@ class SignupStudent extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { firstName, lastName, about, phone, address, email } = data;
+    const { firstName, lastName, about, phone, address } = data;
     const owner = Meteor.user().username;
-    Students.collection.insert({ firstName, lastName, about, phone, email, address, owner },
+    Students.collection.insert({ firstName, lastName, about, phone, address, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -64,7 +63,6 @@ class SignupStudent extends React.Component {
           <Form.Group widths='equal'>
             <TextField fluid label='First name' placeholder='First name' name='firstName'/>
             <TextField fluid label='Last name' placeholder='Last name' name='lastName'/>
-            <TextField fluid label='Email' placeholder='johnfoo@email.com' name='email'/>
           </Form.Group>
           <Form.Group widths='equal'>
             <TextField fluid label='Address' placeholder='Address' name='address'/>

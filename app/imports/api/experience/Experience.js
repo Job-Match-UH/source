@@ -22,7 +22,7 @@ class ExperienceCollection {
       company: String,
       role: String,
       description: String,
-      contactId: String,
+      owner: String,
       exp_start: { type: Date, defaultValue: new Date() },
       exp_end: { type: Date, defaultValue: new Date() },
     }, { tracker: Tracker });

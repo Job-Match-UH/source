@@ -24,7 +24,6 @@ import AddExperience from '../pages/AddExperience';
 import SignupStudentEmail from '../pages/SignupStudentEmail';
 import SignupCompanyEmail from '../pages/SignupCompanyEmail';
 
-
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
   render() {

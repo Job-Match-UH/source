@@ -10,7 +10,6 @@ import { signupCompany } from './signupcompany.page';
 /** Credentials for one of the sample users defined in settings.development.json. */
 const credentials = { username: 'john@foo.com', password: 'changeme' };
 const credentials2 = { username: 'lisa@foo.com', password: 'changeme' };
-
 fixture('job-match-uh availability tests')
   .page('http://localhost:3000');
 

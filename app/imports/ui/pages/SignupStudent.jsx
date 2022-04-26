@@ -19,7 +19,7 @@ const formSchema = new SimpleSchema({
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
-class Signup extends React.Component {
+class SignupStudent extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
@@ -172,4 +172,4 @@ class Signup extends React.Component {
   }
 }
 
-export default Signup;
+export default SignupStudent;

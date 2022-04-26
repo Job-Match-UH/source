@@ -34,5 +34,15 @@
   "defaultTags": [
     { "name": "Kapaa", "typeOf": "Location", "owner": "larissa@foo.com" },
     { "name": "Cyber Security", "typeOf": "Interest", "owner": "larissa@foo.com" }
+  ],
+
+  "defaultJobs": [
+    { "jobTitle": "Teacher",
+      "jobID": "0001",
+      "pay": "1000" ,
+      "location": "POST 318A",
+      "jobDescription": "Teach college students how to code",
+      "qualifications": "Computer Sciense"
+    }
   ]
 }

@@ -5,6 +5,8 @@ import { AutoForm, SubmitField, TextField, LongTextField, NumField } from 'unifo
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
 import swal from 'sweetalert';
+import PropTypes from 'prop-types';
+import { Redirect } from 'react-router';
 import { Companies } from '../../api/company/Companies';
 
 const companySchema = new SimpleSchema({
@@ -21,7 +23,6 @@ const companyBridge = new SimpleSchema2Bridge(companySchema);
 
 /* Renders the Page for adding a company. */
 class SignupCompany extends React.Component {
-
   // On submit, insert data.
   submit(data, formRef) {
     const { companyName, website, description, address, state, phone, year } = data;
@@ -33,15 +34,14 @@ class SignupCompany extends React.Component {
         } else {
           swal('Success', 'Item added successfully', 'success');
           formRef.reset();
+          <Redirect to="/companyprofile"/>;
         }
       });
-
   }
 
   render() {
     let fRef = null;
     const companyPanes = [
-
       {
         menuItem: 'Company Description', render: () => <Tab.Pane>
           <Form.Input fluid label='Company Logo:'>
@@ -85,5 +85,10 @@ class SignupCompany extends React.Component {
     );
   }
 }
+
+/* Ensure that the React Router location object is available in case we need to redirect. */
+SignupCompany.propTypes = {
+  location: PropTypes.object,
+};
 
 export default SignupCompany;

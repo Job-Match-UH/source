@@ -11,11 +11,12 @@ class SignupStudentEmail extends React.Component {
   /* Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '', redirectToReferer: false };
+    this.state = { email: '', password: '', role: 'student', error: '', redirectToReferer: false };
   }
 
   /* Update the form controls each time the user interacts with them. */
   handleChange = (e, { name, value }) => {
+    this.setState({ role: 'student' });
     this.setState({ [name]: value });
   }
 
@@ -33,10 +34,9 @@ class SignupStudentEmail extends React.Component {
 
   /* Display the signup form. Redirect to add page after successful registration and login. */
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/studentsignup' } };
     // if correct authentication, redirect to from: page instead of signup screen
     if (this.state.redirectToReferer) {
-      return <Redirect to={from}/>;
+      return <Redirect to={'/studentsignup'}/>;
     }
     return (
       <Container id="signup-student-page">

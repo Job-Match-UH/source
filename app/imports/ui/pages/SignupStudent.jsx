@@ -5,6 +5,7 @@ import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Meteor } from 'meteor/meteor';
 import swal from 'sweetalert';
 import SimpleSchema from 'simpl-schema';
+import { Redirect } from 'react-router';
 import { Students } from '../../api/student/Student';
 import AddExperience from './AddExperience';
 import AddEducation from './AddEducation';
@@ -15,11 +16,6 @@ const formSchema = new SimpleSchema({
   address: String,
   phone: Number,
   about: String,
-  school: String,
-  degree: String,
-  field: String,
-  startDate: Date,
-  endDate: Date,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -37,6 +33,7 @@ class SignupStudent extends React.Component {
         } else {
           swal('Success', 'Profile created!', 'success');
           formRef.reset();
+          <Redirect to="/studentprofile"/>;
         }
       });
   }

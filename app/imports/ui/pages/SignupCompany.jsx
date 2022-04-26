@@ -1,12 +1,14 @@
 import React from 'react';
+import { Meteor } from 'meteor/meteor';
 import { Button, Container, Form, Header, Placeholder, Tab } from 'semantic-ui-react';
 import { AutoForm, SubmitField, TextField, LongTextField, NumField } from 'uniforms-semantic';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
 import swal from 'sweetalert';
 import { Companies } from '../../api/company/Companies';
+import { Jobs } from '../../api/job/Jobs';
 
-const formSchema = new SimpleSchema({
+const companySchema = new SimpleSchema({
   companyName: String,
   website: String,
   description: { type: String, optional: true, defaultValue: '' },
@@ -14,18 +16,43 @@ const formSchema = new SimpleSchema({
   state: String,
   phone: Number,
   year: Number,
-  owner: String,
 });
 
-const bridge = new SimpleSchema2Bridge(formSchema);
+const jobSchema = new SimpleSchema({
+  jobTitle: String,
+  jobID: Number,
+  pay: Number,
+  location: String,
+  jobDescription: String,
+  qualifications: String,
+});
+
+const companyBridge = new SimpleSchema2Bridge(companySchema);
+const jobBridge = new SimpleSchema2Bridge(jobSchema);
 
 /* Renders the Page for adding a company. */
 class SignupCompany extends React.Component {
 
   // On submit, insert data.
   submit(data, formRef) {
-    const { companyName, website, description, address, state, phone, year, owner } = data;
+    const { companyName, website, description, address, state, phone, year } = data;
+    const owner = Meteor.user().username;
     Companies.collection.insert({ companyName, website, description, address, state, phone, year, owner },
+      (error) => {
+        if (error) {
+          swal('Error', error.message, 'error');
+        } else {
+          swal('Success', 'Item added successfully', 'success');
+          formRef.reset();
+        }
+      });
+
+  }
+
+  submitJob(data, formRef) {
+    const { jobTitle, jobID, pay, location, jobDescription, qualifications } = data;
+    const owner = Meteor.user().username;
+    Jobs.collection.insert({ jobTitle, jobID, pay, location, jobDescription, qualifications, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -49,7 +76,6 @@ class SignupCompany extends React.Component {
           </Form.Input>
           <Button compact size='mini'>Select Photo</Button>
           <TextField fluid label={'Company Name:'} placeholder={'Ex: Company Connector'} name={'companyName'}/>
-          <TextField fluid label={'Email:'} placeholder={'Ex: Company Email'} name={'owner'}/>
           <TextField fluid label={'Website:'} placeholder={'Website URL'} name={'website'}/>
           <LongTextField label={'Company Description:'} placeholder={'Tell us a little bit about the company...'} name={'description'}/>
         </Tab.Pane>,
@@ -73,34 +99,27 @@ class SignupCompany extends React.Component {
         </Tab.Pane>,
       },
 
-    ];
-    /*
-    const jobsPane = [
       {
         menuItem: 'Job Postings', render: () => <Tab.Pane>
-          <Form>
+          <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={jobBridge} onSubmit={data => this.submitJob(data, fRef)}>
             <TextField fluid label='Job Title:' placeholder='Job Title' name='jobTitle'/>
             <TextField fluid label='Job ID:' placeholder='Job ID' name='jobID'/>
             <NumField fluid label='Pay:' placeholder='Estimated salary' name='pay'/>
             <TextField fluid label='Location:' placeholder='Location' name='location'/>
             <LongTextField label='Job Description:' placeholder='Give a small description about the job position...' name='jobDescription'/>
             <LongTextField label='Qualifications:' placeholder='List the desired interests for this position...' name='qualifications'/>
-            <Form.Button icon size='mini'>
-              <Icon name='plus'/>
-              Add Another Job?
-            </Form.Button>
-          </Form>
+            <SubmitField value='Submit Job'/>
+          </AutoForm>
         </Tab.Pane>,
       },
     ];
-     */
 
     return (
       <Container>
         <Header className='cp-text' as='h1'>Create Company Profile</Header>
-        <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
+        <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={companyBridge} onSubmit={data => this.submit(data, fRef)}>
           <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={companyPanes}/>
-          <SubmitField value='Submit'/>
+          <SubmitField value='Submit Profile'/>
         </AutoForm>
       </Container>
     );

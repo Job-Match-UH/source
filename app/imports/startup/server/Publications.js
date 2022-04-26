@@ -4,6 +4,7 @@ import { Class } from '../../api/class/Class';
 import { Students } from '../../api/student/Student';
 import { Companies } from '../../api/company/Companies';
 import { Tags } from '../../api/tags/Tags';
+import { Jobs } from '../../api/job/Jobs';
 import { Experiences } from '../../api/experience/Experience';
 
 Meteor.publish(Class.userPublicationName, function () {
@@ -37,6 +38,14 @@ Meteor.publish(Experiences.userPublicationName, function () {
   return this.ready();
 });
 
+Meteor.publish(Jobs.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Jobs.collection.find({ owner: username });
+  }
+  return this.ready();
+});
+
 // Admin-level publication.
 // If logged in and with admin role, then publish all documents from all users. Otherwise publish nothing.
 Meteor.publish(Class.adminPublicationName, function () {
@@ -61,6 +70,14 @@ Meteor.publish(Companies.adminPublicationName, function () {
   return this.ready();
 });
 
+Meteor.publish(Jobs.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Jobs.collection.find();
+  }
+  return this.ready();
+});
+
+// If logged in as company or student, publish all tag documents to user
 Meteor.publish(Tags.userPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin' || 'company' || 'student')) {
     return Tags.collection.find();

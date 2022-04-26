@@ -3,6 +3,7 @@ import { Class } from '../../api/class/Class';
 import { Students } from '../../api/student/Student';
 import { Companies } from '../../api/company/Companies';
 import { Tags } from '../../api/tags/Tags';
+import { Jobs } from '../../api/job/Jobs';
 
 /* eslint-disable no-console */
 
@@ -26,6 +27,11 @@ function addTags(data) {
 function addCompanies(data) {
   console.log(`  Adding: ${data.companyName} (${data.owner})`);
   Companies.collection.insert(data);
+}
+
+function addJobs(data) {
+  console.log(`  Adding: ${data.jobTitle} (${data.owner})`);
+  Jobs.collection.insert(data);
 }
 
 // Initialize the StudentCollection if empty.
@@ -53,9 +59,18 @@ if (Tags.collection.find().count() === 0) {
   }
 }
 
+// Initialize the ClassCollection if empty.
 if (Class.collection.find().count() === 0) {
   if (Meteor.settings.defaultClasses) {
     console.log('Creating default class data.');
     Meteor.settings.defaultClasses.map(data => addClass(data));
+  }
+}
+
+// Initialize the JobCollection if empty.
+if (Jobs.collection.find().count() === 0) {
+  if (Meteor.settings.defaultJobs) {
+    console.log('Creating default job data.');
+    Meteor.settings.defaultJobs.map(data => addJobs(data));
   }
 }

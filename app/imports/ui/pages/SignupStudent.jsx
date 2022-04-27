@@ -5,7 +5,6 @@ import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Meteor } from 'meteor/meteor';
 import swal from 'sweetalert';
 import SimpleSchema from 'simpl-schema';
-// import { Redirect } from 'react-router';
 import { Students } from '../../api/student/Student';
 import AddExperience from './AddExperience';
 import AddEducation from './AddEducation';
@@ -45,27 +44,7 @@ class SignupStudent extends React.Component {
     if (this.state.redirectToReferer) {
       return <Redirect to={'/studentprofile'}/>;
     }
-
- */
-    /*
-    const interests = [
-      {
-        key: 'default',
-        text: 'default',
-        value: 'default',
-      },
-      {
-        key: 'default2',
-        text: 'default2',
-        value: 'default2',
-      },
-      {
-        key: 'default3',
-        text: 'default3',
-        value: 'default3',
-      },
-    ];
-*/
+    */
 
     const panes = [
       {
@@ -118,23 +97,6 @@ class SignupStudent extends React.Component {
       </Tab.Pane> },
       */
     ];
-
-    /*
-    <Form.Input fluid label='Profile Picture' placeholder='Upload Image'>
-            <Form.Button
-              content="Choose File"
-              labelPosition="left"
-              icon="file"
-              onClick={() => this.fileInputRef.current.click()}
-            />
-            <input
-              ref={this.fileInputRef}
-              type="file"
-              hidden
-              onChange={this.fileChange}
-            />
-          </Form.Input>
-     */
 
     return (
       <div>

@@ -94,22 +94,13 @@ export default class Signin extends React.Component {
                   <Link to="/student_signup">Click here to Register as a Student</Link>
                 </Message>
               </Form>
-              {this.state.error === '' && this.props.location.error === undefined ? (
-                ''
-              ) : (
-                <Message
-                  error
-                  header="Login was not successful"
-                  content={`${this.state.error} ${this.props.location.error}`}
-                />
-              )}
             </Grid.Column>
 
             <Grid.Column verticalAlign='middle'>
               <Header as="h2" textAlign="center" className='cp-text'>
                 Company Login
               </Header>
-              <Form onSubmit={this.companySubmit} className='cp-text'>
+              <Form error onSubmit={this.companySubmit} className='cp-text'>
                 <Form.Input
                   icon='user'
                   iconPosition='left'
@@ -134,21 +125,23 @@ export default class Signin extends React.Component {
                 <Message attached color='green'>
                   <Link to="/company_signup">Click here to Register as a Company</Link>
                 </Message>
-                {this.state.error === '' ? (
-                  ''
-                ) : (
-                  <Message
-                    error
-                    header="Login was not successful"
-                    content={this.state.error}
-                  />
-                )}
               </Form>
             </Grid.Column>
           </Grid>
-
           <Divider vertical>Or</Divider>
         </Segment>
+        <Segment textAlign='center' borderless>
+          {this.state.error === '' && this.props.location.error === undefined ? (
+            ''
+          ) : (
+            <Message
+              error
+              header="Login was not successful"
+              content={`${this.state.error} ${this.props.location.error}`}
+            />
+          )}
+        </Segment>
+
       </Container>
     );
   }

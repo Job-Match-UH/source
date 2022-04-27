@@ -1,6 +1,10 @@
 import React from 'react';
-import { Grid, Container, Button, Dropdown, Card, Image, Header } from 'semantic-ui-react';
-import { NavLink } from 'react-router-dom';
+import { Meteor } from 'meteor/meteor';
+import { Grid, Container, Button, Dropdown, Card, Header, Loader } from 'semantic-ui-react';
+import { withTracker } from 'meteor/react-meteor-data';
+import PropTypes from 'prop-types';
+import Company from '../components/Company';
+import { Companies } from '../../api/company/Companies';
 
 const options = [
   { key: 'angular', text: 'Angular', value: 'angular' },
@@ -12,8 +16,6 @@ const options = [
   { key: 'javascript', text: 'Javascript', value: 'javascript' },
   { key: 'mech', text: 'Mechanical Engineering', value: 'mech' },
 ];
-
-const pfp = 'https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg';
 
 /** Renders the Page. */
 class StudentHomePage extends React.Component {
@@ -28,9 +30,13 @@ class StudentHomePage extends React.Component {
   handleChange = (e, { value }) => this.setState({ currentValue: value })
 
   render() {
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+  }
+
+  renderPage() {
     const { currentValue } = this.state;
     return (
-      <Container>
+      <Container id='student-home-page'>
         <Grid textAlign='center' columns='equal'>
           <Grid.Row columns={3}>
             <Grid.Column>
@@ -81,158 +87,10 @@ class StudentHomePage extends React.Component {
             <Header as='h2' className='cp-text'>Job Matches:</Header>
           </Grid.Row>
           <Grid.Row>
-            <Card.Group>
-              <Card as={NavLink} exact to="/companyprofile">
-                <Card.Content>
-                  <Image
-                    floated='right'
-                    size='mini'
-                    src={pfp}
-                  />
-                  <Card.Header>Steve Sanders</Card.Header>
-                  <Card.Meta>Friends of Elliot</Card.Meta>
-                  <Card.Description>
-                    Steve wants to add you to the group <strong>best friends</strong>
-                  </Card.Description>
-                </Card.Content>
-                <Card.Content extra>
-                  <div className='ui two buttons'>
-                    <Button basic color='green'>
-                      Add to Interested
-                    </Button>
-                    <Button basic color='red'>
-                      Not Interested
-                    </Button>
-                  </div>
-                </Card.Content>
-              </Card>
-              <Card as={NavLink} exact to="/companyprofile">
-                <Card.Content>
-                  <Image
-                    floated='right'
-                    size='mini'
-                    src={pfp}
-                  />
-                  <Card.Header>Molly Thomas</Card.Header>
-                  <Card.Meta>New User</Card.Meta>
-                  <Card.Description>
-                    Molly wants to add you to the group <strong>musicians</strong>
-                  </Card.Description>
-                </Card.Content>
-                <Card.Content extra>
-                  <div className='ui two buttons'>
-                    <Button basic color='green'>
-                      Add to Interested
-                    </Button>
-                    <Button basic color='red'>
-                      Not Interested
-                    </Button>
-                  </div>
-                </Card.Content>
-              </Card>
-              <Card as={NavLink} exact to="/companyprofile">
-                <Card.Content>
-                  <Image
-                    floated='right'
-                    size='mini'
-                    src={pfp}
-                  />
-                  <Card.Header>Jenny Lawrence</Card.Header>
-                  <Card.Meta>New User</Card.Meta>
-                  <Card.Description>
-                    Jenny requested permission to view your contact details
-                  </Card.Description>
-                </Card.Content>
-                <Card.Content extra>
-                  <div className='ui two buttons'>
-                    <Button basic color='green'>
-                      Add to Interested
-                    </Button>
-                    <Button basic color='red'>
-                      Not Interested
-                    </Button>
-                  </div>
-                </Card.Content>
-              </Card>
-            </Card.Group>
-          </Grid.Row>
-          <Grid.Row>
-            <Header as='h2' className ='cp-text'>Check out more Recommended:</Header>
-          </Grid.Row>
-          <Grid.Row>
-            <Card.Group>
-              <Card as={NavLink} exact to="/companyprofile">
-                <Card.Content>
-                  <Image
-                    floated='right'
-                    size='mini'
-                    src={pfp}
-                  />
-                  <Card.Header>Steve Sanders</Card.Header>
-                  <Card.Meta>Friends of Elliot</Card.Meta>
-                  <Card.Description>
-                    Steve wants to add you to the group <strong>best friends</strong>
-                  </Card.Description>
-                </Card.Content>
-                <Card.Content extra>
-                  <div className='ui two buttons'>
-                    <Button basic color='green'>
-                      Add to Interested
-                    </Button>
-                    <Button basic color='red'>
-                      Not Interested
-                    </Button>
-                  </div>
-                </Card.Content>
-              </Card>
-              <Card as={NavLink} exact to="/companyprofile">
-                <Card.Content>
-                  <Image
-                    floated='right'
-                    size='mini'
-                    src={pfp}
-                  />
-                  <Card.Header>Molly Thomas</Card.Header>
-                  <Card.Meta>New User</Card.Meta>
-                  <Card.Description>
-                    Molly wants to add you to the group <strong>musicians</strong>
-                  </Card.Description>
-                </Card.Content>
-                <Card.Content extra>
-                  <div className='ui two buttons'>
-                    <Button basic color='green'>
-                      Add to Interested
-                    </Button>
-                    <Button basic color='red'>
-                      Not Interested
-                    </Button>
-                  </div>
-                </Card.Content>
-              </Card>
-              <Card as={NavLink} exact to="/companyprofile">
-                <Card.Content>
-                  <Image
-                    floated='right'
-                    size='mini'
-                    src={pfp}
-                  />
-                  <Card.Header>Jenny Lawrence</Card.Header>
-                  <Card.Meta>New User</Card.Meta>
-                  <Card.Description>
-                    Jenny requested permission to view your contact details
-                  </Card.Description>
-                </Card.Content>
-                <Card.Content extra>
-                  <div className='ui two buttons'>
-                    <Button basic color='green'>
-                      Add to Interested
-                    </Button>
-                    <Button basic color='red'>
-                      Not Interested
-                    </Button>
-                  </div>
-                </Card.Content>
-              </Card>
+            <Card.Group centered>
+              {this.props.companies.map((company, index) => <Company
+                key={index}
+                company={company}/>)}
             </Card.Group>
           </Grid.Row>
         </Grid>
@@ -241,4 +99,22 @@ class StudentHomePage extends React.Component {
   }
 }
 
-export default StudentHomePage;
+// Require an array of Companies documents in the props.
+StudentHomePage.propTypes = {
+  companies: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
+};
+
+// withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+export default withTracker(() => {
+  // Get access to Contacts documents.
+  const subscription = Meteor.subscribe(Companies.userPublicationName);
+  // Determine if the subscription is ready
+  const ready = subscription.ready();
+  // Get the Contacts documents
+  const companies = Companies.collection.find({}).fetch();
+  return {
+    companies,
+    ready,
+  };
+})(StudentHomePage);

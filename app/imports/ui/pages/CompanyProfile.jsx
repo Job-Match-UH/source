@@ -1,13 +1,10 @@
 import React from 'react';
-import { Meteor } from 'meteor/meteor';
 import { Container, Image, Grid, Header, List, Button } from 'semantic-ui-react';
-import { withTracker } from 'meteor/react-meteor-data';
-import PropTypes from 'prop-types';
 
 export class CompanyProfile extends React.Component {
   render() {
     return (
-      <Container>
+      <Container id='company-profile-page'>
         <Grid celled='internally' className='cp-text'>
           <Grid.Row>
             <Grid.Column width={3}>

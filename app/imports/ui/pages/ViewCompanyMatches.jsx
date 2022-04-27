@@ -8,7 +8,7 @@ const pfp = 'https://i.pinimg.com/custom_covers/222x/85498161615209203_163633275
 class ViewCompanyMatches extends React.Component {
   render() {
     return (
-      <Container>
+      <Container id='view-company-page'>
         <Header as='h2' className='cp-text' textAlign='center'>Interested Matches!</Header>
         <Card.Group itemsPerRow={4}>
           <Card as={NavLink} exact to="/companyprofile">

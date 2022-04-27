@@ -92,7 +92,7 @@ class AdminHomePage extends React.Component {
 
     return (
       <div>
-        <Container textAlign='center'>
+        <Container id='admin-home-page' textAlign='center'>
           <Header as='h1' className='cp-text'>Admin Home Page</Header>
           <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes}/>
         </Container>

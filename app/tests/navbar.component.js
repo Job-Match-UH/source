@@ -13,8 +13,39 @@ class NavBar {
 
   async gotoSigninPage(testController) {
     await this.ensureLogout(testController);
-    await testController.click('#login-dropdown');
     await testController.click('#login-dropdown-sign-in');
+  }
+
+  async gotoViewCompanyMatches(testController) {
+    await testController.click('#view-company-matches');
+  }
+
+  async gotoStudentHome(testController) {
+    await testController.click('#view-student-home');
+  }
+
+  async gotoStudentProfile(testController) {
+    await testController.click('#view-student-profile');
+  }
+
+  async gotoAdminHome(testController) {
+    await testController.click('#view-admin-home');
+  }
+
+  async gotoCompanyProfile(testController) {
+    await testController.click('#view-company-profile');
+  }
+
+  async gotoCompanyHome(testController) {
+    await testController.click('#view-company-home');
+  }
+
+  async gotoViewStudentMatches(testController) {
+    await testController.click('#view-student-matches');
+  }
+
+  async gotoJobPostings(testController) {
+    await testController.click('#job-postings');
   }
 
   /** Check that the specified user is currently logged in. */
@@ -28,13 +59,6 @@ class NavBar {
     await testController.expect(Selector('#navbar-current-user').exists).ok();
     await testController.click('#navbar-current-user');
     await testController.click('#navbar-sign-out');
-  }
-
-  /** Pull down login menu, go to sign up page. */
-  async gotoSignupPage(testController) {
-    await this.ensureLogout(testController);
-    await testController.click('#login-dropdown');
-    await testController.click('#login-dropdown-sign-up');
   }
 }
 

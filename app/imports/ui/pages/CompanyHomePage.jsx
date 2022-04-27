@@ -19,7 +19,7 @@ const pfp = 'https://i.pinimg.com/custom_covers/222x/85498161615209203_163633275
 class CompanyHomePage extends React.Component {
   render() {
     return (
-      <Container>
+      <Container id='company-home-page'>
         <Grid textAlign='center'>
           <Grid.Row>
             <Header as='h2' className='cp-text'>Filter Student Profiles by:</Header>

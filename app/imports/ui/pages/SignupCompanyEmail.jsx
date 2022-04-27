@@ -40,7 +40,7 @@ class SignupCompanyEmail extends React.Component {
       return <Redirect to={from}/>;
     }
     return (
-      <Container id="signup-page">
+      <Container id="signup-company-page">
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
             <Header as="h2" textAlign="center">
@@ -72,7 +72,7 @@ class SignupCompanyEmail extends React.Component {
               </Segment>
             </Form>
             <Message>
-              Already have an account? Login <Link to="/signin">here</Link>
+              Already have an account? Login <Link id='view-signin-page' to="/signin">here</Link>
             </Message>
             {this.state.error === '' ? (
               ''

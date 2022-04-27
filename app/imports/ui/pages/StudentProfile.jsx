@@ -9,7 +9,7 @@ class StudentProfile extends React.Component {
   render() {
     const { activeItem } = this.state;
     return (
-      <Container>
+      <Container id='student-profile-page'>
         <Grid celled='internally'>
           <Grid.Row>
             <Grid.Column width={3}>

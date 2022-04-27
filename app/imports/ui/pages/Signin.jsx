@@ -121,8 +121,6 @@ export default class Signin extends React.Component {
                   onChange={this.handleChange}
                 />
                 <Button id="signin-company-form-submit" content='Login' primary />
-                <HiddenField name="role" value='company'/>
-                <Button id="signin-form-submit" content='Login' primary />
                 <Message attached color='green'>
                   <Link id='view-signup-company' to="/company_signup">Click here to Register as a Company</Link>
                 </Message>

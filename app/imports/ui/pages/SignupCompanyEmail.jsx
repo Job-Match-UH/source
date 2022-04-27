@@ -40,7 +40,7 @@ class SignupCompanyEmail extends React.Component {
       return <Redirect to={from}/>;
     }
     return (
-      <Container id="signup-comapny-page">
+      <Container id="signup-company-page">
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
             <Header as="h2" textAlign="center">

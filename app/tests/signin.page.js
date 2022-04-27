@@ -22,6 +22,15 @@ class SigninPage {
   }
 
   /** Fills out and submits the form to signin, then checks to see that login was successful. */
+  async signinAdmin(testController, username, password) {
+    await this.isDisplayed(testController);
+    await testController.typeText('#signin-form-email', username);
+    await testController.typeText('#signin-form-password', password);
+    await testController.click('#signin-form-submit');
+    await navBar.isLoggedIn(testController, username);
+  }
+
+  /** Fills out and submits the form to signin, then checks to see that login was successful. */
   async signinCompany(testController, username, password) {
     await this.isDisplayed(testController);
     await testController.typeText('#signin-company-form-email', username);

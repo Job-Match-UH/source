@@ -29,7 +29,7 @@ class AddProject extends React.Component {
     let fRef = null;
 
     return (
-      <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
+      <AutoForm id='add-project-page' ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
         <TextField fluid="true" name='name' label='Project Name' placeholder='Ex. Calculator' />
         <LongTextField name='description' label='Project description' placeholder='What did you do in this project...' />
         <SubmitField icon='plus' value='Add Project'/>

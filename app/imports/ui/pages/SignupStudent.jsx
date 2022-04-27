@@ -5,7 +5,7 @@ import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Meteor } from 'meteor/meteor';
 import swal from 'sweetalert';
 import SimpleSchema from 'simpl-schema';
-//import { Redirect } from 'react-router';
+// import { Redirect } from 'react-router';
 import { Students } from '../../api/student/Student';
 import AddExperience from './AddExperience';
 import AddEducation from './AddEducation';
@@ -40,7 +40,7 @@ class SignupStudent extends React.Component {
 
   render() {
     let fRef = null;
-/*
+    /*
     if (this.state.redirectToReferer) {
       return <Redirect to={'/studentprofile'}/>;
     }
@@ -70,23 +70,23 @@ class SignupStudent extends React.Component {
       {
         menuItem: 'Personal Info', render: () => <Tab.Pane>
           <Form.Group widths='equal'>
-            <TextField fluid label='First name' placeholder='First name' name='firstName'/>
-            <TextField fluid label='Last name' placeholder='Last name' name='lastName'/>
+            <TextField id='personal-info-first-name' fluid label='First name' placeholder='First name' name='firstName'/>
+            <TextField id='personal-info-last-name' fluid label='Last name' placeholder='Last name' name='lastName'/>
           </Form.Group>
           <Form.Group widths='equal'>
-            <TextField fluid label='Address' placeholder='Address' name='address'/>
-            <NumField fluid label='Phone Number' placeholder='1234567890' name='phone'/>
+            <TextField id='personal-info-address' fluid label='Address' placeholder='Address' name='address'/>
+            <NumField id='personal-info-phone-num' fluid label='Phone Number' placeholder='1234567890' name='phone'/>
           </Form.Group>
-          <LongTextField label='About' placeholder='Tell us more about you...' name='about'/>
+          <LongTextField id='personal-info-about' label='About' placeholder='Tell us more about you...' name='about'/>
         </Tab.Pane>,
       },
       /* { menuItem: 'Interests', render: () => <Tab.Pane>
         <Form.Dropdown label='Add interests' placeholder='Pick multiple interests' fluid multiple selection options={interests} />
       </Tab.Pane> },
        */
-      { menuItem: 'Projects', render: () => <Tab.Pane>
+      { menuItem: 'Projects', render: () => <div id='goto-projects-tab'><Tab.Pane>
         <AddProject owner={Meteor.user().username}/>
-      </Tab.Pane> },
+      </Tab.Pane></div> },
 
       { menuItem: 'Experience', render: () => <Tab.Pane>
         <AddExperience owner={Meteor.user().username}/>
@@ -136,7 +136,7 @@ class SignupStudent extends React.Component {
 
     return (
       <div>
-        <Container>
+        <Container id='sign-up-student-page'>
           <Header className='cp-text' as='h1'>Create Student Profile</Header>
           <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
             <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes}/>

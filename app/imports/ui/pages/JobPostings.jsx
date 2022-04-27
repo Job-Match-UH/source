@@ -39,7 +39,7 @@ class JobPostings extends React.Component {
     const payTypes = ['hourly', 'annually'];
 
     return (
-      <Container>
+      <Container id='job-postings-page'>
         <Header as='h1' className='cp-text' style={ { padding: 0 } }>Add a Job Posting</Header>
         <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={jobBridge} onSubmit={data => this.submitJob(data, fRef)}>
           <TextField fluid label='Job Title:' placeholder='Software Development Intern' name='jobTitle'/>

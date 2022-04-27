@@ -36,7 +36,7 @@ class AddEducation extends React.Component {
         <TextField id='education-name' fluid="true" name='field' label='Field of study' placeholder='Ex. Computer Science'/>
         <DateField name='startDate' label='Start Date'/>
         <DateField name='endDate' label='End Date (or expected)'/>
-        <SubmitField value='Add education'/>
+        <SubmitField value='Add Education'/>
         <HiddenField name='owner' value={this.props.owner}/>
         <ErrorsField/>
       </AutoForm>

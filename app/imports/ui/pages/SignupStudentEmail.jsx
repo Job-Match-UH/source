@@ -42,8 +42,8 @@ class SignupStudentEmail extends React.Component {
       <Container id="signup-student-page">
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
-            <Header as="h2" textAlign="center">
-              Register your account
+            <Header as="h2" textAlign="center" className='cp-text'>
+              Register your Student Account
             </Header>
             <Form onSubmit={this.submit}>
               <Segment stacked>

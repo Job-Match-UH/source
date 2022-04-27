@@ -31,7 +31,7 @@ class AddExperience extends React.Component {
     const employmentType = ['Full-time', 'Part-time', 'Internship', 'Seasonal', 'Self-employed'];
 
     return (
-      <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
+      <AutoForm style={ { marginBottom: 10 } } ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
         <Form.Group widths='equal'>
           <TextField id='experience-title' fluid="true" label='Title' placeholder='Ex. Retail Manager' name='title'/>
           <SelectField fluid="true" placeholder='Full-time' name='type' allowedValues={employmentType}/>

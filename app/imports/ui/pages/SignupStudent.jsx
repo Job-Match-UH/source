@@ -140,7 +140,7 @@ class SignupStudent extends React.Component {
           <Header className='cp-text' as='h1'>Create Student Profile</Header>
           <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
             <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes}/>
-            <SubmitField value='Submit' />
+            <SubmitField id='#personal-info-submit' value='Submit' />
           </AutoForm>
         </Container>
       </div>

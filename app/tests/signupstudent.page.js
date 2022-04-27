@@ -24,7 +24,8 @@ class SignUpStudentPage {
     await testController.typeText('#personal-info-address', address);
     await testController.typeText('#personal-info-phone-num', phoneNum);
     await testController.typeText('#personal-info-about', about);
-    await testController.click(this.selectProjects);
+    // await testController.click('#personal-info-submit');
+    // await testController.click(this.selectProjects);
   }
 
   async gotoExperienceTab(testController) {

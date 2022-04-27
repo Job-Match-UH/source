@@ -7,7 +7,8 @@
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "email": "john@foo.com", "password": "changeme", "role": "student"},
-    { "email": "pear@pear.com", "password": "pear", "role": "company" }
+    { "email": "pear@pear.com", "password": "pear", "role": "company" },
+    { "email": "lisa@foo.com", "password": "changeme", "role": "company" }
   ],
 
   "defaultClasses": [
@@ -24,11 +25,11 @@
   ],
 
   "defaultCompanies": [
-    { "companyName": "Pear Inc", "website": "google.com", "description": "We are the Pear Company!", "owner": "pear@pear.com", "address": "f", "state": "HI",
+    { "companyName": "Pear Inc", "website": "www.google.com", "description": "We are the Pear Company!", "owner": "pear@pear.com", "address": "f", "state": "HI",
       "phone": "8080980909", "year": "2002" },
-    { "companyName": "Facebook", "website": "facebook.com", "description": "We are the Facebook!", "owner": "facebook@fb.com", "address": "f", "state": "HI",
+    { "companyName": "Facebook", "website": "www.facebook.com", "description": "We are the Facebook!", "owner": "facebook@fb.com", "address": "f", "state": "HI",
       "phone": "8080980909", "year": "2002" },
-    { "companyName": "UH Manoa", "website": "manoa.com", "description": "We are Manoa!", "owner": "uhm@uhm.com", "address": "f", "state": "HI",
+    { "companyName": "UH Manoa", "website": "www.manoa.com", "description": "We are Manoa!", "owner": "uhm@uhm.com", "address": "f", "state": "HI",
       "phone": "8080980909", "year": "2002" }
   ],
 

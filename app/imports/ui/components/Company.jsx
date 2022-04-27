@@ -1,23 +1,23 @@
 import React from 'react';
 import { Button, Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { NavLink, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-class Student extends React.Component {
+class Company extends React.Component {
   render() {
     return (
-      <Card as={NavLink} exact to="/studentprofile">
+      <Card>
         <Card.Content>
           <Image
             floated='right'
             size='mini'
             src='https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg'
           />
-          <Card.Header>{this.props.student.firstName} {this.props.student.lastName}</Card.Header>
-          <Card.Meta>{this.props.student.owner}</Card.Meta>
+          <Card.Header>{this.props.company.companyName}</Card.Header>
+          <Card.Meta>{this.props.company.website}</Card.Meta>
           <Card.Description>
-            {this.props.student.about}
+            {this.props.company.description}
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
@@ -36,9 +36,9 @@ class Student extends React.Component {
 }
 
 // Require a document to be passed to this component.
-Student.propTypes = {
-  student: PropTypes.object.isRequired,
+Company.propTypes = {
+  company: PropTypes.object.isRequired,
 };
 
 // Wrap this component in withRouter since we use the <Link> React Router element.
-export default withRouter(Student);
+export default withRouter(Company);

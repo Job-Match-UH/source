@@ -16,8 +16,8 @@ class SignupCompanyEmail extends React.Component {
 
   /* Update the form controls each time the user interacts with them. */
   handleChange = (e, { name, value }) => {
-    this.setState({ role: 'company' });
     this.setState({ [name]: value });
+    this.setState({ role: 'company' });
   }
 
   /* Handle SignupStudentEmail submission. Create user account and a profile entry, then redirect to the home page. */

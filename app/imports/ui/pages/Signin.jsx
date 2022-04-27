@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Roles } from 'meteor/alanning:roles';
 import { Link, Redirect } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { Button, Form, Grid, Header, Message, Segment, Divider, Container } from 'semantic-ui-react';
@@ -22,8 +23,26 @@ export default class Signin extends React.Component {
   }
 
   // Handle Signin submission using Meteor's account mechanism.
-  submit = () => {
+  submitStudent = () => {
     const { email, password, role } = this.state;
+    // eslint-disable-next-line no-console
+    console.log(`role: ${this.state.role}`);
+    Meteor.loginWithPassword(email, password, role, (err) => {
+      if (this.state.email === this.userID && !(Roles.userIsInRole(this.state.role, 'student'))) {
+        this.setState({ error: 'Unauthorized login.' });
+      }
+      if (err) {
+        this.setState({ error: err.reason });
+      } else {
+        this.setState({ error: '', redirectToReferer: true });
+      }
+    });
+  }
+
+  submitCompany = () => {
+    const { email, password, role } = this.state;
+    // eslint-disable-next-line no-console
+    console.log(`role: ${this.state.role}`);
     Meteor.loginWithPassword(email, password, role, (err) => {
       if (err) {
         this.setState({ error: err.reason });
@@ -58,12 +77,12 @@ export default class Signin extends React.Component {
               <Header as="h2" textAlign="center" className='cp-text'>
               Student Login
               </Header>
-              <Form onSubmit={this.submit} className='cp-text'>
+              <Form onSubmit={this.submitStudent} className='cp-text'>
                 <Form.Input
                   icon='user'
                   iconPosition='left'
                   label='Email'
-                  id="signin-form-email"
+                  id="student-signin-form-email"
                   name="email"
                   type="email"
                   placeholder="E-mail address"
@@ -74,12 +93,12 @@ export default class Signin extends React.Component {
                   iconPosition='left'
                   label='Password'
                   type='password'
-                  id="signin-form-password"
+                  id="student-signin-form-password"
                   name="password"
                   placeholder="Password"
                   onChange={this.handleChange}
                 />
-                <Button id="signin-form-submit" content='Login' primary />
+                <Button id="student-signin-form-submit" content='Login' primary />
                 <Message attached color='green'>
                   <Link to="/student_signup">Click here to Register as a Student</Link>
                 </Message>
@@ -99,12 +118,12 @@ export default class Signin extends React.Component {
               <Header as="h2" textAlign="center" className='cp-text'>
                 Company Login
               </Header>
-              <Form onSubmit={this.submit} className='cp-text'>
+              <Form onSubmit={this.submitCompany} className='cp-text'>
                 <Form.Input
                   icon='user'
                   iconPosition='left'
                   label='Email'
-                  id="signin-form-email"
+                  id="company-signin-form-email"
                   name="email"
                   type="email"
                   placeholder="E-mail address"
@@ -115,12 +134,12 @@ export default class Signin extends React.Component {
                   iconPosition='left'
                   label='Password'
                   type='password'
-                  id="signin-form-password"
+                  id="company-signin-form-password"
                   name="password"
                   placeholder="Password"
                   onChange={this.handleChange}
                 />
-                <Button id="signin-form-submit" content='Login' primary />
+                <Button id="company-signin-form-submit" content='Login' primary />
                 <Message attached color='green'>
                   <Link to="/company_signup">Click here to Register as a Company</Link>
                 </Message>

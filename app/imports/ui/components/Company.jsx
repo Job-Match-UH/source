@@ -12,7 +12,7 @@ class Company extends React.Component {
           <Image
             floated='right'
             size='mini'
-            src='https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg'
+            src={this.props.company.image}
           />
           <Card.Header>{this.props.company.companyName}</Card.Header>
           <Card.Meta>{this.props.company.website}</Card.Meta>

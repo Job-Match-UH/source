@@ -17,6 +17,7 @@ const formSchema = new SimpleSchema({
   address: String,
   phone: Number,
   about: String,
+  image: String,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -25,9 +26,9 @@ class SignupStudent extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { firstName, lastName, about, phone, address } = data;
+    const { firstName, lastName, about, phone, address, image } = data;
     const owner = Meteor.user().username;
-    Students.collection.insert({ firstName, lastName, about, phone, address, owner },
+    Students.collection.insert({ firstName, lastName, about, phone, address, image, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -77,6 +78,7 @@ class SignupStudent extends React.Component {
             <TextField id='personal-info-address' fluid label='Address' placeholder='Address' name='address'/>
             <NumField id='personal-info-phone-num' fluid label='Phone Number' placeholder='1234567890' name='phone'/>
           </Form.Group>
+          <TextField id='personal-info-image' fluid label='Profile Photo' placeholder='Image URL' name='image'/>
           <LongTextField id='personal-info-about' label='About' placeholder='Tell us more about you...' name='about'/>
         </Tab.Pane>,
       },
@@ -86,7 +88,7 @@ class SignupStudent extends React.Component {
        */
       { menuItem: 'Projects', render: () => <Tab.Pane>
         <AddProject owner={Meteor.user().username}/>
-      </Tab.Pane>},
+      </Tab.Pane> },
 
       { menuItem: 'Experience', render: () => <Tab.Pane>
         <AddExperience owner={Meteor.user().username}/>

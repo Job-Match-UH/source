@@ -20,6 +20,7 @@ class CompaniesCollection {
       state: String,
       phone: Number,
       year: Number,
+      image: String,
       owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.

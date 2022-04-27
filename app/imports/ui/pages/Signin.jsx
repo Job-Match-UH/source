@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Roles } from 'meteor/alanning:roles';
 import { Link, Redirect } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { Button, Form, Grid, Header, Message, Segment, Divider, Container } from 'semantic-ui-react';
@@ -23,31 +22,24 @@ export default class Signin extends React.Component {
   }
 
   // Handle Signin submission using Meteor's account mechanism.
-  submitStudent = () => {
-    const { email, password, role } = this.state;
-    // eslint-disable-next-line no-console
-    console.log(`role: ${this.state.role}`);
-    Meteor.loginWithPassword(email, password, role, (err) => {
-      if (this.state.email === this.userID && !(Roles.userIsInRole(this.state.role, 'student'))) {
-        this.setState({ error: 'Unauthorized login.' });
-      }
+  studentSubmit = () => {
+    const { email, password } = this.state;
+    Meteor.loginWithPassword(email, password, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
-        this.setState({ error: '', redirectToReferer: true });
+        this.setState({ role: 'student', error: '', redirectToReferer: true });
       }
     });
   }
 
-  submitCompany = () => {
-    const { email, password, role } = this.state;
-    // eslint-disable-next-line no-console
-    console.log(`role: ${this.state.role}`);
-    Meteor.loginWithPassword(email, password, role, (err) => {
+  companySubmit = () => {
+    const { email, password } = this.state;
+    Meteor.loginWithPassword(email, password, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
-        this.setState({ error: '', redirectToReferer: true });
+        this.setState({ role: 'company', error: '', redirectToReferer: true });
       }
     });
   }
@@ -55,13 +47,12 @@ export default class Signin extends React.Component {
   // Render the signin form.
   render() {
     const { from } = this.props.location.state || { from: { pathname: '/' } };
-
     // if correct authentication, redirect to page instead of login screen
     if (this.state.redirectToReferer && this.state.role === 'student') {
-      return <Redirect to={'studenthomepage'}/>;
+      return <Redirect to={'/studenthomepage'}/>;
     }
     if (this.state.redirectToReferer && this.state.role === 'company') {
-      return <Redirect to={'companyhomepage'}/>;
+      return <Redirect to={'/companyhomepage'}/>;
     }
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
@@ -77,12 +68,12 @@ export default class Signin extends React.Component {
               <Header as="h2" textAlign="center" className='cp-text'>
               Student Login
               </Header>
-              <Form onSubmit={this.submitStudent} className='cp-text'>
+              <Form error onSubmit={this.studentSubmit} className='cp-text'>
                 <Form.Input
                   icon='user'
                   iconPosition='left'
                   label='Email'
-                  id="student-signin-form-email"
+                  id="signin-form-email"
                   name="email"
                   type="email"
                   placeholder="E-mail address"
@@ -93,37 +84,37 @@ export default class Signin extends React.Component {
                   iconPosition='left'
                   label='Password'
                   type='password'
-                  id="student-signin-form-password"
+                  id="signin-form-password"
                   name="password"
                   placeholder="Password"
                   onChange={this.handleChange}
                 />
-                <Button id="student-signin-form-submit" content='Login' primary />
+                <Button id="signin-form-submit" content='Login' primary />
                 <Message attached color='green'>
                   <Link to="/student_signup">Click here to Register as a Student</Link>
                 </Message>
-                {this.state.error === '' ? (
-                  ''
-                ) : (
-                  <Message
-                    error
-                    header="Login was not successful"
-                    content={this.state.error}
-                  />
-                )}
               </Form>
+              {this.state.error === '' && this.props.location.error === undefined ? (
+                ''
+              ) : (
+                <Message
+                  error
+                  header="Login was not successful"
+                  content={`${this.state.error} ${this.props.location.error}`}
+                />
+              )}
             </Grid.Column>
 
             <Grid.Column verticalAlign='middle'>
               <Header as="h2" textAlign="center" className='cp-text'>
                 Company Login
               </Header>
-              <Form onSubmit={this.submitCompany} className='cp-text'>
+              <Form onSubmit={this.companySubmit} className='cp-text'>
                 <Form.Input
                   icon='user'
                   iconPosition='left'
                   label='Email'
-                  id="company-signin-form-email"
+                  id="signin-form-email"
                   name="email"
                   type="email"
                   placeholder="E-mail address"
@@ -134,12 +125,12 @@ export default class Signin extends React.Component {
                   iconPosition='left'
                   label='Password'
                   type='password'
-                  id="company-signin-form-password"
+                  id="signin-form-password"
                   name="password"
                   placeholder="Password"
                   onChange={this.handleChange}
                 />
-                <Button id="company-signin-form-submit" content='Login' primary />
+                <Button id="signin-form-submit" content='Login' primary />
                 <Message attached color='green'>
                   <Link to="/company_signup">Click here to Register as a Company</Link>
                 </Message>

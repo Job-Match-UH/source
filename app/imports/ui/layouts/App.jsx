@@ -92,7 +92,7 @@ const StudentProtectedRoute = ({ component: Component, ...rest }) => (
       const isStudent = Roles.userIsInRole(Meteor.userId(), 'student');
       return (isLogged && isStudent) ?
         (<Component {...props} />) :
-        (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
+        (Meteor.logout() || <Redirect to={{ pathname: '/signin', state: { from: props.location }, error: 'Unauthorized login' }}/>
         );
     }}
   />
@@ -111,7 +111,7 @@ const CompanyProtectedRoute = ({ component: Component, ...rest }) => (
       const isCompany = Roles.userIsInRole(Meteor.userId(), 'company');
       return (isLogged && isCompany) ?
         (<Component {...props} />) :
-        (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
+        (Meteor.logout() || <Redirect to={{ pathname: '/signin', state: { from: props.location }, error: 'Unauthorized login' }}/>
         );
     }}
   />

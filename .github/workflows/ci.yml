@@ -1,4 +1,4 @@
-name: ci-Job-Match-UH
+name: job-match-uh
 
 on:
   push:

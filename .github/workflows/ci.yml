@@ -3,7 +3,7 @@ name: ci-Job-Match-UH
 on:
   push:
     branches:
-      - master
+      - main
 
 defaults:
   run:

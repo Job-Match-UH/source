@@ -84,9 +84,9 @@ class SignupStudent extends React.Component {
         <Form.Dropdown label='Add interests' placeholder='Pick multiple interests' fluid multiple selection options={interests} />
       </Tab.Pane> },
        */
-      { menuItem: 'Projects', render: () => <div id='goto-projects-tab'><Tab.Pane>
+      { menuItem: 'Projects', render: () => <Tab.Pane>
         <AddProject owner={Meteor.user().username}/>
-      </Tab.Pane></div> },
+      </Tab.Pane>},
 
       { menuItem: 'Experience', render: () => <Tab.Pane>
         <AddExperience owner={Meteor.user().username}/>
@@ -139,7 +139,7 @@ class SignupStudent extends React.Component {
         <Container id='sign-up-student-page'>
           <Header className='cp-text' as='h1'>Create Student Profile</Header>
           <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
-            <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes}/>
+            <Tab id='goto-projects-tab' menu={{ fluid: true, vertical: true, tabular: true }} panes={panes}/>
             <SubmitField id='#personal-info-submit' value='Submit' />
           </AutoForm>
         </Container>

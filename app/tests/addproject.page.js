@@ -12,13 +12,10 @@ class AddProjectPage {
     await testController.expect(this.pageSelector.exists).ok();
   }
 
-  /** Fills in project form. */
-  async inputProject(testController, name, description) {
-    await this.isDisplayed(testController);
+  async inputProjectData(testController, name, description) {
     await testController.typeText('#projects-name', name);
     await testController.typeText('#projects-description', description);
   }
-
 }
 
 export const addProjectPage = new AddProjectPage();

@@ -1,6 +1,6 @@
 import { Selector } from 'testcafe';
 
-const experienceInput = { title: 'Manager', name: 'Fedex', role: 'manager' };
+const experienceInput = { title: 'Manager', name: 'Fedex', role: 'manager', about: 'asdf' };
 
 class AddExperiencePage {
   constructor() {
@@ -15,11 +15,11 @@ class AddExperiencePage {
   }
 
   /** Fills in project form. */
-  async inputExperience(testController) {
-    await this.isDisplayed(testController);
+  async inputExperienceData(testController) {
     await testController.typeText('#experience-title', experienceInput.title);
     await testController.typeText('#experience-name', experienceInput.name);
     await testController.typeText('#experience-role', experienceInput.role);
+    await testController.typeText('#experience-about', experienceInput.about);
   }
 
 }

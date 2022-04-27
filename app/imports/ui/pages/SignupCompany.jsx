@@ -46,33 +46,33 @@ class SignupCompany extends React.Component {
     }
     */
     return (
-      <Container>
+      <Container id='company-signup-page'>
         <Header className='cp-text' as='h1' textAlign='center'>Create Company Profile</Header>
         <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={companyBridge} onSubmit={data => this.submit(data, fRef)}>
           <Segment>
-            <TextField fluid label={'Company Name:'} placeholder={'Ex: Company Connector'} name={'companyName'}/>
+            <TextField id='company-name' fluid label={'Company Name:'} placeholder={'Ex: Company Connector'} name={'companyName'}/>
             <Form.Input fluid label='Company Logo:'>
               <Placeholder style={{ height: 150, width: 150 }}>
                 <Placeholder.Image/>
               </Placeholder>
             </Form.Input>
             <Button compact size='mini'>Select Photo</Button>
-            <TextField fluid label={'Website:'} placeholder={'Website URL'} name={'website'}/>
+            <TextField id='company-website' fluid label={'Website:'} placeholder={'Website URL'} name={'website'}/>
             <LongTextField label={'Company Description:'} placeholder={'Tell us a little bit about the company...'} name={'description'}/>
             <Form>
               <Form.Group unstackable widths={2}>
-                <TextField fluid label='Address:' placeholder='Address' name='address'/>
-                <TextField fluid label='State:' placeholder='Ex: HI' name='state'/>
+                <TextField id='company-address' fluid label='Address:' placeholder='Address' name='address'/>
+                <TextField id='company-state' fluid label='State:' placeholder='Ex: HI' name='state'/>
               </Form.Group>
               <Form.Group inline>
                 <Form.Field>
-                  <NumField placeholder='1234567890' name='phone'/>
+                  <NumField id='company-phone-num' placeholder='1234567890' name='phone'/>
                 </Form.Field>
               </Form.Group>
-              <NumField fluid label='Year Established:' placeholder='Ex: 2000' name='year'/>
+              <NumField id='year-established' fluid label='Year Established:' placeholder='Ex: 2000' name='year'/>
             </Form>
           </Segment>
-          <SubmitField value='Submit Profile'/>
+          <SubmitField id='submit-company' value='Submit Profile'/>
         </AutoForm>
       </Container>
     );

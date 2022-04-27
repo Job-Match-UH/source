@@ -13,8 +13,10 @@ import { viewStudentPage } from './viewstudent.page';
 import { jobPostingsPage } from './jobpostings.page';
 import { adminHomePage } from './adminhome.page';
 import { signupStudent } from './signupstudent.page';
-// import { addProjectPage } from './addproject.page';
-// import { addExperiencePage } from './addexperience.page';
+import { addProjectPage } from './addproject.page';
+import { addExperiencePage } from './addexperience.page';
+import { addEducationPage } from './addeducation.page';
+import { companySignup } from './signupcompany.page';
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
@@ -22,8 +24,9 @@ const credentials = { username: 'john@foo.com', password: 'changeme' };
 const credentials2 = { username: 'lisa@foo.com', password: 'changeme' };
 const credentials3 = { username: 'admin@foo.com', password: 'changeme' };
 const credentials4 = { username: 'john2@foo.com', password: 'changeme' };
+const credentials5 = { username: 'john3@foo.com', password: 'changeme' };
 const personalInfo = { firstName: 'John', lastName: 'foo', address: 'zxc', phoneNum: '1234567', about: 'about' };
-// const projectInput = { name: 'Banana farm', description: 'farm bananas' };
+const projectInput = { name: 'Banana farm', description: 'farm bananas' };
 
 fixture('job-match-uh availability tests')
   .page('http://localhost:3000');
@@ -58,20 +61,21 @@ test('Test register student works', async (testController) => {
   await signupStudentEmail.signupStudent(testController, credentials4.username, credentials4.password);
   await signupStudent.isDisplayed(testController);
   await signupStudent.inputPersonalInfo(testController, personalInfo.firstName, personalInfo.lastName, personalInfo.address, personalInfo.phoneNum, personalInfo.about);
-  /*
-  await addProjectPage.inputProject(testController, projectInput.name, projectInput.description);
-  await addProjectPage.isDisplayed(testController);
-  await signupStudent.gotoExperienceTab(testController);
-  await addExperiencePage.inputExperience(testController);
-  */
+  await addProjectPage.inputProjectData(testController, projectInput.name, projectInput.description);
+  await signupStudent.clickExperiencesTab(testController);
+  await addExperiencePage.inputExperienceData(testController);
+  await signupStudent.gotoEducationTab(testController);
+  await addEducationPage.inputEducation(testController);
 });
 
-test('Test register company works', async (testController) => {
+test.only('Test register company works', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.gotoSignUpCompany(testController);
   await signupCompanyEmail.isDisplayed(testController);
   await signupCompanyEmail.returnToSignin(testController);
   await signinPage.gotoSignUpCompany(testController);
+  await signupCompanyEmail.signupUser(testController, credentials5.username, credentials5.password);
+  await companySignup.inputCompanyData(testController);
 });
 
 test('Test studenthome, studentprofile & viewcompanymatches works', async (testController) => {

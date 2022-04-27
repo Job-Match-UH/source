@@ -4,10 +4,10 @@ class SignUpStudentPage {
   constructor() {
     this.pageId = '#sign-up-student-page';
     this.pageSelector = Selector(this.pageId);
-    this.selectProjects = Selector('#goto-projects-tab')
-      .child('div')
-      .withText('Projects');
-    this.selectExperiences = Selector('#goto-experience-tab').child('div').withText('Experience');
+    this.selectProjects = Selector('#goto-projects-tab .item').withText('Projects');
+    this.selectExperiences = Selector('#goto-projects-tab .item').withText('Experience');
+    this.selectEducation = Selector('#goto-projects-tab .item').withText('Education');
+    this.selectPersonalInfo = Selector('#goto-projects-tab .item').withText('Personal Info');
   }
 
   /** Asserts that this page is currently displayed. */
@@ -24,12 +24,19 @@ class SignUpStudentPage {
     await testController.typeText('#personal-info-address', address);
     await testController.typeText('#personal-info-phone-num', phoneNum);
     await testController.typeText('#personal-info-about', about);
-    // await testController.click('#personal-info-submit');
-    // await testController.click(this.selectProjects);
+    await testController.click(this.selectProjects);
   }
 
-  async gotoExperienceTab(testController) {
+  async clickExperiencesTab(testController) {
     await testController.click(this.selectExperiences);
+  }
+
+  async gotoEducationTab(testController) {
+    await testController.click(this.selectEducation);
+  }
+
+  async gotoPersonalInfo(testController) {
+    await testController.click(this.selectPersonalInfo);
   }
 }
 

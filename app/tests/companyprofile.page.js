@@ -12,5 +12,4 @@ class CompanyProfilePage {
     await testController.expect(this.pageSelector.exists).ok();
   }
 }
-
 export const companyProfilePage = new CompanyProfilePage();

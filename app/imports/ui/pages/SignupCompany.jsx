@@ -5,6 +5,7 @@ import { AutoForm, SubmitField, TextField, LongTextField, NumField } from 'unifo
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
 import swal from 'sweetalert';
+// import { Redirect } from 'react-router';
 import { Companies } from '../../api/company/Companies';
 
 const companySchema = new SimpleSchema({
@@ -40,6 +41,11 @@ class SignupCompany extends React.Component {
 
   render() {
     let fRef = null;
+    /*
+    if (this.state.redirectToReferer) {
+      return <Redirect to={'/companyprofile'}/>;
+    }
+    */
     return (
       <Container>
         <Header className='cp-text' as='h1' textAlign='center'>Create Company Profile</Header>

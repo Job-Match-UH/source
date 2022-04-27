@@ -68,7 +68,7 @@ test('Test register student works', async (testController) => {
   await addEducationPage.inputEducation(testController);
 });
 
-test.only('Test register company works', async (testController) => {
+test('Test register company works', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.gotoSignUpCompany(testController);
   await signupCompanyEmail.isDisplayed(testController);

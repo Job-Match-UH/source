@@ -3,7 +3,8 @@ import { Class } from '../../api/class/Class';
 import { Students } from '../../api/student/Student';
 import { Companies } from '../../api/company/Companies';
 import { Tags } from '../../api/tags/Tags';
-import { Jobs } from '../../api/job/Jobs';
+import { Experiences } from '../../api/experience/Experience';
+import { Education } from '../../api/education/Education';
 
 /* eslint-disable no-console */
 
@@ -29,9 +30,14 @@ function addCompanies(data) {
   Companies.collection.insert(data);
 }
 
-function addJobs(data) {
-  console.log(`  Adding: ${data.jobTitle} (${data.owner})`);
-  Jobs.collection.insert(data);
+function addExperience(data) {
+  console.log('  Adding Experience');
+  Experiences.collection.insert(data);
+}
+
+function addEducation(data) {
+  console.log('  Adding Education');
+  Education.collection.insert(data);
 }
 
 // Initialize the StudentCollection if empty.
@@ -67,10 +73,18 @@ if (Class.collection.find().count() === 0) {
   }
 }
 
-// Initialize the JobCollection if empty.
-if (Jobs.collection.find().count() === 0) {
-  if (Meteor.settings.defaultJobs) {
-    console.log('Creating default job data.');
-    Meteor.settings.defaultJobs.map(data => addJobs(data));
+// Initialize the ExperienceCollection if empty.
+if (Experiences.collection.find().count() === 0) {
+  if (Meteor.settings.defaultExperiences) {
+    console.log('Creating default experience data.');
+    Meteor.settings.defaultExperiences.map(data => addExperience(data));
+  }
+}
+
+// Initialize the ExperienceCollection if empty.
+if (Education.collection.find().count() === 0) {
+  if (Meteor.settings.defaultEducation) {
+    console.log('Creating default education data.');
+    Meteor.settings.defaultEducation.map(data => addEducation(data));
   }
 }

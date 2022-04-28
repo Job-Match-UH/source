@@ -1,7 +1,8 @@
 import React from 'react';
-import { Container, Grid, Image, Header, Menu, Segment, Button, Loader, Item } from 'semantic-ui-react';
+import { Grid, Header, Loader, Container, Menu, Item, Image } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
+import { _ } from 'meteor/underscore';
 import PropTypes from 'prop-types';
 import { Students } from '../../api/student/Student';
 import { Experiences } from '../../api/experience/Experience';
@@ -33,29 +34,23 @@ class StudentProfile extends React.Component {
         <Grid celled='internally'>
           <Grid.Row>
             <Grid.Column width={3}>
-              <Image src='https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png' />
-              <Button.Group widths={2} style={ { marginTop: '30px' } } >
-                <Button color='green' className='cp-text'>Match Me!</Button>
-                <Button color='black'>No Thanks</Button>
-              </Button.Group>
+              <Image centered size='medium' src={this.props.students.image}/>
+              {/* <Button.Group widths={2} style={ { marginTop: '30px' } } > */}
+              {/*  <Button color='green' className='cp-text'>Match Me!</Button> */}
+              {/*  <Button color='black'>No Thanks</Button> */}
+              {/* </Button.Group> */}
             </Grid.Column>
-            <Grid.Column width={10}>
-              <Header as='h1' className='cp-text'>{this.props.profile.firstName} {this.props.profile.lastName}</Header>
+            <Grid.Column width={12}>
+              <Header as='h1' className='cp-text'>{this.props.students.firstName} {this.props.students.lastName}</Header>
               <Item>
-                <Item.Description>{this.props.profile.about}</Item.Description>
+                <Item.Description className='cp-text'>{this.props.students.owner}</Item.Description>
+                <Item.Description className='cp-text'>{this.props.students.phone}</Item.Description>
+                <Item.Description className='cp-text'>{this.props.students.about}</Item.Description>
               </Item>
             </Grid.Column>
-            <Grid.Column width={3}>
-              <Header className='cp-text'>Education</Header>
-            </Grid.Column>
           </Grid.Row>
-
           <Grid.Row>
-            <Grid.Column width={3}>
-              <Header as='h3' className='cp-text'>Additional Notes</Header>
-              <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
-            </Grid.Column>
-            <Grid.Column width={10}>
+            <Grid.Column width={12}>
               <Menu pointing>
                 <Menu.Item
                   name='interests'
@@ -83,18 +78,18 @@ class StudentProfile extends React.Component {
                   onClick={this.handleItemClick}
                 />
               </Menu>
-
-              <Segment>
-                <Image src='https://react.semantic-ui.com/images/wireframe/centered-paragraph.png' />
-              </Segment>
-            </Grid.Column>
-            <Grid.Column width={3}>
+              <Header className='cp-text'>Education</Header>
+              {this.props.education.map((education, index) => <Container
+                key={index}
+                education={education}>
+                {this.props.education.school}
+              </Container>)}
               <Header as='h3' className='cp-text'>Experience</Header>
-              <Header className='cp-text' style={ { marginTop: 100 } } >Contact Information</Header>
-              <Item>
-                <Item.Description>{this.props.profile.owner}</Item.Description>
-                <Item.Description>{this.props.profile.phone}</Item.Description>
-              </Item>
+              {this.props.experience.map((experience, index) => <Container
+                key={index}
+                experience={experience}>
+                {this.props.experience.title}
+              </Container>)}
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -104,7 +99,7 @@ class StudentProfile extends React.Component {
 }
 
 StudentProfile.propTypes = {
-  profile: PropTypes.object,
+  students: PropTypes.object,
   experience: PropTypes.array,
   education: PropTypes.array,
   ready: PropTypes.bool.isRequired,
@@ -120,11 +115,14 @@ export default withTracker(({ match }) => {
   // Determine if the subscription is ready
   const ready = subscription1.ready() && subscription2.ready() && subscription3.ready();
   // Get the documents
-  const profile = Students.collection.findOne(documentId);
-  const experience = Experiences.collection.findOne(documentId);
-  const education = Education.collection.findOne(documentId);
+  const currentUser = Meteor.user() ? Meteor.user().username : '';
+  const students = Students.collection.findOne(documentId);
+  const allExperience = Experiences.collection.find().fetch();
+  const experience = _.filter(allExperience, function (exp) { return currentUser.owner === exp.owner; });
+  const allEducation = Education.collection.find().fetch();
+  const education = _.filter(allEducation, function (edu) { return currentUser.owner === edu.owner; });
   return {
-    profile,
+    students,
     experience,
     education,
     ready,

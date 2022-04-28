@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, Image } from 'semantic-ui-react';
+import { Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { NavLink, withRouter } from 'react-router-dom';
 
@@ -20,16 +20,16 @@ class Student extends React.Component {
             {this.props.student.about}
           </Card.Description>
         </Card.Content>
-        <Card.Content extra>
-          <div className='ui two buttons'>
-            <Button basic color='green'>
-              Add to Interested
-            </Button>
-            <Button basic color='red'>
-              Not Interested
-            </Button>
-          </div>
-        </Card.Content>
+        {/* <Card.Content extra> */}
+        {/*  <div className='ui two buttons'> */}
+        {/*    <Button basic color='green'> */}
+        {/*      Add to Interested */}
+        {/*    </Button> */}
+        {/*    <Button basic color='red'> */}
+        {/*      Not Interested */}
+        {/*    </Button> */}
+        {/*  </div> */}
+        {/* </Card.Content> */}
       </Card>
     );
   }

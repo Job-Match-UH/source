@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
-import { withRouter, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Menu, Dropdown, Header, Image } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
+import { Students } from '../../api/student/Student';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
@@ -16,9 +17,9 @@ class NavBar extends React.Component {
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
           <Header inverted as='h1' style={ { fontFamily: 'Playfair Display' } }>Job Match&apos;UH</Header>
         </Menu.Item>
-        {Roles.userIsInRole(Meteor.userId(), 'student') ? (
+        {Roles.userIsInRole(Meteor.userId(), 'student') && this.props.studentProfile ? (
           [
-            <Menu.Item id='view-student-profile' as={NavLink} activeClassName="active" exact to="/studentprofile" key='student'>My Profile</Menu.Item>,
+            <Menu.Item id='view-student-profile' as={NavLink} activeClassName="active" exact to={`/studentprofile/${this.props.studentProfile._id}`} key='student'>My Profile</Menu.Item>,
             <Menu.Item id='view-student-home' as={NavLink} activeClassName="active" exact to="/studenthomepage" key='student'>Match Me!</Menu.Item>,
             <Menu.Item id='view-company-matches' as={NavLink} activeClassName="active" exact to="/viewcompanymatches" key='student'>View my Matches</Menu.Item>,
           ]
@@ -53,12 +54,26 @@ class NavBar extends React.Component {
 // Declare the types of all properties.
 NavBar.propTypes = {
   currentUser: PropTypes.string,
+  studentProfile: PropTypes.object,
+  ready: PropTypes.bool.isRequired,
 };
 
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-const NavBarContainer = withTracker(() => ({
-  currentUser: Meteor.user() ? Meteor.user().username : '',
-}))(NavBar);
+export default withTracker(() => {
+  // Get access to current logged in user
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe(Students.userPublicationName);
+  // Determine if the subscription is ready
+  const ready = subscription.ready();
+  // Get the Stuff documents
+  const currentUser = Meteor.user() ? Meteor.user().username : '';
+  const studentProfile = Students.collection.findOne({ owner: currentUser });
+  return {
+    currentUser,
+    studentProfile,
+    ready,
+  };
+})(NavBar);
 
 // Enable ReactRouter for this component. https://reacttraining.com/react-router/web/api/withRouter
-export default withRouter(NavBarContainer);
+// export default withRouter(NavBarContainer);

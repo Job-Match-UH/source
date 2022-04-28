@@ -51,8 +51,6 @@ class SignupCompanyEmail extends React.Component {
                 <Form.Input
                   label="Email"
                   id="signup-form-email"
-                  icon="user"
-                  iconPosition="left"
                   name="email"
                   type="email"
                   placeholder="E-mail address"
@@ -61,8 +59,6 @@ class SignupCompanyEmail extends React.Component {
                 <Form.Input
                   label="Password"
                   id="signup-form-password"
-                  icon="lock"
-                  iconPosition="left"
                   name="password"
                   placeholder="Password"
                   type="password"

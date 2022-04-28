@@ -3,10 +3,19 @@ import { Container, Image, Grid, Header, List, Loader, HiddenField, Button } fro
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import { _ } from 'meteor/underscore';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Companies } from '../../api/company/Companies';
+import { Jobs } from '../../api/job/Jobs';
 
 const bridge = new SimpleSchema2Bridge(Companies.schema);
+
+/** Returns the Profile and associated Projects and jobListings associated with the passed user email/owner. */
+function getCompanyData(owner) {
+  const data = Companies.collection.findOne({ owner });
+  const jobListing = _.pluck(Jobs.collection.find({ owner: owner }).fetch(), 'jobTitle');
+  return _.extend({ }, data, { jobListing });
+}
 
 export class CompanyProfile extends React.Component {
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
@@ -18,10 +27,10 @@ export class CompanyProfile extends React.Component {
   renderPage() {
     return (
       <Container id='company-profile-page'>
-        <Grid celled='internally' className='cp-text' schema={bridge} model={this.props.doc}>
-          <Grid.Row>
+        <Grid celled='internally' className='cp-text'>
+          <Grid.Row schema={bridge} model={this.props.doc}>
             <Grid.Column width={3}>
-              <Image src={'https://www.logolynx.com/images/logolynx/0b/0b7c31144d4dbc850736f64b217e9168.gif'}/>
+              <Image name='image'/>
               <Button circular fluid className='cp-text' name='website'/>
             </Grid.Column>
             <Grid.Column width={10}>
@@ -29,11 +38,10 @@ export class CompanyProfile extends React.Component {
               <div name='description'/>
             </Grid.Column>
             <Grid.Column width={3}>
-              <Image style={ { margin: 10 } } src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
-
-              <Image style={ { margin: 10 } } src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
-
-              <Image style={ { margin: 10 } } src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
+              <div name='address'/>
+              <div name='state'/>
+              <div name='phone'/>
+              <div name='year'/>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
@@ -84,18 +92,15 @@ CompanyProfile.propTypes = {
   ready: PropTypes.bool.isRequired,
 };
 
-// withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(({ match }) => {
-  // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
+  // Ensure that minimongo is populated with all collections prior to running render().
+  const sub1 = Meteor.subscribe(Companies.userPublicationName);
+  const sub2 = Meteor.subscribe(Jobs.userPublicationName);
   const documentId = match.params._id;
-  // Get access to Company documents.
-  const subscription = Meteor.subscribe(Companies.userPublicationName);
-  // Determine if the subscription is ready
-  const ready = subscription.ready();
-  // Get the document
-  const doc = Companies.collection.findOne(documentId);
+
   return {
-    doc,
-    ready,
+    ready: sub1.ready() && sub2.ready(),
+    doc: Companies.collection.findOne(documentId),
   };
 })(CompanyProfile);

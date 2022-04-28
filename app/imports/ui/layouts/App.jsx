@@ -40,7 +40,8 @@ class App extends React.Component {
             <Route path="/studentsignup" component={SignupStudent}/>
             <Route path="/signout" component={Signout}/>
             <Route path="/jobpostings" component={JobPostings}/>
-            <Route path="/companyprofile" component={CompanyProfile}/>
+            <Route path="/companysignup" component={SignupCompany}/>
+            <Route path="/companyprofile/:_id" component={CompanyProfile}/>
             <Route path="/studentprofile" component={StudentProfile}/>
             <Route path="/classform" component={ClassScheduleForm}/>
             <Route path="/studenthomepage" component={StudentHomePage}/>

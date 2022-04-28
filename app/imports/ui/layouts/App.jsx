@@ -44,12 +44,12 @@ class App extends React.Component {
             <Route path="/companysignup" component={SignupCompany}/>
             <Route path="/companyprofile" component={CompanyProfile}/>
             <Route path="/studentprofile" component={StudentProfile}/>
-            <Route path="/jobpostings" component={JobPostings}/>
             <Route path="/classform" component={ClassScheduleForm}/>
             <ProtectedRoute path="/addexp" component={AddExperience}/>
             <ProtectedRoute path="/addedu" component={AddEducation}/>
             <ProtectedRoute path="/addproject" component={AddProject}/>
             <StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/>
+            <CompanyProtectedRoute path="/jobpostings" component={JobPostings}/>
             <CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/>
             <AdminProtectedRoute path="/admin" component={AdminHomePage}/>
             <StudentProtectedRoute path="/viewcompanymatches" component={ViewCompanyMatches}/>

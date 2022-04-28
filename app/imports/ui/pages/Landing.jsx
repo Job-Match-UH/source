@@ -34,6 +34,7 @@ class Landing extends React.Component {
                       <Image src="https://github.com/Job-Match-UH/source/blob/issue-56/images/register-page.png?raw=true" rounded/>
                     </Grid.Column>
                     <Grid.Column>
+                      <br/><br/><br/><br/>
                       <Image src="https://github.com/Job-Match-UH/source/blob/issue-56/images/createstudentprofile.png?raw=true" rounded/>
                     </Grid.Column>
                   </Grid>
@@ -48,6 +49,7 @@ class Landing extends React.Component {
                       <Image src="https://github.com/Job-Match-UH/source/blob/issue-56/images/registercompany.png?raw=true" rounded/>
                     </Grid.Column>
                     <Grid.Column>
+                      <br/><br/>
                       <Image src="https://github.com/Job-Match-UH/source/blob/issue-56/images/createcompanyprofile.png?raw=true" rounded/>
                     </Grid.Column>
                   </Grid>

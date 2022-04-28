@@ -7,6 +7,7 @@ import { Tags } from '../../api/tags/Tags';
 import { Jobs } from '../../api/job/Jobs';
 import { Experiences } from '../../api/experience/Experience';
 import { Education } from '../../api/education/Education';
+import { Projects } from '../../api/projects/Projects';
 
 Meteor.publish(Class.userPublicationName, function () {
   if (this.userId) {
@@ -26,8 +27,7 @@ Meteor.publish(Students.userPublicationName, function () {
 
 Meteor.publish(Companies.userPublicationName, function () {
   if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Companies.collection.find({ owner: username });
+    return Companies.collection.find();
   }
   return this.ready();
 });
@@ -36,6 +36,14 @@ Meteor.publish(Experiences.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
     return Experiences.collection.find({ owner: username });
+  }
+  return this.ready();
+});
+
+Meteor.publish(Projects.userPublicationName, function () {
+  if (this.userId) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Projects.collection.find({ owner: username });
   }
   return this.ready();
 });
@@ -89,6 +97,13 @@ Meteor.publish(Jobs.adminPublicationName, function () {
 Meteor.publish(Education.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Education.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(Projects.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Projects.collection.find();
   }
   return this.ready();
 });

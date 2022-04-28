@@ -11,12 +11,13 @@ class SignupStudentEmail extends React.Component {
   /* Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '', redirectToReferer: false };
+    this.state = { email: '', password: '', role: 'student', error: '', redirectToReferer: false };
   }
 
   /* Update the form controls each time the user interacts with them. */
   handleChange = (e, { name, value }) => {
     this.setState({ [name]: value });
+    this.setState({ role: 'student' });
   }
 
   /* Handle SignupStudentEmail submission. Create user account and a profile entry, then redirect to the home page. */
@@ -33,13 +34,12 @@ class SignupStudentEmail extends React.Component {
 
   /* Display the signup form. Redirect to add page after successful registration and login. */
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/studentsignup' } };
     // if correct authentication, redirect to from: page instead of signup screen
     if (this.state.redirectToReferer) {
-      return <Redirect to={from}/>;
+      return <Redirect to={'/studentsignup'}/>;
     }
     return (
-      <Container id="signup-page">
+      <Container id="signup-student-page">
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
             <Header as="h2" textAlign="center">
@@ -71,7 +71,7 @@ class SignupStudentEmail extends React.Component {
               </Segment>
             </Form>
             <Message>
-              Already have an account? Login <Link to="/signin">here</Link>
+              Already have an account? Login <Link id='view-signin-page' to="/signin">here</Link>
             </Message>
             {this.state.error === '' ? (
               ''

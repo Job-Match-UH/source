@@ -8,6 +8,7 @@ import SimpleSchema from 'simpl-schema';
 import { Students } from '../../api/student/Student';
 import AddExperience from './AddExperience';
 import AddEducation from './AddEducation';
+import AddProject from './AddProject';
 
 const formSchema = new SimpleSchema({
   firstName: String,
@@ -15,11 +16,7 @@ const formSchema = new SimpleSchema({
   address: String,
   phone: Number,
   about: String,
-  school: String,
-  degree: String,
-  field: String,
-  startDate: Date,
-  endDate: Date,
+  image: String,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -28,9 +25,9 @@ class SignupStudent extends React.Component {
 
   // On submit, insert the data.
   submit(data, formRef) {
-    const { firstName, lastName, about, phone, address } = data;
+    const { firstName, lastName, about, phone, address, image } = data;
     const owner = Meteor.user().username;
-    Students.collection.insert({ firstName, lastName, about, phone, address, owner },
+    Students.collection.insert({ firstName, lastName, about, phone, address, image, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -44,53 +41,38 @@ class SignupStudent extends React.Component {
   render() {
     let fRef = null;
     /*
-    const interests = [
-      {
-        key: 'default',
-        text: 'default',
-        value: 'default',
-      },
-      {
-        key: 'default2',
-        text: 'default2',
-        value: 'default2',
-      },
-      {
-        key: 'default3',
-        text: 'default3',
-        value: 'default3',
-      },
-    ];
-*/
+    if (this.state.redirectToReferer) {
+      return <Redirect to={'/studentprofile'}/>;
+    }
+    */
 
     const panes = [
       {
         menuItem: 'Personal Info', render: () => <Tab.Pane>
           <Form.Group widths='equal'>
-            <TextField fluid label='First name' placeholder='First name' name='firstName'/>
-            <TextField fluid label='Last name' placeholder='Last name' name='lastName'/>
+            <TextField id='personal-info-first-name' fluid label='First name' placeholder='First name' name='firstName'/>
+            <TextField id='personal-info-last-name' fluid label='Last name' placeholder='Last name' name='lastName'/>
           </Form.Group>
           <Form.Group widths='equal'>
-            <TextField fluid label='Address' placeholder='Address' name='address'/>
-            <NumField fluid label='Phone Number' placeholder='1234567890' name='phone'/>
+            <TextField id='personal-info-address' fluid label='Address' placeholder='Address' name='address'/>
+            <NumField id='personal-info-phone-num' fluid label='Phone Number' placeholder='1234567890' name='phone'/>
           </Form.Group>
-          <LongTextField label='About' placeholder='Tell us more about you...' name='about'/>
+          <TextField id='personal-info-image' fluid label='Profile Photo' placeholder='Image URL' name='image'/>
+          <LongTextField id='personal-info-about' label='About' placeholder='Tell us more about you...' name='about'/>
         </Tab.Pane>,
       },
       /* { menuItem: 'Interests', render: () => <Tab.Pane>
         <Form.Dropdown label='Add interests' placeholder='Pick multiple interests' fluid multiple selection options={interests} />
       </Tab.Pane> },
+       */
       { menuItem: 'Projects', render: () => <Tab.Pane>
-        <Form>
-          <TextField fluid label='Name of project' placeholder='Ex. Company Connector'/>
-          <LongTextField label='Summary' placeholder='Briefly summarize your project'/>
-          <Form.Button><Icon name='plus' />Add project</Form.Button>
-        </Form>
+        <AddProject owner={Meteor.user().username}/>
       </Tab.Pane> },
-      */
+
       { menuItem: 'Experience', render: () => <Tab.Pane>
         <AddExperience owner={Meteor.user().username}/>
       </Tab.Pane> },
+
       { menuItem: 'Education', render: () => <Tab.Pane>
         <AddEducation owner={Meteor.user().username}/>
       </Tab.Pane> },
@@ -116,30 +98,13 @@ class SignupStudent extends React.Component {
       */
     ];
 
-    /*
-    <Form.Input fluid label='Profile Picture' placeholder='Upload Image'>
-            <Form.Button
-              content="Choose File"
-              labelPosition="left"
-              icon="file"
-              onClick={() => this.fileInputRef.current.click()}
-            />
-            <input
-              ref={this.fileInputRef}
-              type="file"
-              hidden
-              onChange={this.fileChange}
-            />
-          </Form.Input>
-     */
-
     return (
       <div>
-        <Container>
+        <Container id='sign-up-student-page'>
           <Header className='cp-text' as='h1'>Create Student Profile</Header>
           <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)}>
-            <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes}/>
-            <SubmitField value='Submit' />
+            <Tab id='goto-projects-tab' menu={{ fluid: true, vertical: true, tabular: true }} panes={panes}/>
+            <SubmitField id='#personal-info-submit' value='Submit' />
           </AutoForm>
         </Container>
       </div>

@@ -33,14 +33,14 @@ class AddExperience extends React.Component {
     return (
       <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
         <Form.Group widths='equal'>
-          <TextField fluid="true" label='Title' placeholder='Ex. Retail Manager' name='title'/>
+          <TextField id='experience-title' fluid="true" label='Title' placeholder='Ex. Retail Manager' name='title'/>
           <SelectField fluid="true" placeholder='Full-time' name='type' allowedValues={employmentType}/>
         </Form.Group>
         <Form.Group widths='equal'>
-          <TextField fluid="true" label='Name of company' placeholder='Ex.  Walmart' name='company'/>
-          <TextField fluid="true" label='Role' placeholder='Crew Member' name='role'/>
+          <TextField id='experience-name' fluid="true" label='Name of company' placeholder='Ex.  Walmart' name='company'/>
+          <TextField id='experience-role' fluid="true" label='Role' placeholder='Crew Member' name='role'/>
         </Form.Group>
-        <LongTextField label='Job description' placeholder='What were your responsibilities...' name='description'/>
+        <LongTextField id='experience-about' label='Job description' placeholder='What were your responsibilities...' name='description'/>
         <DateField name='exp_start' label='Start Date'/>
         <DateField name='exp_end' label='End Date'/>
         <SubmitField icon='plus' value='Add Experience'/>

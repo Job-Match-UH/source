@@ -24,6 +24,8 @@ import AddExperience from '../pages/AddExperience';
 import SignupStudentEmail from '../pages/SignupStudentEmail';
 import SignupCompanyEmail from '../pages/SignupCompanyEmail';
 import JobPostings from '../pages/JobPostings';
+import AddEducation from '../pages/AddEducation';
+import AddProject from '../pages/AddProject';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -35,22 +37,23 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Landing}/>
             <Route path="/signin" component={Signin}/>
+            <Route path="/signout" component={Signout}/>
             <Route path="/student_signup" component={SignupStudentEmail}/>
             <Route path="/company_signup" component={SignupCompanyEmail}/>
             <Route path="/studentsignup" component={SignupStudent}/>
-            <Route path="/signout" component={Signout}/>
-            <Route path="/jobpostings" component={JobPostings}/>
+            <Route path="/companysignup" component={SignupCompany}/>
             <Route path="/companyprofile" component={CompanyProfile}/>
             <Route path="/studentprofile" component={StudentProfile}/>
+            <Route path="/jobpostings" component={JobPostings}/>
             <Route path="/classform" component={ClassScheduleForm}/>
-            <Route path="/studenthomepage" component={StudentHomePage}/>
-            <Route path="/companysignup" component={SignupCompany}/>
             <ProtectedRoute path="/addexp" component={AddExperience}/>
+            <ProtectedRoute path="/addedu" component={AddEducation}/>
+            <ProtectedRoute path="/addproject" component={AddProject}/>
             <StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/>
-            <StudentProtectedRoute path="/viewcompanymatches" component={ViewCompanyMatches}/>
             <CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/>
-            <CompanyProtectedRoute path="/viewstudentmatches" component={ViewStudentMatches}/>
             <AdminProtectedRoute path="/admin" component={AdminHomePage}/>
+            <StudentProtectedRoute path="/viewcompanymatches" component={ViewCompanyMatches}/>
+            <CompanyProtectedRoute path="/viewstudentmatches" component={ViewStudentMatches}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
@@ -91,7 +94,7 @@ const StudentProtectedRoute = ({ component: Component, ...rest }) => (
       const isStudent = Roles.userIsInRole(Meteor.userId(), 'student');
       return (isLogged && isStudent) ?
         (<Component {...props} />) :
-        (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
+        (Meteor.logout() || <Redirect to={{ pathname: '/signin', state: { from: props.location }, error: 'Unauthorized login' }}/>
         );
     }}
   />
@@ -110,7 +113,7 @@ const CompanyProtectedRoute = ({ component: Component, ...rest }) => (
       const isCompany = Roles.userIsInRole(Meteor.userId(), 'company');
       return (isLogged && isCompany) ?
         (<Component {...props} />) :
-        (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
+        (Meteor.logout() || <Redirect to={{ pathname: '/signin', state: { from: props.location }, error: 'Unauthorized login' }}/>
         );
     }}
   />

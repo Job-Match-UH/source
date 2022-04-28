@@ -31,9 +31,9 @@ class AddEducation extends React.Component {
 
     return (
       <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
-        <TextField fluid="true" name='school' label='School' placeholder='Ex. UH Manoa'/>
+        <TextField id='education-title' fluid="true" name='school' label='School' placeholder='Ex. UH Manoa'/>
         <SelectField fluid="true" placeholder='High School Diploma' name='degree' allowedValues={degreeTypes}/>
-        <TextField fluid="true" name='field' label='Field of study' placeholder='Ex. Computer Science'/>
+        <TextField id='education-name' fluid="true" name='field' label='Field of study' placeholder='Ex. Computer Science'/>
         <DateField name='startDate' label='Start Date'/>
         <DateField name='endDate' label='End Date (or expected)'/>
         <SubmitField value='Add education'/>

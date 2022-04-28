@@ -55,6 +55,7 @@ class Landing extends React.Component {
                   </Grid>
                 </div>
                 <div>
+                  <br/>
                   <Header className='landing-text' style={ { textAlign: 'center', fontSize: 'x-large', marginRight: 50, marginLeft: 50 } }>
                     Students can view company profiles, their job listings, and match with them by interests.
                   </Header>

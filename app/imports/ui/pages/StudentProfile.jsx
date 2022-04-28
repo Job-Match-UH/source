@@ -1,25 +1,16 @@
 import React from 'react';
-import { Grid, Header, Loader, Container, Menu, Item, Image } from 'semantic-ui-react';
+import { Grid, Header, Loader, Container, Menu, Item, Image, Card } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
-import { _ } from 'meteor/underscore';
+// import { _ } from 'meteor/underscore';
 import PropTypes from 'prop-types';
+import Educations from '../components/Educations';
 import { Students } from '../../api/student/Student';
 import { Experiences } from '../../api/experience/Experience';
 import { Education } from '../../api/education/Education';
 
 class StudentProfile extends React.Component {
   state = { isOpen: false }
-
-  handleOpen = () => {
-    this.setState({ isOpen: true });
-  }
-
-  handleClose = () => {
-    this.setState({ isOpen: false });
-  }
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
   render() {
@@ -79,17 +70,16 @@ class StudentProfile extends React.Component {
                 />
               </Menu>
               <Header className='cp-text'>Education</Header>
-              {this.props.education.map((education, index) => <Container
-                key={index}
-                education={education}>
-                {this.props.education.school}
-              </Container>)}
-              <Header as='h3' className='cp-text'>Experience</Header>
-              {this.props.experience.map((experience, index) => <Container
-                key={index}
-                experience={experience}>
-                {this.props.experience.title}
-              </Container>)}
+              <Card.Group>
+                {this.props.education.map((educations, index) => <Educations
+                  key={index}
+                  education={educations}/>)}
+              </Card.Group>
+              {/* <Header as='h3' className='cp-text'>Experience</Header> */}
+              {/* {this.props.experience.map((experiences, index) => <Container */}
+              {/*  key={index} */}
+              {/*  experience={experiences}> */}
+              {/* </Container>)} */}
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -100,8 +90,8 @@ class StudentProfile extends React.Component {
 
 StudentProfile.propTypes = {
   students: PropTypes.object,
-  experience: PropTypes.array,
-  education: PropTypes.array,
+  experience: PropTypes.array.isRequired,
+  education: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -115,16 +105,14 @@ export default withTracker(({ match }) => {
   // Determine if the subscription is ready
   const ready = subscription1.ready() && subscription2.ready() && subscription3.ready();
   // Get the documents
-  const currentUser = Meteor.user() ? Meteor.user().username : '';
   const students = Students.collection.findOne(documentId);
-  const allExperience = Experiences.collection.find().fetch();
-  const experience = _.filter(allExperience, function (exp) { return currentUser.owner === exp.owner; });
-  const allEducation = Education.collection.find().fetch();
-  const education = _.filter(allEducation, function (edu) { return currentUser.owner === edu.owner; });
+  const education = Education.collection.find({}).fetch();
+  const experience = Experiences.collection.find({}).fetch();
+  // const experience = _.filter(allExperience, function (exp) { return students.owner === exp.owner; });
   return {
     students,
-    experience,
     education,
+    experience,
     ready,
   };
 })(StudentProfile);

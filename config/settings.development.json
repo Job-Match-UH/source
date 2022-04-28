@@ -53,15 +53,29 @@
     {
       "title": "Office Assistant",
       "type": {
-        "type": "Worker",
+        "type": "Full-time",
         "defaultValue": "Full-time",
         "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
       },
       "company": "UH Manoa",
-      "role": "student",
+      "role": "Student",
       "description": "Worked in an office",
       "owner": "john@foo.com",
       "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "The Boss",
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Apple",
+      "role": "Worker",
+      "description": "Worked as a boss",
+      "owner": "john@foo.com",
+      "exp_start": { "type": "2015-04-20 00:00:00" },
       "exp_end": { "type": "2022-01-10 00:00:00" }
     }
   ],
@@ -70,7 +84,7 @@
     {
       "school": "MIT",
       "degree": {
-        "type": "Women Studies",
+        "type": "High School Diploma",
         "defaultValue": "High School Diploma",
         "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
       },
@@ -82,11 +96,11 @@
     {
       "school": "Yale University",
       "degree": {
-        "type": "English",
+        "type": "High School Diploma",
         "defaultValue": "High School Diploma",
         "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
       },
-      "field": "Language",
+      "field": "English",
       "owner": "john@foo.com",
       "startDate": { "type": "2020-04-20 00:00:00" },
       "endDate": { "type": "2022-04-20 00:00:00" }

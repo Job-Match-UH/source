@@ -19,7 +19,14 @@ class Landing extends React.Component {
                 <Header className='landing-text' style={ { textAlign: 'center', fontSize: 'x-large', marginRight: 50, marginLeft: 50 } }>
                   Students can create profiles on the site with their interests and search for companies.
                 </Header>
-                <Image src="/images/signup-page.png"/>
+                <Grid container stackable columns='equal' textAlign='center'>
+                  <Grid.Column>
+                    <Image src="/images/signup-page.png" rounded/>
+                  </Grid.Column>
+                  <Grid.Column>
+                    <Image src="/images/createstudentprofile.png" rounded/>
+                  </Grid.Column>
+                </Grid>
                 <Header className='landing-text' style={ { textAlign: 'center', fontSize: 'x-large', marginRight: 50, marginLeft: 50 } }>
                   Companies can create job profiles on the site and specify requirements per job.
                 </Header>

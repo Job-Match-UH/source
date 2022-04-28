@@ -70,8 +70,6 @@ export default class Signin extends React.Component {
               </Header>
               <Form error onSubmit={this.studentSubmit} className='cp-text'>
                 <Form.Input
-                  icon='user'
-                  iconPosition='left'
                   label='Email'
                   id="signin-form-email"
                   name="email"
@@ -80,8 +78,6 @@ export default class Signin extends React.Component {
                   onChange={this.handleChange}
                 />
                 <Form.Input
-                  icon='lock'
-                  iconPosition='left'
                   label='Password'
                   type='password'
                   id="signin-form-password"
@@ -102,8 +98,6 @@ export default class Signin extends React.Component {
               </Header>
               <Form error onSubmit={this.companySubmit} className='cp-text'>
                 <Form.Input
-                  icon='user'
-                  iconPosition='left'
                   label='Email'
                   id="signin-company-form-email"
                   name="email"
@@ -112,8 +106,6 @@ export default class Signin extends React.Component {
                   onChange={this.handleChange}
                 />
                 <Form.Input
-                  icon='lock'
-                  iconPosition='left'
                   label='Password'
                   type='password'
                   id="signin-company-form-password"

@@ -36,7 +36,7 @@ class StudentHomePage extends React.Component {
   renderPage() {
     const { currentValue } = this.state;
     return (
-      <Container>
+      <Container id='student-home-page'>
         <Grid textAlign='center' columns='equal'>
           <Grid.Row columns={3}>
             <Grid.Column>

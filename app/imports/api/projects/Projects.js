@@ -3,24 +3,18 @@ import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /**
- * The CompaniesCollection. It encapsulates state and variable values for stuff.
+ * The ProjectsCollection. It encapsulates state and variable values for stuff.
  */
-class CompaniesCollection {
+class ProjectsCollection {
   constructor() {
     // The name of this collection.
-    this.name = 'CompanyCollection';
+    this.name = 'ProjectsCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      companyName: String,
-      website: String,
-      description: { type: String, optional: true, defaultValue: '' },
-      address: String,
-      state: String,
-      phone: Number,
-      year: Number,
-      image: String,
+      name: String,
+      description: String,
       owner: String,
     }, { tracker: Tracker });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
@@ -32,7 +26,7 @@ class CompaniesCollection {
 }
 
 /**
- * The singleton instance of the CompaniesCollection.
- * @type {CompaniesCollection}
+ * The singleton instance of the ProjectsCollection.
+ * @type {ProjectsCollection}
  */
-export const Companies = new CompaniesCollection();
+export const Projects = new ProjectsCollection();

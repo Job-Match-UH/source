@@ -12,7 +12,7 @@ class Student extends React.Component {
           <Image
             floated='right'
             size='mini'
-            src='https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg'
+            src={this.props.student.image}
           />
           <Card.Header>{this.props.student.firstName} {this.props.student.lastName}</Card.Header>
           <Card.Meta>{this.props.student.owner}</Card.Meta>

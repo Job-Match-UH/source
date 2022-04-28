@@ -13,7 +13,7 @@ export default class Signin extends React.Component {
   // Initialize component state with properties for login and redirection.
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '', redirectToReferer: false };
+    this.state = { email: '', password: '', role: '', error: '', redirectToReferer: false };
   }
 
   // Update the form controls each time the user interacts with them.
@@ -22,13 +22,24 @@ export default class Signin extends React.Component {
   }
 
   // Handle Signin submission using Meteor's account mechanism.
-  submit = () => {
+  studentSubmit = () => {
     const { email, password } = this.state;
     Meteor.loginWithPassword(email, password, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
-        this.setState({ error: '', redirectToReferer: true });
+        this.setState({ role: 'student', error: '', redirectToReferer: true });
+      }
+    });
+  }
+
+  companySubmit = () => {
+    const { email, password } = this.state;
+    Meteor.loginWithPassword(email, password, (err) => {
+      if (err) {
+        this.setState({ error: err.reason });
+      } else {
+        this.setState({ role: 'company', error: '', redirectToReferer: true });
       }
     });
   }
@@ -37,9 +48,16 @@ export default class Signin extends React.Component {
   render() {
     const { from } = this.props.location.state || { from: { pathname: '/' } };
     // if correct authentication, redirect to page instead of login screen
+    if (this.state.redirectToReferer && this.state.role === 'student') {
+      return <Redirect to={'/studenthomepage'}/>;
+    }
+    if (this.state.redirectToReferer && this.state.role === 'company') {
+      return <Redirect to={'/companyhomepage'}/>;
+    }
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
     }
+
     // Otherwise return the Login form.
     // eslint-disable-next-line no-return-assign
     return (
@@ -50,7 +68,7 @@ export default class Signin extends React.Component {
               <Header as="h2" textAlign="center" className='cp-text'>
               Student Login
               </Header>
-              <Form onSubmit={this.submit} className='cp-text'>
+              <Form error onSubmit={this.studentSubmit} className='cp-text'>
                 <Form.Input
                   icon='user'
                   iconPosition='left'
@@ -73,17 +91,8 @@ export default class Signin extends React.Component {
                 />
                 <Button id="signin-form-submit" content='Login' primary />
                 <Message attached color='green'>
-                  <Link to="/student_signup">Click here to Register as a Student</Link>
+                  <Link id='view-signup-student' to="/student_signup">Click here to Register as a Student</Link>
                 </Message>
-                {this.state.error === '' ? (
-                  ''
-                ) : (
-                  <Message
-                    error
-                    header="Login was not successful"
-                    content={this.state.error}
-                  />
-                )}
               </Form>
             </Grid.Column>
 
@@ -91,12 +100,12 @@ export default class Signin extends React.Component {
               <Header as="h2" textAlign="center" className='cp-text'>
                 Company Login
               </Header>
-              <Form onSubmit={this.submit} className='cp-text'>
+              <Form error onSubmit={this.companySubmit} className='cp-text'>
                 <Form.Input
                   icon='user'
                   iconPosition='left'
                   label='Email'
-                  id="signin-form-email"
+                  id="signin-company-form-email"
                   name="email"
                   type="email"
                   placeholder="E-mail address"
@@ -107,30 +116,32 @@ export default class Signin extends React.Component {
                   iconPosition='left'
                   label='Password'
                   type='password'
-                  id="signin-form-password"
+                  id="signin-company-form-password"
                   name="password"
                   placeholder="Password"
                   onChange={this.handleChange}
                 />
-                <Button id="signin-form-submit" content='Login' primary />
+                <Button id="signin-company-form-submit" content='Login' primary />
                 <Message attached color='green'>
-                  <Link to="/company_signup">Click here to Register as a Company</Link>
+                  <Link id='view-signup-company' to="/company_signup">Click here to Register as a Company</Link>
                 </Message>
-                {this.state.error === '' ? (
-                  ''
-                ) : (
-                  <Message
-                    error
-                    header="Login was not successful"
-                    content={this.state.error}
-                  />
-                )}
               </Form>
             </Grid.Column>
           </Grid>
-
           <Divider vertical>Or</Divider>
         </Segment>
+        <Segment textAlign='center' borderless>
+          {this.state.error === '' && this.props.location.error === undefined ? (
+            ''
+          ) : (
+            <Message
+              error
+              header="Login was not successful"
+              content={`${this.state.error} ${this.props.location.error}`}
+            />
+          )}
+        </Segment>
+
       </Container>
     );
   }

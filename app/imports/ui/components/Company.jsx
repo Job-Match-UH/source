@@ -23,7 +23,7 @@ class Company extends React.Component {
           </Card.Content>
         </Card.Content>
         <Card.Content extra>
-          {this.props.tags.name}
+          {/* {this.props.tags.name} */}
           <div className='ui two buttons'>
             <Button basic color='green'>
               Add to Interested

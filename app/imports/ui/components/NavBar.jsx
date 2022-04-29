@@ -64,12 +64,12 @@ NavBar.propTypes = {
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
 export default withTracker(() => {
   // Get access to current logged in user
-  // Get access to Stuff documents.
+  // Get access to documents.
   const subscription = Meteor.subscribe(Students.userPublicationName);
   const subscription2 = Meteor.subscribe(Companies.userPublicationName);
   // Determine if the subscription is ready
   const ready = subscription.ready() || subscription2.ready();
-  // Get the Stuff documents
+  // Get the documents
   const currentUser = Meteor.user() ? Meteor.user().username : '';
   const studentProfile = Students.collection.findOne({ owner: currentUser });
   const companyProfile = Companies.collection.findOne({ owner: currentUser });

@@ -1,8 +1,11 @@
 import React from 'react';
-import { Header, Card, Image, Container } from 'semantic-ui-react';
-import { NavLink } from 'react-router-dom';
-
-const pfp = 'https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg';
+import { Header, Card, Container } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+import { withTracker } from 'meteor/react-meteor-data';
+import { Meteor } from 'meteor/meteor';
+import Company from '../components/Company';
+import { Companies } from '../../api/company/Companies';
+import { Tags } from '../../api/tags/Tags';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ViewCompanyMatches extends React.Component {
@@ -11,122 +14,38 @@ class ViewCompanyMatches extends React.Component {
       <Container id='view-company-page'>
         <Header as='h2' className='cp-text' textAlign='center'>Interested Matches!</Header>
         <Card.Group itemsPerRow={4}>
-          <Card as={NavLink} exact to="/companyprofile">
-            <Card.Content>
-              <Image
-                floated='right'
-                size='mini'
-                src={pfp}
-              />
-              <Card.Header>Itadori Yuji</Card.Header>
-              <Card.Meta>Friends of Elliot</Card.Meta>
-              <Card.Description>
-                Matched with you!
-              </Card.Description>
-            </Card.Content>
-          </Card>
-          <Card as={NavLink} exact to="/companyprofile">
-            <Card.Content>
-              <Image
-                floated='right'
-                size='mini'
-                src={pfp}
-              />
-              <Card.Header>Fushiguro Megumi</Card.Header>
-              <Card.Meta>Friends of Elliot</Card.Meta>
-              <Card.Description>
-                Matched with you!
-              </Card.Description>
-            </Card.Content>
-          </Card>
-          <Card as={NavLink} exact to="/companyprofile">
-            <Card.Content>
-              <Image
-                floated='right'
-                size='mini'
-                src={pfp}
-              />
-              <Card.Header>Gojou Satoru</Card.Header>
-              <Card.Meta>New User</Card.Meta>
-              <Card.Description>
-                Matched with you!
-              </Card.Description>
-            </Card.Content>
-          </Card>
-          <Card as={NavLink} exact to="/companyprofile">
-            <Card.Content>
-              <Image
-                floated='right'
-                size='mini'
-                src={pfp}
-              />
-              <Card.Header>Getou Suguru</Card.Header>
-              <Card.Meta>New User</Card.Meta>
-              <Card.Description>
-                Matched with you!
-              </Card.Description>
-            </Card.Content>
-          </Card>
-          <Card as={NavLink} exact to="/companyprofile">
-            <Card.Content>
-              <Image
-                floated='right'
-                size='mini'
-                src={pfp}
-              />
-              <Card.Header>Zenin Maki</Card.Header>
-              <Card.Meta>Friends of Elliot</Card.Meta>
-              <Card.Description>
-                Matched with you!
-              </Card.Description>
-            </Card.Content>
-          </Card>
-          <Card as={NavLink} exact to="/companyprofile">
-            <Card.Content>
-              <Image
-                floated='right'
-                size='mini'
-                src={pfp}
-              />
-              <Card.Header>Inumaki Toge</Card.Header>
-              <Card.Meta>Friends of Elliot</Card.Meta>
-              <Card.Description>
-                Matched with you!
-              </Card.Description>
-            </Card.Content>
-          </Card>
-          <Card as={NavLink} exact to="/companyprofile">
-            <Card.Content>
-              <Image
-                floated='right'
-                size='mini'
-                src={pfp}
-              />
-              <Card.Header>Nanami Kento</Card.Header>
-              <Card.Meta>New User</Card.Meta>
-              <Card.Description>
-                Matched with you!
-              </Card.Description>
-            </Card.Content>
-          </Card>
-          <Card as={NavLink} exact to="/companyprofile">
-            <Card.Content>
-              <Image
-                floated='right'
-                size='mini'
-                src={pfp}
-              />
-              <Card.Header>Ryoumen Sukuna</Card.Header>
-              <Card.Meta>New User</Card.Meta>
-              <Card.Description>
-                Matched with you!
-              </Card.Description>
-            </Card.Content>
-          </Card>
+          {this.props.companies.map((company, index) => <Company
+            key={index}
+            company={company}/>)}
+          {this.props.tags.map((tags, index) => <Company
+            key={index}
+            tags={tags}/>)}
         </Card.Group>
       </Container>
     );
   }
 }
+// Require an array of Companies documents in the props.
+ViewCompanyMatches.propTypes = {
+  companies: PropTypes.array.isRequired,
+  tags: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
+};
 
-export default ViewCompanyMatches;
+// withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+export default withTracker(() => {
+  // Get access to companies documents.
+  const subscription = Meteor.subscribe(Companies.userPublicationName);
+  // Get access to tags documents.
+  const subscription2 = Meteor.subscribe(Tags.userPublicationName);
+  // Determine if the subscriptions are ready
+  const ready = subscription.ready() && subscription2.ready();
+  // Get the Contacts documents
+  const companies = Companies.collection.find({}).fetch();
+  const tags = Tags.collection.find({}).fetch();
+  return {
+    companies,
+    tags,
+    ready,
+  };
+})(ViewCompanyMatches);

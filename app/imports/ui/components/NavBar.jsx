@@ -14,22 +14,22 @@ class NavBar extends React.Component {
     const menuStyle = { marginBottom: '10px', backgroundColor: color, fontFamily: 'Playfair Display' };
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
-        <Menu.Item><Image src="https://github.com/Job-Match-UH/source/blob/main/images/uhmLOGO.png?raw=true" size='tiny' fluid /></Menu.Item>
+        <Menu.Item><Image src="https://github.com/Job-Match-UH/source/blob/main/images/uhmLOGO.png?raw=true" size='tiny'/></Menu.Item>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
           <Header inverted as='h1' style={ { fontFamily: 'Playfair Display' } }>Job Match&apos;UH</Header>
         </Menu.Item>
         {Roles.userIsInRole(Meteor.userId(), 'student') && this.props.studentProfile ? (
           [
             <Menu.Item id='view-student-profile' as={NavLink} activeClassName="active" exact to={`/studentprofile/${this.props.studentProfile._id}`} key='student'>My Profile</Menu.Item>,
-            <Menu.Item id='view-student-home' as={NavLink} activeClassName="active" exact to="/studenthomepage" key='student'>Match Me!</Menu.Item>,
-            <Menu.Item id='view-company-matches' as={NavLink} activeClassName="active" exact to="/viewcompanymatches" key='student'>View my Matches</Menu.Item>,
+            <Menu.Item id='view-student-home' as={NavLink} activeClassName="active" exact to="/studenthomepage" key='student2'>Match Me!</Menu.Item>,
+            <Menu.Item id='view-company-matches' as={NavLink} activeClassName="active" exact to="/viewcompanymatches" key='student3'>View my Matches</Menu.Item>,
           ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'company') ? (
           [
             <Menu.Item id='view-company-profile' as={NavLink} activeClassName="active" exact to="/companyprofile" key='company'>My Profile</Menu.Item>,
-            <Menu.Item id='view-company-home' as={NavLink} activeClassName="active" exact to="/companyhomepage" key='company'>Match Me!</Menu.Item>,
-            <Menu.Item id='view-student-matches' as={NavLink} activeClassName="active" exact to="/viewstudentmatches" key='company'>View my Matches</Menu.Item>,
+            <Menu.Item id='view-company-home' as={NavLink} activeClassName="active" exact to="/companyhomepage" key='company2'>Match Me!</Menu.Item>,
+            <Menu.Item id='view-student-matches' as={NavLink} activeClassName="active" exact to="/viewstudentmatches" key='company3'>View my Matches</Menu.Item>,
             <Menu.Item id='job-postings' as={NavLink} activeClassName="active" exact to="/jobpostings" key='company'>Post a Job</Menu.Item>,
           ]
         ) : ''}

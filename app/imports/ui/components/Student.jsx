@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card, Image, Button } from 'semantic-ui-react';
+import { Card, Image, Button, Grid, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { NavLink, withRouter } from 'react-router-dom';
+import { Link, NavLink, withRouter } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Student extends React.Component {
@@ -14,7 +14,9 @@ class Student extends React.Component {
             size='mini'
             src={this.props.student.image}
           />
-          <Card.Header>{this.props.student.firstName} {this.props.student.lastName}</Card.Header>
+          <Card.Header>
+            {this.props.student.firstName} {this.props.student.lastName}
+          </Card.Header>
           <Card.Meta>{this.props.student.owner}</Card.Meta>
           <Card.Description>
             {this.props.student.about}

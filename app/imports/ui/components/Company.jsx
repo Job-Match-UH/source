@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button, Card, Image } from 'semantic-ui-react';
+import { Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Company extends React.Component {
@@ -19,16 +19,9 @@ class Company extends React.Component {
           <Card.Description>
             {this.props.company.description}
           </Card.Description>
-        </Card.Content>
-        <Card.Content extra>
-          <div className='ui two buttons'>
-            <Button basic color='green'>
-              Add to Interested
-            </Button>
-            <Button basic color='red'>
-              Not Interested
-            </Button>
-          </div>
+          <Card.Content extra>
+            <Link to={`/companyprofile/${this.props.company._id}`}>View Profile</Link>
+          </Card.Content>
         </Card.Content>
       </Card>
     );

@@ -1,21 +1,15 @@
 import React from 'react';
-import { Container, Image, Grid, Header, List, Loader, HiddenField, Button } from 'semantic-ui-react';
+import { Container, Image, Grid, Header, Loader, HiddenField, Button, Card } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import { _ } from 'meteor/underscore';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Companies } from '../../api/company/Companies';
 import { Jobs } from '../../api/job/Jobs';
+import Job from '../components/Job';
+import company from '../components/Company';
 
 const bridge = new SimpleSchema2Bridge(Companies.schema);
-
-/** Returns the Profile and associated Projects and jobListings associated with the passed user email/owner. */
-function getCompanyData(owner) {
-  const data = Companies.collection.findOne({ owner });
-  const jobListing = _.pluck(Jobs.collection.find({ owner: owner }).fetch(), 'jobTitle');
-  return _.extend({ }, data, { jobListing });
-}
 
 export class CompanyProfile extends React.Component {
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
@@ -27,55 +21,30 @@ export class CompanyProfile extends React.Component {
   renderPage() {
     return (
       <Container id='company-profile-page'>
-        <Grid celled='internally' className='cp-text'>
-          <Grid.Row schema={bridge} model={this.props.doc}>
+        <Grid celled='internally' className='cp-text' schema={bridge} model={this.props.doc}>
+          <Grid.Row>
             <Grid.Column width={3}>
               <Image name='image'/>
               <Button circular fluid className='cp-text' name='website'/>
             </Grid.Column>
             <Grid.Column width={10}>
-              <Header style={ { fontSize: 30 } } className='cp-text' name='companyName'/>
-              <div name='description'/>
+              <Header style={ { fontSize: 30 } } className='cp-text'>{this.props.doc.companyName}</Header>
+              <div>{this.props.doc.description}</div>
             </Grid.Column>
             <Grid.Column width={3}>
-              <div name='address'/>
-              <div name='state'/>
-              <div name='phone'/>
-              <div name='year'/>
+              <div>{this.props.doc.address}</div>
+              <div>{this.props.doc.state}</div>
+              <div>{this.props.doc.phone}</div>
+              <div>{this.props.doc.year}</div>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
             <Grid.Column width={3}>
-              <Button.Group widths={2}>
-                <Button color='green' className='cp-text'>Match Me!</Button>
-                <Button color='black'>No Thanks</Button>
-              </Button.Group>
-            </Grid.Column>
-            <Grid.Column width={10}>
-              <List divided relaxed className='cp-text'>
-                <List.Item style={ { fontSize: 30 } }>Job Listings</List.Item>
-                <List.Item className='cp-text'>
-                  <List.Icon name='briefcase' size='large' verticalAlign='middle' />
-                  <List.Content>
-                    <List.Header as='a'>Semantic-Org/Semantic-UI</List.Header>
-                    <List.Description as='a'>Updated 10 mins ago</List.Description>
-                  </List.Content>
-                </List.Item>
-                <List.Item className='cp-text'>
-                  <List.Icon name='briefcase' size='large' verticalAlign='middle' />
-                  <List.Content>
-                    <List.Header as='a'>Semantic-Org/Semantic-UI-Docs</List.Header>
-                    <List.Description as='a'>Updated 22 mins ago</List.Description>
-                  </List.Content>
-                </List.Item>
-                <List.Item className='cp-text'>
-                  <List.Icon name='briefcase' size='large' verticalAlign='middle' />
-                  <List.Content>
-                    <List.Header as='a'>Semantic-Org/Semantic-UI-Meteor</List.Header>
-                    <List.Description as='a'>Updated 34 mins ago</List.Description>
-                  </List.Content>
-                </List.Item>
-              </List>
+              <Card.Group>
+                {this.props.job.map((job, index) => <Job
+                  key={index}
+                  job={this.props.job.filter(job.owner === company._id)}/>)}
+              </Card.Group>
             </Grid.Column>
           </Grid.Row>
           <HiddenField name='owner' />
@@ -90,6 +59,7 @@ CompanyProfile.propTypes = {
   doc: PropTypes.object,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
+  job: PropTypes.array.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
@@ -97,10 +67,12 @@ export default withTracker(({ match }) => {
   // Ensure that minimongo is populated with all collections prior to running render().
   const sub1 = Meteor.subscribe(Companies.userPublicationName);
   const sub2 = Meteor.subscribe(Jobs.userPublicationName);
+  // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
   const documentId = match.params._id;
 
   return {
     ready: sub1.ready() && sub2.ready(),
     doc: Companies.collection.findOne(documentId),
+    job: Jobs.collection.find({}).fetch(),
   };
 })(CompanyProfile);

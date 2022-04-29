@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card } from 'semantic-ui-react';
+import { Card, Grid, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class Project extends React.Component {
   render() {
@@ -9,7 +9,18 @@ class Project extends React.Component {
       <Card className='cp-text'>
         <Card.Content>
           <Card.Header>
-            {this.props.project.name}
+            <Card.Content extra>
+              <Grid columns='equal'>
+                <Grid.Row>
+                  <Grid.Column width={13}>
+                    {this.props.project.name}
+                  </Grid.Column>
+                  <Grid.Column>
+                    <Link to={`/editproject/${this.props.project._id}`}><Icon name='pencil'/></Link>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
+            </Card.Content>
           </Card.Header>
           <Card.Description>
             {this.props.project.description}

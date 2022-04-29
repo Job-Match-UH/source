@@ -1,7 +1,7 @@
 import React from 'react';
-import { Card } from 'semantic-ui-react';
+import { Card, Icon, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class Experience extends React.Component {
   render() {
@@ -9,7 +9,18 @@ class Experience extends React.Component {
       <Card className='cp-text'>
         <Card.Content>
           <Card.Header>
-            {this.props.experiences.title}
+            <Card.Content extra>
+              <Grid columns='equal'>
+                <Grid.Row>
+                  <Grid.Column width={13}>
+                    {this.props.experiences.title}
+                  </Grid.Column>
+                  <Grid.Column>
+                    <Link to={`/editexperience/${this.props.experiences._id}`}><Icon name='pencil'/></Link>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
+            </Card.Content>
           </Card.Header>
           <Card.Description>
             {this.props.experiences.type.type}

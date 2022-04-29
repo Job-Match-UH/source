@@ -1,8 +1,9 @@
 import React from 'react';
-import { Grid, Header, Loader, Container, Item, Image, Card } from 'semantic-ui-react';
+import { Grid, Header, Loader, Container, Item, Image, Card, Icon } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import Educations from '../components/Educations';
 import Experience from '../components/Experience';
 import Project from '../components/Project';
@@ -39,7 +40,16 @@ class StudentProfile extends React.Component {
               <Image centered size='medium' src={this.props.students.image}/>
             </Grid.Column>
             <Grid.Column width={12}>
-              <Header as='h1' className='cp-text'>{this.props.students.firstName} {this.props.students.lastName}</Header>
+              <Grid columns='equal'>
+                <Grid.Row>
+                  <Grid.Column width={15}>
+                    <Header as='h1' className='cp-text'>{this.props.students.firstName} {this.props.students.lastName}</Header>
+                  </Grid.Column>
+                  <Grid.Column>
+                    <Link to={`/editstudent/${this.props.students._id}`}><Icon size='large' name='pencil'/></Link>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
               <Item>
                 <Item.Description className='cp-text'>{this.props.students.owner}</Item.Description>
                 <Item.Description className='cp-text'>{this.props.students.phone}</Item.Description>

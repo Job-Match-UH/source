@@ -7,6 +7,11 @@
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "email": "john@foo.com", "password": "changeme", "role": "student"},
+    { "email": "tsai@gmail.com", "password": "changeme", "role": "student"},
+    { "email": "leano@gmail.com", "password": "changeme", "role": "student"},
+    { "email": "cadiena@gmail.com", "password": "changeme", "role": "student"},
+    { "email": "galano@gmail.com", "password": "changeme", "role": "student"},
+    { "email": "arakaki@gmail.com", "password": "changeme", "role": "student"},
     { "email": "pear@pear.com", "password": "pear", "role": "company" },
     { "email":  "facebook@fb.com", "password":  "facebook", "role":  "company"},
     { "email": "lisa@foo.com", "password": "changeme", "role": "company" }
@@ -22,7 +27,8 @@
     { "firstName":  "Michelle", "lastName":  "Leano", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data", "owner":  "leano@gmail.com", "image":  "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg"},
     { "firstName":  "Eda", "lastName":  "Cadiena", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data", "owner":  "cadiena@gmail.com", "image":  "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg"},
     { "firstName":  "Gaila", "lastName":  "Galano", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data", "owner":  "galano@gmail.com", "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg"},
-    { "firstName":  "Cameron", "lastName":  "Arakaki", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data", "owner":  "arakaki@gmail.com", "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg"}
+    { "firstName":  "Cameron", "lastName":  "Arakaki", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data", "owner":  "arakaki@gmail.com", "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg"},
+    { "firstName":  "John", "lastName":  "Foo", "address": "too foo  fo skoo", "phone":  "1234567", "about":  "This is default data", "owner":  "john@foo.com", "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg"}
   ],
 
   "defaultCompanies": [
@@ -40,17 +46,123 @@
   ],
 
   "defaultJobs": [
-    { "jobTitle": "Teacher",
-      "jobID": "0001",
-      "pay": "1000" ,
-      "location": "POST 318A",
-      "jobDescription": "Teach college students how to code",
-      "qualifications": "Computer Science",
-      "owner": "john@foo.com"
-    }
+    {}
   ],
 
   "defaultExperiences": [
-    {}
+    {
+      "title": "Office Assistant",
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "UH Manoa",
+      "role": "Student",
+      "description": "Worked in an office",
+      "owner": "john@foo.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "The Boss",
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Apple",
+      "role": "Worker",
+      "description": "Worked as a boss",
+      "owner": "john@foo.com",
+      "exp_start": { "type": "2015-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "The Girl Boss",
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Apple",
+      "role": "Worker",
+      "description": "Worked as a boss",
+      "owner": "leano@gmail.com",
+      "exp_start": { "type": "2015-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    }
+  ],
+  
+  "defaultEducation": [
+    {
+      "school": "MIT",
+      "degree": {
+        "type": "High School Diploma",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Women",
+      "owner": "john@foo.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "Yale University",
+      "degree": {
+        "type": "High School Diploma",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "English",
+      "owner": "john@foo.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "Yale University",
+      "degree": {
+        "type": "High School Diploma",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Math",
+      "owner": "leano@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    }
+  ],
+
+  "defaultProjects": [
+    {
+      "name": "Job Match UH",
+      "description": "Create an application for connecting students and companies.",
+      "owner": "leano@gmail.com"
+    },
+    {
+      "name": "Job Match UH",
+      "description": "Create an application for connecting students and companies.",
+      "owner": "cadiena@gmail.com"
+    },
+    {
+      "name": "Job Match UH",
+      "description": "Create an application for connecting students and companies.",
+      "owner": "galano@gmail.com"
+    },
+    {
+      "name": "Job Match UH",
+      "description": "Create an application for connecting students and companies.",
+      "owner": "arakaki@gmail.com"
+    },
+    {
+      "name": "Job Match UH",
+      "description": "Create an application for connecting students and companies.",
+      "owner": "tsai@gmail.com"
+    },
+    {
+      "name": "John Project",
+      "description": "Make a project for John",
+      "owner": "john@foo.com"
+    }
   ]
 }

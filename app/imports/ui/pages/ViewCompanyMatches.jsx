@@ -17,15 +17,14 @@ class ViewCompanyMatches extends React.Component {
           {this.props.companies.map((company, index) => <Company
             key={index}
             company={company}/>)}
-          {this.props.tags.map((interests, index) => <Company
+          {this.props.tags.map((tags, index) => <Company
             key={index}
-            tags={interests}/>)}
+            tags={tags}/>)}
         </Card.Group>
       </Container>
     );
   }
 }
-
 // Require an array of Companies documents in the props.
 ViewCompanyMatches.propTypes = {
   companies: PropTypes.array.isRequired,

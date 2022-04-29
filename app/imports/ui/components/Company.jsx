@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, Image, Label } from 'semantic-ui-react';
+import { Button, Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
@@ -22,22 +22,21 @@ class Company extends React.Component {
           <Card.Content extra>
           </Card.Content>
         </Card.Content>
-        <Card.Content extra>{/*
-          <Label size='tiny' color='teal'>{this.props.tags.name}</Label> */}
-        <div className='ui two buttons'>
-          <Button basic color='green'>
+        <Card.Content extra>
+          {this.props.tags.name}
+          <div className='ui two buttons'>
+            <Button basic color='green'>
               Add to Interested
-          </Button>
-          <Button basic color='red'>
+            </Button>
+            <Button basic color='red'>
               Not Interested
-          </Button>
-        </div>
+            </Button>
+          </div>
         </Card.Content>
       </Card>
     );
   }
 }
-
 // Require a document to be passed to this component.
 Company.propTypes = {
   company: PropTypes.object.isRequired,

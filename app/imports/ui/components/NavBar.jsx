@@ -14,7 +14,7 @@ class NavBar extends React.Component {
     const menuStyle = { marginBottom: '10px', backgroundColor: color, fontFamily: 'Playfair Display' };
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
-        <Menu.Item><Image src="https://github.com/Job-Match-UH/source/blob/main/images/uhmLOGO.png?raw=true" size='tiny' fluid /></Menu.Item>
+        <Menu.Item><Image src="https://github.com/Job-Match-UH/source/blob/main/images/uhmLOGO.png?raw=true" size='tiny'/></Menu.Item>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
           <Header inverted as='h1' style={ { fontFamily: 'Playfair Display' } }>Job Match&apos;UH</Header>
         </Menu.Item>

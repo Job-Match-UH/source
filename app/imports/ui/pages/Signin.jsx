@@ -122,7 +122,7 @@ export default class Signin extends React.Component {
           </Grid>
           <Divider vertical>Or</Divider>
         </Segment>
-        <Segment textAlign='center' borderless>
+        <Segment textAlign='center' borderless='true'>
           {this.state.error === '' && this.props.location.error === undefined ? (
             ''
           ) : (

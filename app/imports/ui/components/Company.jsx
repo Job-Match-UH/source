@@ -22,16 +22,16 @@ class Company extends React.Component {
           <Card.Content extra>
           </Card.Content>
         </Card.Content>
-        <Card.Content extra>
-          <Label size='tiny' color='teal'>{this.props.tags.name}</Label>
-          <div className='ui two buttons'>
-            <Button basic color='green'>
+        <Card.Content extra>{/*
+          <Label size='tiny' color='teal'>{this.props.tags.name}</Label> */}
+        <div className='ui two buttons'>
+          <Button basic color='green'>
               Add to Interested
-            </Button>
-            <Button basic color='red'>
+          </Button>
+          <Button basic color='red'>
               Not Interested
-            </Button>
-          </div>
+          </Button>
+        </div>
         </Card.Content>
       </Card>
     );

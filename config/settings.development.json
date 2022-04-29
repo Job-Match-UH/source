@@ -77,6 +77,20 @@
       "owner": "john@foo.com",
       "exp_start": { "type": "2015-04-20 00:00:00" },
       "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "The Girl Boss",
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Apple",
+      "role": "Worker",
+      "description": "Worked as a boss",
+      "owner": "leano@gmail.com",
+      "exp_start": { "type": "2015-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
     }
   ],
   
@@ -104,6 +118,51 @@
       "owner": "john@foo.com",
       "startDate": { "type": "2020-04-20 00:00:00" },
       "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "Yale University",
+      "degree": {
+        "type": "High School Diploma",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Math",
+      "owner": "leano@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    }
+  ],
+
+  "defaultProjects": [
+    {
+      "name": "Job Match UH",
+      "description": "Create an application for connecting students and companies.",
+      "owner": "leano@gmail.com"
+    },
+    {
+      "name": "Job Match UH",
+      "description": "Create an application for connecting students and companies.",
+      "owner": "cadiena@gmail.com"
+    },
+    {
+      "name": "Job Match UH",
+      "description": "Create an application for connecting students and companies.",
+      "owner": "galano@gmail.com"
+    },
+    {
+      "name": "Job Match UH",
+      "description": "Create an application for connecting students and companies.",
+      "owner": "arakaki@gmail.com"
+    },
+    {
+      "name": "Job Match UH",
+      "description": "Create an application for connecting students and companies.",
+      "owner": "tsai@gmail.com"
+    },
+    {
+      "name": "John Project",
+      "description": "Make a project for John",
+      "owner": "john@foo.com"
     }
   ]
 }

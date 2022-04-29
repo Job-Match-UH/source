@@ -5,6 +5,7 @@ import { Companies } from '../../api/company/Companies';
 import { Tags } from '../../api/tags/Tags';
 import { Experiences } from '../../api/experience/Experience';
 import { Education } from '../../api/education/Education';
+import { Projects } from '../../api/projects/Projects';
 
 /* eslint-disable no-console */
 
@@ -38,6 +39,11 @@ function addExperience(data) {
 function addEducation(data) {
   console.log('  Adding Education');
   Education.collection.insert(data);
+}
+
+function addProject(data) {
+  console.log('  Adding Projects');
+  Projects.collection.insert(data);
 }
 
 // Initialize the StudentCollection if empty.
@@ -86,5 +92,13 @@ if (Education.collection.find().count() === 0) {
   if (Meteor.settings.defaultEducation) {
     console.log('Creating default education data.');
     Meteor.settings.defaultEducation.map(data => addEducation(data));
+  }
+}
+
+// Initialize the ProjectCollection if empty.
+if (Projects.collection.find().count() === 0) {
+  if (Meteor.settings.defaultProjects) {
+    console.log('Creating default project data.');
+    Meteor.settings.defaultProjects.map(data => addProject(data));
   }
 }

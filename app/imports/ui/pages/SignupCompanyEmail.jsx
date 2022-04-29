@@ -43,16 +43,14 @@ class SignupCompanyEmail extends React.Component {
       <Container id="signup-company-page">
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
           <Grid.Column>
-            <Header as="h2" textAlign="center">
-              Register your account
+            <Header as="h2" textAlign="center" className='cp-text'>
+              Register your Company Account
             </Header>
             <Form onSubmit={this.submit}>
               <Segment stacked>
                 <Form.Input
                   label="Email"
                   id="signup-form-email"
-                  icon="user"
-                  iconPosition="left"
                   name="email"
                   type="email"
                   placeholder="E-mail address"
@@ -61,8 +59,6 @@ class SignupCompanyEmail extends React.Component {
                 <Form.Input
                   label="Password"
                   id="signup-form-password"
-                  icon="lock"
-                  iconPosition="left"
                   name="password"
                   placeholder="Password"
                   type="password"

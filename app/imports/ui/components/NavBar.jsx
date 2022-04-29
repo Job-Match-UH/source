@@ -10,7 +10,8 @@ import { Students } from '../../api/student/Student';
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
   render() {
-    const menuStyle = { marginBottom: '10px', backgroundColor: '#145714', fontFamily: 'Playfair Display' };
+    const color = '#2d5144';
+    const menuStyle = { marginBottom: '10px', backgroundColor: color, fontFamily: 'Playfair Display' };
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
         <Menu.Item><Image src="https://github.com/Job-Match-UH/source/blob/main/images/uhmLOGO.png?raw=true" size='tiny' fluid /></Menu.Item>
@@ -29,7 +30,7 @@ class NavBar extends React.Component {
             <Menu.Item id='view-company-profile' as={NavLink} activeClassName="active" exact to="/companyprofile" key='company'>My Profile</Menu.Item>,
             <Menu.Item id='view-company-home' as={NavLink} activeClassName="active" exact to="/companyhomepage" key='company'>Match Me!</Menu.Item>,
             <Menu.Item id='view-student-matches' as={NavLink} activeClassName="active" exact to="/viewstudentmatches" key='company'>View my Matches</Menu.Item>,
-            <Menu.Item id='job-postings' as={NavLink} activeClassName="active" exact to="/jobpostings" key='company'>Job Postings</Menu.Item>,
+            <Menu.Item id='job-postings' as={NavLink} activeClassName="active" exact to="/jobpostings" key='company'>Post a Job</Menu.Item>,
           ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
@@ -37,7 +38,7 @@ class NavBar extends React.Component {
         ) : ''}
         <Menu.Item position="right">
           {this.props.currentUser === '' ? (
-            <Menu.Item id="login-dropdown-sign-in" pointing="top right" as={NavLink} exact to="/signin">Login/Sign In</Menu.Item>
+            <Menu.Item id="login-dropdown-sign-in" pointing="top right" as={NavLink} exact to="/signin">Login / Sign Up</Menu.Item>
           ) : (
             <Dropdown id="navbar-current-user" text={this.props.currentUser} pointing="top right" icon={'user'}>
               <Dropdown.Menu>

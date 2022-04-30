@@ -27,7 +27,97 @@
     { "firstName":  "Eda", "lastName":  "Cadiena", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data", "owner":  "cadiena@gmail.com", "image":  "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg"},
     { "firstName":  "Gaila", "lastName":  "Galano", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data", "owner":  "galano@gmail.com", "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg"},
     { "firstName":  "Cameron", "lastName":  "Arakaki", "address": "123 University Ave", "phone":  "1234567", "about":  "This is default data", "owner":  "arakaki@gmail.com", "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg"},
-    { "firstName":  "John", "lastName":  "Foo", "address": "too foo  fo skoo", "phone":  "1234567", "about":  "This is default data", "owner":  "john@foo.com", "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg"}
+    { "firstName":  "John", "lastName":  "Foo", "address": "too foo  fo skoo", "phone":  "1234567", "about":  "This is default data", "owner":  "john@foo.com", "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg"},
+    {
+      "firstName": "Michelle",
+      "lastName": "Leano",
+      "address": "94-472 Hamau St",
+      "phone": "8083865475",
+      "about": "I am studying for a B.S. in Computer Science in the Department of Information and Computer Sciences at the University of Hawaii. I expect to graduate in Spring, 2023.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "leanomc@hawaii.edu"
+    },
+    {
+      "firstName": "Alysha",
+      "lastName": "Leano",
+      "address": "94-472 Hamau St",
+      "phone": "8083877597",
+      "about": "I am studying for a B.S. in Cyber-Security at the University of Hawaii, West Oahu. I am graduating in Spring, 2022.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "leanoa@hawaii.edu"
+    },
+    {
+      "firstName": "Kaley",
+      "lastName": "Dang",
+      "address": "",
+      "phone": "",
+      "about": "I am studying for a B.S. in Biology at the University of Hawaii, Manoa. I am graduating in Spring, 2022.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "kdang2@hawaii.edu"
+    },
+    {
+      "firstName": "Kiana",
+      "lastName": "Ejercito",
+      "address": "",
+      "phone": "",
+      "about": "I am an Astrophysics major at the University of Hawaii, Manoa. I am in my freshman year and am also interested in engineering and computer science.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "kjee@hawaii.edu"
+    },
+    {
+      "firstName": "Wilson",
+      "lastName": "Lau",
+      "address": "",
+      "phone": "",
+      "about": "I am a Mechanical Engineering major at the University of Hawaii, Manoa. I am a freshman and will expect to graduate in Spring 2026.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "wlau32@hawaii.edu"
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "address": "",
+      "phone": "",
+      "about": "",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": ""
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "address": "",
+      "phone": "",
+      "about": "",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": ""
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "address": "",
+      "phone": "",
+      "about": "",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": ""
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "address": "",
+      "phone": "",
+      "about": "",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": ""
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "address": "",
+      "phone": "",
+      "about": "",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": ""
+    }
   ],
 
   "defaultCompanies": [

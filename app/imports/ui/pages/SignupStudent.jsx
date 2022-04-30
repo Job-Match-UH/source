@@ -10,6 +10,8 @@ import AddExperience from './AddExperience';
 import AddEducation from './AddEducation';
 import AddProject from './AddProject';
 import AddInterest from './AddInterest';
+import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 
 const formSchema = new SimpleSchema({
   firstName: String,
@@ -35,12 +37,16 @@ class SignupStudent extends React.Component {
         } else {
           swal('Success', 'Profile created!', 'success');
           formRef.reset();
+          this.setState({ error: '', redirectToReferer: true });
         }
       });
   }
 
   render() {
     let fRef = null;
+    if (this.state.redirectToReferer) {
+      return <Redirect to={'/studenthomepage'}/>;
+    }
     const panes = [
       {
         menuItem: 'Personal Info', render: () => <Tab.Pane>
@@ -87,5 +93,10 @@ class SignupStudent extends React.Component {
     );
   }
 }
+
+/* Ensure that the React Router location object is available in case we need to redirect. */
+SignupStudent.propTypes = {
+  location: PropTypes.object,
+};
 
 export default SignupStudent;

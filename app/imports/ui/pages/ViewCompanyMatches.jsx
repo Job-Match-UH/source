@@ -17,9 +17,9 @@ class ViewCompanyMatches extends React.Component {
           {this.props.companies.map((company, index) => <Company
             key={index}
             company={company}/>)}
-          {this.props.tags.map((tags, index) => <Company
+          {/* {this.props.tags.map((tags, index) => <Company
             key={index}
-            tags={tags}/>)}
+            tags={tags}/>)} */}
         </Card.Group>
       </Container>
     );

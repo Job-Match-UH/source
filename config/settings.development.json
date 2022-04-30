@@ -40,8 +40,8 @@
   ],
 
   "defaultTags": [
-    { "name": "Kapaa", "typeOf": "Location", "owner": "larissa@foo.com" },
-    { "name": "Cyber Security", "typeOf": "Interest", "owner": "larissa@foo.com" }
+    { "name": "Computer", "owner": "pear@pear.com" },
+    { "name": "Computer", "owner": "john@pear.com" }
   ],
 
   "defaultJobs": [

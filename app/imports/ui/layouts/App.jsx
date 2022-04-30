@@ -20,8 +20,8 @@ import ClassScheduleForm from '../pages/ClassScheduleForm';
 import AddExperience from '../pages/AddExperience';
 import AddEducation from '../pages/AddEducation';
 import AddProject from '../pages/AddProject';
-import StudentHomePage from '../pages/StudentHomePage';
-import CompanyHomePage from '../pages/CompanyHomePage';
+// import StudentHomePage from '../pages/StudentHomePage';
+// import CompanyHomePage from '../pages/CompanyHomePage';
 import AdminHomePage from '../pages/AdminHomePage';
 import ViewStudentMatches from '../pages/ViewStudentMatches';
 import ViewCompanyMatches from '../pages/ViewCompanyMatches';
@@ -56,8 +56,8 @@ class App extends React.Component {
             <ProtectedRoute path="/editexperience/:_id" component={EditExperience}/>
             <ProtectedRoute path="/editproject/:_id" component={EditProject}/>
             <ProtectedRoute path="/editstudent/:_id" component={EditStudent}/>
-            <StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/>
-            <CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/>
+            {/*<StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/>*/}
+            {/*<CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/>*/}
             <CompanyProtectedRoute path="/jobpostings" component={JobPostings}/>
             <AdminProtectedRoute path="/admin" component={AdminHomePage}/>
             <CompanyProtectedRoute path="/viewstudentmatches" component={ViewStudentMatches}/>

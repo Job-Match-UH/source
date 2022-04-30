@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Image, Grid, Header, Loader, HiddenField, Button, Card, Item } from 'semantic-ui-react';
+import { Container, Image, Grid, Header, Loader, Button, Card, Item } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -8,14 +8,14 @@ import { Jobs } from '../../api/job/Jobs';
 import Job from '../components/Job';
 
 export class CompanyProfile extends React.Component {
-
+/*
   constructor(props) {
     super(props);
     this.state = {
       activeItem: 'interests',
     };
   }
-
+*/
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
@@ -45,13 +45,12 @@ export class CompanyProfile extends React.Component {
           <Grid.Row>
             <Grid.Column width={3}>
               <Card.Group>
-                {this.props.job.map((job, index) => <Job
+                {this.props.job.filter(job => (job.owner === this.props.company.owner)).map((job, index) => <Job
                   key={index}
-                  job={this.props.job.filter(job.owner === this.props.company._id)}/>)}
+                  job={job}/>)}
               </Card.Group>
             </Grid.Column>
           </Grid.Row>
-          <HiddenField name='owner' />
         </Grid>
       </Container>
     );

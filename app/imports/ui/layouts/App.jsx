@@ -31,6 +31,7 @@ import EditExperience from '../pages/EditExperience';
 import EditProject from '../pages/EditProject';
 import EditStudent from '../pages/EditStudent';
 import EditJob from '../pages/EditJob';
+import JobListings from '../pages/JobListings';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -58,9 +59,10 @@ class App extends React.Component {
             <ProtectedRoute path="/editproject/:_id" component={EditProject}/>
             <ProtectedRoute path="/editstudent/:_id" component={EditStudent}/>
             <ProtectedRoute path="/editjob/:_id" component={EditJob}/>
-            {/*<StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/>*/}
-            {/*<CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/>*/}
+            {/* <StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/> */}
+            {/* <CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/> */}
             <CompanyProtectedRoute path="/jobpostings" component={JobPostings}/>
+            <CompanyProtectedRoute path="/joblistings/:_id" component={JobListings}/>
             <AdminProtectedRoute path="/admin" component={AdminHomePage}/>
             <CompanyProtectedRoute path="/viewstudentmatches" component={ViewStudentMatches}/>
             <StudentProtectedRoute path="/viewcompanymatches" component={ViewCompanyMatches}/>

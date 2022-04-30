@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
+import { Card, Image, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 
@@ -23,6 +23,15 @@ class Company extends React.Component {
         <Card.Content extra>
           {/* {this.props.tags.name} */}
           <Link to={`/companyprofile/${this.props.company._id}`}>View Profile</Link>
+          Banana
+          <div className='ui two buttons'>
+            <Button basic color='green'>
+              Add to Interested
+            </Button>
+            <Button basic color='red'>
+              Not Interested
+            </Button>
+          </div>
         </Card.Content>
       </Card>
     );

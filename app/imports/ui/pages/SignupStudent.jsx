@@ -15,7 +15,7 @@ const formSchema = new SimpleSchema({
   firstName: String,
   lastName: String,
   address: String,
-  phone: Number,
+  phone: { type: SimpleSchema.Integer, min: 0 }, // can also use String as type
   about: String,
   image: String,
 });

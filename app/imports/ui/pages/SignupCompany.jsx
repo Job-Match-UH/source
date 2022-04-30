@@ -16,8 +16,8 @@ const companySchema = new SimpleSchema({
   description: { type: String, optional: true, defaultValue: '' },
   address: String,
   state: String,
-  phone: Number,
-  year: Number,
+  phone: { type: SimpleSchema.Integer, min: 0 }, // can also use String as type
+  year: { type: SimpleSchema.Integer, min: 0 },
   image: String,
 });
 

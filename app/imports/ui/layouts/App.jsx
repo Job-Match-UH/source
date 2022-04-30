@@ -47,7 +47,7 @@ class App extends React.Component {
             <Route path="/studentsignup" component={SignupStudent}/>
             <Route path="/companysignup" component={SignupCompany}/>
             <StudentProtectedRoute path="/studentprofile/:_id" component={StudentProfile}/>
-            <CompanyProtectedRoute path="/companyprofile" component={CompanyProfile}/>
+            <ProtectedRoute path="/companyprofile/:_id" component={CompanyProfile}/>
             <Route path="/classform" component={ClassScheduleForm}/>
             <ProtectedRoute path="/addexp" component={AddExperience}/>
             <ProtectedRoute path="/addedu" component={AddEducation}/>

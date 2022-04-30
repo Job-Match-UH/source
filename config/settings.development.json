@@ -10,6 +10,13 @@
     { "email": "apple@gmail.com", "password": "apple", "role": "company" },
     { "email":  "facebook@fb.com", "password":  "facebook", "role":  "company"},
     { "email": "lisa@foo.com", "password": "changeme", "role": "company" }
+    { "email": "tsai@gmail.com", "password": "changeme", "role": "student"},
+    { "email": "leano@gmail.com", "password": "changeme", "role": "student"},
+    { "email": "cadiena@gmail.com", "password": "changeme", "role": "student"},
+    { "email": "galano@gmail.com", "password": "changeme", "role": "student"},
+    { "email": "arakaki@gmail.com", "password": "changeme", "role": "student"},
+    { "email": "pear@pear.com", "password": "pear", "role": "company" },
+    { "email":  "facebook@fb.com", "password":  "facebook", "role":  "company"}
   ],
 
   "defaultClasses": [
@@ -132,6 +139,15 @@
       "about":  "I'm a senior graduating at the University of Hawaii at Manoa, with a B.S. in Data Science.",
       "owner":  "nathanm@gmail.com",
       "image":  "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    },
+    {
+      "firstName":  "John",
+      "lastName":  "Foo",
+      "address": "too foo  fo skoo",
+      "phone":  "1234567",
+      "about":  "This is default data",
+      "owner":  "john@foo.com",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg"
     }
   ],
 
@@ -217,22 +233,128 @@
   ],
 
   "defaultTags": [
-    { "name": "Kapaa", "typeOf": "Location", "owner": "larissa@foo.com" },
-    { "name": "Cyber Security", "typeOf": "Interest", "owner": "larissa@foo.com" }
+    { "name": "Computer", "owner": "pear@pear.com" },
+    { "name": "Computer", "owner": "john@pear.com" }
   ],
 
   "defaultJobs": [
-    { "jobTitle": "Teacher",
-      "jobID": "0001",
-      "pay": "1000" ,
-      "location": "POST 318A",
-      "jobDescription": "Teach college students how to code",
-      "qualifications": "Computer Science",
-      "owner": "john@foo.com"
-    }
+    {}
   ],
 
   "defaultExperiences": [
-    {}
+    {
+      "title": "Office Assistant",
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "UH Manoa",
+      "role": "Student",
+      "description": "Worked in an office",
+      "owner": "john@foo.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "The Boss",
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Apple",
+      "role": "Worker",
+      "description": "Worked as a boss",
+      "owner": "john@foo.com",
+      "exp_start": { "type": "2015-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "The Girl Boss",
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Apple",
+      "role": "Worker",
+      "description": "Worked as a boss",
+      "owner": "leano@gmail.com",
+      "exp_start": { "type": "2015-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    }
+  ],
+  
+  "defaultEducation": [
+    {
+      "school": "MIT",
+      "degree": {
+        "type": "High School Diploma",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Women",
+      "owner": "john@foo.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "Yale University",
+      "degree": {
+        "type": "High School Diploma",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "English",
+      "owner": "john@foo.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "Yale University",
+      "degree": {
+        "type": "High School Diploma",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Math",
+      "owner": "leano@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    }
+  ],
+
+  "defaultProjects": [
+    {
+      "name": "Job Match UH",
+      "description": "Create an application for connecting students and companies.",
+      "owner": "leano@gmail.com"
+    },
+    {
+      "name": "Job Match UH",
+      "description": "Create an application for connecting students and companies.",
+      "owner": "cadiena@gmail.com"
+    },
+    {
+      "name": "Job Match UH",
+      "description": "Create an application for connecting students and companies.",
+      "owner": "galano@gmail.com"
+    },
+    {
+      "name": "Job Match UH",
+      "description": "Create an application for connecting students and companies.",
+      "owner": "arakaki@gmail.com"
+    },
+    {
+      "name": "Job Match UH",
+      "description": "Create an application for connecting students and companies.",
+      "owner": "tsai@gmail.com"
+    },
+    {
+      "name": "John Project",
+      "description": "Make a project for John",
+      "owner": "john@foo.com"
+    }
   ]
 }

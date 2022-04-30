@@ -27,7 +27,8 @@ Meteor.publish(Students.userPublicationName, function () {
 
 Meteor.publish(Companies.userPublicationName, function () {
   if (this.userId) {
-    return Companies.collection.find();
+    const username = Meteor.users.findOne(this.userId).username;
+    return Companies.collection.find({ owner: username });
   }
   return this.ready();
 });
@@ -51,7 +52,7 @@ Meteor.publish(Projects.userPublicationName, function () {
 Meteor.publish(Education.userPublicationName, function () {
   if (this.userId) {
     const username = Meteor.users.findOne(this.userId).username;
-    return Class.collection.find({ owner: username });
+    return Education.collection.find({ owner: username });
   }
   return this.ready();
 });

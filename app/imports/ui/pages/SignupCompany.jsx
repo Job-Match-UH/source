@@ -8,6 +8,7 @@ import swal from 'sweetalert';
 import PropTypes from 'prop-types';
 // import { Redirect } from 'react-router';
 import { Companies } from '../../api/company/Companies';
+import AddInterest from './AddInterest';
 
 const companySchema = new SimpleSchema({
   companyName: String,
@@ -15,8 +16,8 @@ const companySchema = new SimpleSchema({
   description: { type: String, optional: true, defaultValue: '' },
   address: String,
   state: String,
-  phone: Number,
-  year: Number,
+  phone: { type: SimpleSchema.Integer, min: 0 }, // can also use String as type
+  year: { type: SimpleSchema.Integer, min: 0 },
   image: String,
 });
 
@@ -66,6 +67,7 @@ class SignupCompany extends React.Component {
                 </Form.Field>
               </Form.Group>
               <NumField id='year-established' fluid label='Year Established' placeholder='Ex: 2000' name='year'/>
+              <AddInterest owner={Meteor.user().username}/>
             </Form>
           </Segment>
           <SubmitField id='submit-company' value='Submit Profile'/>

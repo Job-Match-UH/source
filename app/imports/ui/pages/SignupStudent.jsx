@@ -9,12 +9,13 @@ import { Students } from '../../api/student/Student';
 import AddExperience from './AddExperience';
 import AddEducation from './AddEducation';
 import AddProject from './AddProject';
+import AddInterest from './AddInterest';
 
 const formSchema = new SimpleSchema({
   firstName: String,
   lastName: String,
   address: String,
-  phone: Number,
+  phone: { type: SimpleSchema.Integer, min: 0 }, // can also use String as type
   about: String,
   image: String,
 });
@@ -40,12 +41,6 @@ class SignupStudent extends React.Component {
 
   render() {
     let fRef = null;
-    /*
-    if (this.state.redirectToReferer) {
-      return <Redirect to={'/studentprofile'}/>;
-    }
-    */
-
     const panes = [
       {
         menuItem: 'Personal Info', render: () => <Tab.Pane>
@@ -61,10 +56,7 @@ class SignupStudent extends React.Component {
           <LongTextField id='personal-info-about' label='About' placeholder='Tell us more about you...' name='about'/>
         </Tab.Pane>,
       },
-      /* { menuItem: 'Interests', render: () => <Tab.Pane>
-        <Form.Dropdown label='Add interests' placeholder='Pick multiple interests' fluid multiple selection options={interests} />
-      </Tab.Pane> },
-       */
+
       { menuItem: 'Projects', render: () => <Tab.Pane>
         <AddProject owner={Meteor.user().username}/>
       </Tab.Pane> },
@@ -76,26 +68,10 @@ class SignupStudent extends React.Component {
       { menuItem: 'Education', render: () => <Tab.Pane>
         <AddEducation owner={Meteor.user().username}/>
       </Tab.Pane> },
-      /*
-      { menuItem: 'Documents', render: () => <Tab.Pane>
-        <Form>
-          <Form.Input fluid label='Upload documents' placeholder='Upload file'>
-            <Form.Button
-              content="Choose File"
-              labelPosition="left"
-              icon="file"
-              onClick={() => this.fileInputRef.current.click()}
-            />
-            <input
-              ref={this.fileInputRef}
-              type="file"
-              hidden
-              onChange={this.fileChange}
-            />
-          </Form.Input>
-        </Form>
+
+      { menuItem: 'Interests', render: () => <Tab.Pane>
+        <AddInterest owner={Meteor.user().username}/>
       </Tab.Pane> },
-      */
     ];
 
     return (

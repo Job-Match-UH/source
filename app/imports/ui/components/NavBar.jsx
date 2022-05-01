@@ -22,17 +22,17 @@ class NavBar extends React.Component {
         {Roles.userIsInRole(Meteor.userId(), 'student') && this.props.studentProfile ? (
           [
             <Menu.Item id='view-student-profile' as={NavLink} activeClassName="active" exact to={`/studentprofile/${this.props.studentProfile._id}`} key='student'>My Profile</Menu.Item>,
+            <Menu.Item id='view-company-matches' as={NavLink} activeClassName="active" exact to="/viewcompanymatches" key='student'>View my Matches</Menu.Item>,
+            <Menu.Item id='job-listings' as={NavLink} activeClassName="active" exact to="/joblistings" key='student'>Job Listings</Menu.Item>,
             // <Menu.Item id='view-student-home' as={NavLink} activeClassName="active" exact to="/studenthomepage" key='student2'>Match Me!</Menu.Item>,
-            <Menu.Item id='view-company-matches' as={NavLink} activeClassName="active" exact to="/viewcompanymatches" key='student3'>View my Matches</Menu.Item>,
           ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'company') && this.props.companyProfile ? (
           [
             <Menu.Item id='view-company-profile' as={NavLink} activeClassName="active" exact to={`/companyprofile/${this.props.companyProfile._id}`} key='company'>My Profile</Menu.Item>,
-            // <Menu.Item id='view-company-home' as={NavLink} activeClassName="active" exact to="/companyhomepage" key='company'>Match Me!</Menu.Item>,
             <Menu.Item id='view-student-matches' as={NavLink} activeClassName="active" exact to="/viewstudentmatches" key='company'>View my Matches</Menu.Item>,
             <Menu.Item id='job-postings' as={NavLink} activeClassName="active" exact to="/jobpostings" key='company'>Post a Job</Menu.Item>,
-            <Menu.Item id='job-listings' as={NavLink} activeClassName="active" exact to={`/joblistings/${this.props.companyProfile._id}`} key='company'>Job Listings</Menu.Item>,
+            // <Menu.Item id='view-company-home' as={NavLink} activeClassName="active" exact to="/companyhomepage" key='company'>Match Me!</Menu.Item>,
           ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (

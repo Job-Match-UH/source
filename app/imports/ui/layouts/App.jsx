@@ -24,12 +24,14 @@ import AddProject from '../pages/AddProject';
 // import CompanyHomePage from '../pages/CompanyHomePage';
 import AdminHomePage from '../pages/AdminHomePage';
 import ViewStudentMatches from '../pages/ViewStudentMatches';
+import ViewStudentProfile from '../pages/ViewStudentProfile';
 import ViewCompanyMatches from '../pages/ViewCompanyMatches';
 import NotFound from '../pages/NotFound';
 import EditEducation from '../pages/EditEducation';
 import EditExperience from '../pages/EditExperience';
 import EditProject from '../pages/EditProject';
 import EditStudent from '../pages/EditStudent';
+import EditCompany from '../pages/EditCompany';
 import EditJob from '../pages/EditJob';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
@@ -57,9 +59,11 @@ class App extends React.Component {
             <ProtectedRoute path="/editexperience/:_id" component={EditExperience}/>
             <ProtectedRoute path="/editproject/:_id" component={EditProject}/>
             <ProtectedRoute path="/editstudent/:_id" component={EditStudent}/>
+            <ProtectedRoute path="/editcompany/:_id" component={EditCompany}/>
             <ProtectedRoute path="/editjob/:_id" component={EditJob}/>
-            {/*<StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/>*/}
-            {/*<CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/>*/}
+            <CompanyProtectedRoute path="/viewstudent/:_id" component={ViewStudentProfile}/>
+            {/* <StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/> */}
+            {/* <CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/> */}
             <CompanyProtectedRoute path="/jobpostings" component={JobPostings}/>
             <AdminProtectedRoute path="/admin" component={AdminHomePage}/>
             <CompanyProtectedRoute path="/viewstudentmatches" component={ViewStudentMatches}/>

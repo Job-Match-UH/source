@@ -46,7 +46,7 @@ class JobPostings extends React.Component {
           <TextField fluid label='Job ID:' placeholder='1234567' name='jobID'/>
           <Form.Group widths='equal'>
             <NumField fluid="true" label='Pay:' placeholder='25' name='pay'/>
-            <SelectField fluid="true" placeholder='hourly' name='payType' allowedValues={payTypes}/>
+            <SelectField fluid="true" placeholder='Select pay type' name='payType' allowedValues={payTypes}/>
           </Form.Group>
           <TextField fluid label='Location:' placeholder='Ex. Honolulu, HI' name='location'/>
           <LongTextField label='Job Description:' placeholder='Give a small description about the job position...' name='jobDescription'/>

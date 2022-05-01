@@ -2,6 +2,8 @@ import React from 'react';
 import { Card, Grid, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
+import { Roles } from 'meteor/alanning:roles';
+import { Meteor } from 'meteor/meteor';
 
 class Educations extends React.Component {
   render() {
@@ -16,7 +18,9 @@ class Educations extends React.Component {
                     {this.props.educations.school}
                   </Grid.Column>
                   <Grid.Column>
-                    <Link to={`/editeducation/${this.props.educations._id}`}><Icon name='pencil'/></Link>
+                    {Roles.userIsInRole(Meteor.userId(), 'student') ? (
+                      <Link to={`/editeducation/${this.props.educations._id}`}><Icon name='pencil'/></Link>
+                    ) : ''}
                   </Grid.Column>
                 </Grid.Row>
               </Grid>

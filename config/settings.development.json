@@ -13,7 +13,7 @@
     { "email": "galano@gmail.com", "password": "changeme", "role": "student"},
     { "email": "arakaki@gmail.com", "password": "changeme", "role": "student"},
     { "email": "pear@pear.com", "password": "pear", "role": "company" },
-    { "email":  "facebook@fb.com", "password":  "facebook", "role":  "company"}
+    { "email": "facebook@fb.com", "password":  "facebook", "role":  "company"}
   ],
 
   "defaultClasses": [

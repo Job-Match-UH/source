@@ -1,5 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
+import { withTracker } from 'meteor/react-meteor-data';
 import { Container, Form, Header, Segment } from 'semantic-ui-react';
 import { AutoForm, SubmitField, TextField, LongTextField, NumField } from 'uniforms-semantic';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -82,4 +83,18 @@ SignupCompany.propTypes = {
   location: PropTypes.object,
 };
 
-export default SignupCompany;
+// withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+export default withTracker(({ match }) => {
+  // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
+  const documentId = match.params._id;
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe(Companies.userPublicationName);
+  // Determine if the subscription is ready
+  const ready = subscription.ready();
+  // Get the document
+  const doc = Companies.collection.findOne(documentId);
+  return {
+    doc,
+    ready,
+  };
+})(SignupCompany);

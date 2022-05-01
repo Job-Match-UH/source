@@ -62,6 +62,17 @@ export default class Signin extends React.Component {
     // eslint-disable-next-line no-return-assign
     return (
       <Container>
+        <Segment textAlign='center' borderless='true' basic>
+          {this.state.error === '' && this.props.location.error === undefined ? (
+            ''
+          ) : (
+            <Message
+              error
+              header="Login was not successful"
+              content={`${this.state.error} ${this.props.location.error}`}
+            />
+          )}
+        </Segment>
         <Segment placeholder id="signin-page">
           <Grid columns={2} relaxed='very' stackable>
             <Grid.Column>
@@ -122,18 +133,6 @@ export default class Signin extends React.Component {
           </Grid>
           <Divider vertical>Or</Divider>
         </Segment>
-        <Segment textAlign='center' borderless='true'>
-          {this.state.error === '' && this.props.location.error === undefined ? (
-            ''
-          ) : (
-            <Message
-              error
-              header="Login was not successful"
-              content={`${this.state.error} ${this.props.location.error}`}
-            />
-          )}
-        </Segment>
-
       </Container>
     );
   }

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Company extends React.Component {
   render() {
     return (
-      <Card>
+      <Card as={NavLink} exact to={`/viewcompany/${this.props.company._id}`}>
         <Card.Content>
           <Image
             floated='right'

@@ -12,7 +12,7 @@ class ViewCompanyMatches extends React.Component {
   constructor(props) {
     super(props);
 
-    console.log(Tags.collection.find());
+    console.log(Tags.collection.find({}));
   }
 
   render() {

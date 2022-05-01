@@ -60,15 +60,14 @@ ViewCompanyProfile.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(({ match }) => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
-  const documentId = match.params._id;
+  const companyId = match.params._id;
   // Ensure that minimongo is populated with all collections prior to running render().
   const sub1 = Meteor.subscribe(Companies.userPublicationName);
   const sub2 = Meteor.subscribe(Jobs.userPublicationName);
-  // Get documents
-  const company = Companies.collection.findOne(documentId);
-  const job = Jobs.collection.find({ owner: company.owner });
   const ready = sub1.ready() && sub2.ready();
-
+  // Get documents
+  const company = Companies.collection.findOne(companyId);
+  const job = Jobs.collection.find({ owner: company.owner });
   return {
     ready,
     company,

@@ -24,6 +24,7 @@ import AddProject from '../pages/AddProject';
 // import CompanyHomePage from '../pages/CompanyHomePage';
 import AdminHomePage from '../pages/AdminHomePage';
 import ViewStudentMatches from '../pages/ViewStudentMatches';
+import ViewStudentProfile from '../pages/ViewStudentProfile';
 import ViewCompanyMatches from '../pages/ViewCompanyMatches';
 import NotFound from '../pages/NotFound';
 import EditEducation from '../pages/EditEducation';
@@ -58,8 +59,9 @@ class App extends React.Component {
             <ProtectedRoute path="/editproject/:_id" component={EditProject}/>
             <ProtectedRoute path="/editstudent/:_id" component={EditStudent}/>
             <ProtectedRoute path="/editjob/:_id" component={EditJob}/>
-            {/*<StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/>*/}
-            {/*<CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/>*/}
+            <CompanyProtectedRoute path="/viewstudent/:_id" component={ViewStudentProfile}/>
+            {/* <StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/> */}
+            {/* <CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/> */}
             <CompanyProtectedRoute path="/jobpostings" component={JobPostings}/>
             <AdminProtectedRoute path="/admin" component={AdminHomePage}/>
             <CompanyProtectedRoute path="/viewstudentmatches" component={ViewStudentMatches}/>

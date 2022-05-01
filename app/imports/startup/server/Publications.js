@@ -22,7 +22,6 @@ Meteor.publish(Students.userPublicationName, function () {
     const username = Meteor.users.findOne(this.userId).username;
     return Students.collection.find({ owner: username });
   }
-
   if (this.userId && Roles.userIsInRole(this.userId, 'company')) {
     return Students.collection.find();
   }
@@ -43,25 +42,34 @@ Meteor.publish(Companies.userPublicationName, function () {
 });
 
 Meteor.publish(Experiences.userPublicationName, function () {
-  if (this.userId) {
+  if (this.userId && Roles.userIsInRole(this.userId, 'student')) {
     const username = Meteor.users.findOne(this.userId).username;
     return Experiences.collection.find({ owner: username });
+  }
+  if (this.userId && Roles.userIsInRole(this.userId, 'company')) {
+    return Experiences.collection.find();
   }
   return this.ready();
 });
 
 Meteor.publish(Projects.userPublicationName, function () {
-  if (this.userId) {
+  if (this.userId && Roles.userIsInRole(this.userId, 'student')) {
     const username = Meteor.users.findOne(this.userId).username;
     return Projects.collection.find({ owner: username });
+  }
+  if (this.userId && Roles.userIsInRole(this.userId, 'company')) {
+    return Projects.collection.find();
   }
   return this.ready();
 });
 
 Meteor.publish(Education.userPublicationName, function () {
-  if (this.userId) {
+  if (this.userId && Roles.userIsInRole(this.userId, 'student')) {
     const username = Meteor.users.findOne(this.userId).username;
     return Education.collection.find({ owner: username });
+  }
+  if (this.userId && Roles.userIsInRole(this.userId, 'company')) {
+    return Education.collection.find();
   }
   return this.ready();
 });

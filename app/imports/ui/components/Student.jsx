@@ -7,7 +7,7 @@ import { NavLink, withRouter } from 'react-router-dom';
 class Student extends React.Component {
   render() {
     return (
-      <Card as={NavLink} exact to="/studentprofile">
+      <Card as={NavLink} exact to={`/viewstudent/${this.props.student._id}`}>
         <Card.Content>
           <Image
             floated='right'

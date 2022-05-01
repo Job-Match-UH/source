@@ -21,7 +21,7 @@ class ViewStudentProfile extends React.Component {
 
   renderPage() {
     return (
-      <Container id='student-profile-page'>
+      <Container id='view-student-profile'>
         <Grid celled='internally'>
           <Grid.Row>
             <Grid.Column width={3}>

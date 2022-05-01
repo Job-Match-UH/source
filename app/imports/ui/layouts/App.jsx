@@ -20,8 +20,8 @@ import ClassScheduleForm from '../pages/ClassScheduleForm';
 import AddExperience from '../pages/AddExperience';
 import AddEducation from '../pages/AddEducation';
 import AddProject from '../pages/AddProject';
-import StudentHomePage from '../pages/StudentHomePage';
-import CompanyHomePage from '../pages/CompanyHomePage';
+// import StudentHomePage from '../pages/StudentHomePage';
+// import CompanyHomePage from '../pages/CompanyHomePage';
 import AdminHomePage from '../pages/AdminHomePage';
 import ViewStudentMatches from '../pages/ViewStudentMatches';
 import ViewCompanyMatches from '../pages/ViewCompanyMatches';
@@ -30,6 +30,7 @@ import EditEducation from '../pages/EditEducation';
 import EditExperience from '../pages/EditExperience';
 import EditProject from '../pages/EditProject';
 import EditStudent from '../pages/EditStudent';
+import EditJob from '../pages/EditJob';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -47,7 +48,7 @@ class App extends React.Component {
             <Route path="/studentsignup" component={SignupStudent}/>
             <Route path="/companysignup" component={SignupCompany}/>
             <StudentProtectedRoute path="/studentprofile/:_id" component={StudentProfile}/>
-            <CompanyProtectedRoute path="/companyprofile" component={CompanyProfile}/>
+            <ProtectedRoute path="/companyprofile/:_id" component={CompanyProfile}/>
             <Route path="/classform" component={ClassScheduleForm}/>
             <ProtectedRoute path="/addexp" component={AddExperience}/>
             <ProtectedRoute path="/addedu" component={AddEducation}/>
@@ -56,8 +57,9 @@ class App extends React.Component {
             <ProtectedRoute path="/editexperience/:_id" component={EditExperience}/>
             <ProtectedRoute path="/editproject/:_id" component={EditProject}/>
             <ProtectedRoute path="/editstudent/:_id" component={EditStudent}/>
-            <StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/>
-            <CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/>
+            <ProtectedRoute path="/editjob/:_id" component={EditJob}/>
+            {/*<StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/>*/}
+            {/*<CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/>*/}
             <CompanyProtectedRoute path="/jobpostings" component={JobPostings}/>
             <AdminProtectedRoute path="/admin" component={AdminHomePage}/>
             <CompanyProtectedRoute path="/viewstudentmatches" component={ViewStudentMatches}/>

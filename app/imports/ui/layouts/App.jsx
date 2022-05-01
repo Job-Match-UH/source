@@ -107,8 +107,8 @@ const StudentProtectedRoute = ({ component: Component, ...rest }) => (
     {...rest}
     render={(props) => {
       const isLogged = Meteor.userId() !== null;
-      const isStudent = Roles.userIsInRole(Meteor.userId(), 'student');
-      return (isLogged && isStudent) ?
+      const isStudentAdmin = Roles.userIsInRole(Meteor.userId(), 'student') || Roles.userIsInRole(Meteor.userId(), 'admin');
+      return (isLogged && isStudentAdmin) ?
         (<Component {...props} />) :
         (Meteor.logout() || <Redirect to={{ pathname: '/signin', state: { from: props.location }, error: 'Unauthorized login' }}/>
         );
@@ -126,8 +126,8 @@ const CompanyProtectedRoute = ({ component: Component, ...rest }) => (
     {...rest}
     render={(props) => {
       const isLogged = Meteor.userId() !== null;
-      const isCompany = Roles.userIsInRole(Meteor.userId(), 'company');
-      return (isLogged && isCompany) ?
+      const isCompanyAdmin = Roles.userIsInRole(Meteor.userId(), 'company') || Roles.userIsInRole(Meteor.userId(), 'admin');
+      return (isLogged && isCompanyAdmin) ?
         (<Component {...props} />) :
         (Meteor.logout() || <Redirect to={{ pathname: '/signin', state: { from: props.location }, error: 'Unauthorized login' }}/>
         );

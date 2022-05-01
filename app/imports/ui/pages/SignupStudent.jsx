@@ -5,13 +5,13 @@ import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Meteor } from 'meteor/meteor';
 import swal from 'sweetalert';
 import SimpleSchema from 'simpl-schema';
+import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 import { Students } from '../../api/student/Student';
 import AddExperience from './AddExperience';
 import AddEducation from './AddEducation';
 import AddProject from './AddProject';
 import AddInterest from './AddInterest';
-import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
 
 const formSchema = new SimpleSchema({
   firstName: String,
@@ -45,7 +45,7 @@ class SignupStudent extends React.Component {
   render() {
     let fRef = null;
     if (this.state.redirectToReferer) {
-      return <Redirect to={'/studenthomepage'}/>;
+      return <Redirect to={'/studentprofile'}/>;
     }
     const panes = [
       {

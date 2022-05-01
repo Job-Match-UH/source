@@ -30,8 +30,8 @@ class AddProject extends React.Component {
     let fRef = null;
 
     return (
-      <AutoForm id='add-interest-page' ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
-        <MultiSelectField name='name' fluid="true" showInlineError={true} placeholder={'Select from list'}/>
+      <AutoForm style={ { marginBottom: 10 } } id='add-interest-page' ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
+        <MultiSelectField name='name' label='Interests' fluid="true" showInlineError={true} placeholder={'Select interests'}/>
         <SubmitField icon='plus' value='Add Interest'/>
         <HiddenField name='owner' value={this.props.owner}/>
         <ErrorsField/>

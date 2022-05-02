@@ -9,11 +9,6 @@ import { Tags } from '../../api/tags/Tags';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ViewCompanyMatches extends React.Component {
-  constructor(props) {
-    super(props);
-
-    console.log(Tags.collection.find({}));
-  }
 
   render() {
     return (
@@ -22,10 +17,9 @@ class ViewCompanyMatches extends React.Component {
         <Card.Group itemsPerRow={4}>
           {this.props.companies.map((company, index) => <Company
             key={index}
-            company={company}/>)}
-          {this.props.tags.map((tags, index) => <Company
-            key={index}
-            tags={tags}/>)}
+            company={company}
+            tags={this.props.tags.filter(tag => (tag.owner === company.owner))}
+          />)}
         </Card.Group>
       </Container>
     );

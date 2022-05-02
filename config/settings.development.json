@@ -40,8 +40,11 @@
   ],
 
   "defaultTags": [
-    { "name": "Computer", "owner": "pear@pear.com" },
-    { "name": "Computer", "owner": "john@pear.com" }
+    { "name": "Computer", "owner": "john@foo.com" },
+    { "name": "Food Service", "owner": "pear@pear.com" },
+    { "name": "Retail", "owner": "john@foo.com" },
+    { "name": "Research", "owner": "facebook@fb.com" },
+    { "name": "Computer", "owner": "john@foo.com" }
   ],
 
   "defaultJobs": [

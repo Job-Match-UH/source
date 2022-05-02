@@ -1,7 +1,9 @@
 import React from 'react';
+import { NavLink, withRouter } from 'react-router-dom';
+import { _ } from 'meteor/underscore';
 import { Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { NavLink, withRouter } from 'react-router-dom';
+import Tag from '../components/Tag';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Company extends React.Component {
@@ -21,8 +23,10 @@ class Company extends React.Component {
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          {/*  /!* {this.props.tags.name} *!/ */}
-          {/*  /!* <Link to={`/companyprofile/${this.props.company._id}`}>View Profile</Link> *!/ */}
+          {_.map(this.props.tags, (tag, index) => <Tag
+            key={index}
+            tag={tag}
+          />)}
         </Card.Content>
       </Card>
     );
@@ -31,7 +35,7 @@ class Company extends React.Component {
 // Require a document to be passed to this component.
 Company.propTypes = {
   company: PropTypes.object.isRequired,
-  tags: PropTypes.object.isRequired,
+  tags: PropTypes.array.isRequired,
 };
 
 // Wrap this component in withRouter since we use the <Link> React Router element.

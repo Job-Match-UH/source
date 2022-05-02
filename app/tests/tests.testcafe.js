@@ -11,14 +11,13 @@ import { viewStudentMatchesPage } from './viewstudentmatches.page';
 import { jobPostingsPage } from './jobpostings.page';
 import { adminHomePage } from './adminhome.page';
 import { signupStudent } from './signupstudent.page';
-import signupCompany from '../imports/ui/pages/SignupCompany';
+import { companySignup } from './signupcompany.page';
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
 const credentials = { username: 'john@foo.com', password: 'changeme' };
 const credentials2 = { username: 'facebook@fb.com', password: 'facebook' };
 const credentials3 = { username: 'admin@foo.com', password: 'changeme' };
-const newUser = `user-${new Date().getTime()}@foo.com`;
 
 fixture('job-match-uh availability tests')
   .page('http://localhost:3000');
@@ -58,15 +57,15 @@ test('Test signout page displays', async (testController) => {
 test('Test register student works', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.gotoSignUpStudent(testController);
-  await signupStudentEmail.signupStudent(testController, newUser, credentials.password);
+  await signupStudentEmail.signupStudent(testController, credentials.password);
   await signupStudent.isDisplayed(testController);
 });
 
-test.only('Test register company works', async (testController) => {
+test('Test register company works', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.gotoSignUpCompany(testController);
-  await signupCompanyEmail.signupUser(testController, newUser, credentials.password);
-  await signupCompany.isDisplayed(testController);
+  await signupCompanyEmail.signupUser(testController, credentials.password);
+  await companySignup.isDisplayed(testController);
 });
 
 test('Test viewcompanymatches page displays', async (testController) => {

@@ -17,7 +17,7 @@ class ViewCompanyProfile extends React.Component {
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   renderPage() {
     return (
-      <Container id='company-profile-page'>
+      <Container id='view-company-profile'>
         <Grid className='cp-text'>
           <Grid.Row>
             <Grid.Column width={3}>

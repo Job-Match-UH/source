@@ -17,6 +17,8 @@ import { addProjectPage } from './addproject.page';
 import { addExperiencePage } from './addexperience.page';
 import { addEducationPage } from './addeducation.page';
 import { companySignup } from './signupcompany.page';
+import { viewCompanyProfile } from './viewcompanyprofile.page';
+import { viewStudentProfile } from './viewstudentprofile.page';
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
@@ -78,7 +80,7 @@ test('Test register company works', async (testController) => {
   await companySignup.inputCompanyData(testController);
 });
 
-test('Test studenthome, studentprofile & viewcompanymatches works', async (testController) => {
+test('Test studenthome, studentprofile, viewcompanymatches & viewcompanyprofile works', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.isLoggedIn(testController, credentials.username);
@@ -88,9 +90,10 @@ test('Test studenthome, studentprofile & viewcompanymatches works', async (testC
   await studentProfilePage.isDisplayed(testController);
   await navBar.gotoViewCompanyMatches(testController);
   await viewCompanyPage.isDisplayed(testController);
+  await viewCompanyProfile.isDisplayed(testController);
 });
 
-test('Test companyhome, companyprofile & viewstudentmatches works', async (testController) => {
+test('Test companyhome, companyprofile, viewstudentmatches & viewstudentprofile works', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signinCompany(testController, credentials2.username, credentials2.password);
   await navBar.isLoggedIn(testController, credentials2.username);
@@ -100,6 +103,7 @@ test('Test companyhome, companyprofile & viewstudentmatches works', async (testC
   await companyHomePage.isDisplayed(testController);
   await navBar.gotoViewStudentMatches(testController);
   await viewStudentPage.isDisplayed(testController);
+  await viewStudentProfile.isDisplayed(testController);
   await navBar.gotoJobPostings(testController);
   await jobPostingsPage.isDisplayed(testController);
 });

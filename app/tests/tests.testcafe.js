@@ -11,6 +11,7 @@ import { viewStudentMatchesPage } from './viewstudentmatches.page';
 import { jobPostingsPage } from './jobpostings.page';
 import { adminHomePage } from './adminhome.page';
 import { signupStudent } from './signupstudent.page';
+import signupCompany from '../imports/ui/pages/SignupCompany';
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
@@ -54,21 +55,19 @@ test('Test signout page displays', async (testController) => {
   await signoutPage.isDisplayed(testController);
 });
 
-test.only('Test register student works', async (testController) => {
+test('Test register student works', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.gotoSignUpStudent(testController);
   await signupStudentEmail.signupStudent(testController, newUser, credentials.password);
   await signupStudent.isDisplayed(testController);
 });
-/*
 
-test('Test register company works', async (testController) => {
+test.only('Test register company works', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.gotoSignUpCompany(testController);
   await signupCompanyEmail.signupUser(testController, newUser, credentials.password);
   await signupCompany.isDisplayed(testController);
 });
-*/
 
 test('Test viewcompanymatches page displays', async (testController) => {
   await navBar.gotoSigninPage(testController);

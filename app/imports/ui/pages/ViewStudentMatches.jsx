@@ -10,7 +10,7 @@ import { Students } from '../../api/student/Student';
 class ViewStudentMatches extends React.Component {
   render() {
     return (
-      <Container id='view-student-matches'>
+      <Container id='view-student-matches-page'>
         <Header as='h2' className='cp-text' textAlign='center'>Interested Matches!</Header>
         <Card.Group itemsPerRow={4}>
           {this.props.students.map((student, index) => <Student

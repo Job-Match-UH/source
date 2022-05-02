@@ -29,7 +29,7 @@ class SignupCompanyEmail extends React.Component {
       } else {
         Meteor.call('addToRole', Meteor.userId(), 'company', (methodErr) => {
           if (methodErr) {
-            console.log(methodErr);
+            this.setState({ error: methodErr.reason });
           } else {
             this.setState({ error: '', redirectToReferer: true });
           }

@@ -30,7 +30,7 @@ class SignupStudentEmail extends React.Component {
       } else {
         Meteor.call('addToRole', Meteor.userId(), 'student', (methodErr) => {
           if (methodErr) {
-            console.log(methodErr);
+            this.setState({ error: methodErr.reason });
           } else {
             this.setState({ error: '', redirectToReferer: true });
           }
@@ -42,10 +42,12 @@ class SignupStudentEmail extends React.Component {
   /* Display the signup form. Redirect to add page after successful registration and login. */
   render() {
     const { from } = this.props.location.state || { from: { pathname: '/studentsignup' } };
+
     // if correct authentication, redirect to from: page instead of signup screen
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
     }
+
     return (
       <Container id="signup-student-page">
         <Grid textAlign="center" verticalAlign="middle" centered columns={2}>

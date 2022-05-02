@@ -10,6 +10,7 @@ import swal from 'sweetalert';
 import PropTypes from 'prop-types';
 import { Companies } from '../../api/company/Companies';
 import AddInterest from './AddInterest';
+import { Redirect } from 'react-router-dom';
 
 const companySchema = new SimpleSchema({
   companyName: String,
@@ -35,7 +36,8 @@ class SignupCompany extends React.Component {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Info added successfully', 'success');
+          swal('Success', 'Company Info added successfully', 'success');
+          this.setState({ error: '', redirectToReferer: true });
           formRef.reset();
         }
       });
@@ -43,6 +45,11 @@ class SignupCompany extends React.Component {
 
   render() {
     let fRef = null;
+    const { from } = this.props.location.state || { from: { pathname: '/' } };
+
+    if (this.state.redirectToReferer) {
+      return <Redirect to={from}/>;
+    }
     return (
       <Container id='company-signup-page'>
         <Header className='cp-text' as='h1' textAlign='center'>Create Company Profile</Header>

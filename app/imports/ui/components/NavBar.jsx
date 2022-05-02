@@ -72,14 +72,11 @@ export default withTracker(() => {
   // Determine if the subscription is ready
   const ready = subscription.ready() || subscription2.ready();
   // Get the documents
-  // console.log(Meteor.user());
-  // console.log(Meteor.user().username);
   const currentUser = Meteor.user() ? Meteor.user().username : '';
-  // console.log(currentUser);
-  const studentProfile = Students.collection.findOne({ owner: currentUser });
+  const studentProfile = Students.collection.findOne({ email: currentUser });
   const companyProfile = Companies.collection.findOne({ owner: currentUser });
-  // console.log(`student profile: ${studentProfile}`);
-  // console.log(`company profile: ${companyProfile}`);
+  console.log(`student profile: ${studentProfile}`);
+  console.log(`company profile: ${companyProfile}`);
   return {
     currentUser,
     studentProfile,

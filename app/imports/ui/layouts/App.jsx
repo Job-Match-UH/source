@@ -46,10 +46,10 @@ class App extends React.Component {
             <Route exact path="/" component={Landing}/>
             <Route path="/signin" component={Signin}/>
             <Route path="/signout" component={Signout}/>
-            <Route path="/student_signup" component={SignupStudentEmail}/>
-            <Route path="/company_signup" component={SignupCompanyEmail}/>
-            <Route path="/studentsignup" component={SignupStudent}/>
-            <Route path="/companysignup" component={SignupCompany}/>
+            <StudentProtectedRoute path="/student_signup" component={SignupStudentEmail}/>
+            <CompanyProtectedRoute path="/company_signup" component={SignupCompanyEmail}/>
+            <StudentProtectedRoute path="/studentsignup" component={SignupStudent}/>
+            <CompanyProtectedRoute path="/companysignup" component={SignupCompany}/>
             <StudentProtectedRoute path="/studentprofile/:_id" component={StudentProfile}/>
             <ProtectedRoute path="/companyprofile/:_id" component={CompanyProfile}/>
             <Route path="/classform" component={ClassScheduleForm}/>

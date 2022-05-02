@@ -7,7 +7,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import swal from 'sweetalert';
 import SimpleSchema from 'simpl-schema';
 import PropTypes from 'prop-types';
-// import { Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { Students } from '../../api/student/Student';
 import AddExperience from './AddExperience';
 import AddEducation from './AddEducation';
@@ -42,19 +42,20 @@ class SignupStudent extends React.Component {
           swal('Error', error.message, 'error');
         } else {
           swal('Success', 'Profile created!', 'success');
+          this.setState({ error: '', redirectToReferer: true });
           formRef.reset();
-          // this.setState({ error: '', redirectToReferer: true });
         }
       });
   }
 
   render() {
     let fRef = null;
-    // const { from } = this.props.location.state || { from: { pathname: '/' } };
-    //
-    // if (this.state.redirectToReferer) {
-    //   return <Redirect to={from}/>;
-    // }
+    const { from } = this.props.location.state || { from: { pathname: '/' } };
+
+    if (this.state.redirectToReferer) {
+      return <Redirect to={from}/>;
+    }
+
     const panes = [
       {
         menuItem: 'Personal Info', render: () => <Tab.Pane>
@@ -105,6 +106,7 @@ class SignupStudent extends React.Component {
 /* Ensure that the React Router location object is available in case we need to redirect. */
 SignupStudent.propTypes = {
   location: PropTypes.object,
+  student: PropTypes.object.isRequired,
 };
 
 export default withTracker(({ match }) => {

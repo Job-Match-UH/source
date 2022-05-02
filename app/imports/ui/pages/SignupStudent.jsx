@@ -3,7 +3,6 @@ import { Container, Header, Tab, Form } from 'semantic-ui-react';
 import { AutoForm, LongTextField, SubmitField, TextField, NumField } from 'uniforms-semantic';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Meteor } from 'meteor/meteor';
-import { Roles } from 'meteor/alanning:roles';
 import swal from 'sweetalert';
 import SimpleSchema from 'simpl-schema';
 import PropTypes from 'prop-types';
@@ -29,7 +28,7 @@ class SignupStudent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', role: 'student', error: '', redirectToReferer: false };
+    this.state = { email: '', password: '', error: '', redirectToReferer: false };
   }
 
   // On submit, insert the data.
@@ -53,7 +52,6 @@ class SignupStudent extends React.Component {
     let fRef = null;
 
     if (this.state.redirectToReferer) {
-      console.log(Roles.userIsInRole(Meteor.userId(), 'student'));
       return <Redirect to={from}/>;
     }
     const panes = [

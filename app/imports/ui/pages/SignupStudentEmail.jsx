@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Meteor } from 'meteor/meteor';
 import { Link, Redirect } from 'react-router-dom';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
@@ -11,34 +12,39 @@ class SignupStudentEmail extends React.Component {
   /* Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', role: 'student', error: '', redirectToReferer: false };
+    this.state = { email: '', password: '', error: '', redirectToReferer: false };
   }
 
   /* Update the form controls each time the user interacts with them. */
   handleChange = (e, { name, value }) => {
     this.setState({ [name]: value });
-    this.setState({ role: 'student' });
   }
 
   /* Handle SignupStudentEmail submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
-    const { email, password, role } = this.state;
+    const { email, password } = this.state;
     this.setState({ role: 'student' });
-    Accounts.createUser({ email, username: email, password, role }, (err) => {
-      console.log(`role: ${role}`);
+    Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
-        this.setState({ error: '', redirectToReferer: true });
+        Meteor.call('addToRole', Meteor.userId(), 'student', (methodErr) => {
+          if (methodErr) {
+            console.log(methodErr);
+          } else {
+            this.setState({ error: '', redirectToReferer: true });
+          }
+        });
       }
     });
   }
 
   /* Display the signup form. Redirect to add page after successful registration and login. */
   render() {
+    const { from } = this.props.location.state || { from: { pathname: '/studentsignup' } };
     // if correct authentication, redirect to from: page instead of signup screen
     if (this.state.redirectToReferer) {
-      return <Redirect to={'/studentsignup'}/>;
+      return <Redirect to={from}/>;
     }
     return (
       <Container id="signup-student-page">

@@ -85,6 +85,14 @@ Meteor.publish(Jobs.userPublicationName, function () {
   return this.ready();
 });
 
+// If logged in as company or student, publish all tag documents to user
+Meteor.publish(Tags.userPublicationName, function () {
+  if (this.userId) {
+    return Tags.collection.find();
+  }
+  return this.ready();
+});
+
 // Admin-level publication.
 // If logged in and with admin role, then publish all documents from all users. Otherwise publish nothing.
 Meteor.publish(Class.adminPublicationName, function () {
@@ -125,14 +133,6 @@ Meteor.publish(Education.adminPublicationName, function () {
 Meteor.publish(Projects.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Projects.collection.find();
-  }
-  return this.ready();
-});
-
-// If logged in as company or student, publish all tag documents to user
-Meteor.publish(Tags.userPublicationName, function () {
-  if (this.userId && Roles.userIsInRole(this.userId, 'admin' || 'company' || 'student')) {
-    return Tags.collection.find();
   }
   return this.ready();
 });

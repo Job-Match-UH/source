@@ -5,9 +5,11 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Student from '../components/Student';
 import { Students } from '../../api/student/Student';
+import { Tags } from '../../api/tags/Tags';
 
-/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+/** Renders card containing all of the Student and Tags documents. */
 class ViewStudentMatches extends React.Component {
+
   render() {
     return (
       <Container id='view-student-matches-page'>
@@ -16,6 +18,7 @@ class ViewStudentMatches extends React.Component {
           {this.props.students.map((student, index) => <Student
             key={index}
             student={student}
+            tags={this.props.tags.filter(tag => (tag.owner === student.owner))}
           />)}
         </Card.Group>
       </Container>
@@ -23,8 +26,10 @@ class ViewStudentMatches extends React.Component {
   }
 }
 
+// Require an array of Student documents in the props.
 ViewStudentMatches.propTypes = {
   students: PropTypes.array.isRequired,
+  tags: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -33,14 +38,15 @@ export default withTracker(() => {
   // Get access to companies documents.
   const subscription = Meteor.subscribe(Students.userPublicationName);
   // Get access to tags documents.
-  // const subscription2 = Meteor.subscribe(Tags.userPublicationName);
+  const subscription2 = Meteor.subscribe(Tags.userPublicationName);
   // Determine if the subscriptions are ready
-  const ready = subscription.ready();
+  const ready = subscription.ready() && subscription2.ready();
   // Get the Companies documents
   const students = Students.collection.find({}).fetch();
-  // const tags = Tags.collection.find({}).fetch();
+  const tags = Tags.collection.find({}).fetch();
   return {
     students,
+    tags,
     ready,
   };
 })(ViewStudentMatches);

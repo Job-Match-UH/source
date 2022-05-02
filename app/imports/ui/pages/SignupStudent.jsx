@@ -3,10 +3,11 @@ import { Container, Header, Tab, Form } from 'semantic-ui-react';
 import { AutoForm, LongTextField, SubmitField, TextField, NumField } from 'uniforms-semantic';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Meteor } from 'meteor/meteor';
+import { withTracker } from 'meteor/react-meteor-data';
 import swal from 'sweetalert';
 import SimpleSchema from 'simpl-schema';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import { Students } from '../../api/student/Student';
 import AddExperience from './AddExperience';
 import AddEducation from './AddEducation';
@@ -42,18 +43,18 @@ class SignupStudent extends React.Component {
         } else {
           swal('Success', 'Profile created!', 'success');
           formRef.reset();
-          this.setState({ error: '', redirectToReferer: true });
+          // this.setState({ error: '', redirectToReferer: true });
         }
       });
   }
 
   render() {
-    const { from } = this.props.location.state || { from: { pathname: '/' } };
     let fRef = null;
-
-    if (this.state.redirectToReferer) {
-      return <Redirect to={from}/>;
-    }
+    // const { from } = this.props.location.state || { from: { pathname: '/' } };
+    //
+    // if (this.state.redirectToReferer) {
+    //   return <Redirect to={from}/>;
+    // }
     const panes = [
       {
         menuItem: 'Personal Info', render: () => <Tab.Pane>
@@ -106,4 +107,17 @@ SignupStudent.propTypes = {
   location: PropTypes.object,
 };
 
-export default SignupStudent;
+export default withTracker(({ match }) => {
+  // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
+  const documentId = match.params._id;
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe(Students.userPublicationName);
+  // Determine if the subscription is ready
+  const ready = subscription.ready();
+  // Get the document
+  const doc = Students.collection.findOne(documentId);
+  return {
+    doc,
+    ready,
+  };
+})(SignupStudent);

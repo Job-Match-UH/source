@@ -47,15 +47,15 @@ export default class Signin extends React.Component {
   // Render the signin form.
   render() {
     const { from } = this.props.location.state || { from: { pathname: '/' } };
-    const { toStudent } = this.props.location.state || { from: { pathname: `/studentprofile${this.props.student._id}` } };
-    const { toCompany } = this.props.location.state || { from: { pathname: `/companyprofile${this.props.company._id}` } };
+    // const { toStudent } = this.props.location.state || { from: { pathname: `/studentprofile${this.props.student._id}` } };
+    // const { toCompany } = this.props.location.state || { from: { pathname: `/companyprofile${this.props.company._id}` } };
 
     // if correct authentication, redirect to page instead of login screen
     if (this.state.redirectToReferer && this.state.role === 'student') {
-      return <Redirect to={toStudent}/>;
+      return <Redirect to={from}/>;
     }
     if (this.state.redirectToReferer && this.state.role === 'company') {
-      return <Redirect to={toCompany}/>;
+      return <Redirect to={from}/>;
     }
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;

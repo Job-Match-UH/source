@@ -13,13 +13,15 @@ class NavBar extends React.Component {
   render() {
     const color = '#2d5144';
     const menuStyle = { marginBottom: '10px', backgroundColor: color, fontFamily: 'Playfair Display' };
+    console.log(`userID: ${Meteor.userId()}`);
+    console.log(`Roles.userIsInRole: ${Roles.userIsInRole(Meteor.userId(), 'student')}`);
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
         <Menu.Item><Image src="https://github.com/Job-Match-UH/source/blob/main/images/uhmLOGO.png?raw=true" size='tiny'/></Menu.Item>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
           <Header inverted as='h1' style={ { fontFamily: 'Playfair Display' } }>Job Match&apos;UH</Header>
         </Menu.Item>
-        {Roles.userIsInRole(Meteor.userId(), 'student') && this.props.studentProfile ? (
+        {Roles.userIsInRole(Meteor.userId(), 'student') ? (
           [
             <Menu.Item id='view-student-profile' as={NavLink} activeClassName="active" exact to={`/studentprofile/${this.props.studentProfile._id}`} key='student'>My Profile</Menu.Item>,
             // <Menu.Item id='view-student-home' as={NavLink} activeClassName="active" exact to="/studenthomepage" key='student2'>Match Me!</Menu.Item>,
@@ -70,9 +72,14 @@ export default withTracker(() => {
   // Determine if the subscription is ready
   const ready = subscription.ready() || subscription2.ready();
   // Get the documents
+  // console.log(Meteor.user());
+  // console.log(Meteor.user().username);
   const currentUser = Meteor.user() ? Meteor.user().username : '';
+  // console.log(currentUser);
   const studentProfile = Students.collection.findOne({ owner: currentUser });
   const companyProfile = Companies.collection.findOne({ owner: currentUser });
+  // console.log(`student profile: ${studentProfile}`);
+  // console.log(`company profile: ${companyProfile}`);
   return {
     currentUser,
     studentProfile,

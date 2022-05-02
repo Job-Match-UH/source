@@ -23,7 +23,9 @@ class SignupStudentEmail extends React.Component {
   /* Handle SignupStudentEmail submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
     const { email, password, role } = this.state;
+    this.setState({ role: 'student' });
     Accounts.createUser({ email, username: email, password, role }, (err) => {
+      console.log(`role: ${role}`);
       if (err) {
         this.setState({ error: err.reason });
       } else {

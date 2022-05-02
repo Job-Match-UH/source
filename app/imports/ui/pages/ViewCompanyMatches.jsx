@@ -7,7 +7,7 @@ import Company from '../components/Company';
 import { Companies } from '../../api/company/Companies';
 import { Tags } from '../../api/tags/Tags';
 
-/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+/** Renders card containing all of the Company and Tags documents. */
 class ViewCompanyMatches extends React.Component {
 
   render() {

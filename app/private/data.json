@@ -1,0 +1,31 @@
+{
+  "users": [
+    { "email": "peterleo@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "uhonline@uhm.com", "password": "changeme", "role": "company" }
+  ],
+
+  "students": [
+    {
+      "firstName": "Peter",
+      "lastName": "Leong",
+      "address": "123 University Ave",
+      "phone": "1234567",
+      "about": "I am a student",
+      "image": "http://www2.hawaii.edu/~peterleo/Electronic_Portfolio/Cool-guy.jpg",
+      "owner": "peterleo@hawaii.edu"
+    }
+  ],
+  "companies": [
+    {
+      "companyName": "UH Online",
+      "website": "https://www.uhonline.hawaii.edu/",
+      "description": "Online learning opportunities at the University of Hawaii.",
+      "address": "Address",
+      "state": "State",
+      "phone": "1234567",
+      "year": "1234",
+      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
+      "owner": "uhonline@uhm.com"
+    }
+  ]
+}

@@ -12,7 +12,7 @@
     { "email": "ccortez134@hawaii.edu", "password": "changeme", "role": "student" },
     { "email": "hmanning@hawaii.edu", "password": "changeme", "role": "student" },
     { "email": "mhisatake@hawaii.edu", "password": "changeme", "role": "student" },
-    { "email": "uhonline@uhm.com", "password": "changeme", "role": "company" },
+    { "email": "uhonline@uhm.com", "password": "changeme", "role": "company" }
   ],
 
   "students": [
@@ -126,6 +126,61 @@
     }
   ],
   "companies": [
+    {
+      "companyName": "UH Online",
+      "website": "https://www.uhonline.hawaii.edu/",
+      "description": "Online learning opportunities at the University of Hawaii.",
+      "address": "Address",
+      "state": "State",
+      "phone": "1234567",
+      "year": "1234",
+      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
+      "owner": "uhonline@uhm.com"
+    },
+    {
+      "companyName": "Kyo-ya Hotels & Resorts - Sheraton Princess Kaiulani",
+      "website": "https://www.marriott.com/en-us/hotels/hnlks-sheraton-princess-kaiulani/overview/",
+      "description": "The Sheraton Princess Kaiulani offers a glimpse at Hawaii’s royal past in the heart of Waikiki. This O‘ahu hotel graces the former estate of Hawaii’s last princess, Princess Kaiulani, just steps from world-famous Waikiki Beach, plus unlimited shopping, dining, and nightlife options.",
+      "address": "120 Kaiulani Ave",
+      "state": "Honolulu, HI",
+      "phone": "8089225811",
+      "year": "1955",
+      "image": "https://cdn-fdiga.nitrocdn.com/XuhkOyFPrpLYLKDiuvQyZlwTSfvbndIG/assets/static/optimized/rev-7447dda/wp-content/uploads/2018/05/Kyoya_kaiulani2-1.png",
+      "owner": "uhonline@uhm.com"
+    },
+    {
+      "companyName": "UH Online",
+      "website": "https://www.uhonline.hawaii.edu/",
+      "description": "Online learning opportunities at the University of Hawaii.",
+      "address": "Address",
+      "state": "State",
+      "phone": "1234567",
+      "year": "1234",
+      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
+      "owner": "uhonline@uhm.com"
+    },
+    {
+      "companyName": "UH Online",
+      "website": "https://www.uhonline.hawaii.edu/",
+      "description": "Online learning opportunities at the University of Hawaii.",
+      "address": "Address",
+      "state": "State",
+      "phone": "1234567",
+      "year": "1234",
+      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
+      "owner": "uhonline@uhm.com"
+    },
+    {
+      "companyName": "UH Online",
+      "website": "https://www.uhonline.hawaii.edu/",
+      "description": "Online learning opportunities at the University of Hawaii.",
+      "address": "Address",
+      "state": "State",
+      "phone": "1234567",
+      "year": "1234",
+      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
+      "owner": "uhonline@uhm.com"
+    },
     {
       "companyName": "UH Online",
       "website": "https://www.uhonline.hawaii.edu/",

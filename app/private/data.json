@@ -13,6 +13,96 @@
       "about": "I am a student",
       "image": "http://www2.hawaii.edu/~peterleo/Electronic_Portfolio/Cool-guy.jpg",
       "owner": "peterleo@hawaii.edu"
+    },
+    {
+      "firstName": "Ereni",
+      "lastName": "Nakamura",
+      "address": "Kahala, HI",
+      "phone": "8085179479",
+      "about": "I am a second year student pursuing a Bachelors in Education",
+      "image": "",
+      "owner": "ereninak@hawaii.edu"
+    },
+    {
+      "firstName": "Cameron",
+      "lastName": "Woods",
+      "address": "Aiea, HI",
+      "phone": "8084696160",
+      "about": "I am a senior that will be graduating with a Bachelors in Public Health and Womens Studies",
+      "image": "",
+      "owner": "cmmw@hawaii.edu"
+    },
+    {
+      "firstName": "Isabella",
+      "lastName": "Kotsol",
+      "address": "Princeville, HI",
+      "phone": "8084696160",
+      "about": "I am a senior that will be graduating with a B.S. in Mechanical Engineering",
+      "image": "",
+      "owner": "ikotsol@hawaii.edu"
+    },
+    {
+      "firstName": "Jeanette",
+      "lastName": "Tajiri",
+      "address": "Kapuhulu, HI",
+      "phone": "8084696160",
+      "about": "I am a senior graduating this semester with a B.S. in Molecular Cell Biology Pre-Med.",
+      "image": "",
+      "owner": "jtajiri@hawaii.edu"
+    },
+    {
+      "firstName": "Ian",
+      "lastName": "Kimura",
+      "address": "Pauloa Valley, HI",
+      "phone": "8084824836",
+      "about": "I am a senior graduating with a B.S. in Computer Science in cyber security",
+      "image": "",
+      "owner": "kimurai@hawaii.edu"
+    },
+    {
+      "firstName": "Nohea",
+      "lastName": "Espejo",
+      "address": "Kailua, HI",
+      "phone": "8085179479",
+      "about": "I am a third year pursuing a B.S. in nursing",
+      "image": "",
+      "owner": "nespejo@hawaii.edu"
+    },
+    {
+      "firstName": "Romel",
+      "lastName": "Galanto",
+      "address": "Kalihi, HI",
+      "phone": "8084696160",
+      "about": "I am a third year majoring in Communications",
+      "image": "",
+      "owner": "rgalanto@hawaii.edu"
+    },
+    {
+      "firstName": "Anna",
+      "lastName": "Choy",
+      "address": "Kapaa, HI",
+      "phone": "8084696160",
+      "about": "I am a third year pursuing a B.S. in Nursing",
+      "image": "",
+      "owner": "achoy@hawaii.edu"
+    },
+    {
+      "firstName": "Anna-Malia",
+      "lastName": "Santos",
+      "address": "Anahola, HI",
+      "phone": "8084696160",
+      "about": "I am a senior graduating this semester with a B.S. in Electrical Engineering",
+      "image": "",
+      "owner": "asantos@gmail.com"
+    },
+    {
+      "firstName": "Sejong",
+      "lastName": "Takenaka",
+      "address": "Kilaeua, HI",
+      "phone": "8084824836",
+      "about": "I am a senior graduating with a B.A. in English",
+      "image": "",
+      "owner": "wildpup@gmail.com"
     }
   ],
   "companies": [
@@ -26,6 +116,61 @@
       "year": "1234",
       "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
       "owner": "uhonline@uhm.com"
+    },
+    {
+      "companyName": "American Savings Bank",
+      "website": "https://www.asbhawaii.com/about-us/join-our-team",
+      "description": "At ASB, we like to dream big. We are a great bank making people's dreams possible.",
+      "address": "300 N Beretania St",
+      "state": "State",
+      "phone": "8002722566",
+      "year": "1925",
+      "image": "https://ccbank.us/wp-content/uploads/logo-85.jpg",
+      "owner": "asb@asb.com"
+    },
+    {
+      "companyName": "Bank of Hawaii",
+      "website": "https://www.boh.com/careers",
+      "description": "Live your happy. At Bank of Hawaii, nothing means more to us than helping you pursue your happiness.",
+      "address": "111 South King St.",
+      "state": "Honolulu, HI",
+      "phone": "8086433888",
+      "year": "1897",
+      "image": "https://play-lh.googleusercontent.com/pFvF1NIEFLYFsoz-gYH1y7ZTEVyknRjTpa8HvXQqKOzdXtPx9utMyuQ2ySsca4cJWBKd",
+      "owner": "boh@boh.com"
+    },
+    {
+      "companyName": "First Hawaiian",
+      "website": "https://www.fhb.com/en/careers",
+      "description": "We look forward to serving you. We’re Hawaii's oldest and largest bank, ready to assist you with all your financial needs, be it personal, private, or business banking",
+      "address": "999 Bishop St.",
+      "state": "Honolulu, HI",
+      "phone": "8085257000",
+      "year": "1858",
+      "image": "https://media.mauinow.com/file/mauinow/2011/07/first-hawaiian-bank-logo.jpg",
+      "owner": "fhb@fhb.com"
+    },
+    {
+      "companyName": "Hawaiian Telcom",
+      "website": "https://www.hawaiiantel.com/aboutus/Careers",
+      "description": "When we connect, something beautiful happens. See how we connect.",
+      "address": "1177 Bishop Street",
+      "state": "Honolulu, HI ",
+      "phone": "8086436677",
+      "year": "1883",
+      "image": "https://yt3.ggpht.com/ytc/AKedOLTJ5y6LAfLuQQpHpOK132w7XM4qBC7CatUlG0FA=s900-c-k-c0x00ffffff-no-rj",
+      "owner": "htc@htc.com"
+    },
+    {
+      "companyName": "TSA (Transportation Security Administration)",
+      "website": "https://jobs.tsa.gov/careers-at-tsa",
+      "description": "Ensuring Safe Travels. If you’re looking to build a rewarding career and serve your country, you’ve come to the right place.",
+      "address": "300 Rodgers Blvd #45 4th Fl Tower Admin Bldg",
+      "state": "Honolulu, HI",
+      "phone": "8088314604",
+      "year": "2001",
+      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
+      "owner": "tsa@tsa.com"
     }
   ]
 }

@@ -12,7 +12,12 @@
     { "email": "ccortez134@hawaii.edu", "password": "changeme", "role": "student" },
     { "email": "hmanning@hawaii.edu", "password": "changeme", "role": "student" },
     { "email": "mhisatake@hawaii.edu", "password": "changeme", "role": "student" },
-    { "email": "uhonline@uhm.com", "password": "changeme", "role": "company" }
+    { "email": "uhonline@uhm.com", "password": "changeme", "role": "company" },
+    { "email": "news@civilbeat.org", "password": "changeme", "role": "company" },
+    { "email": "HOCInfo@hmsa.com", "password": "changeme", "role": "company" },
+    { "email": "sales@alohaaircargo.com", "password": "changeme", "role": "company" },
+    { "email": "propertymanagement@abhi.com", "password": "changeme", "role": "company" },
+    { "email": "GuestServices.00377@sheraton.com", "password": "changeme", "role": "company" }
   ],
 
   "students": [
@@ -146,51 +151,51 @@
       "phone": "8089225811",
       "year": "1955",
       "image": "https://cdn-fdiga.nitrocdn.com/XuhkOyFPrpLYLKDiuvQyZlwTSfvbndIG/assets/static/optimized/rev-7447dda/wp-content/uploads/2018/05/Kyoya_kaiulani2-1.png",
-      "owner": "uhonline@uhm.com"
+      "owner": "GuestServices.00377@sheraton.com"
     },
     {
-      "companyName": "UH Online",
-      "website": "https://www.uhonline.hawaii.edu/",
-      "description": "Online learning opportunities at the University of Hawaii.",
-      "address": "Address",
-      "state": "State",
-      "phone": "1234567",
-      "year": "1234",
-      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
-      "owner": "uhonline@uhm.com"
+      "companyName": "Alexander & Baldwin",
+      "website": "https://alexanderbaldwin.com/",
+      "description": "Alexander & Baldwin (NYSE: ALEX) is Hawaii’s premier real estate company. We own, operate and manage local properties at the heart of Hawaii’s business, industrial and retail communities. We’ve been creating special places and experiences for the people of Hawaii for 150 years.",
+      "address": "Alexander & Baldwin 822 Bishop Street Honolulu, HI 96813",
+      "state": "HI",
+      "phone": "8085256611",
+      "year": "1870",
+      "image": "https://upload.wikimedia.org/wikipedia/en/d/d6/Alexander_%26_Baldwin_logo.png",
+      "owner": "propertymanagement@abhi.com"
     },
     {
-      "companyName": "UH Online",
-      "website": "https://www.uhonline.hawaii.edu/",
-      "description": "Online learning opportunities at the University of Hawaii.",
-      "address": "Address",
-      "state": "State",
-      "phone": "1234567",
-      "year": "1234",
-      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
-      "owner": "uhonline@uhm.com"
+      "companyName": "Aloha Air Cargo",
+      "website": "www.alohaaircargo.comhttps:",
+      "description": "Aloha Air Cargo had its beginnings as a unit of Aloha Airlines, a passenger airline that served Hawaii and US mainland destinations from 1946 to 2008 for 61 years. Originally, Aloha’s cargo business consisted of carrying freight in the cargo holds below the floors of regular passenger flights. Aloha’s dual-purpose Boeing 737-200 QC aircraft, better known as ‘quick change’ aircraft, had the unique ability to convert from a passenger configuration to an exclusively cargo configuration in less than an hour. In the evening, pallets of seats were removed to accommodate the overnight cargo. On March 31, 2008, Aloha Airlines closed its doors, halting its passenger services. Aloha Airlines and its creditors, with the help of U.S. Senator Daniel Inouye, sold the airline’s profitable cargo division to Seattle-based Saltchuk, which in turn operates multiple lines of business in the transportation, logistics and freight industries.",
+      "address": "50 Elliott Street Honolulu, HI 96819",
+      "state": "HI",
+      "phone": "8088364222",
+      "year": "1946",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Aloha_Air_Cargo_Logo.svg/1920px-Aloha_Air_Cargo_Logo.svg.png",
+      "owner": "sales@alohaaircargo.com"
     },
     {
-      "companyName": "UH Online",
-      "website": "https://www.uhonline.hawaii.edu/",
-      "description": "Online learning opportunities at the University of Hawaii.",
-      "address": "Address",
-      "state": "State",
-      "phone": "1234567",
-      "year": "1234",
-      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
-      "owner": "uhonline@uhm.com"
+      "companyName": "Hawaii Medical Service Association (HMSA)",
+      "website": "https://hmsa.com/",
+      "description": "Caring for the people of Hawaii is our promise and our privilege. Working together with employers, partners, and physicians and other health care providers, we promote wellness; develop reliable, affordable health plans; and support members with clear, thoughtful guidance. HMSA is the most experienced health plan in the state, covering more than half of Hawaii’s population. As a recognized leader, we embrace our responsibility to strengthen the health and well-being of our community. Headquartered on Oahu with centers statewide to serve our members, HMSA is an independent licensee of the Blue Cross and Blue Shield Association.",
+      "address": "818 Keeaumoku St. Honolulu, HI 96814",
+      "state": "HI",
+      "phone": "8089486079",
+      "year": "1938",
+      "image": "https://upload.wikimedia.org/wikipedia/en/7/74/HMSA_Logo_2022.png",
+      "owner": "HOCInfo@hmsa.com"
     },
     {
-      "companyName": "UH Online",
-      "website": "https://www.uhonline.hawaii.edu/",
-      "description": "Online learning opportunities at the University of Hawaii.",
-      "address": "Address",
-      "state": "State",
-      "phone": "1234567",
-      "year": "1234",
-      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
-      "owner": "uhonline@uhm.com"
+      "companyName": "Honolulu Civil Beat",
+      "website": "https://www.civilbeat.org/",
+      "description": "Honolulu Civil Beat is a 501(c)3 tax-exempt news organization dedicated to cultivating an informed body of citizens, all striving to make Hawaii a better place to live. We achieve this through investigative and watchdog journalism, in-depth enterprise reporting, analysis and commentary that gives readers a broad view on issues of importance to our community.",
+      "address": "3465 Waialae Avenue #200, Honolulu HI 96816",
+      "state": "HI",
+      "phone": "8087372300",
+      "year": "2010",
+      "image": "https://www.civilbeat.org/wp-content/themes/becivil/dist/images/civilbeat-logo-round-flat-white.png",
+      "owner": "news@civilbeat.org"
     }
   ]
 }

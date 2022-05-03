@@ -2,19 +2,36 @@ import React from 'react';
 import { AutoForm, ErrorsField, HiddenField, SubmitField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
+// import SimpleSchema from 'simpl-schema';
 import PropTypes from 'prop-types';
+import SimpleSchema from 'simpl-schema';
 import MultiSelectField from '../forms/controllers/MultiSelectField';
 import { Tags } from '../../api/tags/Tags';
 
-const bridge = new SimpleSchema2Bridge(Tags.schema);
+const CommonInterestData = [
+  'Accounting/Fiscal', 'Administrative/Clerical', 'Agriculture', 'Architecture', 'Aquaculture', 'Art', 'Automotive', 'Business', 'Child Car', 'Communication',
+  'Computer', 'Construction Trades', 'Culinary Arts', 'Education', 'Electrical', 'Electronics', 'Emergency Medical Services', 'Engineering', 'Fashion Tech', 'Finance',
+  'Food Service', 'Graphical Arts', 'Groundskeeping/Janitorial', 'Health/Medical', 'Human Resources', 'Human Services', 'Janitorial/Custodial', 'Journalism', 'Laborer',
+  'Language', 'Law Enforcement/Judicial', 'Mail Processing', 'Marketing', 'Mathematics Statistics', 'Media', 'Miscellaneous', 'Performing Arts', 'Receptionist', 'Research',
+  'Retail', 'Science', 'Social Services', 'Sports/Recreation', 'Student Activities', 'Sustainability', 'Switch Board Operator', 'Technical/Trades', 'Tourism/Hospitality', 'Tutoring',
+];
 
 /** Renders the Page for adding a document. */
-class AddProject extends React.Component {
+class AddInterest extends React.Component {
+
+  constructor() {
+    super();
+    this.tempSchema = new SimpleSchema({
+      name: { type: Array, label: 'Interests', optional: true },
+      'name.$': { type: String, allowedValues: CommonInterestData },
+      owner: String,
+    });
+  }
 
   // On submit, insert the data.
   submit(data, formRef) {
     const { name, owner } = data;
-    Tags.collection.insert({ name, owner },
+    name.map((tag) => Tags.collection.insert({ name: tag, owner: owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -22,12 +39,13 @@ class AddProject extends React.Component {
           swal('Success', 'Interests added!', 'success');
           formRef.reset();
         }
-      });
+      }));
   }
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   render() {
     let fRef = null;
+    const bridge = new SimpleSchema2Bridge(this.tempSchema);
 
     return (
       <AutoForm style={ { marginBottom: 10 } } id='add-interest-page' ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
@@ -40,10 +58,8 @@ class AddProject extends React.Component {
   }
 }
 
-// <HiddenField name='contactId' value={this.props.contactId}/>
-
-AddProject.propTypes = {
+AddInterest.propTypes = {
   owner: PropTypes.string.isRequired,
 };
 
-export default AddProject;
+export default AddInterest;

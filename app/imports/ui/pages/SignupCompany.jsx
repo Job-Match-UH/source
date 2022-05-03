@@ -1,13 +1,7 @@
 import React from 'react';
+// import { Redirect } from 'react-router';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
-// import { Redirect } from 'react-router-dom';
-import { Container, Form, Header, Segment } from 'semantic-ui-react';
-import { AutoForm, SubmitField, TextField, LongTextField, NumField } from 'uniforms-semantic';
-import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import SimpleSchema from 'simpl-schema';
-import swal from 'sweetalert';
-import PropTypes from 'prop-types';
 import { Companies } from '../../api/company/Companies';
 import AddInterest from './AddInterest';
 import { Redirect } from 'react-router-dom';

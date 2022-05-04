@@ -7,9 +7,11 @@ import { Students } from '../../api/student/Student';
 import Educations from '../components/Educations';
 import Experience from '../components/Experience';
 import Project from '../components/Project';
+import Tag from '../components/Tag';
 import { Experiences } from '../../api/experience/Experience';
 import { Education } from '../../api/education/Education';
 import { Projects } from '../../api/projects/Projects';
+import { Tags } from '../../api/tags/Tags';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ViewStudentProfile extends React.Component {
@@ -39,6 +41,12 @@ class ViewStudentProfile extends React.Component {
                 <Item.Description className='cp-text'>{this.props.student.owner}</Item.Description>
                 <Item.Description className='cp-text'>{this.props.student.phone}</Item.Description>
                 <Item.Description className='cp-text'>{this.props.student.about}</Item.Description>
+                <Item.Description className='cp-text'>
+                  {this.props.tags.map((tags, index) => <Tag
+                    key={index}
+                    tag={tags}
+                  />)}
+                </Item.Description>
               </Item>
             </Grid.Column>
           </Grid.Row>
@@ -75,6 +83,7 @@ ViewStudentProfile.propTypes = {
   experience: PropTypes.array.isRequired,
   education: PropTypes.array.isRequired,
   projects: PropTypes.array.isRequired,
+  tags: PropTypes.array,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -87,18 +96,21 @@ export default withTracker(({ match }) => {
   const subscription2 = Meteor.subscribe(Experiences.userPublicationName);
   const subscription3 = Meteor.subscribe(Education.userPublicationName);
   const subscription4 = Meteor.subscribe(Projects.userPublicationName);
+  const subscription5 = Meteor.subscribe(Tags.userPublicationName);
   // Determine if the subscription is ready
-  const ready = subscription1.ready() && subscription2.ready() && subscription3.ready() && subscription4.ready();
+  const ready = subscription1.ready() && subscription2.ready() && subscription3.ready() && subscription4.ready() && subscription5.ready();
   // Get the documents
   const student = Students.collection.findOne(studentId);
   const education = Education.collection.find({ owner: student.owner });
   const experience = Experiences.collection.find({ owner: student.owner });
   const projects = Projects.collection.find({ owner: student.owner });
+  const tags = Tags.collection.find({ owner: student.owner });
   return {
     student,
     education,
     experience,
     projects,
+    tags,
     ready,
   };
 })(ViewStudentProfile);

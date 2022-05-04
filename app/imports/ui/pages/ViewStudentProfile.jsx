@@ -22,6 +22,7 @@ class ViewStudentProfile extends React.Component {
   }
 
   renderPage() {
+    const styling = { padding: '0px' };
     return (
       <Container id='view-student-profile'>
         <Grid celled='internally'>
@@ -41,6 +42,7 @@ class ViewStudentProfile extends React.Component {
                 <Item.Description className='cp-text'>{this.props.student.owner}</Item.Description>
                 <Item.Description className='cp-text'>{this.props.student.phone}</Item.Description>
                 <Item.Description className='cp-text'>{this.props.student.about}</Item.Description>
+                <Header as='h3' className='cp-text' style={styling}>Interests</Header>
                 <Item.Description className='cp-text'>
                   {this.props.tags.map((tags, index) => <Tag
                     key={index}

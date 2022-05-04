@@ -18,6 +18,7 @@ class ViewCompanyProfile extends React.Component {
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   renderPage() {
+    const styling = { padding: '0px' };
     return (
       <Container id='view-company-profile'>
         <Grid className='cp-text'>
@@ -35,6 +36,7 @@ class ViewCompanyProfile extends React.Component {
               <Item.Description>{this.props.company.state}</Item.Description>
               <Item.Description>{this.props.company.phone}</Item.Description>
               <Item.Description>{this.props.company.year}</Item.Description>
+              <Header as='h3' className='cp-text' style={styling}>Interests</Header>
               <Item.Description className='cp-text'>
                 {this.props.tags.map((tags, index) => <Tag
                   key={index}

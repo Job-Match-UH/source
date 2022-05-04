@@ -13,7 +13,7 @@ class NavBar {
 
   async gotoSigninPage(testController) {
     await this.ensureLogout(testController);
-    await testController.click('#login-dropdown-sign-in');
+    await testController.click('#sign-in');
   }
 
   async gotoViewCompanyMatches(testController) {

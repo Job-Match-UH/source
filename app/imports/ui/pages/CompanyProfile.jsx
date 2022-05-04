@@ -76,7 +76,8 @@ export default withTracker(({ match }) => {
   const sub1 = Meteor.subscribe(Companies.userPublicationName);
   const sub2 = Meteor.subscribe(Jobs.userPublicationName);
   // Get documents
-  const company = Companies.collection.findOne(documentId);
+  const email = Meteor.users.findOne(documentId).username;
+  const company = Companies.collection.findOne({ owner: email });
   const job = Jobs.collection.find({}).fetch();
   const ready = sub1.ready() && sub2.ready();
 

@@ -51,12 +51,12 @@ export default class Signin extends React.Component {
   // Render the signin form.
   render() {
     const { from } = this.props.location.state || { from: { pathname: '/' } };
-    // if correct authentication, redirect to page instead of login screen
+
     if (this.state.redirectToReferer && this.state.role === 'student') {
-      return <Redirect to={'/viewcompanymatches'}/>;
+      return <Redirect to={from}/>;
     }
     if (this.state.redirectToReferer && this.state.role === 'company') {
-      return <Redirect to={'/viewstudentmatches'}/>;
+      return <Redirect to={from}/>;
     }
     if (this.state.redirectToReferer && this.state.role === 'admin') {
       return <Redirect to={from}/>;
@@ -65,7 +65,7 @@ export default class Signin extends React.Component {
     // Otherwise return the Login form.
     // eslint-disable-next-line no-return-assign
     return (
-      <Container>
+      <Container id="signin-page">
         <Segment textAlign='center' borderless='true' basic>
           {this.state.error === '' && this.props.location.error === undefined ? (
             ''
@@ -77,7 +77,7 @@ export default class Signin extends React.Component {
             />
           )}
         </Segment>
-        <Segment placeholder id="signin-page">
+        <Segment placeholder>
           <Grid columns={2} relaxed='very' stackable>
             <Grid.Column>
               <Header as="h2" textAlign="center" className='cp-text'>

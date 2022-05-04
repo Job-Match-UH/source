@@ -24,12 +24,16 @@ import AddProject from '../pages/AddProject';
 // import CompanyHomePage from '../pages/CompanyHomePage';
 import AdminHomePage from '../pages/AdminHomePage';
 import ViewStudentMatches from '../pages/ViewStudentMatches';
+import ViewStudentProfile from '../pages/ViewStudentProfile';
+import ViewCompanyProfile from '../pages/ViewCompanyProfile';
 import ViewCompanyMatches from '../pages/ViewCompanyMatches';
 import NotFound from '../pages/NotFound';
 import EditEducation from '../pages/EditEducation';
 import EditExperience from '../pages/EditExperience';
 import EditProject from '../pages/EditProject';
 import EditStudent from '../pages/EditStudent';
+import EditCompany from '../pages/EditCompany';
+import EditJob from '../pages/EditJob';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -56,8 +60,12 @@ class App extends React.Component {
             <ProtectedRoute path="/editexperience/:_id" component={EditExperience}/>
             <ProtectedRoute path="/editproject/:_id" component={EditProject}/>
             <ProtectedRoute path="/editstudent/:_id" component={EditStudent}/>
-            {/*<StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/>*/}
-            {/*<CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/>*/}
+            <ProtectedRoute path="/editcompany/:_id" component={EditCompany}/>
+            <ProtectedRoute path="/editjob/:_id" component={EditJob}/>
+            <CompanyProtectedRoute path="/viewstudent/:_id" component={ViewStudentProfile}/>
+            <StudentProtectedRoute path="/viewcompany/:_id" component={ViewCompanyProfile}/>
+            {/* <StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/> */}
+            {/* <CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/> */}
             <CompanyProtectedRoute path="/jobpostings" component={JobPostings}/>
             <AdminProtectedRoute path="/admin" component={AdminHomePage}/>
             <CompanyProtectedRoute path="/viewstudentmatches" component={ViewStudentMatches}/>
@@ -99,8 +107,8 @@ const StudentProtectedRoute = ({ component: Component, ...rest }) => (
     {...rest}
     render={(props) => {
       const isLogged = Meteor.userId() !== null;
-      const isStudent = Roles.userIsInRole(Meteor.userId(), 'student');
-      return (isLogged && isStudent) ?
+      const isStudentAdmin = Roles.userIsInRole(Meteor.userId(), 'student') || Roles.userIsInRole(Meteor.userId(), 'admin');
+      return (isLogged && isStudentAdmin) ?
         (<Component {...props} />) :
         (Meteor.logout() || <Redirect to={{ pathname: '/signin', state: { from: props.location }, error: 'Unauthorized login' }}/>
         );
@@ -118,8 +126,8 @@ const CompanyProtectedRoute = ({ component: Component, ...rest }) => (
     {...rest}
     render={(props) => {
       const isLogged = Meteor.userId() !== null;
-      const isCompany = Roles.userIsInRole(Meteor.userId(), 'company');
-      return (isLogged && isCompany) ?
+      const isCompanyAdmin = Roles.userIsInRole(Meteor.userId(), 'company') || Roles.userIsInRole(Meteor.userId(), 'admin');
+      return (isLogged && isCompanyAdmin) ?
         (<Component {...props} />) :
         (Meteor.logout() || <Redirect to={{ pathname: '/signin', state: { from: props.location }, error: 'Unauthorized login' }}/>
         );

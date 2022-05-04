@@ -13,11 +13,12 @@ class NavBar {
 
   async gotoSigninPage(testController) {
     await this.ensureLogout(testController);
-    await testController.click('#login-dropdown-sign-in');
+    await testController.click('#sign-in');
   }
 
   async gotoViewCompanyMatches(testController) {
     await testController.click('#view-company-matches');
+    await testController.click('#view-company-profile');
   }
 
   async gotoStudentHome(testController) {
@@ -42,6 +43,7 @@ class NavBar {
 
   async gotoViewStudentMatches(testController) {
     await testController.click('#view-student-matches');
+    await testController.click('#view-student-profile');
   }
 
   async gotoJobPostings(testController) {

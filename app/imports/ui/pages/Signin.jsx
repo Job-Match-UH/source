@@ -47,12 +47,12 @@ export default class Signin extends React.Component {
   // Render the signin form.
   render() {
     const { from } = this.props.location.state || { from: { pathname: '/' } };
-    // if correct authentication, redirect to page instead of login screen
+
     if (this.state.redirectToReferer && this.state.role === 'student') {
-      return <Redirect to={'/viewcompanymatches'}/>;
+      return <Redirect to={from}/>;
     }
     if (this.state.redirectToReferer && this.state.role === 'company') {
-      return <Redirect to={'/viewstudentmatches'}/>;
+      return <Redirect to={from}/>;
     }
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
@@ -61,8 +61,19 @@ export default class Signin extends React.Component {
     // Otherwise return the Login form.
     // eslint-disable-next-line no-return-assign
     return (
-      <Container>
-        <Segment placeholder id="signin-page">
+      <Container id="signin-page">
+        <Segment textAlign='center' borderless='true' basic>
+          {this.state.error === '' && this.props.location.error === undefined ? (
+            ''
+          ) : (
+            <Message
+              error
+              header="Login was not successful"
+              content={`${this.state.error} ${this.props.location.error}`}
+            />
+          )}
+        </Segment>
+        <Segment placeholder>
           <Grid columns={2} relaxed='very' stackable>
             <Grid.Column>
               <Header as="h2" textAlign="center" className='cp-text'>
@@ -122,18 +133,6 @@ export default class Signin extends React.Component {
           </Grid>
           <Divider vertical>Or</Divider>
         </Segment>
-        <Segment textAlign='center' borderless='true'>
-          {this.state.error === '' && this.props.location.error === undefined ? (
-            ''
-          ) : (
-            <Message
-              error
-              header="Login was not successful"
-              content={`${this.state.error} ${this.props.location.error}`}
-            />
-          )}
-        </Segment>
-
       </Container>
     );
   }

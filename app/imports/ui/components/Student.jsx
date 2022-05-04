@@ -1,13 +1,15 @@
 import React from 'react';
-import { Card, Image, Button, Grid, Icon } from 'semantic-ui-react';
+import { _ } from 'meteor/underscore';
+import { Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { Link, NavLink, withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
+import Tag from './Tag';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Student extends React.Component {
   render() {
     return (
-      <Card as={NavLink} exact to="/studentprofile">
+      <Card as={NavLink} exact to={`/viewstudent/${this.props.student._id}`}>
         <Card.Content>
           <Image
             floated='right'
@@ -23,14 +25,10 @@ class Student extends React.Component {
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <div className='ui two buttons'>
-            <Button basic color='green'>
-              Add to Interested
-            </Button>
-            <Button basic color='red'>
-              Not Interested
-            </Button>
-          </div>
+          {_.map(this.props.tags, (tag, index) => <Tag
+            key={index}
+            tag={tag}
+          />)}
         </Card.Content>
       </Card>
     );
@@ -40,6 +38,7 @@ class Student extends React.Component {
 // Require a document to be passed to this component.
 Student.propTypes = {
   student: PropTypes.object.isRequired,
+  tags: PropTypes.array.isRequired,
 };
 
 // Wrap this component in withRouter since we use the <Link> React Router element.

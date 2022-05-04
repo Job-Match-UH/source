@@ -7,24 +7,25 @@ import Company from '../components/Company';
 import { Companies } from '../../api/company/Companies';
 import { Tags } from '../../api/tags/Tags';
 
-/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+/** Renders card containing all of the Company and Tags documents. */
 class ViewCompanyMatches extends React.Component {
+
   render() {
     return (
-      <Container id='view-company-page'>
+      <Container id='view-company-matches-page'>
         <Header as='h2' className='cp-text' textAlign='center'>Interested Matches!</Header>
         <Card.Group itemsPerRow={4}>
           {this.props.companies.map((company, index) => <Company
             key={index}
-            company={company}/>)}
-          {this.props.tags.map((tags, index) => <Company
-            key={index}
-            tags={tags}/>)}
+            company={company}
+            tags={this.props.tags.filter(tag => (tag.owner === company.owner))}
+          />)}
         </Card.Group>
       </Container>
     );
   }
 }
+
 // Require an array of Companies documents in the props.
 ViewCompanyMatches.propTypes = {
   companies: PropTypes.array.isRequired,
@@ -40,7 +41,7 @@ export default withTracker(() => {
   const subscription2 = Meteor.subscribe(Tags.userPublicationName);
   // Determine if the subscriptions are ready
   const ready = subscription.ready() && subscription2.ready();
-  // Get the Contacts documents
+  // Get the Companies documents
   const companies = Companies.collection.find({}).fetch();
   const tags = Tags.collection.find({}).fetch();
   return {

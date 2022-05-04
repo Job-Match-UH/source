@@ -21,8 +21,7 @@ class TagsCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      name: { type: Array, optional: true },
-      'name.$': { type: String, allowedValues: CommonInterestData.interests },
+      name: { type: String, optional: true, allowedValues: CommonInterestData.interests },
       owner: String,
     }, { tracker: Tracker });
     // Ensure collection documents obey schema.

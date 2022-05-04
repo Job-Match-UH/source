@@ -1,7 +1,9 @@
 import React from 'react';
-import { Card } from 'semantic-ui-react';
+import { Card, Grid, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import { Roles } from 'meteor/alanning:roles';
+import { Meteor } from 'meteor/meteor';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Job extends React.Component {
@@ -9,7 +11,22 @@ class Job extends React.Component {
     return (
       <Card>
         <Card.Content>
-          <Card.Header>{this.props.job.jobTitle}</Card.Header>
+          <Card.Header>
+            <Card.Content extra>
+              <Grid columns='equal'>
+                <Grid.Row>
+                  <Grid.Column width={12}>
+                    {this.props.job.jobTitle}
+                  </Grid.Column>
+                  <Grid.Column>
+                    {Roles.userIsInRole(Meteor.userId(), 'company') ? (
+                      <Link to={`/editjob/${this.props.job._id}`}><Icon name='pencil'/></Link>
+                    ) : ''}
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
+            </Card.Content>
+          </Card.Header>
           <Card.Meta>{this.props.job.location}</Card.Meta>
           <Card.Description>
             {this.props.job.jobDescription}

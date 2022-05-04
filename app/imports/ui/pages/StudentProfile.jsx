@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Header, Loader, Container, Item, Image, Card, Icon } from 'semantic-ui-react';
+import { Grid, Header, Loader, Container, Item, Image, Card, Icon, Tab } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -11,6 +11,10 @@ import { Students } from '../../api/student/Student';
 import { Experiences } from '../../api/experience/Experience';
 import { Education } from '../../api/education/Education';
 import { Projects } from '../../api/projects/Projects';
+import AddProject from './AddProject';
+import AddExperience from './AddExperience';
+import AddEducation from './AddEducation';
+import AddInterest from './AddInterest';
 
 class StudentProfile extends React.Component {
 
@@ -31,7 +35,24 @@ class StudentProfile extends React.Component {
 
   // Render student profile page according to current user
   renderPage() {
-    // const { activeItem } = this.state;
+    const panes = [
+      { menuItem: 'Education', render: () => <Tab.Pane>
+        <AddEducation owner={Meteor.user().username}/>
+      </Tab.Pane> },
+
+      { menuItem: 'Experience', render: () => <Tab.Pane>
+        <AddExperience owner={Meteor.user().username}/>
+      </Tab.Pane> },
+
+      { menuItem: 'Projects', render: () => <Tab.Pane>
+        <AddProject owner={Meteor.user().username}/>
+      </Tab.Pane> },
+
+      { menuItem: 'Interests', render: () => <Tab.Pane>
+        <AddInterest owner={Meteor.user().username}/>
+      </Tab.Pane> },
+    ];
+
     return (
       <Container id='student-profile-page'>
         <Grid celled='internally'>
@@ -39,7 +60,7 @@ class StudentProfile extends React.Component {
             <Grid.Column width={3}>
               <Image centered size='medium' src={this.props.students.image}/>
             </Grid.Column>
-            <Grid.Column width={12}>
+            <Grid.Column width={13}>
               <Grid columns='equal'>
                 <Grid.Row>
                   <Grid.Column width={15}>
@@ -58,8 +79,10 @@ class StudentProfile extends React.Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width={12}>
-              <Header className='cp-text'>Education</Header>
+            <Grid.Column width={9}>
+              <Grid.Column width={2}>
+                <Header className='cp-text'>Education</Header>
+              </Grid.Column>
               <Card.Group>
                 {this.props.education.map((educations, index) => <Educations
                   key={index}
@@ -77,6 +100,9 @@ class StudentProfile extends React.Component {
                   key={index}
                   project={project}/>)}
               </Card.Group>
+            </Grid.Column>
+            <Grid.Column width={7}>
+              <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
             </Grid.Column>
           </Grid.Row>
         </Grid>

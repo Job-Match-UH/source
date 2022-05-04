@@ -43,7 +43,7 @@ class ViewStudentProfile extends React.Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width={12}>
+            <Grid.Column>
               <Header className='cp-text'>Education</Header>
               <Card.Group>
                 {this.props.education.map((educations, index) => <Educations

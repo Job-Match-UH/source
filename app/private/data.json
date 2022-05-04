@@ -1,6 +1,22 @@
 {
   "users": [
     { "email": "peterleo@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "ecadiena323@gmail.com", "password": "changeme", "role":  "student"},
+    { "email": "jameschang719@gmail.com", "password": "changeme", "role": "student"},
+    { "email": "miac12323@gmail.com", "password": "changeme", "role": "student"},
+    { "email": "zcadiena@gmail.com", "password": "changeme", "role": "student"},
+    { "email": "rhnakasone3@gmail.com", "password": "changeme", "role": "student"},
+    { "email": "cristianm1148@gmail.com", "password": "changeme", "role": "student"},
+    { "email": "t0mb0ys@gmail.com", "password": "changeme", "role": "student"},
+    { "email": "coltj@gmail.com", "password": "changeme", "role": "student"},
+    { "email": "scarlettb@gmail.com", "password": "changeme", "role": "student"},
+    { "email": "nathanm@gmail.com", "password": "changeme", "role": "student"},
+    { "email": "apple@gmail.com", "password": "changeme", "role": "company"},
+    { "email": "bishop@museum.org", "password": "changeme", "role": "company"},
+    { "email": "ced@gmail.com", "password": "changeme", "role": "company"},
+    { "email": "dia@gmail.com", "password": "changeme", "role": "company"},
+    { "email": "citycounty@gmail.com", "password": "changeme", "role": "company"},
+    { "email": "doe@gmail.com", "password": "changeme", "role": "company"},
     { "email": "uhonline@uhm.com", "password": "changeme", "role": "company" }
   ],
 

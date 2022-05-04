@@ -5,27 +5,35 @@ import 'semantic-ui-css/semantic.css';
 import { Roles } from 'meteor/alanning:roles';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from '../components/NavBar';
-import AdminHomePage from '../pages/AdminHomePage';
-import CompanyProfile from '../pages/CompanyProfile';
-import StudentProfile from '../pages/StudentProfile';
-import SignupCompany from '../pages/SignupCompany';
-import StudentHomePage from '../pages/StudentHomePage';
-import CompanyHomePage from '../pages/CompanyHomePage';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
-import SignupStudent from '../pages/SignupStudent';
 import Signout from '../pages/Signout';
-import ClassScheduleForm from '../pages/ClassScheduleForm';
-import ViewStudentMatches from '../pages/ViewStudentMatches';
-import ViewCompanyMatches from '../pages/ViewCompanyMatches';
-import AddExperience from '../pages/AddExperience';
 import SignupStudentEmail from '../pages/SignupStudentEmail';
 import SignupCompanyEmail from '../pages/SignupCompanyEmail';
+import SignupStudent from '../pages/SignupStudent';
+import SignupCompany from '../pages/SignupCompany';
+import StudentProfile from '../pages/StudentProfile';
+import CompanyProfile from '../pages/CompanyProfile';
 import JobPostings from '../pages/JobPostings';
+import ClassScheduleForm from '../pages/ClassScheduleForm';
+import AddExperience from '../pages/AddExperience';
 import AddEducation from '../pages/AddEducation';
 import AddProject from '../pages/AddProject';
+// import StudentHomePage from '../pages/StudentHomePage';
+// import CompanyHomePage from '../pages/CompanyHomePage';
+import AdminHomePage from '../pages/AdminHomePage';
+import ViewStudentMatches from '../pages/ViewStudentMatches';
+import ViewStudentProfile from '../pages/ViewStudentProfile';
+import ViewCompanyProfile from '../pages/ViewCompanyProfile';
+import ViewCompanyMatches from '../pages/ViewCompanyMatches';
+import NotFound from '../pages/NotFound';
+import EditEducation from '../pages/EditEducation';
+import EditExperience from '../pages/EditExperience';
+import EditProject from '../pages/EditProject';
+import EditStudent from '../pages/EditStudent';
+import EditCompany from '../pages/EditCompany';
+import EditJob from '../pages/EditJob';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -42,18 +50,26 @@ class App extends React.Component {
             <Route path="/company_signup" component={SignupCompanyEmail}/>
             <Route path="/studentsignup" component={SignupStudent}/>
             <Route path="/companysignup" component={SignupCompany}/>
-            <Route path="/companyprofile" component={CompanyProfile}/>
-            <Route path="/studentprofile" component={StudentProfile}/>
-            <Route path="/jobpostings" component={JobPostings}/>
+            <StudentProtectedRoute path="/studentprofile/:_id" component={StudentProfile}/>
+            <ProtectedRoute path="/companyprofile/:_id" component={CompanyProfile}/>
             <Route path="/classform" component={ClassScheduleForm}/>
             <ProtectedRoute path="/addexp" component={AddExperience}/>
             <ProtectedRoute path="/addedu" component={AddEducation}/>
             <ProtectedRoute path="/addproject" component={AddProject}/>
-            <StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/>
-            <CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/>
+            <ProtectedRoute path="/editeducation/:_id" component={EditEducation}/>
+            <ProtectedRoute path="/editexperience/:_id" component={EditExperience}/>
+            <ProtectedRoute path="/editproject/:_id" component={EditProject}/>
+            <ProtectedRoute path="/editstudent/:_id" component={EditStudent}/>
+            <ProtectedRoute path="/editcompany/:_id" component={EditCompany}/>
+            <ProtectedRoute path="/editjob/:_id" component={EditJob}/>
+            <CompanyProtectedRoute path="/viewstudent/:_id" component={ViewStudentProfile}/>
+            <StudentProtectedRoute path="/viewcompany/:_id" component={ViewCompanyProfile}/>
+            {/* <StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/> */}
+            {/* <CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/> */}
+            <CompanyProtectedRoute path="/jobpostings" component={JobPostings}/>
             <AdminProtectedRoute path="/admin" component={AdminHomePage}/>
-            <StudentProtectedRoute path="/viewcompanymatches" component={ViewCompanyMatches}/>
             <CompanyProtectedRoute path="/viewstudentmatches" component={ViewStudentMatches}/>
+            <StudentProtectedRoute path="/viewcompanymatches" component={ViewCompanyMatches}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
@@ -91,8 +107,8 @@ const StudentProtectedRoute = ({ component: Component, ...rest }) => (
     {...rest}
     render={(props) => {
       const isLogged = Meteor.userId() !== null;
-      const isStudent = Roles.userIsInRole(Meteor.userId(), 'student');
-      return (isLogged && isStudent) ?
+      const isStudentAdmin = Roles.userIsInRole(Meteor.userId(), 'student') || Roles.userIsInRole(Meteor.userId(), 'admin');
+      return (isLogged && isStudentAdmin) ?
         (<Component {...props} />) :
         (Meteor.logout() || <Redirect to={{ pathname: '/signin', state: { from: props.location }, error: 'Unauthorized login' }}/>
         );
@@ -110,8 +126,8 @@ const CompanyProtectedRoute = ({ component: Component, ...rest }) => (
     {...rest}
     render={(props) => {
       const isLogged = Meteor.userId() !== null;
-      const isCompany = Roles.userIsInRole(Meteor.userId(), 'company');
-      return (isLogged && isCompany) ?
+      const isCompanyAdmin = Roles.userIsInRole(Meteor.userId(), 'company') || Roles.userIsInRole(Meteor.userId(), 'admin');
+      return (isLogged && isCompanyAdmin) ?
         (<Component {...props} />) :
         (Meteor.logout() || <Redirect to={{ pathname: '/signin', state: { from: props.location }, error: 'Unauthorized login' }}/>
         );

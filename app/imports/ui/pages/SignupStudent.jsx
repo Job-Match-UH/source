@@ -3,18 +3,22 @@ import { Container, Header, Tab, Form } from 'semantic-ui-react';
 import { AutoForm, LongTextField, SubmitField, TextField, NumField } from 'uniforms-semantic';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Meteor } from 'meteor/meteor';
+import { withTracker } from 'meteor/react-meteor-data';
 import swal from 'sweetalert';
 import SimpleSchema from 'simpl-schema';
+import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 import { Students } from '../../api/student/Student';
 import AddExperience from './AddExperience';
 import AddEducation from './AddEducation';
 import AddProject from './AddProject';
+import AddInterest from './AddInterest';
 
 const formSchema = new SimpleSchema({
   firstName: String,
   lastName: String,
   address: String,
-  phone: Number,
+  phone: { type: SimpleSchema.Integer, min: 0 }, // can also use String as type
   about: String,
   image: String,
 });
@@ -22,6 +26,11 @@ const formSchema = new SimpleSchema({
 const bridge = new SimpleSchema2Bridge(formSchema);
 
 class SignupStudent extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { email: '', password: '', error: '', redirectToReferer: false };
+  }
 
   // On submit, insert the data.
   submit(data, formRef) {
@@ -33,6 +42,7 @@ class SignupStudent extends React.Component {
           swal('Error', error.message, 'error');
         } else {
           swal('Success', 'Profile created!', 'success');
+          this.setState({ error: '', redirectToReferer: true });
           formRef.reset();
         }
       });
@@ -40,11 +50,11 @@ class SignupStudent extends React.Component {
 
   render() {
     let fRef = null;
-    /*
+    const { from } = this.props.location.state || { from: { pathname: '/' } };
+
     if (this.state.redirectToReferer) {
-      return <Redirect to={'/studentprofile'}/>;
+      return <Redirect to={from}/>;
     }
-    */
 
     const panes = [
       {
@@ -61,10 +71,7 @@ class SignupStudent extends React.Component {
           <LongTextField id='personal-info-about' label='About' placeholder='Tell us more about you...' name='about'/>
         </Tab.Pane>,
       },
-      /* { menuItem: 'Interests', render: () => <Tab.Pane>
-        <Form.Dropdown label='Add interests' placeholder='Pick multiple interests' fluid multiple selection options={interests} />
-      </Tab.Pane> },
-       */
+
       { menuItem: 'Projects', render: () => <Tab.Pane>
         <AddProject owner={Meteor.user().username}/>
       </Tab.Pane> },
@@ -76,26 +83,10 @@ class SignupStudent extends React.Component {
       { menuItem: 'Education', render: () => <Tab.Pane>
         <AddEducation owner={Meteor.user().username}/>
       </Tab.Pane> },
-      /*
-      { menuItem: 'Documents', render: () => <Tab.Pane>
-        <Form>
-          <Form.Input fluid label='Upload documents' placeholder='Upload file'>
-            <Form.Button
-              content="Choose File"
-              labelPosition="left"
-              icon="file"
-              onClick={() => this.fileInputRef.current.click()}
-            />
-            <input
-              ref={this.fileInputRef}
-              type="file"
-              hidden
-              onChange={this.fileChange}
-            />
-          </Form.Input>
-        </Form>
+
+      { menuItem: 'Interests', render: () => <Tab.Pane>
+        <AddInterest owner={Meteor.user().username}/>
       </Tab.Pane> },
-      */
     ];
 
     return (
@@ -112,4 +103,23 @@ class SignupStudent extends React.Component {
   }
 }
 
-export default SignupStudent;
+/* Ensure that the React Router location object is available in case we need to redirect. */
+SignupStudent.propTypes = {
+  location: PropTypes.object,
+  student: PropTypes.object.isRequired,
+};
+
+export default withTracker(({ match }) => {
+  // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
+  const documentId = match.params._id;
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe(Students.userPublicationName);
+  // Determine if the subscription is ready
+  const ready = subscription.ready();
+  // Get the document
+  const doc = Students.collection.findOne(documentId);
+  return {
+    doc,
+    ready,
+  };
+})(SignupStudent);

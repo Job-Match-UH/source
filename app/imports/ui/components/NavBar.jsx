@@ -23,17 +23,17 @@ class NavBar extends React.Component {
         </Menu.Item>
         { Roles.userIsInRole(Meteor.userId(), 'student') ? (
           [
-            <Menu.Item id='view-student-profile' as={NavLink} activeClassName="active" exact to={`/studentprofile/${Meteor.userId()}`} key='student' style={ { fontSize: 'large' } }>My Profile</Menu.Item>,
+            <Menu.Item id='view-student-profile' as={NavLink} activeClassName="active" exact to={`/studentprofile/${Meteor.userId()}`} key='student'>My Profile</Menu.Item>,
             // <Menu.Item id='view-student-home' as={NavLink} activeClassName="active" exact to="/studenthomepage" key='student2'>Match Me!</Menu.Item>,
-            <Menu.Item id='view-company-matches' as={NavLink} activeClassName="active" exact to="/viewcompanymatches" key='student3' style={ { fontSize: 'large' } }>View my Matches</Menu.Item>,
+            <Menu.Item id='view-company-matches' as={NavLink} activeClassName="active" exact to="/viewcompanymatches" key='student3'>View my Matches</Menu.Item>,
           ]
         ) : ''}
         { Roles.userIsInRole(Meteor.userId(), 'company') ? (
           [
-            <Menu.Item id='view-company-profile' as={NavLink} activeClassName="active" exact to={`/companyprofile/${Meteor.userId()}`} key='company' style={ { fontSize: 'large' } }>My Profile</Menu.Item>,
+            <Menu.Item id='view-company-profile' as={NavLink} activeClassName="active" exact to={`/companyprofile/${Meteor.userId()}`} key='company'>My Profile</Menu.Item>,
             // <Menu.Item id='view-company-home' as={NavLink} activeClassName="active" exact to="/companyhomepage" key='company'>Match Me!</Menu.Item>,
-            <Menu.Item id='view-student-matches' as={NavLink} activeClassName="active" exact to="/viewstudentmatches" key='company' style={ { fontSize: 'large' } }>View my Matches</Menu.Item>,
-            <Menu.Item id='job-postings' as={NavLink} activeClassName="active" exact to="/jobpostings" key='company' style={ { fontSize: 'large' } }>Post a Job</Menu.Item>,
+            <Menu.Item id='view-student-matches' as={NavLink} activeClassName="active" exact to="/viewstudentmatches" key='company'>View my Matches</Menu.Item>,
+            <Menu.Item id='job-postings' as={NavLink} activeClassName="active" exact to="/jobpostings" key='company'>Post a Job</Menu.Item>,
           ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (

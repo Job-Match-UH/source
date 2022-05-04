@@ -9,8 +9,8 @@ import { Jobs } from '../../api/job/Jobs';
 
 const jobSchema = new SimpleSchema({
   jobTitle: String,
-  jobID: Number,
-  pay: Number,
+  jobID: { type: SimpleSchema.Integer, min: 0 }, // can also use String as type
+  pay: { type: SimpleSchema.Integer, min: 0 }, // can also use String as type
   payType: String,
   location: String,
   jobDescription: String,

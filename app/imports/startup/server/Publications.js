@@ -18,48 +18,77 @@ Meteor.publish(Class.userPublicationName, function () {
 });
 
 Meteor.publish(Students.userPublicationName, function () {
-  if (this.userId) {
+  if (this.userId && Roles.userIsInRole(this.userId, 'student')) {
     const username = Meteor.users.findOne(this.userId).username;
     return Students.collection.find({ owner: username });
+  }
+  if (this.userId && Roles.userIsInRole(this.userId, 'company')) {
+    return Students.collection.find();
   }
   return this.ready();
 });
 
+// If logged in user is a company, then publish only data for the company user
+// If logged in user is a student, publish all companies in collection
 Meteor.publish(Companies.userPublicationName, function () {
-  if (this.userId) {
+  if (this.userId && Roles.userIsInRole(this.userId, 'company')) {
+    const username = Meteor.users.findOne(this.userId).username;
+    return Companies.collection.find({ owner: username });
+  }
+  if (this.userId && Roles.userIsInRole(this.userId, 'student')) {
     return Companies.collection.find();
   }
   return this.ready();
 });
 
 Meteor.publish(Experiences.userPublicationName, function () {
-  if (this.userId) {
+  if (this.userId && Roles.userIsInRole(this.userId, 'student')) {
     const username = Meteor.users.findOne(this.userId).username;
     return Experiences.collection.find({ owner: username });
+  }
+  if (this.userId && Roles.userIsInRole(this.userId, 'company')) {
+    return Experiences.collection.find();
   }
   return this.ready();
 });
 
 Meteor.publish(Projects.userPublicationName, function () {
-  if (this.userId) {
+  if (this.userId && Roles.userIsInRole(this.userId, 'student')) {
     const username = Meteor.users.findOne(this.userId).username;
     return Projects.collection.find({ owner: username });
+  }
+  if (this.userId && Roles.userIsInRole(this.userId, 'company')) {
+    return Projects.collection.find();
   }
   return this.ready();
 });
 
 Meteor.publish(Education.userPublicationName, function () {
-  if (this.userId) {
+  if (this.userId && Roles.userIsInRole(this.userId, 'student')) {
     const username = Meteor.users.findOne(this.userId).username;
-    return Class.collection.find({ owner: username });
+    return Education.collection.find({ owner: username });
+  }
+  if (this.userId && Roles.userIsInRole(this.userId, 'company')) {
+    return Education.collection.find();
   }
   return this.ready();
 });
 
 Meteor.publish(Jobs.userPublicationName, function () {
-  if (this.userId) {
+  if (this.userId && Roles.userIsInRole(this.userId, 'company')) {
     const username = Meteor.users.findOne(this.userId).username;
     return Jobs.collection.find({ owner: username });
+  }
+  if (this.userId && Roles.userIsInRole(this.userId, 'student')) {
+    return Jobs.collection.find();
+  }
+  return this.ready();
+});
+
+// If logged in as company or student, publish all tag documents to user
+Meteor.publish(Tags.userPublicationName, function () {
+  if (this.userId) {
+    return Tags.collection.find();
   }
   return this.ready();
 });
@@ -104,14 +133,6 @@ Meteor.publish(Education.adminPublicationName, function () {
 Meteor.publish(Projects.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Projects.collection.find();
-  }
-  return this.ready();
-});
-
-// If logged in as company or student, publish all tag documents to user
-Meteor.publish(Tags.userPublicationName, function () {
-  if (this.userId && Roles.userIsInRole(this.userId, 'admin' || 'company' || 'student')) {
-    return Tags.collection.find();
   }
   return this.ready();
 });

@@ -19,7 +19,7 @@ class ViewCompanyMatches extends React.Component {
     return (
       <Container id='view-company-matches'>
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-          <Header as='h1' className='cp-text' textAlign='center' key='header1'>Admin (Viewing Student Profiles)</Header>
+          <Header as='h1' className='cp-text' textAlign='center' key='header1'>Admin (Student Profiles)</Header>
         ) : (
           <Header as='h2' className='cp-text' textAlign='center' key='header2'>Interested Matches!</Header>
         )}

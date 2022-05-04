@@ -22,11 +22,7 @@ function createUser(email, password, role) {
   }
   if (role === 'admin') {
     Roles.createRole(role, { unlessExists: true });
-    Roles.createRole('company', { unlessExists: true });
-    Roles.createRole('student', { unlessExists: true });
     Roles.addUsersToRoles(userID, 'admin');
-    Roles.addUsersToRoles(userID, 'company');
-    Roles.addUsersToRoles(userID, 'student');
   }
 }
 

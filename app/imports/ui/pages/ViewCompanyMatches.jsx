@@ -12,7 +12,7 @@ class ViewCompanyMatches extends React.Component {
 
   render() {
     return (
-      <Container id='view-company-page'>
+      <Container id='view-company-matches-page'>
         <Header as='h2' className='cp-text' textAlign='center'>Interested Matches!</Header>
         <Card.Group itemsPerRow={4}>
           {this.props.companies.map((company, index) => <Company

@@ -3,7 +3,6 @@ import { Header, Card, Container } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
-import Job from '../components/Job';
 import { Jobs } from '../../api/job/Jobs';
 // import { Tags } from '../../api/tags/Tags';
 
@@ -14,9 +13,6 @@ class ViewJobDescription extends React.Component {
       <Container id='view-job-description'>
         <Header as='h2' className='cp-text' textAlign='center'>Available Jobs</Header>
         <Card.Group itemsPerRow={4}>
-          {this.props.jobs.map((job, index) => <Job
-            key={index}
-            job={job}/>)}
         </Card.Group>
       </Container>
     );

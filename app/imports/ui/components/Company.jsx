@@ -1,7 +1,9 @@
 import React from 'react';
+import { Roles } from 'meteor/alanning:roles';
+import { Meteor } from 'meteor/meteor';
 import { NavLink, withRouter } from 'react-router-dom';
 import { _ } from 'meteor/underscore';
-import { Card, Image } from 'semantic-ui-react';
+import { Button, Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import Tag from '../components/Tag';
 
@@ -28,6 +30,18 @@ class Company extends React.Component {
             tag={tag}
           />)}
         </Card.Content>
+        { Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+          <Card.Content extra>
+            <div className='ui two buttons'>
+              <Button basic color='grey'>
+                View
+              </Button>
+              <Button basic color='red'>
+                Delete
+              </Button>
+            </div>
+          </Card.Content>
+        ) : ''}
       </Card>
     );
   }

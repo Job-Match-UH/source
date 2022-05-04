@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header, Card, Container } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
+import { Roles } from 'meteor/alanning:roles';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Student from '../components/Student';
@@ -13,7 +14,11 @@ class ViewStudentMatches extends React.Component {
   render() {
     return (
       <Container id='view-student-matches'>
-        <Header as='h2' className='cp-text' textAlign='center'>Interested Matches!</Header>
+        {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+          <Header as='h1' className='cp-text' textAlign='center'>Admin (Viewing Student Profiles)</Header>
+        ) :
+          <Header as='h2' className='cp-text' textAlign='center'>Interested Matches!</Header>
+        }
         <Card.Group itemsPerRow={4}>
           {this.props.students.map((student, index) => <Student
             key={index}

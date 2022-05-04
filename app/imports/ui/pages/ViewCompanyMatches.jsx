@@ -2,6 +2,7 @@ import React from 'react';
 import { Header, Card, Container } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
+import { Roles } from 'meteor/alanning:roles';
 import { Meteor } from 'meteor/meteor';
 import Company from '../components/Company';
 import { Companies } from '../../api/company/Companies';
@@ -12,8 +13,12 @@ class ViewCompanyMatches extends React.Component {
 
   render() {
     return (
-      <Container id='view-company-page'>
-        <Header as='h2' className='cp-text' textAlign='center'>Interested Matches!</Header>
+      <Container id='view-company-matches'>
+        {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+          <Header as='h1' className='cp-text' textAlign='center' key='header1'>Admin (Viewing Company Profiles)</Header>
+        ) : (
+          <Header as='h2' className='cp-text' textAlign='center' key='header2'>Interested Matches!</Header>
+        )}
         <Card.Group itemsPerRow={4}>
           {this.props.companies.map((company, index) => <Company
             key={index}

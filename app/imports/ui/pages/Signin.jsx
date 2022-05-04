@@ -47,12 +47,12 @@ export default class Signin extends React.Component {
   // Render the signin form.
   render() {
     const { from } = this.props.location.state || { from: { pathname: '/' } };
-    // if correct authentication, redirect to page instead of login screen
+
     if (this.state.redirectToReferer && this.state.role === 'student') {
-      return <Redirect to={'/studenthomepage'}/>;
+      return <Redirect to={from}/>;
     }
     if (this.state.redirectToReferer && this.state.role === 'company') {
-      return <Redirect to={'/companyhomepage'}/>;
+      return <Redirect to={from}/>;
     }
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;
@@ -61,68 +61,8 @@ export default class Signin extends React.Component {
     // Otherwise return the Login form.
     // eslint-disable-next-line no-return-assign
     return (
-      <Container>
-        <Segment placeholder id="signin-page">
-          <Grid columns={2} relaxed='very' stackable>
-            <Grid.Column>
-              <Header as="h2" textAlign="center" className='cp-text'>
-              Student Login
-              </Header>
-              <Form error onSubmit={this.studentSubmit} className='cp-text'>
-                <Form.Input
-                  label='Email'
-                  id="signin-form-email"
-                  name="email"
-                  type="email"
-                  placeholder="E-mail address"
-                  onChange={this.handleChange}
-                />
-                <Form.Input
-                  label='Password'
-                  type='password'
-                  id="signin-form-password"
-                  name="password"
-                  placeholder="Password"
-                  onChange={this.handleChange}
-                />
-                <Button id="signin-form-submit" content='Login' primary />
-                <Message attached color='green'>
-                  <Link id='view-signup-student' to="/student_signup">Click here to Register as a Student</Link>
-                </Message>
-              </Form>
-            </Grid.Column>
-
-            <Grid.Column verticalAlign='middle'>
-              <Header as="h2" textAlign="center" className='cp-text'>
-                Company Login
-              </Header>
-              <Form error onSubmit={this.companySubmit} className='cp-text'>
-                <Form.Input
-                  label='Email'
-                  id="signin-company-form-email"
-                  name="email"
-                  type="email"
-                  placeholder="E-mail address"
-                  onChange={this.handleChange}
-                />
-                <Form.Input
-                  label='Password'
-                  type='password'
-                  id="signin-company-form-password"
-                  name="password"
-                  placeholder="Password"
-                  onChange={this.handleChange}
-                />
-                <Button id="signin-company-form-submit" content='Login' primary />
-                <Message attached color='green'>
-                  <Link id='view-signup-company' to="/company_signup">Click here to Register as a Company</Link>
-                </Message>
-              </Form>
-            </Grid.Column>
-          </Grid>
-          <Divider vertical>Or</Divider>
-        </Segment>
-        <Segment textAlign='center' borderless>
+      <Container id="signin-page">
+        <Segment textAlign='center' borderless='true' basic style={{ fontSize: 'medium' }}>
           {this.state.error === '' && this.props.location.error === undefined ? (
             ''
           ) : (
@@ -133,7 +73,70 @@ export default class Signin extends React.Component {
             />
           )}
         </Segment>
+        <Segment placeholder>
+          <Grid columns={2} relaxed='very' stackable>
+            <Grid.Column>
+              <Header as="h2" textAlign="center" className='cp-text' style={{ fontSize: 'x-large' }}>
+              Student Login
+              </Header>
+              <Form error onSubmit={this.studentSubmit} className='cp-text' style={{ fontSize: 'medium' }}>
+                <Form.Input
+                  style={{ fontSize: 'medium' }}
+                  label='Email'
+                  id="signin-form-email"
+                  name="email"
+                  type="email"
+                  placeholder="E-mail address"
+                  onChange={this.handleChange}
+                />
+                <Form.Input
+                  style={{ fontSize: 'medium' }}
+                  label='Password'
+                  type='password'
+                  id="signin-form-password"
+                  name="password"
+                  placeholder="Password"
+                  onChange={this.handleChange}
+                />
+                <Button id="signin-form-submit" content='Login' primary style={{ fontSize: 'medium' }}/>
+                <Message attached color='green' style={{ fontSize: 'medium' }}>
+                  <Link id='view-signup-student' to="/student_signup">Click here to Register as a Student</Link>
+                </Message>
+              </Form>
+            </Grid.Column>
 
+            <Grid.Column verticalAlign='middle'>
+              <Header as="h2" textAlign="center" className='cp-text' style={{ fontSize: 'x-large' }}>
+                Company Login
+              </Header>
+              <Form error onSubmit={this.companySubmit} className='cp-text' style={{ fontSize: 'medium' }}>
+                <Form.Input
+                  style={{ fontSize: 'medium' }}
+                  label='Email'
+                  id="signin-company-form-email"
+                  name="email"
+                  type="email"
+                  placeholder="E-mail address"
+                  onChange={this.handleChange}
+                />
+                <Form.Input
+                  style={{ fontSize: 'medium' }}
+                  label='Password'
+                  type='password'
+                  id="signin-company-form-password"
+                  name="password"
+                  placeholder="Password"
+                  onChange={this.handleChange}
+                />
+                <Button id="signin-company-form-submit" content='Login' primary style={{ fontSize: 'medium' }}/>
+                <Message attached color='green' style={{ fontSize: 'medium' }}>
+                  <Link id='view-signup-company' to="/company_signup">Click here to Register as a Company</Link>
+                </Message>
+              </Form>
+            </Grid.Column>
+          </Grid>
+          <Divider vertical>Or</Divider>
+        </Segment>
       </Container>
     );
   }

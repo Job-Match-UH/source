@@ -1,59 +1,44 @@
 import React from 'react';
-import { Grid, Header, Loader, Container, Item, Image, Card, Icon } from 'semantic-ui-react';
+import { Header, Card, Container, Loader, Grid, Image, Item } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Students } from '../../api/student/Student';
 import Educations from '../components/Educations';
 import Experience from '../components/Experience';
 import Project from '../components/Project';
-import { Students } from '../../api/student/Student';
 import { Experiences } from '../../api/experience/Experience';
 import { Education } from '../../api/education/Education';
 import { Projects } from '../../api/projects/Projects';
 
-class StudentProfile extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeItem: 'interests',
-    };
-  }
-  // state = { isOpen: false }
-
-  // handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+class ViewStudentProfile extends React.Component {
 
   // If the subscription(s) have been received, render the page, otherwise show a loading icon.
   render() {
-    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting Student Profile</Loader>;
   }
 
-  // Render student profile page according to current user
   renderPage() {
-    // const { activeItem } = this.state;
     return (
-      <Container id='student-profile-page'>
+      <Container id='view-student-profile'>
         <Grid celled='internally'>
           <Grid.Row>
             <Grid.Column width={3}>
-              <Image centered size='medium' src={this.props.students.image}/>
+              <Image centered size='medium' src={this.props.student.image}/>
             </Grid.Column>
             <Grid.Column width={12}>
               <Grid columns='equal'>
                 <Grid.Row>
                   <Grid.Column width={15}>
-                    <Header style={ { fontSize: 'xxx-large', padding: 0 } } className='cp-text'>{this.props.students.firstName} {this.props.students.lastName}</Header>
-                  </Grid.Column>
-                  <Grid.Column>
-                    <Link to={`/editstudent/${this.props.students._id}`}><Icon size='large' name='pencil'/></Link>
+                    <Header style={ { fontSize: 'xxx-large', padding: 0, marginBottom: 10 } } className='cp-text'>{this.props.student.firstName} {this.props.student.lastName}</Header>
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
               <Item>
-                <Item.Description className='cp-text' style={ { fontSize: 'large' } }>{this.props.students.owner}</Item.Description>
-                <Item.Description className='cp-text' style={ { fontSize: 'large' } }>{this.props.students.phone}</Item.Description>
-                <Item.Description className='cp-text' style={ { fontSize: 'large' } }>{this.props.students.about}</Item.Description>
+                <Item.Description className='cp-text' style={ { fontSize: 'large' } }>{this.props.student.owner}</Item.Description>
+                <Item.Description className='cp-text' style={ { fontSize: 'large' } }>{this.props.student.phone}</Item.Description>
+                <Item.Description className='cp-text' style={ { fontSize: 'large' } }>{this.props.student.about}</Item.Description>
               </Item>
             </Grid.Column>
           </Grid.Row>
@@ -85,17 +70,18 @@ class StudentProfile extends React.Component {
   }
 }
 
-StudentProfile.propTypes = {
-  students: PropTypes.object,
+ViewStudentProfile.propTypes = {
+  student: PropTypes.object.isRequired,
   experience: PropTypes.array.isRequired,
   education: PropTypes.array.isRequired,
   projects: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
+// withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
 export default withTracker(({ match }) => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
-  const documentId = match.params._id;
+  const studentId = match.params._id;
   // Get access to documents.
   const subscription1 = Meteor.subscribe(Students.userPublicationName);
   const subscription2 = Meteor.subscribe(Experiences.userPublicationName);
@@ -104,16 +90,15 @@ export default withTracker(({ match }) => {
   // Determine if the subscription is ready
   const ready = subscription1.ready() && subscription2.ready() && subscription3.ready() && subscription4.ready();
   // Get the documents
-  const email = Meteor.users.findOne(documentId).username;
-  const students = Students.collection.findOne({ owner: email });
-  const education = Education.collection.find({}).fetch();
-  const experience = Experiences.collection.find({}).fetch();
-  const projects = Projects.collection.find({}).fetch();
+  const student = Students.collection.findOne(studentId);
+  const education = Education.collection.find({ owner: student.owner });
+  const experience = Experiences.collection.find({ owner: student.owner });
+  const projects = Projects.collection.find({ owner: student.owner });
   return {
-    students,
+    student,
     education,
     experience,
     projects,
     ready,
   };
-})(StudentProfile);
+})(ViewStudentProfile);

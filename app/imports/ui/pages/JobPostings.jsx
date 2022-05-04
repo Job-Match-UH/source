@@ -40,17 +40,17 @@ class JobPostings extends React.Component {
 
     return (
       <Container id='job-postings-page'>
-        <Header as='h1' className='cp-text' style={ { padding: 0 } }>Add a Job Posting</Header>
+        <Header as='h1' className='cp-text' style={ { padding: 0, fontSize: 'xx-large' } }>Add a Job Posting</Header>
         <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={jobBridge} onSubmit={data => this.submitJob(data, fRef)}>
-          <TextField fluid label='Job Title:' placeholder='Software Development Intern' name='jobTitle'/>
-          <TextField fluid label='Job ID:' placeholder='1234567' name='jobID'/>
+          <TextField fluid label='Job Title:' placeholder='Software Development Intern' name='jobTitle' style={ { fontSize: 'large' } }/>
+          <TextField fluid label='Job ID:' placeholder='1234567' name='jobID' style={ { fontSize: 'large' } }/>
           <Form.Group widths='equal'>
-            <NumField fluid="true" label='Pay:' placeholder='25' name='pay'/>
-            <SelectField fluid="true" placeholder='hourly' name='payType' allowedValues={payTypes}/>
+            <NumField fluid="true" label='Pay:' placeholder='25' name='pay' style={ { fontSize: 'large' } }/>
+            <SelectField fluid="true" placeholder='Select pay type' name='payType' allowedValues={payTypes} style={ { fontSize: 'large' } }/>
           </Form.Group>
-          <TextField fluid label='Location:' placeholder='Ex. Honolulu, HI' name='location'/>
-          <LongTextField label='Job Description:' placeholder='Give a small description about the job position...' name='jobDescription'/>
-          <LongTextField label='Qualifications:' placeholder='List the desired interests for this position...' name='qualifications'/>
+          <TextField fluid label='Location:' placeholder='Ex. Honolulu, HI' name='location' style={ { fontSize: 'large' } }/>
+          <LongTextField label='Job Description:' placeholder='Give a small description about the job position...' name='jobDescription' style={ { fontSize: 'large' } }/>
+          <LongTextField label='Qualifications:' placeholder='List the desired interests for this position...' name='qualifications' style={ { fontSize: 'large' } }/>
           <SubmitField value='Submit Job'/>
         </AutoForm>
       </Container>

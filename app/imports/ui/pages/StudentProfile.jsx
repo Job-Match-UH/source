@@ -104,7 +104,8 @@ export default withTracker(({ match }) => {
   // Determine if the subscription is ready
   const ready = subscription1.ready() && subscription2.ready() && subscription3.ready() && subscription4.ready();
   // Get the documents
-  const students = Students.collection.findOne(documentId);
+  const email = Meteor.users.findOne(documentId).username;
+  const students = Students.collection.findOne({ owner: email });
   const education = Education.collection.find({}).fetch();
   const experience = Experiences.collection.find({}).fetch();
   const projects = Projects.collection.find({}).fetch();

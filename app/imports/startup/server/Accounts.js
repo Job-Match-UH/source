@@ -12,15 +12,15 @@ function createUser(email, password, role) {
     email: email,
     password: password,
   });
-  if (role.includes('student')) {
+  if (role === 'student') {
     Roles.createRole(role, { unlessExists: true });
     Roles.addUsersToRoles(userID, 'student');
   }
-  if (role.includes('company')) {
+  if (role === 'company') {
     Roles.createRole(role, { unlessExists: true });
     Roles.addUsersToRoles(userID, 'company');
   }
-  if (role.includes('admin')) {
+  if (role === 'admin') {
     Roles.createRole(role, { unlessExists: true });
     Roles.addUsersToRoles(userID, 'admin');
   }

@@ -21,16 +21,16 @@ class NavBar extends React.Component {
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
           <Header inverted as='h1' style={ { fontFamily: 'Playfair Display' } }>Job Match&apos;UH</Header>
         </Menu.Item>
-        {Roles.userIsInRole(Meteor.userId(), 'student') ? (
+        { Roles.userIsInRole(Meteor.userId(), 'student') ? (
           [
-            <Menu.Item id='view-student-profile' as={NavLink} activeClassName="active" exact to={`/studentprofile/${this.props.studentProfile._id}`} key='student'>My Profile</Menu.Item>,
+            <Menu.Item id='view-student-profile' as={NavLink} activeClassName="active" exact to={`/studentprofile/${Meteor.userId()}`} key='student'>My Profile</Menu.Item>,
             // <Menu.Item id='view-student-home' as={NavLink} activeClassName="active" exact to="/studenthomepage" key='student2'>Match Me!</Menu.Item>,
             <Menu.Item id='view-company-matches' as={NavLink} activeClassName="active" exact to="/viewcompanymatches" key='student3'>View my Matches</Menu.Item>,
           ]
         ) : ''}
         { Roles.userIsInRole(Meteor.userId(), 'company') ? (
           [
-            <Menu.Item id='view-company-profile' as={NavLink} activeClassName="active" exact to={`/companyprofile/${this.props.companyProfile._id}`} key='company'>My Profile</Menu.Item>,
+            <Menu.Item id='view-company-profile' as={NavLink} activeClassName="active" exact to={`/companyprofile/${Meteor.userId()}`} key='company'>My Profile</Menu.Item>,
             // <Menu.Item id='view-company-home' as={NavLink} activeClassName="active" exact to="/companyhomepage" key='company'>Match Me!</Menu.Item>,
             <Menu.Item id='view-student-matches' as={NavLink} activeClassName="active" exact to="/viewstudentmatches" key='company'>View my Matches</Menu.Item>,
             <Menu.Item id='job-postings' as={NavLink} activeClassName="active" exact to="/jobpostings" key='company'>Post a Job</Menu.Item>,
@@ -69,14 +69,15 @@ export default withTracker(() => {
   // Get access to documents.
   const subscription = Meteor.subscribe(Students.userPublicationName);
   const subscription2 = Meteor.subscribe(Companies.userPublicationName);
+
   // Determine if the subscription is ready
   const ready = subscription.ready() || subscription2.ready();
+
   // Get the documents
+
   const currentUser = Meteor.user() ? Meteor.user().username : '';
-  const studentProfile = Students.collection.findOne({ email: currentUser });
+  const studentProfile = Students.collection.findOne({ owner: currentUser });
   const companyProfile = Companies.collection.findOne({ owner: currentUser });
-  console.log(`student profile: ${studentProfile}`);
-  console.log(`company profile: ${companyProfile}`);
   return {
     currentUser,
     studentProfile,

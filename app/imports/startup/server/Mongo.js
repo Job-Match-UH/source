@@ -111,10 +111,13 @@ if (Projects.collection.find().count() === 0) {
  * For more info on assets, see https://docs.meteor.com/api/assets.html
  * User count check is to make sure we don't load the file twice, which would generate errors due to duplicate info.
  */
-if (Meteor.settings.loadAssetsFile) {
-  const assetsFileName = 'data.json';
-  console.log(`Loading data from private/${assetsFileName}`);
-  const jsonData = JSON.parse(Assets.getText(assetsFileName));
-  jsonData.students.map(student => addStudent(student));
-  jsonData.companies.map(company => addCompanies(company));
+
+if (Meteor.users.find().count() < 15) {
+  if (Meteor.settings.loadAssetsFile) {
+    const assetsFileName = 'data.json';
+    console.log(`Creating Student/Company from ${assetsFileName}`);
+    const jsonData = JSON.parse(Assets.getText(assetsFileName));
+    jsonData.students.map(student => addStudent(student));
+    jsonData.companies.map(company => addCompanies(company));
+  }
 }

@@ -55,6 +55,8 @@ class StudentProfile extends React.Component {
       </Tab.Pane> },
     ];
 
+    const styling = { padding: '0px' };
+
     return (
       <Container id='student-profile-page'>
         <Grid celled='internally'>
@@ -77,10 +79,11 @@ class StudentProfile extends React.Component {
                 <Item.Description className='cp-text'>{this.props.students.owner}</Item.Description>
                 <Item.Description className='cp-text'>{this.props.students.phone}</Item.Description>
                 <Item.Description className='cp-text'>{this.props.students.about}</Item.Description>
+                <Header as='h3' className='cp-text' style={styling}>Interests</Header>
                 <Item.Description className='cp-text'>
                   {this.props.tags.map((tags, index) => <Tag
-                      key={index}
-                      tag={tags}
+                    key={index}
+                    tag={tags}
                   />)}
                 </Item.Description>
               </Item>

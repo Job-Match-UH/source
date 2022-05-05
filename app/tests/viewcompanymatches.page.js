@@ -1,8 +1,8 @@
 import { Selector } from 'testcafe';
 
-class ViewStudentPage {
+class ViewCompanyMatchesPage {
   constructor() {
-    this.pageId = '#view-student-matches';
+    this.pageId = '#view-company-matches-page';
     this.pageSelector = Selector(this.pageId);
   }
 
@@ -13,4 +13,4 @@ class ViewStudentPage {
   }
 }
 
-export const viewStudentPage = new ViewStudentPage();
+export const viewCompanyMatchesPage = new ViewCompanyMatchesPage();

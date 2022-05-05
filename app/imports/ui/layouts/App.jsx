@@ -63,7 +63,7 @@ class App extends React.Component {
             <ProtectedRoute path="/editstudent/:_id" component={EditStudent}/>
             <ProtectedRoute path="/editcompany/:_id" component={EditCompany}/>
             <ProtectedRoute path="/editjob/:_id" component={EditJob}/>
-            <ProtectedRoute path="/jobdescription/:_id" component={ViewJobDescription}/>
+            <StudentProtectedRoute path="/jobdescription/:_id" component={ViewJobDescription}/>
             <CompanyProtectedRoute path="/viewstudent/:_id" component={ViewStudentProfile}/>
             <StudentProtectedRoute path="/viewcompany/:_id" component={ViewCompanyProfile}/>
             {/* <StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/> */}

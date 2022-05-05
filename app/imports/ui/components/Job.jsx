@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Grid, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, NavLink, withRouter } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
 import { Meteor } from 'meteor/meteor';
 
@@ -10,7 +10,7 @@ class Job extends React.Component {
   render() {
     return (
       <Card>
-        <Card.Content>
+        <Card.Content as={NavLink} exact to={`/jobdescription/${this.props.job._id}`}>
           <Card.Header>
             <Card.Content extra>
               <Grid columns='equal'>

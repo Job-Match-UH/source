@@ -6,6 +6,7 @@ import { Tags } from '../../api/tags/Tags';
 import { Experiences } from '../../api/experience/Experience';
 import { Education } from '../../api/education/Education';
 import { Projects } from '../../api/projects/Projects';
+import { Jobs } from '../../api/job/Jobs';
 
 /* eslint-disable no-console */
 
@@ -44,6 +45,11 @@ function addEducation(data) {
 function addProject(data) {
   console.log('  Adding Projects');
   Projects.collection.insert(data);
+}
+
+function addJob(data) {
+  console.log('  Adding Jobs');
+  Jobs.collection.insert(data);
 }
 
 // Initialize the StudentCollection if empty.
@@ -103,6 +109,14 @@ if (Projects.collection.find().count() === 0) {
   }
 }
 
+// Initialize the ProjectCollection if empty.
+if (Jobs.collection.find().count() === 0) {
+  if (Meteor.settings.defaultJobs) {
+    console.log('Creating default job data.');
+    Meteor.settings.defaultJobs.map(data => addJob(data));
+  }
+}
+
 /**
  * If the loadAssetsFile field in settings.development.json is true, then load the data in private/data.json.
  * This approach allows you to initialize your system with large amounts of data.
@@ -119,5 +133,10 @@ if (Meteor.users.find().count() < 15) {
     const jsonData = JSON.parse(Assets.getText(assetsFileName));
     jsonData.students.map(student => addStudent(student));
     jsonData.companies.map(company => addCompanies(company));
+    jsonData.tags.map(tags => addTags(tags));
+    jsonData.experiences.map(experiences => addExperience(experiences));
+    jsonData.education.map(education => addEducation(education));
+    jsonData.projects.map(projects => addProject(projects));
+    jsonData.jobs.map(jobs => addJob(jobs));
   }
 }

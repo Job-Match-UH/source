@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import { Companies } from '../../api/company/Companies';
 import { Jobs } from '../../api/job/Jobs';
 import Job from '../components/Job';
+import Tag from '../components/Tag';
+import { Tags } from '../../api/tags/Tags';
 
 export class CompanyProfile extends React.Component {
 /*
@@ -24,6 +26,7 @@ export class CompanyProfile extends React.Component {
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   renderPage() {
+    const styling = { padding: '0px' };
     return (
       <Container id='company-profile-page'>
         <Grid className='cp-text'>
@@ -44,6 +47,13 @@ export class CompanyProfile extends React.Component {
               <Item.Description>{this.props.company.state}</Item.Description>
               <Item.Description>{this.props.company.phone}</Item.Description>
               <Item.Description>{this.props.company.year}</Item.Description>
+              <Header as='h3' className='cp-text' style={styling}>Interests</Header>
+              <Item.Description className='cp-text'>
+                {this.props.tags.map((tags, index) => <Tag
+                  key={index}
+                  tag={tags}
+                />)}
+              </Item.Description>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
@@ -65,6 +75,7 @@ export class CompanyProfile extends React.Component {
 CompanyProfile.propTypes = {
   company: PropTypes.object,
   ready: PropTypes.bool.isRequired,
+  tags: PropTypes.array,
   job: PropTypes.array.isRequired,
 };
 
@@ -75,15 +86,18 @@ export default withTracker(({ match }) => {
   // Ensure that minimongo is populated with all collections prior to running render().
   const sub1 = Meteor.subscribe(Companies.userPublicationName);
   const sub2 = Meteor.subscribe(Jobs.userPublicationName);
+  const sub3 = Meteor.subscribe(Tags.userPublicationName);
   // Get documents
   const email = Meteor.users.findOne(documentId).username;
   const company = Companies.collection.findOne({ owner: email });
   const job = Jobs.collection.find({}).fetch();
-  const ready = sub1.ready() && sub2.ready();
+  const tags = Tags.collection.find({ owner: company.owner });
+  const ready = sub1.ready() && sub2.ready() && sub3.ready();
 
   return {
     ready,
     company,
+    tags,
     job,
   };
 })(CompanyProfile);

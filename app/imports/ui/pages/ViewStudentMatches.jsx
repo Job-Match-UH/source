@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header, Card, Container } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
+import { _ } from 'meteor/underscore';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Student from '../components/Student';

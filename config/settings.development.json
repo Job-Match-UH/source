@@ -106,7 +106,9 @@
 
   "defaultTags": [
     { "name": "Computer", "owner": "john@foo.com" },
-    { "name": "Food Service", "owner": "pear@pear.com" }
+    { "name": "Food Service", "owner": "pear@pear.com" },
+    { "name": "Food Service", "owner": "facebook@fb.com" },
+    { "name": "Computer", "owner": "facebook@fb.com" }
   ],
 
   "defaultJobs": [

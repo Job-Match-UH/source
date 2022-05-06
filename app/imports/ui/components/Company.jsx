@@ -5,7 +5,7 @@ import { Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import Tag from '../components/Tag';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+/** Renders a single Company card */
 class Company extends React.Component {
   render() {
     return (

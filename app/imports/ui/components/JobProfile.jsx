@@ -19,14 +19,43 @@ class Job extends React.Component {
                 </Grid.Row>
               </Grid>
               <Item>
-                <Item.Description className='cp-text'>{this.props.job.jobID}</Item.Description>
-                <Item.Description className='cp-text'>{this.props.job.pay}</Item.Description>
-                <Item.Description className='cp-text'>{this.props.job.payType}</Item.Description>
-                <Item.Description className='cp-text'>{this.props.job.type}</Item.Description>
-                <Item.Description className='cp-text'>{this.props.job.location}</Item.Description>
-                <Item.Description className='cp-text'>{this.props.job.jobDescription}</Item.Description>
-                <Item.Description className='cp-text'>{this.props.job.qualifications}</Item.Description>
-                <Item.Description className='cp-text'>{this.props.job.owner}</Item.Description>
+                <Item.Content>
+                  <Item.Meta className='cp-text'>
+                    <b>Job ID: </b>
+                    <span>{this.props.job.jobID}</span>
+                  </Item.Meta>
+
+                  <Item.Meta className='cp-text'>
+                    <b>Salary: </b>
+                    <span>${this.props.job.pay}</span>
+                  </Item.Meta>
+
+                  <Item.Meta className='cp-text'>
+                    <b>Salary Type: </b>
+                    <span>{this.props.job.payType}</span>
+                  </Item.Meta>
+
+                  <Item.Meta className='cp-text'>
+                    <b>Job Type: </b>
+                    <span>{this.props.job.type}</span>
+                  </Item.Meta>
+
+                  <Item.Meta className='cp-text'>
+                    <b>Location: </b>
+                    <span>{this.props.job.location}</span>
+                  </Item.Meta>
+
+                  <Item.Meta className='cp-text'>
+                    <b>Contact info: </b>
+                    <span>{this.props.job.owner}</span>
+                  </Item.Meta>
+
+                  <Item.Meta as='h5' className='cp-text'>Description:</Item.Meta>
+                  <Item.Description className='cp-text'>{this.props.job.jobDescription}</Item.Description>
+                  <Item.Meta as='h5' className='cp-text'>Qualifications:</Item.Meta>
+                  <Item.Description className='cp-text'>{this.props.job.qualifications}</Item.Description>
+
+                </Item.Content>
               </Item>
             </Grid.Column>
           </Grid.Row>

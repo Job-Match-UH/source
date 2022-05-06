@@ -137,6 +137,5 @@ if (Meteor.users.find().count() < 15) {
     jsonData.experiences.map(experiences => addExperience(experiences));
     jsonData.education.map(education => addEducation(education));
     jsonData.projects.map(projects => addProject(projects));
-    jsonData.jobs.map(jobs => addJob(jobs));
   }
 }

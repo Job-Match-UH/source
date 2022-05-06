@@ -77,7 +77,7 @@ export default class Signin extends React.Component {
           <Grid columns={2} relaxed='very' stackable>
             <Grid.Column>
               <Header as="h2" textAlign="center" className='cp-text'>
-              Student Login
+              Login
               </Header>
               <Form error onSubmit={this.studentSubmit} className='cp-text'>
                 <Form.Input
@@ -97,38 +97,12 @@ export default class Signin extends React.Component {
                   onChange={this.handleChange}
                 />
                 <Button id="signin-form-submit" content='Login' primary />
-                <Message attached color='green'>
-                  <Link id='view-signup-student' to="/student_signup">Click here to Register as a Student</Link>
-                </Message>
               </Form>
             </Grid.Column>
 
             <Grid.Column verticalAlign='middle'>
-              <Header as="h2" textAlign="center" className='cp-text'>
-                Company Login
-              </Header>
-              <Form error onSubmit={this.companySubmit} className='cp-text'>
-                <Form.Input
-                  label='Email'
-                  id="signin-company-form-email"
-                  name="email"
-                  type="email"
-                  placeholder="E-mail address"
-                  onChange={this.handleChange}
-                />
-                <Form.Input
-                  label='Password'
-                  type='password'
-                  id="signin-company-form-password"
-                  name="password"
-                  placeholder="Password"
-                  onChange={this.handleChange}
-                />
-                <Button id="signin-company-form-submit" content='Login' primary />
-                <Message attached color='green'>
-                  <Link id='view-signup-company' to="/company_signup">Click here to Register as a Company</Link>
-                </Message>
-              </Form>
+              <Message as={Link} to="/student_signup" icon='student' header='Student Signup' content='Click here to Register as a Student'/>
+              <Message as={Link} to="/company_signup" icon='briefcase' header='Company Signup' content='Click here to Register as a Company'/>
             </Grid.Column>
           </Grid>
           <Divider vertical>Or</Divider>

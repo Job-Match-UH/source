@@ -27,8 +27,8 @@ class Company extends React.Component {
 
   render() {
     return (
-      <Card>
-        <Card.Content as={NavLink} exact to={`/viewcompany/${this.props.company._id}`}>
+      <Card as={NavLink} exact to={`/viewcompany/${this.props.company._id}`}>
+        <Card.Content>
           <Image
             floated='right'
             size='mini'

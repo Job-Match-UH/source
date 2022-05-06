@@ -24,6 +24,10 @@ const credentials3 = { username: 'admin@foo.com', password: 'changeme' };
 fixture('job-match-uh availability tests')
   .page('http://localhost:3000');
 
+/**
+ * The following code tests that all pages are explorable from landing page and that all pages render accordingly.
+ */
+
 test('Test that landing displays', async (testController) => {
   await landingPage.isDisplayed(testController);
 });

@@ -35,7 +35,7 @@ class Company extends React.Component {
 // Require a document to be passed to this component.
 Company.propTypes = {
   company: PropTypes.object.isRequired,
-  tags: PropTypes.array.isRequired,
+  tags: PropTypes.array,
 };
 
 // Wrap this component in withRouter since we use the <Link> React Router element.

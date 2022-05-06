@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Header, Card, Container, Segment, Loader, Button } from 'semantic-ui-react';
+import { Header, Card, Container, Segment, Loader } from 'semantic-ui-react';
 import { AutoForm, SubmitField } from 'uniforms-semantic';
 import { _ } from 'meteor/underscore';
 import PropTypes from 'prop-types';
@@ -17,9 +17,17 @@ const makeSchema = (allInterests) => new SimpleSchema({
   'name.$': { type: String, allowedValues: allInterests },
 });
 
-function getProfile(email) {
-  console.log(`what is email passed into getProfile? ${email}`);
-  return Companies.collection.find({ owner: email });
+function getProfile(owner) {
+  const profile = Companies.collection.findOne({ owner });
+  if (profile !== 'undefined') {
+    return profile;
+  }
+  return 0;
+}
+
+function testing(data) {
+  console.log('this is testing data');
+  console.log(data);
 }
 
 /** Renders card containing all of the Company and Tags documents. */
@@ -31,14 +39,8 @@ class ViewCompanyMatches extends React.Component {
   }
 
   submit(data) {
-    this.setState({ interests: data.interests || [] });
-    console.log(`this is interests: ${this.state.interests}`);
+    this.setState({ interests: data.name || [] });
   }
-
-  // handleChange = (data) => {
-  //   this.setState({ data });
-  //   console.log(`this is interest: ${this.state.interests}`);
-  // }
 
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
@@ -49,23 +51,30 @@ class ViewCompanyMatches extends React.Component {
     const formSchema = makeSchema(allInterests);
     const bridge = new SimpleSchema2Bridge(formSchema);
     const companyEmails = _.pluck(Tags.collection.find({ name: { $in: this.state.interests } }).fetch(), 'owner');
-    const companyMatches = _.uniq(companyEmails).map(email => getProfile(email));
+    const companyMatches = _.without(_.uniq(companyEmails).map(email => getProfile(email)), 0);
+    testing(companyMatches);
     return (
       <Container id='view-company-matches-page'>
         <AutoForm schema={bridge} onSubmit={data => this.submit(data)}>
           <Segment>
-            <MultiSelectField id='name' name='name' onChange={data => this.submit(data)} showInlineError={true} placeholder={'Search by interests...'} fieldType='array'/>
+            <MultiSelectField id='name' name='name' showInlineError={true} placeholder={'Search by interests...'}/>
             <SubmitField value='Submit'/>
-            <Button onClick={this.handleClick}>Back</Button>
           </Segment>
         </AutoForm>
-        <Header as='h2' className='cp-text' textAlign='center'>Interested Matches!</Header>
+        {_.size(companyMatches) > 0 ? (
+          <Header as='h2' className='cp-text' textAlign='center'>Interested Matches!</Header>
+        ) : ''}
         <Card.Group itemsPerRow={4}>
-          {_.map(companyMatches, (company, index) => <Company
+          {companyMatches.map((company, index) => <Company
             key={index}
             company={company}
             tags={this.props.tags.filter(tag => (tag.owner === company.owner))}
           />)}
+          {/* {_.map(companyMatches, (company, index) => <Company */}
+          {/*  key={index} */}
+          {/*  company={company} */}
+          {/*  tags={this.props.tags.filter(tag => (tag.owner === company.owner))} */}
+          {/* />)} */}
           {/* {this.props.companies.map((company, index) => <Company */}
           {/*  key={index} */}
           {/*  company={company} */}

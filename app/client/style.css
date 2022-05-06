@@ -86,3 +86,27 @@
     background-color: rgb(255,255,255,0.8);
   }
 }
+
+.ui.icon.message > .icon:not(.close) {
+  display: block;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: auto;
+  line-height: 1;
+  vertical-align: middle;
+  font-size: 3em;
+  opacity: 0.8;
+  color: #2d5144;
+}
+
+.ui.message .header:not(.ui) {
+  font-size: 1.14285714em;
+  font-family: 'Playfair Display', serif;
+  color: #2d5144;
+}
+
+.ui.message {
+  font-size: 1em;
+  font-family: 'Playfair Display', serif;
+}

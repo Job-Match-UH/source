@@ -2,7 +2,8 @@ import { Meteor } from 'meteor/meteor';
 import { Class } from '../../api/class/Class';
 import { Students } from '../../api/student/Student';
 import { Companies } from '../../api/company/Companies';
-import { Tags } from '../../api/tags/Tags';
+import { CompanyTags } from '../../api/tags/CompanyTags';
+import { StudentTags } from '../../api/tags/StudentTags';
 import { Experiences } from '../../api/experience/Experience';
 import { Education } from '../../api/education/Education';
 import { Projects } from '../../api/projects/Projects';
@@ -22,9 +23,14 @@ function addStudent(data) {
   Students.collection.insert(data);
 }
 
-function addTags(data) {
+function addCompanyTags(data) {
   console.log(`  Adding: ${data.name} (${data.owner})`);
-  Tags.collection.insert(data);
+  CompanyTags.collection.insert(data);
+}
+
+function addStudentTags(data) {
+  console.log(`  Adding: ${data.name} (${data.owner})`);
+  StudentTags.collection.insert(data);
 }
 
 function addCompanies(data) {
@@ -70,10 +76,17 @@ if (Companies.collection.find().count() === 0) {
 }
 
 // Initialize the TagsCollection if empty.
-if (Tags.collection.find().count() === 0) {
-  if (Meteor.settings.defaultTags) {
-    console.log('Creating default tags.');
-    Meteor.settings.defaultTags.map(data => addTags(data));
+if (CompanyTags.collection.find().count() === 0) {
+  if (Meteor.settings.defaultCompanyTags) {
+    console.log('Creating default company tags.');
+    Meteor.settings.defaultCompanyTags.map(data => addCompanyTags(data));
+  }
+}
+
+if (StudentTags.collection.find().count() === 0) {
+  if (Meteor.settings.defaultStudentTags) {
+    console.log('Creating default student tags.');
+    Meteor.settings.defaultStudentTags.map(data => addStudentTags(data));
   }
 }
 
@@ -133,7 +146,8 @@ if (Meteor.users.find().count() < 15) {
     const jsonData = JSON.parse(Assets.getText(assetsFileName));
     jsonData.students.map(student => addStudent(student));
     jsonData.companies.map(company => addCompanies(company));
-    jsonData.tags.map(tags => addTags(tags));
+    jsonData.companyTags.map(tags => addCompanyTags(tags));
+    jsonData.studentTags.map(tags => addStudentTags(tags));
     jsonData.experiences.map(experiences => addExperience(experiences));
     jsonData.education.map(education => addEducation(education));
     jsonData.projects.map(projects => addProject(projects));

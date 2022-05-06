@@ -30,7 +30,11 @@
     }
   ],
 
-  "tags": [
+  "companyTags": [
+    { "name": "Computer", "owner": "pear@pear.com" }
+  ],
+
+  "studentTags": [
     { "name": "Computer", "owner": "john@foo.com" }
   ],
 

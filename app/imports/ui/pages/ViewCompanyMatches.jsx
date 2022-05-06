@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import SimpleSchema from 'simpl-schema';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Companies } from '../../api/company/Companies';
-import { Tags } from '../../api/tags/Tags';
+import { CompanyTags } from '../../api/tags/CompanyTags';
 import Company from '../components/Company';
 import MultiSelectField from '../forms/controllers/MultiSelectField';
 
@@ -18,16 +18,7 @@ const makeSchema = (allInterests) => new SimpleSchema({
 });
 
 function getProfile(owner) {
-  const profile = Companies.collection.findOne({ owner });
-  if (profile !== 'undefined') {
-    return profile;
-  }
-  return 0;
-}
-
-function testing(data) {
-  console.log('this is testing data');
-  console.log(data);
+  return Companies.collection.findOne({ owner });
 }
 
 /** Renders card containing all of the Company and Tags documents. */
@@ -47,12 +38,11 @@ class ViewCompanyMatches extends React.Component {
   }
 
   renderPage() {
-    const allInterests = _.uniq(_.pluck(Tags.collection.find().fetch(), 'name'));
+    const allInterests = _.uniq(_.pluck(CompanyTags.collection.find().fetch(), 'name'));
     const formSchema = makeSchema(allInterests);
     const bridge = new SimpleSchema2Bridge(formSchema);
-    const companyEmails = _.pluck(Tags.collection.find({ name: { $in: this.state.interests } }).fetch(), 'owner');
-    const companyMatches = _.without(_.uniq(companyEmails).map(email => getProfile(email)), 0);
-    testing(companyMatches);
+    const companyEmails = _.pluck(CompanyTags.collection.find({ name: { $in: this.state.interests } }).fetch(), 'owner');
+    const companyMatches = _.uniq(companyEmails).map(email => getProfile(email));
     return (
       <Container id='view-company-matches-page'>
         <AutoForm schema={bridge} onSubmit={data => this.submit(data)}>
@@ -70,16 +60,6 @@ class ViewCompanyMatches extends React.Component {
             company={company}
             tags={this.props.tags.filter(tag => (tag.owner === company.owner))}
           />)}
-          {/* {_.map(companyMatches, (company, index) => <Company */}
-          {/*  key={index} */}
-          {/*  company={company} */}
-          {/*  tags={this.props.tags.filter(tag => (tag.owner === company.owner))} */}
-          {/* />)} */}
-          {/* {this.props.companies.map((company, index) => <Company */}
-          {/*  key={index} */}
-          {/*  company={company} */}
-          {/*  tags={this.props.tags.filter(tag => (tag.owner === company.owner))} */}
-          {/* />)} */}
         </Card.Group>
       </Container>
     );
@@ -98,12 +78,12 @@ export default withTracker(() => {
   // Get access to companies documents.
   const subscription = Meteor.subscribe(Companies.userPublicationName);
   // Get access to tags documents.
-  const subscription2 = Meteor.subscribe(Tags.userPublicationName);
+  const subscription2 = Meteor.subscribe(CompanyTags.userPublicationName);
   // Determine if the subscriptions are ready
   const ready = subscription.ready() && subscription2.ready();
   // Get the Companies documents
   const companies = Companies.collection.find({}).fetch();
-  const tags = Tags.collection.find({}).fetch();
+  const tags = CompanyTags.collection.find({}).fetch();
   return {
     companies,
     tags,

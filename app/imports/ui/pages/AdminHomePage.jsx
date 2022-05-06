@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, Card, Container, Tab, Loader } from 'semantic-ui-react';
+import { Card, Container, Tab, Loader, Header } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -19,23 +19,46 @@ class AdminHomePage extends React.Component {
   renderPage() {
     const panes = () => [
       {
-        menuItem: 'Company Profile', render: () => <Tab.Pane>
-          <Card.Group>
-            {this.props.companies.map((company, index) => <Company
-              key={index}
-              company={company}
-              tags={this.props.tags.filter(tag => (tag.owner === company.owner))}
-            />)}
+        menuItem: 'Company Profiles', render: () => <Tab.Pane>
+          <Card.Group centered>
+            {(this.props.companies === '') ?
+              <Header className='cp-text'>No companies to display</Header> :
+              (this.props.companies.map((company, index) => <Company
+                key={index}
+                company={company}
+                tags={this.props.tags.filter(tag => (tag.owner === company.owner))}
+              />)
+              )}
           </Card.Group>
         </Tab.Pane>,
       },
       {
-        menuItem: 'Student Profile', render: () => <Tab.Pane>
-          <Card.Group>
+        menuItem: 'Student Profiles', render: () => <Tab.Pane>
+          <Card.Group centered>
+            {(this.props.students === '') ?
+              <Header className='cp-text'>No students to display</Header> :
+              (this.props.students.map((student, index) => <Student
+                key={index}
+                student={student}
+                tags={this.props.tags.filter(tag => (tag.owner === student.owner))}
+              />)
+              )
+            }
+          </Card.Group>
+        </Tab.Pane>,
+      },
+      {
+        menuItem: 'All Profiles', render: () => <Tab.Pane>
+          <Card.Group centered>
             {this.props.students.map((student, index) => <Student
               key={index}
               student={student}
               tags={this.props.tags.filter(tag => (tag.owner === student.owner))}
+            />)}
+            {this.props.companies.map((company, index) => <Company
+              key={index}
+              company={company}
+              tags={this.props.tags.filter(tag => (tag.owner === company.owner))}
             />)}
           </Card.Group>
         </Tab.Pane>,
@@ -45,8 +68,15 @@ class AdminHomePage extends React.Component {
     return (
       <div>
         <Container id='admin-home-page' textAlign='center'>
-          <Header as='h1' className='cp-text'>Admin Home Page</Header>
-          <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes()}/>
+          <Tab
+            menu={{
+              attached: true,
+              tabular: true,
+              style: {
+                display: 'flex',
+                justifyContent: 'center',
+              },
+            }} panes={panes()}/>
         </Container>
       </div>
     );
@@ -64,10 +94,10 @@ AdminHomePage.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Ensure that minimongo is populated with all collections prior to running render().
-  const sub1 = Meteor.subscribe(Students.userPublicationName);
-  const sub2 = Meteor.subscribe(Companies.userPublicationName);
-  const sub3 = Meteor.subscribe(Tags.userPublicationName);
-  const ready = sub1.ready() && sub2.ready() && sub3.ready();
+  const sub1 = Meteor.subscribe(Students.adminPublicationName);
+  const sub2 = Meteor.subscribe(Companies.adminPublicationName);
+  const sub3 = Meteor.subscribe(Tags.adminPublicationName);
+  const ready = (sub1.ready() && sub2.ready()) || sub3.ready();
   // Get documents
   const companies = Companies.collection.find({}).fetch();
   const students = Students.collection.find({}).fetch();

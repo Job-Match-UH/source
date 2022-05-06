@@ -48,9 +48,9 @@ class App extends React.Component {
             <Route path="/company_signup" component={SignupCompanyEmail}/>
             <Route path="/studentsignup" component={SignupStudent}/>
             <Route path="/companysignup" component={SignupCompany}/>
-            <StudentProtectedRoute path="/studentprofile/:_id" component={StudentProfile}/>
-            <ProtectedRoute path="/companyprofile/:_id" component={CompanyProfile}/>
             <Route path="/classform" component={ClassScheduleForm}/>
+            <ProtectedRoute path="/studentprofile/:_id" component={StudentProfile}/>
+            <ProtectedRoute path="/companyprofile/:_id" component={CompanyProfile}/>
             <ProtectedRoute path="/addexp" component={AddExperience}/>
             <ProtectedRoute path="/addedu/:_id" component={AddEducation}/>
             <ProtectedRoute path="/addproject" component={AddProject}/>
@@ -64,10 +64,10 @@ class App extends React.Component {
             <ProtectedRoute path="/viewcompany/:_id" component={ViewCompanyProfile}/>
             {/* <StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/> */}
             {/* <CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/> */}
-            <CompanyProtectedRoute path="/jobpostings" component={JobPostings}/>
+            <ProtectedRoute path="/jobpostings" component={JobPostings}/>
             <ProtectedRoute path="/admin" component={AdminHomePage}/>
-            <CompanyProtectedRoute path="/viewstudentmatches" component={ViewStudentMatches}/>
-            <StudentProtectedRoute path="/viewcompanymatches" component={ViewCompanyMatches}/>
+            <ProtectedRoute path="/viewstudentmatches" component={ViewStudentMatches}/>
+            <ProtectedRoute path="/viewcompanymatches" component={ViewCompanyMatches}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
@@ -96,44 +96,6 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
 );
 
 /**
- * ProtectedRoute (see React Router v4 sample)
- * Checks for Meteor login before routing to the requested page, otherwise goes to signin page.
- * @param {any} { component: Component, ...rest }
- */
-const StudentProtectedRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={(props) => {
-      const isLogged = Meteor.userId() !== null;
-      const isStudentAdmin = Roles.userIsInRole(Meteor.userId(), 'student') || Roles.userIsInRole(Meteor.userId(), 'admin');
-      return (isLogged && isStudentAdmin) ?
-        (<Component {...props} />) :
-        (Meteor.logout() || <Redirect to={{ pathname: '/signin', state: { from: props.location }, error: 'Unauthorized login' }}/>
-        );
-    }}
-  />
-);
-
-/**
- * ProtectedRoute (see React Router v4 sample)
- * Checks for Meteor login before routing to the requested page, otherwise goes to signin page.
- * @param {any} { component: Component, ...rest }
- */
-const CompanyProtectedRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={(props) => {
-      const isLogged = Meteor.userId() !== null;
-      const isCompanyAdmin = Roles.userIsInRole(Meteor.userId(), 'company') || Roles.userIsInRole(Meteor.userId(), 'admin');
-      return (isLogged && isCompanyAdmin) ?
-        (<Component {...props} />) :
-        (Meteor.logout() || <Redirect to={{ pathname: '/signin', state: { from: props.location }, error: 'Unauthorized login' }}/>
-        );
-    }}
-  />
-);
-
-/**
  * AdminProtectedRoute (see React Router v4 sample)
  * Checks for Meteor login and admin role before routing to the requested page, otherwise goes to signin page.
  * @param {any} { component: Component, ...rest }
@@ -154,18 +116,6 @@ const AdminProtectedRoute = ({ component: Component, ...rest }) => (
 
 // Require a component and location to be passed to each ProtectedRoute.
 ProtectedRoute.propTypes = {
-  component: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
-  location: PropTypes.object,
-};
-
-// Require a component and location to be passed to each ProtectedRoute.
-StudentProtectedRoute.propTypes = {
-  component: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
-  location: PropTypes.object,
-};
-
-// Require a component and location to be passed to each CompanyProtectedRoute.
-CompanyProtectedRoute.propTypes = {
   component: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   location: PropTypes.object,
 };

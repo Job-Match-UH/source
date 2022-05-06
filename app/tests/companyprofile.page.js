@@ -11,5 +11,9 @@ class CompanyProfilePage {
     // This is first test to be run. Wait 10 seconds to avoid timeouts with GitHub Actions.
     await testController.expect(this.pageSelector.exists).ok();
   }
+
+  async gotoEditCompany(testController) {
+    await testController.click('#goto-edit-company');
+  }
 }
 export const companyProfilePage = new CompanyProfilePage();

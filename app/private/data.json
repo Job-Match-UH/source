@@ -15,6 +15,7 @@
       "owner": "peterleo@hawaii.edu"
     }
   ],
+
   "companies": [
     {
       "companyName": "UH Online",
@@ -26,6 +27,72 @@
       "year": "1234",
       "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
       "owner": "uhonline@uhm.com"
+    }
+  ],
+
+  "tags": [
+    { "name": "Computer", "owner": "john@foo.com" }
+  ],
+
+  "jobs": [
+    { "jobTitle": "Sales Clerk",
+      "jobID": "1234",
+      "pay": "15",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Waikiki",
+      "jobDescription": "Rang customers up for their purchases at a small local shop selling tourist items",
+      "qualifications": "a happy smile",
+      "owner": "uhonline@uhm.com"
+    }
+  ],
+
+  "experiences": [
+    {
+      "title": "Babysitter",
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Parents",
+      "role": "student",
+      "description": "Worked at home",
+      "owner": "john@foo.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    }
+  ],
+
+  "education": [
+    {
+      "school": "Stanford",
+      "degree":
+        {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+        },
+      "field": "Women Studies",
+      "owner": "john@foo.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "Job Match UH",
+      "description": "Create an application for connecting students and companies.",
+      "owner": "john@foo.com"
     }
   ]
 }

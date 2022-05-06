@@ -70,9 +70,9 @@ test('Test register company works', async (testController) => {
 
 test('Test viewcompanymatches page displays', async (testController) => {
   await navBar.gotoSigninPage(testController);
-  await signinPage.isDisplayed(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.isLoggedIn(testController, credentials.username);
+  await navBar.gotoViewCompanyMatches(testController);
   await viewCompanyMatchesPage.isDisplayed(testController);
 });
 
@@ -84,17 +84,17 @@ test('Test student profile page displays', async (testController) => {
   await studentProfilePage.isDisplayed(testController);
 });
 
-test('Test viewstudentmatches page displays', async (testController) => {
+test.only('Test viewstudentmatches page displays', async (testController) => {
   await navBar.gotoSigninPage(testController);
-  await signinPage.isDisplayed(testController);
-  await signinPage.signinCompany(testController, credentials2.username, credentials2.password);
+  await signinPage.signin(testController, credentials2.username, credentials2.password);
   await navBar.isLoggedIn(testController, credentials2.username);
+  await navBar.gotoViewStudentMatches(testController);
   await viewStudentMatchesPage.isDisplayed(testController);
 });
 
 test('Test company profile page displays', async (testController) => {
   await navBar.gotoSigninPage(testController);
-  await signinPage.signinCompany(testController, credentials2.username, credentials2.password);
+  await signinPage.signin(testController, credentials2.username, credentials2.password);
   await navBar.isLoggedIn(testController, credentials2.username);
   await navBar.gotoCompanyProfile(testController);
   await companyProfilePage.isDisplayed(testController);
@@ -102,7 +102,7 @@ test('Test company profile page displays', async (testController) => {
 
 test('Test job listing page displays', async (testController) => {
   await navBar.gotoSigninPage(testController);
-  await signinPage.signinCompany(testController, credentials2.username, credentials2.password);
+  await signinPage.signin(testController, credentials2.username, credentials2.password);
   await navBar.isLoggedIn(testController, credentials2.username);
   await navBar.gotoJobPostings(testController);
   await jobPostingsPage.isDisplayed(testController);

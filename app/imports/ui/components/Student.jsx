@@ -1,16 +1,46 @@
 import React from 'react';
 import { _ } from 'meteor/underscore';
-import { Card, Image } from 'semantic-ui-react';
+import { Roles } from 'meteor/alanning:roles';
+import { Meteor } from 'meteor/meteor';
+import { Button, Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { NavLink, withRouter } from 'react-router-dom';
 import Tag from './Tag';
+import { StudentTags } from '../../api/tags/StudentTags';
+import { Students } from '../../api/student/Student';
+import { Education } from '../../api/education/Education';
+import { Experiences } from '../../api/experience/Experience';
+import { Projects } from '../../api/projects/Projects';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Student extends React.Component {
+
+  deleteProfile(ID) {
+    const owner = this.props.student.owner;
+    // remove educations from EducationCollection
+    const ownersEduById = _.pluck(Education.collection.find({ owner: owner }).fetch(), '_id');
+    _.map(ownersEduById, function (id) { Education.collection.remove({ _id: id }); });
+
+    // remove experiences from ExperienceCollection
+    const ownersExpsById = _.pluck(Experiences.collection.find({ owner: owner }).fetch(), '_id');
+    _.map(ownersExpsById, function (id) { Experiences.collection.remove({ _id: id }); });
+
+    // remove projects from ProjectCollection
+    const ownersProjectsById = _.pluck(Projects.collection.find({ owner: owner }).fetch(), '_id');
+    _.map(ownersProjectsById, function (id) { Projects.collection.remove({ _id: id }); });
+
+    // remove tags from TagCollection
+    const ownersTagsById = _.pluck(StudentTags.collection.find({ owner: owner }).fetch(), '_id');
+    _.map(ownersTagsById, function (id) { StudentTags.collection.remove({ _id: id }); });
+
+    // remove company from CompaniesCollection
+    Students.collection.remove({ _id: ID });
+  }
+
   render() {
     return (
-      <Card as={NavLink} exact to={`/viewstudent/${this.props.student._id}`}>
-        <Card.Content>
+      <Card>
+        <Card.Content as={NavLink} exact to={`/viewstudent/${this.props.student._id}`}>
           <Image
             floated='right'
             size='mini'
@@ -30,6 +60,21 @@ class Student extends React.Component {
             tag={tag}
           />)}
         </Card.Content>
+        { Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+          <Card.Content extra>
+            <div className='ui two buttons'>
+              <Button basic color='grey' as={NavLink} exact to={`/viewstudent/${this.props.student._id}`}>
+              View
+              </Button>
+              <Button
+                basic color='red'
+                onClick={() => this.deleteProfile(this.props.student._id)}
+              >
+              Delete
+              </Button>
+            </div>
+          </Card.Content>
+        ) : ''}
       </Card>
     );
   }

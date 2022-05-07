@@ -50,7 +50,7 @@ class SignupStudent extends React.Component {
 
   render() {
     let fRef = null;
-    const { from } = this.props.location.state || { from: { pathname: '/' } };
+    const { from } = this.props.location.state || { from: { pathname: '/signout' } };
 
     if (this.state.redirectToReferer) {
       return <Redirect to={from}/>;

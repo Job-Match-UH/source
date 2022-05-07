@@ -27,6 +27,8 @@ export default class Signin extends React.Component {
     Meteor.loginWithPassword(email, password, (err) => {
       if (err) {
         this.setState({ error: err.reason });
+      } else if (email === 'admin@foo.com') {
+        this.setState({ role: 'admin', error: '', redirectToReferer: true });
       } else {
         this.setState({ role: 'student', error: '', redirectToReferer: true });
       }
@@ -38,6 +40,8 @@ export default class Signin extends React.Component {
     Meteor.loginWithPassword(email, password, (err) => {
       if (err) {
         this.setState({ error: err.reason });
+      } else if (email === 'admin@foo.com') {
+        this.setState({ role: 'admin', error: '', redirectToReferer: true });
       } else {
         this.setState({ role: 'company', error: '', redirectToReferer: true });
       }
@@ -54,7 +58,7 @@ export default class Signin extends React.Component {
     if (this.state.redirectToReferer && this.state.role === 'company') {
       return <Redirect to={from}/>;
     }
-    if (this.state.redirectToReferer) {
+    if (this.state.redirectToReferer && this.state.role === 'admin') {
       return <Redirect to={from}/>;
     }
 

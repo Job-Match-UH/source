@@ -32,12 +32,16 @@ class NavBar extends React.Component {
           [
             <Menu.Item id='view-company-profile' as={NavLink} activeClassName="active" exact to={`/companyprofile/${Meteor.userId()}`} key='company'>My Profile</Menu.Item>,
             // <Menu.Item id='view-company-home' as={NavLink} activeClassName="active" exact to="/companyhomepage" key='company'>Match Me!</Menu.Item>,
-            <Menu.Item id='view-student-matches' as={NavLink} activeClassName="active" exact to="/viewstudentmatches" key='company'>View my Matches</Menu.Item>,
-            <Menu.Item id='job-postings' as={NavLink} activeClassName="active" exact to="/jobpostings" key='company'>Post a Job</Menu.Item>,
+            <Menu.Item id='view-student-matches' as={NavLink} activeClassName="active" exact to="/viewstudentmatches" key='company2'>View my Matches</Menu.Item>,
+            <Menu.Item id='job-postings' as={NavLink} activeClassName="active" exact to="/jobpostings" key='company3'>Post a Job</Menu.Item>,
           ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-          <Menu.Item id='view-admin-home' as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
+          [
+            // <Menu.Item id='view-company-matches' as={NavLink} activeClassName="active" exact to="/viewcompanymatches" key='student4'>Student Profiles</Menu.Item>,
+            // <Menu.Item id='view-student-matches' as={NavLink} activeClassName="active" exact to="/viewstudentmatches" key='company4'>Company Profiles</Menu.Item>,
+            <Menu.Item id='admin-home' as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin Home Page</Menu.Item>,
+          ]
         ) : ''}
         <Menu.Item position="right">
           {this.props.currentUser === '' ? (

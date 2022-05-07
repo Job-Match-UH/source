@@ -16,7 +16,7 @@ import AddExperience from './AddExperience';
 import AddEducation from './AddEducation';
 import AddInterest from './AddInterest';
 import Tag from '../components/Tag';
-import { Tags } from '../../api/tags/Tags';
+import { StudentTags } from '../../api/tags/StudentTags';
 
 class StudentProfile extends React.Component {
 
@@ -139,7 +139,7 @@ export default withTracker(({ match }) => {
   const subscription2 = Meteor.subscribe(Experiences.userPublicationName);
   const subscription3 = Meteor.subscribe(Education.userPublicationName);
   const subscription4 = Meteor.subscribe(Projects.userPublicationName);
-  const subscription5 = Meteor.subscribe(Tags.userPublicationName);
+  const subscription5 = Meteor.subscribe(StudentTags.userPublicationName);
   // Determine if the subscription is ready
   const ready = subscription1.ready() && subscription2.ready() && subscription3.ready() && subscription4.ready() && subscription5.ready();
   // Get the documents
@@ -148,7 +148,7 @@ export default withTracker(({ match }) => {
   const education = Education.collection.find({}).fetch();
   const experience = Experiences.collection.find({}).fetch();
   const projects = Projects.collection.find({}).fetch();
-  const tags = Tags.collection.find({ owner: students.owner });
+  const tags = StudentTags.collection.find({ owner: students.owner });
   return {
     students,
     education,

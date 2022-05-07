@@ -104,9 +104,14 @@
     }
   ],
 
-  "defaultTags": [
-    { "name": "Computer", "owner": "john@foo.com" },
-    { "name": "Food Service", "owner": "pear@pear.com" }
+  "defaultCompanyTags": [
+    { "name": "Food Service", "owner": "pear@pear.com" },
+    { "name": "Food Service", "owner": "facebook@fb.com" },
+    { "name": "Computer", "owner": "facebook@fb.com" }
+  ],
+
+  "defaultStudentTags": [
+    { "name": "Graphical Arts", "owner": "john@foo.com" }
   ],
 
   "defaultExperiences": [

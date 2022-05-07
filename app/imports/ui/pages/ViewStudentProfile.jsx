@@ -11,7 +11,7 @@ import Tag from '../components/Tag';
 import { Experiences } from '../../api/experience/Experience';
 import { Education } from '../../api/education/Education';
 import { Projects } from '../../api/projects/Projects';
-import { Tags } from '../../api/tags/Tags';
+import { StudentTags } from '../../api/tags/StudentTags';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ViewStudentProfile extends React.Component {
@@ -98,7 +98,7 @@ export default withTracker(({ match }) => {
   const subscription2 = Meteor.subscribe(Experiences.userPublicationName);
   const subscription3 = Meteor.subscribe(Education.userPublicationName);
   const subscription4 = Meteor.subscribe(Projects.userPublicationName);
-  const subscription5 = Meteor.subscribe(Tags.userPublicationName);
+  const subscription5 = Meteor.subscribe(StudentTags.userPublicationName);
   // Determine if the subscription is ready
   const ready = subscription1.ready() && subscription2.ready() && subscription3.ready() && subscription4.ready() && subscription5.ready();
   // Get the documents
@@ -106,7 +106,7 @@ export default withTracker(({ match }) => {
   const education = Education.collection.find({ owner: student.owner });
   const experience = Experiences.collection.find({ owner: student.owner });
   const projects = Projects.collection.find({ owner: student.owner });
-  const tags = Tags.collection.find({ owner: student.owner });
+  const tags = StudentTags.collection.find({ owner: student.owner });
   return {
     student,
     education,

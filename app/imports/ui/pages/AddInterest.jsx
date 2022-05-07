@@ -1,15 +1,17 @@
 import React from 'react';
 import { AutoForm, ErrorsField, HiddenField, SubmitField } from 'uniforms-semantic';
 import swal from 'sweetalert';
+import { Meteor } from 'meteor/meteor';
+import { Roles } from 'meteor/alanning:roles';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 // import SimpleSchema from 'simpl-schema';
 import PropTypes from 'prop-types';
 import SimpleSchema from 'simpl-schema';
 import MultiSelectField from '../forms/controllers/MultiSelectField';
-import { Tags } from '../../api/tags/Tags';
+import { CompanyTags } from '../../api/tags/CompanyTags';
+import { StudentTags } from '../../api/tags/StudentTags';
 
-const CommonInterestData = [
-  'Accounting/Fiscal', 'Administrative/Clerical', 'Agriculture', 'Architecture', 'Aquaculture', 'Art', 'Automotive', 'Business', 'Child Car', 'Communication',
+const CommonInterestData = ['Accounting/Fiscal', 'Administrative/Clerical', 'Agriculture', 'Architecture', 'Aquaculture', 'Art', 'Automotive', 'Business', 'Child Car', 'Communication',
   'Computer', 'Construction Trades', 'Culinary Arts', 'Education', 'Electrical', 'Electronics', 'Emergency Medical Services', 'Engineering', 'Fashion Tech', 'Finance',
   'Food Service', 'Graphical Arts', 'Groundskeeping/Janitorial', 'Health/Medical', 'Human Resources', 'Human Services', 'Janitorial/Custodial', 'Journalism', 'Laborer',
   'Language', 'Law Enforcement/Judicial', 'Mail Processing', 'Marketing', 'Mathematics Statistics', 'Media', 'Miscellaneous', 'Performing Arts', 'Receptionist', 'Research',
@@ -31,15 +33,29 @@ class AddInterest extends React.Component {
   // On submit, insert the data.
   submit(data, formRef) {
     const { name, owner } = data;
-    name.map((tag) => Tags.collection.insert({ name: tag, owner: owner },
-      (error) => {
-        if (error) {
-          swal('Error', error.message, 'error');
-        } else {
-          swal('Success', 'Interests added!', 'success');
-          formRef.reset();
-        }
-      }));
+    if (Roles.userIsInRole(Meteor.userId(), 'company')) {
+      name.map((tag) => CompanyTags.collection.insert({ name: tag, owner: owner },
+        (error) => {
+          if (error) {
+            swal('Error', error.message, 'error');
+          } else {
+            swal('Success', 'Interests added!', 'success');
+            formRef.reset();
+          }
+        }));
+    }
+
+    if (Roles.userIsInRole(Meteor.userId(), 'student')) {
+      name.map((tag) => StudentTags.collection.insert({ name: tag, owner: owner },
+        (error) => {
+          if (error) {
+            swal('Error', error.message, 'error');
+          } else {
+            swal('Success', 'Interests added!', 'success');
+            formRef.reset();
+          }
+        }));
+    }
   }
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms

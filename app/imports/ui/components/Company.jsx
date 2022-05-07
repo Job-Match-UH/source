@@ -7,7 +7,7 @@ import { Button, Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import Tag from '../components/Tag';
 import { Companies } from '../../api/company/Companies';
-import { Tags } from '../../api/tags/Tags';
+import { CompanyTags } from '../../api/tags/CompanyTags';
 import { Jobs } from '../../api/job/Jobs';
 
 /** Renders a single Company card */
@@ -19,8 +19,8 @@ class Company extends React.Component {
     const ownersJobsById = _.pluck(Jobs.collection.find({ owner: owner }).fetch(), '_id');
     _.map(ownersJobsById, function (id) { Jobs.collection.remove({ _id: id }); });
     // remove tags from TagCollection
-    const ownersTagsById = _.pluck(Tags.collection.find({ owner: owner }).fetch(), '_id');
-    _.map(ownersTagsById, function (id) { Tags.collection.remove({ _id: id }); });
+    const ownersTagsById = _.pluck(CompanyTags.collection.find({ owner: owner }).fetch(), '_id');
+    _.map(ownersTagsById, function (id) { CompanyTags.collection.remove({ _id: id }); });
     // remove company from CompaniesCollection
     Companies.collection.remove({ _id: ID });
   }

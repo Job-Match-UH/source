@@ -6,7 +6,7 @@ import { Button, Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { NavLink, withRouter } from 'react-router-dom';
 import Tag from './Tag';
-import { Tags } from '../../api/tags/Tags';
+import { StudentTags } from '../../api/tags/StudentTags';
 import { Students } from '../../api/student/Student';
 import { Education } from '../../api/education/Education';
 import { Experiences } from '../../api/experience/Experience';
@@ -30,8 +30,8 @@ class Student extends React.Component {
     _.map(ownersProjectsById, function (id) { Projects.collection.remove({ _id: id }); });
 
     // remove tags from TagCollection
-    const ownersTagsById = _.pluck(Tags.collection.find({ owner: owner }).fetch(), '_id');
-    _.map(ownersTagsById, function (id) { Tags.collection.remove({ _id: id }); });
+    const ownersTagsById = _.pluck(StudentTags.collection.find({ owner: owner }).fetch(), '_id');
+    _.map(ownersTagsById, function (id) { StudentTags.collection.remove({ _id: id }); });
 
     // remove company from CompaniesCollection
     Students.collection.remove({ _id: ID });

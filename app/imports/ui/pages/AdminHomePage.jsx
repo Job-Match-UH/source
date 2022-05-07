@@ -7,7 +7,8 @@ import Company from '../components/Company';
 import Student from '../components/Student';
 import { Companies } from '../../api/company/Companies';
 import { Students } from '../../api/student/Student';
-import { Tags } from '../../api/tags/Tags';
+import { CompanyTags } from '../../api/tags/CompanyTags';
+import { StudentTags } from '../../api/tags/StudentTags';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class AdminHomePage extends React.Component {
@@ -26,7 +27,7 @@ class AdminHomePage extends React.Component {
               (this.props.companies.map((company, index) => <Company
                 key={index}
                 company={company}
-                tags={this.props.tags.filter(tag => (tag.owner === company.owner))}
+                tags={this.props.companyTags.filter(tag => (tag.owner === company.owner))}
               />)
               )}
           </Card.Group>
@@ -40,7 +41,7 @@ class AdminHomePage extends React.Component {
               (this.props.students.map((student, index) => <Student
                 key={index}
                 student={student}
-                tags={this.props.tags.filter(tag => (tag.owner === student.owner))}
+                tags={this.props.studentTags.filter(tag => (tag.owner === student.owner))}
               />)
               )
             }
@@ -53,12 +54,12 @@ class AdminHomePage extends React.Component {
             {this.props.students.map((student, index) => <Student
               key={index}
               student={student}
-              tags={this.props.tags.filter(tag => (tag.owner === student.owner))}
+              tags={this.props.studentTags.filter(tag => (tag.owner === student.owner))}
             />)}
             {this.props.companies.map((company, index) => <Company
               key={index}
               company={company}
-              tags={this.props.tags.filter(tag => (tag.owner === company.owner))}
+              tags={this.props.companyTags.filter(tag => (tag.owner === company.owner))}
             />)}
           </Card.Group>
         </Tab.Pane>,
@@ -85,9 +86,10 @@ class AdminHomePage extends React.Component {
 
 // Require the presence of a Company document in the props object. Uniforms adds 'model' to the props, which we use.
 AdminHomePage.propTypes = {
-  companies: PropTypes.array.isRequired,
-  students: PropTypes.array.isRequired,
-  tags: PropTypes.array.isRequired,
+  companies: PropTypes.array,
+  students: PropTypes.array,
+  companyTags: PropTypes.array,
+  studentTags: PropTypes.array,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -96,16 +98,19 @@ export default withTracker(() => {
   // Ensure that minimongo is populated with all collections prior to running render().
   const sub1 = Meteor.subscribe(Students.adminPublicationName);
   const sub2 = Meteor.subscribe(Companies.adminPublicationName);
-  const sub3 = Meteor.subscribe(Tags.adminPublicationName);
-  const ready = (sub1.ready() && sub2.ready()) || sub3.ready();
+  const sub3 = Meteor.subscribe(StudentTags.adminPublicationName);
+  const sub4 = Meteor.subscribe(CompanyTags.adminPublicationName);
+  const ready = sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready();
   // Get documents
   const companies = Companies.collection.find({}).fetch();
   const students = Students.collection.find({}).fetch();
-  const tags = Tags.collection.find({}).fetch();
+  const companyTags = CompanyTags.collection.find({}).fetch();
+  const studentTags = StudentTags.collection.find({}).fetch();
   return {
     companies,
     students,
-    tags,
+    companyTags,
+    studentTags,
     ready,
   };
 })(AdminHomePage);

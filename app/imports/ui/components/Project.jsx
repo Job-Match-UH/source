@@ -1,11 +1,20 @@
 import React from 'react';
-import { Card, Grid, Icon } from 'semantic-ui-react';
+import { Button, Card, Grid, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
+import { _ } from 'meteor/underscore';
 import { Roles } from 'meteor/alanning:roles';
 import { Meteor } from 'meteor/meteor';
+import { Projects } from '../../api/projects/Projects';
 
 class Project extends React.Component {
+
+  deleteProj() {
+    const title = _.pluck(Projects.collection.find({ _id: this.props.project._id }).fetch(), '_id');
+    _.map(title, function (id) { Projects.collection.remove({ _id: id }, true); });
+    Projects.collection.remove({ _id: Meteor.userId() });
+  }
+
   render() {
     return (
       <Card className='cp-text'>
@@ -14,14 +23,19 @@ class Project extends React.Component {
             <Card.Content extra>
               <Grid columns='equal'>
                 <Grid.Row>
-                  <Grid.Column width={13}>
+                  <Grid.Column width={12}>
                     {this.props.project.name}
                   </Grid.Column>
-                  <Grid.Column>
+                  <Grid.Row>
                     {Roles.userIsInRole(Meteor.userId(), 'student') ? (
                       <Link to={`/editproject/${this.props.project._id}`}><Icon name='pencil'/></Link>
                     ) : ''}
-                  </Grid.Column>
+                    {Roles.userIsInRole(Meteor.userId(), 'student') ? (
+                      <Button icon color='blue' onClick={() => this.deleteProj()}>
+                        <Icon name='trash alternate'/>
+                      </Button>
+                    ) : ''}
+                  </Grid.Row>
                 </Grid.Row>
               </Grid>
             </Card.Content>

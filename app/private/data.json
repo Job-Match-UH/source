@@ -115,6 +115,7 @@
       "image": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
     }
   ],
+
   "companies": [
     {
       "companyName": "UH Online",
@@ -189,6 +190,76 @@
       "phone": "8085863310",
       "year": "1840",
       "image": "https://www.hawaiitribune-herald.com/wp-content/uploads/2020/07/web1_DOE-logo.jpeg"
+    }
+  ],
+
+  "companyTags": [
+    { "name": "Computer", "owner": "pear@pear.com" }
+  ],
+
+  "studentTags": [
+    { "name": "Computer", "owner": "john@foo.com" }
+  ],
+
+  "jobs": [
+    { "jobTitle": "Sales Clerk",
+      "jobID": "1234",
+      "pay": "15",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Waikiki",
+      "jobDescription": "Rang customers up for their purchases at a small local shop selling tourist items",
+      "qualifications": "a happy smile",
+      "owner": "uhonline@uhm.com"
+    }
+  ],
+
+  "experiences": [
+    {
+      "title": "Babysitter",
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Parents",
+      "role": "student",
+      "description": "Worked at home",
+      "owner": "john@foo.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    }
+  ],
+
+  "education": [
+    {
+      "school": "Stanford",
+      "degree":
+        {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+        },
+      "field": "Women Studies",
+      "owner": "john@foo.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "Job Match UH",
+      "description": "Create an application for connecting students and companies.",
+      "owner": "john@foo.com"
     }
   ]
 }

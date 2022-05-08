@@ -32,9 +32,9 @@ class AddExperience extends React.Component {
 
     return (
       <AutoForm style={ { marginBottom: 10 } } ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
-        <Form.Group widths='equal'>
+        <Form.Group>
           <TextField id='experience-title' fluid="true" label='Title' placeholder='Ex. Retail Manager' name='title'/>
-          <SelectField fluid="true" placeholder='Full-time' name='type' allowedValues={employmentType}/>
+          <SelectField inline fluid="true" placeholder='Full-time' name='type' allowedValues={employmentType}/>
         </Form.Group>
         <Form.Group widths='equal'>
           <TextField id='experience-name' fluid="true" label='Name of company' placeholder='Ex.  Walmart' name='company'/>

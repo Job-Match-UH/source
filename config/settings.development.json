@@ -129,13 +129,14 @@
 
   ],
 
-  "defaultTags": [
-    { "name": "Computer", "owner": "john@foo.com" },
-    { "name": "Food Service", "owner": "pear@pear.com" }
+  "defaultCompanyTags": [
+    { "name": "Food Service", "owner": "pear@pear.com" },
+    { "name": "Food Service", "owner": "facebook@fb.com" },
+    { "name": "Computer", "owner": "facebook@fb.com" }
   ],
 
-  "defaultJobs": [
-    {}
+  "defaultStudentTags": [
+    { "name": "Graphical Arts", "owner": "john@foo.com" }
   ],
 
   "defaultExperiences": [
@@ -179,6 +180,26 @@
       "owner": "john@foo.com",
       "startDate": { "type": "2020-04-20 00:00:00" },
       "endDate": { "type": "2022-04-20 00:00:00" }
+    }
+  ],
+  "defaultJobs": [
+    { "jobTitle": "Sales Clerk",
+      "jobID": "1234",
+      "pay": "15",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Waikiki",
+      "jobDescription": "Rang customers up for their purchases at a small local shop selling pear items",
+      "qualifications": "Happy smile",
+      "owner": "pear@pear.com"
     }
   ],
 

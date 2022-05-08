@@ -5,6 +5,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Company from '../components/Company';
 import { Companies } from '../../api/company/Companies';
+import { Tags } from '../../api/tags/Tags';
 
 const options = [
   { key: 'angular', text: 'Angular', value: 'angular' },
@@ -90,7 +91,9 @@ class StudentHomePage extends React.Component {
             <Card.Group centered>
               {this.props.companies.map((company, index) => <Company
                 key={index}
-                company={company}/>)}
+                company={company}
+                tags={this.props.tags}
+              />)}
             </Card.Group>
           </Grid.Row>
         </Grid>
@@ -102,6 +105,7 @@ class StudentHomePage extends React.Component {
 // Require an array of Companies documents in the props.
 StudentHomePage.propTypes = {
   companies: PropTypes.array.isRequired,
+  tags: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -113,8 +117,10 @@ export default withTracker(() => {
   const ready = subscription.ready();
   // Get the Contacts documents
   const companies = Companies.collection.find({}).fetch();
+  const tags = Tags.collection.find({}).fetch();
   return {
     companies,
+    tags,
     ready,
   };
 })(StudentHomePage);

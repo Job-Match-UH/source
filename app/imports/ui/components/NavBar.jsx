@@ -31,13 +31,14 @@ class NavBar extends React.Component {
         { Roles.userIsInRole(Meteor.userId(), 'company') ? (
           [
             <Menu.Item id='view-company-profile' as={NavLink} activeClassName="active" exact to={`/companyprofile/${Meteor.userId()}`} key='company' style={ { fontSize: 'large' } }>My Profile</Menu.Item>,
-            // <Menu.Item id='view-company-home' as={NavLink} activeClassName="active" exact to="/companyhomepage" key='company'>Match Me!</Menu.Item>,
             <Menu.Item id='view-student-matches' as={NavLink} activeClassName="active" exact to="/viewstudentmatches" key='company' style={ { fontSize: 'large' } }>View my Matches</Menu.Item>,
             <Menu.Item id='job-postings' as={NavLink} activeClassName="active" exact to="/jobpostings" key='company' style={ { fontSize: 'large' } }>Post a Job</Menu.Item>,
           ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-          <Menu.Item id='view-admin-home' as={NavLink} activeClassName="active" exact to="/admin" key='admin' style={ { fontSize: 'large' } }>Admin</Menu.Item>
+          [
+            <Menu.Item id='view-admin-home' as={NavLink} activeClassName="active" exact to="/admin" key='admin' style={ { fontSize: 'large' } }>Admin</Menu.Item>,
+          ]
         ) : ''}
         <Menu.Item position="right">
           {this.props.currentUser === '' ? (

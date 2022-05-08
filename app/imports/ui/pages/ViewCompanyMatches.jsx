@@ -1,7 +1,7 @@
 import React from 'react';
-import { Meteor } from 'meteor/meteor';
-import { withTracker } from 'meteor/react-meteor-data';
 import { Header, Card, Container, Segment, Loader } from 'semantic-ui-react';
+import { withTracker } from 'meteor/react-meteor-data';
+import { Meteor } from 'meteor/meteor';
 import { AutoForm, SubmitField } from 'uniforms-semantic';
 import { _ } from 'meteor/underscore';
 import PropTypes from 'prop-types';

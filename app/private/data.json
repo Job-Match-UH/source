@@ -24,7 +24,7 @@
       "address": "Kahala, HI",
       "phone": "8085179479",
       "about": "I am a second year student pursuing a Bachelors in Education",
-      "image": "",
+      "image": "https://i.pinimg.com/originals/90/ea/48/90ea4802bc9c34bb988031bb05721365.jpg",
       "owner": "ereninak@hawaii.edu"
     },
     {
@@ -33,7 +33,7 @@
       "address": "Aiea, HI",
       "phone": "8084696160",
       "about": "I am a senior that will be graduating with a Bachelors in Public Health and Womens Studies",
-      "image": "",
+      "image": "https://i.pinimg.com/236x/72/63/8c/72638ca88f1ddbc8913bcbf24947b7b7.jpg",
       "owner": "cmmw@hawaii.edu"
     },
     {
@@ -42,7 +42,7 @@
       "address": "Princeville, HI",
       "phone": "8084696160",
       "about": "I am a senior that will be graduating with a B.S. in Mechanical Engineering",
-      "image": "",
+      "image": "https://i.pinimg.com/474x/3c/38/6c/3c386c6c88af9031f7ffd752e86c31ba.jpg",
       "owner": "ikotsol@hawaii.edu"
     },
     {
@@ -51,7 +51,7 @@
       "address": "Kapuhulu, HI",
       "phone": "8084696160",
       "about": "I am a senior graduating this semester with a B.S. in Molecular Cell Biology Pre-Med.",
-      "image": "",
+      "image": "https://i.pinimg.com/474x/52/f6/cf/52f6cf1aecda4a38c7382931a00bd605.jpg",
       "owner": "jtajiri@hawaii.edu"
     },
     {
@@ -60,7 +60,7 @@
       "address": "Pauloa Valley, HI",
       "phone": "8084824836",
       "about": "I am a senior graduating with a B.S. in Computer Science in cyber security",
-      "image": "",
+      "image": "https://i.pinimg.com/474x/f1/39/63/f13963c024d3b1e8fe55d78b0654b985.jpg",
       "owner": "kimurai@hawaii.edu"
     },
     {
@@ -69,7 +69,7 @@
       "address": "Kailua, HI",
       "phone": "8085179479",
       "about": "I am a third year pursuing a B.S. in nursing",
-      "image": "",
+      "image": "https://i.pinimg.com/236x/18/4b/f7/184bf73183b0fbddc65212b27f787d06.jpg",
       "owner": "nespejo@hawaii.edu"
     },
     {
@@ -78,7 +78,7 @@
       "address": "Kalihi, HI",
       "phone": "8084696160",
       "about": "I am a third year majoring in Communications",
-      "image": "",
+      "image": "https://i.pinimg.com/564x/1b/14/34/1b1434c7d78bca9e24bcb89e5126903c.jpg",
       "owner": "rgalanto@hawaii.edu"
     },
     {
@@ -87,7 +87,7 @@
       "address": "Kapaa, HI",
       "phone": "8084696160",
       "about": "I am a third year pursuing a B.S. in Nursing",
-      "image": "",
+      "image": "https://www.hinzechiropractic.com/wp-content/uploads/2020/10/050_girl_avatar_profile_woman_suit_student_officer-512.jpg",
       "owner": "achoy@hawaii.edu"
     },
     {
@@ -96,7 +96,7 @@
       "address": "Anahola, HI",
       "phone": "8084696160",
       "about": "I am a senior graduating this semester with a B.S. in Electrical Engineering",
-      "image": "",
+      "image": "https://i.pinimg.com/222x/f5/6b/ae/f56baef86aed6c261c422402aab59065.jpg",
       "owner": "asantos@gmail.com"
     },
     {
@@ -105,7 +105,7 @@
       "address": "Kilaeua, HI",
       "phone": "8084824836",
       "about": "I am a senior graduating with a B.A. in English",
-      "image": "",
+      "image": "https://icon-library.com/images/cool-profile-icon/cool-profile-icon-9.jpg",
       "owner": "wildpup@gmail.com"
     }
   ],
@@ -169,86 +169,69 @@
   ],
 
   "companyTags": [
-    { "name": [
-      "Computer",
-      "Accounting/Fiscal",
-      "Administrative/Clerical",
-      "Human Services",
-      "Human Resources",
-      "Finance",
-      "Marketing"
-    ], "owner": "asb@asb.com" },
-    { "name": [
-      "Computer",
-      "Accounting/Fiscal",
-      "Administrative/Clerical",
-      "Human Services",
-      "Human Resources",
-      "Finance",
-      "Marketing"
-    ], "owner": "boh@boh.com" },
-    { "name": [
-      "Computer",
-      "Accounting/Fiscal",
-      "Administrative/Clerical",
-      "Human Services",
-      "Human Resources",
-      "Finance",
-      "Marketing"
-    ], "owner": "fhb@fhb.com" },
-    { "name": [
-      "Computer",
-      "Accounting/Fiscal",
-      "Administrative/Clerical",
-      "Human Services",
-      "Human Resources",
-      "Finance",
-      "Marketing"
-    ], "owner": "htc@htc.com" },
-    { "name": [
-      "Tourism/Hospitality",
-      "Law Enforcement/Judicial",
-      "Administrative/Clerical"
-    ], "owner": "tsa@tsa.com" }
+    {
+      "name": "Administrative/Clerical",
+      "owner": "asb@asb.com"
+    },
+    {
+      "name": "Administrative/Clerical",
+      "owner": "boh@boh.com"
+    },
+    {
+      "name": "Human Resources",
+      "owner": "fhb@fhb.com"
+    },
+    {
+      "name": "Computer",
+      "owner": "htc@htc.com"
+    },
+    {
+      "name": "Law Enforcement/Judicial",
+      "owner": "tsa@tsa.com"
+    }
   ],
 
   "studentTags": [
-    { "name": [
-      "Tutoring",
-      "Education",
-      "Student Activities"
-    ], "owner": "ereninak@hawaii.edu" },
-    { "name": [
-      "Health/Medical"
-    ], "owner": "cmmw@hawaii.edu"  },
-    { "name": [
-      "Engineering"
-    ], "owner": "ikotsol@hawaii.edu" },
-    { "name": [
-      "Health/Medical"
-    ], "owner": "jtajiri@hawaii.edu" },
-    { "name": [
-      "Computer",
-      "Electronics"
-    ], "owner": "kimurai@hawaii.edu" },
-    { "name": [
-      "Health/Medical"
-    ], "owner": "nespejo@hawaii.edu" },
-    { "name": [
-      "Communication",
-      "Technical/Trades"
-    ], "owner": "rgalanto@hawaii.edu" },
-    { "name": [
-      "Health/Medical"
-    ], "owner": "achoy@hawaii.edu" },
-    { "name": [
-      "Electrical",
-      "Engineering"
-    ], "owner": "asantos@gmail.com" },
-    { "name": [
-      "Language",
-      "Education"
-    ], "owner": "wildpup@gmail.com" }
+    {
+      "name": "Education",
+      "owner": "ereninak@hawaii.edu"
+    },
+    {
+      "name": "Health/Medical",
+      "owner": "cmmw@hawaii.edu"
+    },
+    {
+      "name": "Engineering",
+      "owner": "ikotsol@hawaii.edu"
+    },
+    {
+      "name": "Health/Medical",
+    "owner": "jtajiri@hawaii.edu"
+    },
+    {
+      "name": "Computer",
+    "owner": "kimurai@hawaii.edu"
+    },
+    {
+      "name": "Health/Medical",
+      "owner": "nespejo@hawaii.edu"
+    },
+    {
+      "name": "Communication",
+      "owner": "rgalanto@hawaii.edu"
+    },
+    {
+      "name": "Health/Medical",
+      "owner": "achoy@hawaii.edu"
+    },
+    {
+      "name": "Electrical",
+      "owner": "asantos@gmail.com"
+    },
+    {
+      "name": "Language",
+      "owner": "wildpup@gmail.com"
+    }
   ],
 
   "jobs": [
@@ -678,7 +661,7 @@
         "defaultValue": "High School Diploma",
         "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
       },
-      "field": ["Public Health", "Women's Studies"],
+      "field": "Public Health",
       "owner": "cmmw@hawaii.edu",
       "startDate": { "type": "2018-08-20 00:00:00" },
       "endDate": { "type": "2022-05-08 00:00:00" }

@@ -103,9 +103,6 @@ export default class Signin extends React.Component {
                   onChange={this.handleChange}
                 />
                 <Button id="signin-form-submit" content='Login' primary style={{ fontSize: 'medium' }}/>
-                <Message attached color='green' style={{ fontSize: 'medium' }}>
-                  <Link id='view-signup-student' to="/student_signup">Click here to Register as a Student</Link>
-                </Message>
               </Form>
             </Grid.Column>
 

@@ -76,7 +76,11 @@ export default withTracker(({ match }) => {
   const sub1 = Meteor.subscribe(Companies.userPublicationName);
   const sub2 = Meteor.subscribe(Jobs.userPublicationName);
   const sub3 = Meteor.subscribe(CompanyTags.userPublicationName);
-  const ready = sub1.ready() && sub2.ready() && sub3.ready();
+  // Get docuemnts for admin access
+  const sub4 = Meteor.subscribe(Companies.adminPublicationName);
+  const sub5 = Meteor.subscribe(Jobs.adminPublicationName);
+  const sub6 = Meteor.subscribe(CompanyTags.adminPublicationName);
+  const ready = sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready() && sub5.ready() && sub6.ready();
   // Get documents
   const company = Companies.collection.findOne(companyId);
   const job = Jobs.collection.find({ owner: company.owner });

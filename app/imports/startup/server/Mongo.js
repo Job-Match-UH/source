@@ -2,10 +2,12 @@ import { Meteor } from 'meteor/meteor';
 import { Class } from '../../api/class/Class';
 import { Students } from '../../api/student/Student';
 import { Companies } from '../../api/company/Companies';
-import { Tags } from '../../api/tags/Tags';
+import { CompanyTags } from '../../api/tags/CompanyTags';
+import { StudentTags } from '../../api/tags/StudentTags';
 import { Experiences } from '../../api/experience/Experience';
 import { Education } from '../../api/education/Education';
 import { Projects } from '../../api/projects/Projects';
+import { Jobs } from '../../api/job/Jobs';
 
 /* eslint-disable no-console */
 
@@ -21,9 +23,14 @@ function addStudent(data) {
   Students.collection.insert(data);
 }
 
-function addTags(data) {
+function addCompanyTags(data) {
   console.log(`  Adding: ${data.name} (${data.owner})`);
-  Tags.collection.insert(data);
+  CompanyTags.collection.insert(data);
+}
+
+function addStudentTags(data) {
+  console.log(`  Adding: ${data.name} (${data.owner})`);
+  StudentTags.collection.insert(data);
 }
 
 function addCompanies(data) {
@@ -46,6 +53,11 @@ function addProject(data) {
   Projects.collection.insert(data);
 }
 
+function addJob(data) {
+  console.log('  Adding Jobs');
+  Jobs.collection.insert(data);
+}
+
 // Initialize the StudentCollection if empty.
 if (Students.collection.find().count() === 0) {
   if (Meteor.settings.defaultStudentData) {
@@ -64,10 +76,17 @@ if (Companies.collection.find().count() === 0) {
 }
 
 // Initialize the TagsCollection if empty.
-if (Tags.collection.find().count() === 0) {
-  if (Meteor.settings.defaultTags) {
-    console.log('Creating default tags.');
-    Meteor.settings.defaultTags.map(data => addTags(data));
+if (CompanyTags.collection.find().count() === 0) {
+  if (Meteor.settings.defaultCompanyTags) {
+    console.log('Creating default company tags.');
+    Meteor.settings.defaultCompanyTags.map(data => addCompanyTags(data));
+  }
+}
+
+if (StudentTags.collection.find().count() === 0) {
+  if (Meteor.settings.defaultStudentTags) {
+    console.log('Creating default student tags.');
+    Meteor.settings.defaultStudentTags.map(data => addStudentTags(data));
   }
 }
 
@@ -103,6 +122,14 @@ if (Projects.collection.find().count() === 0) {
   }
 }
 
+// Initialize the ProjectCollection if empty.
+if (Jobs.collection.find().count() === 0) {
+  if (Meteor.settings.defaultJobs) {
+    console.log('Creating default job data.');
+    Meteor.settings.defaultJobs.map(data => addJob(data));
+  }
+}
+
 /**
  * If the loadAssetsFile field in settings.development.json is true, then load the data in private/data.json.
  * This approach allows you to initialize your system with large amounts of data.
@@ -111,10 +138,19 @@ if (Projects.collection.find().count() === 0) {
  * For more info on assets, see https://docs.meteor.com/api/assets.html
  * User count check is to make sure we don't load the file twice, which would generate errors due to duplicate info.
  */
-if (Meteor.settings.loadAssetsFile) {
-  const assetsFileName = 'data.json';
-  console.log(`Loading data from private/${assetsFileName}`);
-  const jsonData = JSON.parse(Assets.getText(assetsFileName));
-  jsonData.students.map(student => addStudent(student));
-  jsonData.companies.map(company => addCompanies(company));
+
+if (Meteor.users.find().count() < 15) {
+  if (Meteor.settings.loadAssetsFile) {
+    const assetsFileName = 'data.json';
+    console.log(`Creating Student/Company from ${assetsFileName}`);
+    const jsonData = JSON.parse(Assets.getText(assetsFileName));
+    jsonData.students.map(student => addStudent(student));
+    jsonData.companies.map(company => addCompanies(company));
+    jsonData.companyTags.map(tags => addCompanyTags(tags));
+    jsonData.studentTags.map(tags => addStudentTags(tags));
+    jsonData.experiences.map(experiences => addExperience(experiences));
+    jsonData.education.map(education => addEducation(education));
+    jsonData.projects.map(projects => addProject(projects));
+    jsonData.jobs.map(jobs => addJob(jobs));
+  }
 }

@@ -13,7 +13,6 @@
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
     { "email": "john@foo.com", "password": "changeme", "role": "student"},
     { "email": "tsai@gmail.com", "password": "changeme", "role": "student"},
-    { "email": "leano@gmail.com", "password": "changeme", "role": "student"},
     { "email": "cadiena@gmail.com", "password": "changeme", "role": "student"},
     { "email": "galano@gmail.com", "password": "changeme", "role": "student"},
     { "email": "arakaki@gmail.com", "password": "changeme", "role": "student"},
@@ -29,15 +28,6 @@
       "phone":  "1234567",
       "about":  "This is default data",
       "owner":  "tsai@gmail.com",
-      "image":  "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg"
-    },
-    {
-      "firstName":  "Michelle",
-      "lastName":  "Leano",
-      "address": "123 University Ave",
-      "phone":  "1234567",
-      "about":  "This is default data",
-      "owner":  "leano@gmail.com",
       "image":  "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg"
     },
     {
@@ -114,13 +104,14 @@
     }
   ],
 
-  "defaultTags": [
-    { "name": "Computer", "owner": "pear@pear.com" },
-    { "name": "Computer", "owner": "john@pear.com" }
+  "defaultCompanyTags": [
+    { "name": "Food Service", "owner": "pear@pear.com" },
+    { "name": "Food Service", "owner": "facebook@fb.com" },
+    { "name": "Computer", "owner": "facebook@fb.com" }
   ],
 
-  "defaultJobs": [
-    {}
+  "defaultStudentTags": [
+    { "name": "Graphical Arts", "owner": "john@foo.com" }
   ],
 
   "defaultExperiences": [
@@ -137,37 +128,9 @@
       "owner": "john@foo.com",
       "exp_start": { "type": "2020-04-20 00:00:00" },
       "exp_end": { "type": "2022-01-10 00:00:00" }
-    },
-    {
-      "title": "The Boss",
-      "type": {
-        "type": "Full-time",
-        "defaultValue": "Full-time",
-        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
-      },
-      "company": "Apple",
-      "role": "Worker",
-      "description": "Worked as a boss",
-      "owner": "john@foo.com",
-      "exp_start": { "type": "2015-04-20 00:00:00" },
-      "exp_end": { "type": "2022-01-10 00:00:00" }
-    },
-    {
-      "title": "The Girl Boss",
-      "type": {
-        "type": "Full-time",
-        "defaultValue": "Full-time",
-        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
-      },
-      "company": "Apple",
-      "role": "Worker",
-      "description": "Worked as a boss",
-      "owner": "leano@gmail.com",
-      "exp_start": { "type": "2015-04-20 00:00:00" },
-      "exp_end": { "type": "2022-01-10 00:00:00" }
     }
   ],
-  
+
   "defaultEducation": [
     {
       "school": "MIT",
@@ -192,27 +155,30 @@
       "owner": "john@foo.com",
       "startDate": { "type": "2020-04-20 00:00:00" },
       "endDate": { "type": "2022-04-20 00:00:00" }
-    },
-    {
-      "school": "Yale University",
-      "degree": {
-        "type": "High School Diploma",
-        "defaultValue": "High School Diploma",
-        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+    }
+  ],
+  "defaultJobs": [
+    { "jobTitle": "Sales Clerk",
+      "jobID": "1234",
+      "pay": "15",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
       },
-      "field": "Math",
-      "owner": "leano@gmail.com",
-      "startDate": { "type": "2020-04-20 00:00:00" },
-      "endDate": { "type": "2022-04-20 00:00:00" }
+      "type": {
+        "type": "String",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Waikiki",
+      "jobDescription": "Rang customers up for their purchases at a small local shop selling pear items",
+      "qualifications": "Happy smile",
+      "owner": "pear@pear.com"
     }
   ],
 
   "defaultProjects": [
-    {
-      "name": "Job Match UH",
-      "description": "Create an application for connecting students and companies.",
-      "owner": "leano@gmail.com"
-    },
     {
       "name": "Job Match UH",
       "description": "Create an application for connecting students and companies.",

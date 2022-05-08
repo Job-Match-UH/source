@@ -1,11 +1,20 @@
 import React from 'react';
-import { Card, Grid, Icon } from 'semantic-ui-react';
+import { Button, Card, Grid, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import { _ } from 'meteor/underscore';
 import { Link, withRouter } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
 import { Meteor } from 'meteor/meteor';
+import { Education } from '../../api/education/Education';
 
 class Educations extends React.Component {
+
+  deleteEdu() {
+    const school = _.pluck(Education.collection.find({ _id: this.props.educations._id }).fetch(), '_id');
+    _.map(school, function (id) { Education.collection.remove({ _id: id }, true); });
+    Education.collection.remove({ _id: Meteor.userId() });
+  }
+
   render() {
     return (
       <Card className='cp-text'>
@@ -14,14 +23,19 @@ class Educations extends React.Component {
             <Card.Content extra>
               <Grid columns='equal'>
                 <Grid.Row>
-                  <Grid.Column width={13}>
+                  <Grid.Column width={12}>
                     {this.props.educations.school}
                   </Grid.Column>
-                  <Grid.Column>
+                  <Grid.Row>
                     {Roles.userIsInRole(Meteor.userId(), 'student') ? (
                       <Link to={`/editeducation/${this.props.educations._id}`}><Icon name='pencil'/></Link>
                     ) : ''}
-                  </Grid.Column>
+                    {Roles.userIsInRole(Meteor.userId(), 'student') ? (
+                      <Button icon color='blue' onClick={() => this.deleteEdu()}>
+                        <Icon name='trash alternate'/>
+                      </Button>
+                    ) : ''}
+                  </Grid.Row>
                 </Grid.Row>
               </Grid>
             </Card.Content>

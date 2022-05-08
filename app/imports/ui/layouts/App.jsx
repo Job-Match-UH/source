@@ -20,8 +20,6 @@ import ClassScheduleForm from '../pages/ClassScheduleForm';
 import AddExperience from '../pages/AddExperience';
 import AddEducation from '../pages/AddEducation';
 import AddProject from '../pages/AddProject';
-// import StudentHomePage from '../pages/StudentHomePage';
-// import CompanyHomePage from '../pages/CompanyHomePage';
 import AdminHomePage from '../pages/AdminHomePage';
 import ViewStudentMatches from '../pages/ViewStudentMatches';
 import ViewStudentProfile from '../pages/ViewStudentProfile';
@@ -50,11 +48,11 @@ class App extends React.Component {
             <Route path="/company_signup" component={SignupCompanyEmail}/>
             <Route path="/studentsignup" component={SignupStudent}/>
             <Route path="/companysignup" component={SignupCompany}/>
-            <StudentProtectedRoute path="/studentprofile/:_id" component={StudentProfile}/>
-            <ProtectedRoute path="/companyprofile/:_id" component={CompanyProfile}/>
             <Route path="/classform" component={ClassScheduleForm}/>
+            <ProtectedRoute path="/studentprofile/:_id" component={StudentProfile}/>
+            <ProtectedRoute path="/companyprofile/:_id" component={CompanyProfile}/>
             <ProtectedRoute path="/addexp" component={AddExperience}/>
-            <ProtectedRoute path="/addedu" component={AddEducation}/>
+            <ProtectedRoute path="/addedu/:_id" component={AddEducation}/>
             <ProtectedRoute path="/addproject" component={AddProject}/>
             <ProtectedRoute path="/editeducation/:_id" component={EditEducation}/>
             <ProtectedRoute path="/editexperience/:_id" component={EditExperience}/>
@@ -62,14 +60,14 @@ class App extends React.Component {
             <ProtectedRoute path="/editstudent/:_id" component={EditStudent}/>
             <ProtectedRoute path="/editcompany/:_id" component={EditCompany}/>
             <ProtectedRoute path="/editjob/:_id" component={EditJob}/>
-            <CompanyProtectedRoute path="/viewstudent/:_id" component={ViewStudentProfile}/>
-            <StudentProtectedRoute path="/viewcompany/:_id" component={ViewCompanyProfile}/>
+            <ProtectedRoute path="/viewstudent/:_id" component={ViewStudentProfile}/>
+            <ProtectedRoute path="/viewcompany/:_id" component={ViewCompanyProfile}/>
             {/* <StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/> */}
             {/* <CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/> */}
-            <CompanyProtectedRoute path="/jobpostings" component={JobPostings}/>
-            <AdminProtectedRoute path="/admin" component={AdminHomePage}/>
-            <CompanyProtectedRoute path="/viewstudentmatches" component={ViewStudentMatches}/>
-            <StudentProtectedRoute path="/viewcompanymatches" component={ViewCompanyMatches}/>
+            <ProtectedRoute path="/jobpostings" component={JobPostings}/>
+            <ProtectedRoute path="/admin" component={AdminHomePage}/>
+            <ProtectedRoute path="/viewstudentmatches" component={ViewStudentMatches}/>
+            <ProtectedRoute path="/viewcompanymatches" component={ViewCompanyMatches}/>
             <Route component={NotFound}/>
           </Switch>
           <Footer/>
@@ -98,44 +96,6 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
 );
 
 /**
- * ProtectedRoute (see React Router v4 sample)
- * Checks for Meteor login before routing to the requested page, otherwise goes to signin page.
- * @param {any} { component: Component, ...rest }
- */
-const StudentProtectedRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={(props) => {
-      const isLogged = Meteor.userId() !== null;
-      const isStudent = Roles.userIsInRole(Meteor.userId(), 'student');
-      return (isLogged && isStudent) ?
-        (<Component {...props} />) :
-        (Meteor.logout() || <Redirect to={{ pathname: '/signin', state: { from: props.location }, error: 'Unauthorized login' }}/>
-        );
-    }}
-  />
-);
-
-/**
- * ProtectedRoute (see React Router v4 sample)
- * Checks for Meteor login before routing to the requested page, otherwise goes to signin page.
- * @param {any} { component: Component, ...rest }
- */
-const CompanyProtectedRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={(props) => {
-      const isLogged = Meteor.userId() !== null;
-      const isCompany = Roles.userIsInRole(Meteor.userId(), 'company');
-      return (isLogged && isCompany) ?
-        (<Component {...props} />) :
-        (Meteor.logout() || <Redirect to={{ pathname: '/signin', state: { from: props.location }, error: 'Unauthorized login' }}/>
-        );
-    }}
-  />
-);
-
-/**
  * AdminProtectedRoute (see React Router v4 sample)
  * Checks for Meteor login and admin role before routing to the requested page, otherwise goes to signin page.
  * @param {any} { component: Component, ...rest }
@@ -148,7 +108,7 @@ const AdminProtectedRoute = ({ component: Component, ...rest }) => (
       const isAdmin = Roles.userIsInRole(Meteor.userId(), 'admin');
       return (isLogged && isAdmin) ?
         (<Component {...props} />) :
-        (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
+        (<Redirect to={{ pathname: '/signin', state: { from: props.location }, error: 'Unauthorized login' }}/>
         );
     }}
   />
@@ -156,18 +116,6 @@ const AdminProtectedRoute = ({ component: Component, ...rest }) => (
 
 // Require a component and location to be passed to each ProtectedRoute.
 ProtectedRoute.propTypes = {
-  component: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
-  location: PropTypes.object,
-};
-
-// Require a component and location to be passed to each ProtectedRoute.
-StudentProtectedRoute.propTypes = {
-  component: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
-  location: PropTypes.object,
-};
-
-// Require a component and location to be passed to each CompanyProtectedRoute.
-CompanyProtectedRoute.propTypes = {
   component: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   location: PropTypes.object,
 };

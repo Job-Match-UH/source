@@ -3,7 +3,8 @@ import { Roles } from 'meteor/alanning:roles';
 import { Class } from '../../api/class/Class';
 import { Students } from '../../api/student/Student';
 import { Companies } from '../../api/company/Companies';
-import { Tags } from '../../api/tags/Tags';
+import { CompanyTags } from '../../api/tags/CompanyTags';
+import { StudentTags } from '../../api/tags/StudentTags';
 import { Jobs } from '../../api/job/Jobs';
 import { Experiences } from '../../api/experience/Experience';
 import { Education } from '../../api/education/Education';
@@ -85,6 +86,21 @@ Meteor.publish(Jobs.userPublicationName, function () {
   return this.ready();
 });
 
+// If logged in as company or student, publish all tag documents to user
+Meteor.publish(CompanyTags.userPublicationName, function () {
+  if (this.userId) {
+    return CompanyTags.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(StudentTags.userPublicationName, function () {
+  if (this.userId) {
+    return StudentTags.collection.find();
+  }
+  return this.ready();
+});
+
 // Admin-level publication.
 // If logged in and with admin role, then publish all documents from all users. Otherwise publish nothing.
 Meteor.publish(Class.adminPublicationName, function () {
@@ -129,17 +145,23 @@ Meteor.publish(Projects.adminPublicationName, function () {
   return this.ready();
 });
 
-// If logged in as company or student, publish all tag documents to user
-Meteor.publish(Tags.userPublicationName, function () {
-  if (this.userId && Roles.userIsInRole(this.userId, 'admin' || 'company' || 'student')) {
-    return Tags.collection.find();
+Meteor.publish(Experiences.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Experiences.collection.find();
   }
   return this.ready();
 });
 
-Meteor.publish(Experiences.adminPublicationName, function () {
+Meteor.publish(CompanyTags.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Experiences.collection.find();
+    return CompanyTags.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(StudentTags.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return StudentTags.collection.find();
   }
   return this.ready();
 });

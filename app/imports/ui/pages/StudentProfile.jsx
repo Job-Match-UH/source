@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Header, Loader, Container, Item, Image, Card, Icon } from 'semantic-ui-react';
+import { Grid, Header, Loader, Container, Item, Image, Card, Icon, Tab } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -11,6 +11,12 @@ import { Students } from '../../api/student/Student';
 import { Experiences } from '../../api/experience/Experience';
 import { Education } from '../../api/education/Education';
 import { Projects } from '../../api/projects/Projects';
+import AddProject from './AddProject';
+import AddExperience from './AddExperience';
+import AddEducation from './AddEducation';
+import AddInterest from './AddInterest';
+import Tag from '../components/Tag';
+import { StudentTags } from '../../api/tags/StudentTags';
 
 class StudentProfile extends React.Component {
 
@@ -31,7 +37,26 @@ class StudentProfile extends React.Component {
 
   // Render student profile page according to current user
   renderPage() {
-    // const { activeItem } = this.state;
+    const panes = [
+      { menuItem: 'Education', render: () => <Tab.Pane>
+        <AddEducation owner={Meteor.user().username}/>
+      </Tab.Pane> },
+
+      { menuItem: 'Experience', render: () => <Tab.Pane>
+        <AddExperience owner={Meteor.user().username}/>
+      </Tab.Pane> },
+
+      { menuItem: 'Projects', render: () => <Tab.Pane>
+        <AddProject owner={Meteor.user().username}/>
+      </Tab.Pane> },
+
+      { menuItem: 'Interests', render: () => <Tab.Pane>
+        <AddInterest owner={Meteor.user().username}/>
+      </Tab.Pane> },
+    ];
+
+    const styling = { padding: '0px' };
+
     return (
       <Container id='student-profile-page'>
         <Grid celled='internally'>
@@ -39,7 +64,7 @@ class StudentProfile extends React.Component {
             <Grid.Column width={3}>
               <Image centered size='medium' src={this.props.students.image}/>
             </Grid.Column>
-            <Grid.Column width={12}>
+            <Grid.Column width={13}>
               <Grid columns='equal'>
                 <Grid.Row>
                   <Grid.Column width={15}>
@@ -54,12 +79,21 @@ class StudentProfile extends React.Component {
                 <Item.Description className='cp-text'>{this.props.students.owner}</Item.Description>
                 <Item.Description className='cp-text'>{this.props.students.phone}</Item.Description>
                 <Item.Description className='cp-text'>{this.props.students.about}</Item.Description>
+                <Header as='h3' className='cp-text' style={styling}>Interests</Header>
+                <Item.Description className='cp-text'>
+                  {this.props.tags.map((tags, index) => <Tag
+                    key={index}
+                    tag={tags}
+                  />)}
+                </Item.Description>
               </Item>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width={12}>
-              <Header className='cp-text'>Education</Header>
+            <Grid.Column width={9}>
+              <Grid.Column width={2}>
+                <Header className='cp-text'>Education</Header>
+              </Grid.Column>
               <Card.Group>
                 {this.props.education.map((educations, index) => <Educations
                   key={index}
@@ -78,6 +112,9 @@ class StudentProfile extends React.Component {
                   project={project}/>)}
               </Card.Group>
             </Grid.Column>
+            <Grid.Column width={7}>
+              <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
+            </Grid.Column>
           </Grid.Row>
         </Grid>
       </Container>
@@ -90,6 +127,7 @@ StudentProfile.propTypes = {
   experience: PropTypes.array.isRequired,
   education: PropTypes.array.isRequired,
   projects: PropTypes.array.isRequired,
+  tags: PropTypes.array,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -101,18 +139,22 @@ export default withTracker(({ match }) => {
   const subscription2 = Meteor.subscribe(Experiences.userPublicationName);
   const subscription3 = Meteor.subscribe(Education.userPublicationName);
   const subscription4 = Meteor.subscribe(Projects.userPublicationName);
+  const subscription5 = Meteor.subscribe(StudentTags.userPublicationName);
   // Determine if the subscription is ready
-  const ready = subscription1.ready() && subscription2.ready() && subscription3.ready() && subscription4.ready();
+  const ready = subscription1.ready() && subscription2.ready() && subscription3.ready() && subscription4.ready() && subscription5.ready();
   // Get the documents
-  const students = Students.collection.findOne(documentId);
+  const email = Meteor.users.findOne(documentId).username;
+  const students = Students.collection.findOne({ owner: email });
   const education = Education.collection.find({}).fetch();
   const experience = Experiences.collection.find({}).fetch();
   const projects = Projects.collection.find({}).fetch();
+  const tags = StudentTags.collection.find({ owner: students.owner });
   return {
     students,
     education,
     experience,
     projects,
+    tags,
     ready,
   };
 })(StudentProfile);

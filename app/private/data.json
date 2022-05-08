@@ -167,6 +167,96 @@
       "jobDescription": "Rang customers up for their purchases at a small local shop selling tourist items",
       "qualifications": "a happy smile",
       "owner": "uhonline@uhm.com"
+    },
+    { "jobTitle": "Tour Guide",
+      "jobID": "98123",
+      "pay": "21",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Part-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Kaka'ako",
+      "jobDescription": "Provide information about museum artifacts to guests",
+      "qualifications": "1-2 years of customer service",
+      "owner": "bishop@museum.org"
+    },
+    { "jobTitle": "Front Desk Attendant",
+      "jobID": "918273",
+      "pay": "53000",
+      "payType": {
+        "type": "annually",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu, HI",
+      "jobDescription": "Greet guests, arrange appointments.",
+      "qualifications": "3-4 years of customer service",
+      "owner": "ced@gmail.com"
+    },
+    { "jobTitle": "Technical Analyst",
+      "jobID": "21389",
+      "pay": "84000",
+      "payType": {
+        "type": "annually",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Kaneohe, HI",
+      "jobDescription": "Analyze data, compile tests and run times",
+      "qualifications": "3-4 years in data analytics",
+      "owner": "dia@gmail.com"
+    },
+    { "jobTitle": "Cybersecurity Engineer",
+      "jobID": "925632",
+      "pay": "121000",
+      "payType": {
+        "type": "annually",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu, HI",
+      "jobDescription": "Analyze data, compile tests and run times",
+      "qualifications": "3-4 years in cybersecurity",
+      "owner": "citycounty@gmail.com"
+    },
+    { "jobTitle": "High School Science Teacher",
+      "jobID": "32795",
+      "pay": "67000",
+      "payType": {
+        "type": "annually",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Ewa Beach, HI",
+      "jobDescription": "Teach 3-4 classes Physics or Chemistry",
+      "qualifications": "Bachelors in Education",
+      "owner": "doe@gmail.com"
     }
   ],
 
@@ -182,6 +272,146 @@
       "role": "student",
       "description": "Worked at home",
       "owner": "john@foo.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Technical Specialist",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Apple",
+      "role": "student",
+      "description": "Provide technical support to customers",
+      "owner": "ecadiena323@gmail.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Cashier",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Fishers Hawaii",
+      "role": "student",
+      "description": "Rung out customers",
+      "owner": "jameschang719@gmail.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Cashier",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Walgreens",
+      "role": "student",
+      "description": "Rung out customers",
+      "owner": "miac12323@gmail.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Optometry Tech",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "NEX Optical Center",
+      "role": "student",
+      "description": "Rung out customers",
+      "owner": "zcadiena@gmail.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Youtuber",
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Youtube",
+      "role": "student",
+      "description": "Create youtube videos",
+      "owner": "rhnakasone3@gmail.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Bread Cashier",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Brug Bakery",
+      "role": "student",
+      "description": "Ring out customers",
+      "owner": "cristianm1148@gmail.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Software Development Intern",
+      "type": {
+        "type": "Internship",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "IBM",
+      "role": "student",
+      "description": "Assisted in ITK web development",
+      "owner": "t0mb0ys@gmail.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Crew Member",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "McDonalds",
+      "role": "student",
+      "description": "Served food, drinks, and other menu items",
+      "owner": "coltj@gmail.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Sales Associate",
+      "type": {
+        "type": "Seasonal",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Bloomingdales",
+      "role": "student",
+      "description": "Sell handbags, sunglasses, and other accessories",
+      "owner": "scarlettb@gmail.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Team Member",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Poke and Box",
+      "role": "student",
+      "description": "Serve poke",
+      "owner": "nathanm@gmail.com",
       "exp_start": { "type": "2020-04-20 00:00:00" },
       "exp_end": { "type": "2022-01-10 00:00:00" }
     }
@@ -200,6 +430,136 @@
       "owner": "john@foo.com",
       "startDate": { "type": "2020-04-20 00:00:00" },
       "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Computer Science",
+      "owner": "ecadiena323@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Industrial Design",
+      "owner": "jameschang719@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Japanese Education",
+      "owner": "miac12323@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Micro Cell Biology",
+      "owner": "zcadiena@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "Moanalua High School",
+      "degree":
+      {
+        "type": "High School Diploma",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "High School GED",
+      "owner": "rhnakasone3@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Computer Engineering",
+      "owner": "cristianm1148@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Mechanical Engineering",
+      "owner": "t0mb0ys@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Physics",
+      "owner": "coltj@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Political Science",
+      "owner": "scarlettb@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Chemistry",
+      "owner": "nathanm@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
     }
   ],
 
@@ -208,6 +568,56 @@
       "name": "Job Match UH",
       "description": "Create an application for connecting students and companies.",
       "owner": "john@foo.com"
+    },
+    {
+      "name": "ACE Design Competition",
+      "description": "Participated in national design competition with a focus in architechture, construction, and engineering processes",
+      "owner": "ecadiena323@gmail.com"
+    },
+    {
+      "name": "FRC Robotics",
+      "description": "Design and construct a competition robot to perform tasks according to the game",
+      "owner": "jameschang719@gmail.com"
+    },
+    {
+      "name": "FRC Robotics",
+      "description": "Design and construct a competition robot to perform tasks according to the game",
+      "owner": "miac12323@gmail.com"
+    },
+    {
+      "name": "Events Coordinator",
+      "description": "Plan and coordinate events",
+      "owner": "zcadiena@gmail.com"
+    },
+    {
+      "name": "FRC Robotics",
+      "description": "Design and construct a competition robot to perform tasks according to the game",
+      "owner": "rhnakasone3@gmail.com"
+    },
+    {
+      "name": "FRC Robotics",
+      "description": "Design and construct a competition robot to perform tasks according to the game",
+      "owner": "cristianm1148@gmail.com"
+    },
+    {
+      "name": "FRC Robotics",
+      "description": "Design and construct a competition robot to perform tasks according to the game",
+      "owner": "t0mb0ys@gmail.com"
+    },
+    {
+      "name": "Cleanup Hawaii",
+      "description": "Participated in beach cleanups around Oahu",
+      "owner": "coltj@gmail.com"
+    },
+    {
+      "name": "Car WashUH",
+      "description": "Plan and coordinate car washes for UH students to participate in",
+      "owner": "scarlettb@gmail.com"
+    },
+    {
+      "name": "Rocket Science",
+      "description": "Design and construct a home rocket",
+      "owner": "nathanm@gmail.com"
     }
   ]
 }

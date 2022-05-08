@@ -20,7 +20,7 @@ class ViewJobDescription extends React.Component {
               <Grid columns='equal'>
                 <Grid.Row>
                   <Grid.Column width={15}>
-                    <Header as='h1' className='cp-text'>{this.props.job.jobTitle} </Header>
+                    <Header as='h1' className='cp-text'>{this.props.job.jobTitle}</Header>
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
@@ -73,7 +73,7 @@ class ViewJobDescription extends React.Component {
 
 // Require an array of Jobs documents in the props.
 ViewJobDescription.propTypes = {
-  job: PropTypes.object,
+  job: PropTypes.object.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 

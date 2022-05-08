@@ -32,9 +32,11 @@ class Job extends React.Component {
                       <Link to={`/editjob/${this.props.job._id}`}><Icon name='pencil'/></Link>
                     ) : ''}
                     {Roles.userIsInRole(Meteor.userId(), 'company') ? (
-                      <Button icon color='blue' onClick={() => this.deleteJob()}>
-                        <Icon name='trash alternate'/>
-                      </Button>
+                      <NavLink exact to={`/companyprofile/${Meteor.userId()}`}>
+                        <Button icon color='blue' onClick={() => this.deleteJob()}>
+                          <Icon name='trash alternate'/>
+                        </Button>
+                      </NavLink>
                     ) : ''}
                   </Grid.Row>
                 </Grid.Row>

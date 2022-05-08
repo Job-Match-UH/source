@@ -22,7 +22,6 @@ class ViewStudentProfile extends React.Component {
   }
 
   renderPage() {
-    const styling = { padding: '0px' };
     return (
       <Container id='view-student-profile'>
         <Grid celled='internally'>
@@ -39,10 +38,11 @@ class ViewStudentProfile extends React.Component {
                 </Grid.Row>
               </Grid>
               <Item>
+                <Header className='cp-text' style={ { fontSize: 'large', padding: 0 } }>Contact Information</Header>
                 <Item.Description className='cp-text' style={ { fontSize: 'large' } }>{this.props.student.owner}</Item.Description>
                 <Item.Description className='cp-text' style={ { fontSize: 'large' } }>{this.props.student.phone}</Item.Description>
                 <Item.Description className='cp-text' style={ { fontSize: 'large' } }>{this.props.student.about}</Item.Description>
-                <Header as='h3' className='cp-text' style={styling}>Interests</Header>
+                <Header className='cp-text' style={ { fontSize: 'large', padding: 0 } }>Interests</Header>
                 <Item.Description className='cp-text'>
                   {this.props.tags.map((tags, index) => <Tag
                     key={index}
@@ -53,21 +53,21 @@ class ViewStudentProfile extends React.Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width={12}>
+            <Grid.Column width={15}>
               <Header className='cp-text' style={ { fontSize: 'xx-large', padding: 0 } }>Education</Header>
-              <Card.Group>
+              <Card.Group itemsPerRow={4}>
                 {this.props.education.map((educations, index) => <Educations
                   key={index}
                   educations={educations}/>)}
               </Card.Group>
               <Header className='cp-text' style={ { fontSize: 'xx-large', padding: 0 } }>Experience</Header>
-              <Card.Group>
+              <Card.Group itemsPerRow={4}>
                 {this.props.experience.map((experiences, index) => <Experience
                   key={index}
                   experiences={experiences}/>)}
               </Card.Group>
               <Header className='cp-text' style={ { fontSize: 'xx-large', padding: 0 } }>Projects</Header>
-              <Card.Group>
+              <Card.Group itemsPerRow={4}>
                 {this.props.projects.map((project, index) => <Project
                   key={index}
                   project={project}/>)}

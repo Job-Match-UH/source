@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 class Tag extends React.Component {
   render() {
     return (
-      <Label color='blue'>
+      <Label color='blue' size='large'>
         {this.props.tag.name}
       </Label>
     );

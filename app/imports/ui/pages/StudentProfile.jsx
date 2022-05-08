@@ -75,7 +75,7 @@ class StudentProfile extends React.Component {
                   </Grid.Column>
                 </Grid.Row>
               </Grid>
-              <Item>
+              <Item style={{ padding: 10 }}>
                 <Item.Description className='cp-text' style={ { fontSize: 'large' } }>{this.props.students.owner}</Item.Description>
                 <Item.Description className='cp-text' style={ { fontSize: 'large' } }>{this.props.students.phone}</Item.Description>
                 <Item.Description className='cp-text' style={ { fontSize: 'large' } }>{this.props.students.about}</Item.Description>
@@ -90,7 +90,7 @@ class StudentProfile extends React.Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width={12}>
+            <Grid.Column width={9}>
               <Header className='cp-text' style={ { fontSize: 'xx-large', padding: 0 } }>Education</Header>
               <Card.Group>
                 {this.props.education.map((educations, index) => <Educations

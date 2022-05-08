@@ -1,13 +1,13 @@
 import React from 'react';
-import { Meteor } from 'meteor/meteor';
-import { withTracker } from 'meteor/react-meteor-data';
 import { Container, Form, Header, Segment } from 'semantic-ui-react';
 import { AutoForm, SubmitField, TextField, LongTextField, NumField } from 'uniforms-semantic';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
 import swal from 'sweetalert';
 import PropTypes from 'prop-types';
-// import { Redirect } from 'react-router';
+import { Redirect } from 'react-router';
+import { Meteor } from 'meteor/meteor';
+import { withTracker } from 'meteor/react-meteor-data';
 import { Companies } from '../../api/company/Companies';
 import AddInterest from './AddInterest';
 
@@ -26,6 +26,12 @@ const companyBridge = new SimpleSchema2Bridge(companySchema);
 
 /* Renders the Page for adding a company. */
 class SignupCompany extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { email: '', password: '', error: '', redirectToReferer: false };
+  }
+
   // On submit, insert data.
   submit(data, formRef) {
     const { companyName, website, description, address, state, phone, year, image } = data;
@@ -35,7 +41,8 @@ class SignupCompany extends React.Component {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Info added successfully', 'success');
+          swal('Success', 'Company Info added successfully', 'success');
+          this.setState({ error: '', redirectToReferer: true });
           formRef.reset();
         }
       });
@@ -43,11 +50,11 @@ class SignupCompany extends React.Component {
 
   render() {
     let fRef = null;
-    /*
+    const { from } = this.props.location.state || { from: { pathname: '/signout' } };
+
     if (this.state.redirectToReferer) {
-      return <Redirect to={'/companyprofile'}/>;
+      return <Redirect to={from}/>;
     }
-    */
     return (
       <Container id='company-signup-page'>
         <Header className='cp-text' as='h1' textAlign='center'>Create Company Profile</Header>
@@ -68,7 +75,7 @@ class SignupCompany extends React.Component {
                 </Form.Field>
               </Form.Group>
               <NumField id='year-established' fluid label='Year Established' placeholder='Ex: 2000' name='year'/>
-              <AddInterest owner={Meteor.user().username}/>
+              <AddInterest owner={this.props.currentUser}/>
             </Form>
           </Segment>
           <SubmitField id='submit-company' value='Submit Profile'/>
@@ -81,6 +88,7 @@ class SignupCompany extends React.Component {
 /* Ensure that the React Router location object is available in case we need to redirect. */
 SignupCompany.propTypes = {
   location: PropTypes.object,
+  currentUser: PropTypes.string,
 };
 
 // withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
@@ -92,8 +100,10 @@ export default withTracker(({ match }) => {
   // Determine if the subscription is ready
   const ready = subscription.ready();
   // Get the document
+  const currentUser = Meteor.user() ? Meteor.user().username : '';
   const doc = Companies.collection.findOne(documentId);
   return {
+    currentUser,
     doc,
     ready,
   };

@@ -11,6 +11,7 @@ const jobSchema = new SimpleSchema({
   jobTitle: String,
   jobID: { type: SimpleSchema.Integer, min: 0 }, // can also use String as type
   pay: { type: SimpleSchema.Integer, min: 0 }, // can also use String as type
+  jobType: String,
   payType: String,
   location: String,
   jobDescription: String,
@@ -21,9 +22,9 @@ const jobBridge = new SimpleSchema2Bridge(jobSchema);
 
 class JobPostings extends React.Component {
   submitJob(data, formRef) {
-    const { jobTitle, jobID, pay, location, jobDescription, qualifications, payType } = data;
+    const { jobTitle, jobID, pay, location, jobDescription, qualifications, payType, jobType } = data;
     const owner = Meteor.user().username;
-    Jobs.collection.insert({ jobTitle, jobID, pay, location, jobDescription, qualifications, owner, payType },
+    Jobs.collection.insert({ jobTitle, jobID, pay, location, jobDescription, qualifications, owner, payType, jobType },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -37,13 +38,17 @@ class JobPostings extends React.Component {
   render() {
     let fRef = null;
     const payTypes = ['hourly', 'annually'];
+    const jobTypes = ['Full-time', 'Part-time', 'Internship', 'Seasonal'];
 
     return (
       <Container id='job-postings-page'>
         <Header as='h1' className='cp-text' style={ { padding: 0 } }>Add a Job Posting</Header>
         <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={jobBridge} onSubmit={data => this.submitJob(data, fRef)}>
           <TextField fluid label='Job Title:' placeholder='Software Development Intern' name='jobTitle'/>
-          <TextField fluid label='Job ID:' placeholder='1234567' name='jobID'/>
+          <Form.Group widths='equal'>
+            <TextField fluid label='Job ID:' placeholder='1234567' name='jobID'/>
+            <SelectField fluid="true" placeholder='Select job type' name='jobType' allowedValues={jobTypes}/>
+          </Form.Group>
           <Form.Group widths='equal'>
             <NumField fluid="true" label='Pay:' placeholder='25' name='pay'/>
             <SelectField fluid="true" placeholder='Select pay type' name='payType' allowedValues={payTypes}/>

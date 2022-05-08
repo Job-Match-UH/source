@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
+import { Meteor } from 'meteor/meteor';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 
@@ -11,23 +12,28 @@ class SignupCompanyEmail extends React.Component {
   /* Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', role: 'company', error: '', redirectToReferer: false };
+    this.state = { email: '', password: '', error: '', redirectToReferer: false };
   }
 
   /* Update the form controls each time the user interacts with them. */
   handleChange = (e, { name, value }) => {
     this.setState({ [name]: value });
-    this.setState({ role: 'company' });
   }
 
   /* Handle SignupStudentEmail submission. Create user account and a profile entry, then redirect to the home page. */
   submit = () => {
-    const { email, password, role } = this.state;
-    Accounts.createUser({ email, username: email, password, role }, (err) => {
+    const { email, password } = this.state;
+    Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
-        this.setState({ error: '', redirectToReferer: true });
+        Meteor.call('addToRole', Meteor.userId(), 'company', (methodErr) => {
+          if (methodErr) {
+            this.setState({ error: methodErr.reason });
+          } else {
+            this.setState({ error: '', redirectToReferer: true });
+          }
+        });
       }
     });
   }

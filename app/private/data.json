@@ -120,6 +120,7 @@
       "owner": "dtapaoan@hawaii.edu"
     }
   ],
+
   "companies": [
     {
       "companyName": "UH Online",
@@ -186,6 +187,55 @@
       "year": "1919",
       "image": "data:image/png;base64,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",
       "owner": "info@servco.com"
+    }
+  ],
+
+  "companyTags": [
+    { "name": "Computer", "owner": "pear@pear.com" }
+  ],
+
+  "studentTags": [
+    { "name": "Computer", "owner": "john@foo.com" }
+  ],
+
+  "experiences": [
+    {
+      "title": "Babysitter",
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Parents",
+      "role": "student",
+      "description": "Worked at home",
+      "owner": "john@foo.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    }
+  ],
+
+  "education": [
+    {
+      "school": "Stanford",
+      "degree":
+        {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+        },
+      "field": "Women Studies",
+      "owner": "john@foo.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "Job Match UH",
+      "description": "Create an application for connecting students and companies.",
+      "owner": "john@foo.com"
     }
   ]
 }

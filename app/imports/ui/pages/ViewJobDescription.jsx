@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Grid, Header, Item, Loader, Image } from 'semantic-ui-react';
+import { Button, Container, Grid, Header, Item, Loader } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
@@ -23,7 +23,7 @@ class ViewJobDescription extends React.Component {
             <Grid.Row>
               <Button circular primary className='cp-text' size='small' style={{ padding: 10, marginTop: 5, marginBottom: 5, fontSize: 'larger', width: 200 }}><a href={this.props.company.website}/>Click to apply</Button>
             </Grid.Row>
-            <Grid.Column width={4}>
+            <Grid.Column width={5}>
               <Item>
                 <Item.Content>
                   <Item.Meta className='cp-text' style={ { paddingBottom: 20 } }>
@@ -53,7 +53,7 @@ class ViewJobDescription extends React.Component {
                 </Item.Content>
               </Item>
             </Grid.Column>
-            <Grid.Column width={6}>
+            <Grid.Column width={10}>
               <Item>
                 <Item.Content>
                   <Item.Meta className='cp-text' style={ { fontSize: 'large' } }>
@@ -67,9 +67,6 @@ class ViewJobDescription extends React.Component {
                   <Item.Description className='cp-text' style={ { fontSize: 'large' } }>{this.props.job.qualifications}</Item.Description>
                 </Item.Content>
               </Item>
-            </Grid.Column>
-            <Grid.Column width={6}>
-              <Image size='x-large' src='https://media.istockphoto.com/vectors/we-are-hiring-vector-id1327416357?b=1&k=20&m=1327416357&s=170667a&w=0&h=DAtumAM-mkQ53XhsOmXY53iIxD_sG9Df9UaHy19mH2o='/>
             </Grid.Column>
           </Grid>
         </Grid>

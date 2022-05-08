@@ -38,14 +38,14 @@ export class CompanyProfile extends React.Component {
               </Grid>
               <Item>
                 <Button circular primary className='cp-text' size='medium' style={{ padding: 10, marginTop: 10, marginBottom: 10, fontSize: 'larger', width: 200 }}><a href={this.props.company.website}/>Website</Button>
-                <Header as='h3' className='cp-text' style={ { fontSize: 'large', margin: 0, padding: 0 } }>Contact Information</Header>
+                <Header as='h3' className='cp-text' style={ { fontSize: 'large', margin: 0, paddingBottom: 15 } }>Contact Information</Header>
                 <Item.Description style={ { fontSize: 'large' } }>{this.props.company.address}</Item.Description>
                 <Item.Description style={ { fontSize: 'large' } }>{this.props.company.state}</Item.Description>
                 <Item.Description style={ { fontSize: 'large' } }>{this.props.company.phone}</Item.Description>
                 <Item.Description style={ { fontSize: 'large' } }>Established: {this.props.company.year}</Item.Description>
-                <Header as='h3' className='cp-text' style={ { fontSize: 'large', margin: 0, marginTop: 20, padding: 0 } }>About the company</Header>
+                <Header as='h3' className='cp-text' style={ { fontSize: 'large', margin: 0, marginTop: 20, paddingBottom: 15 } }>About the company</Header>
                 <Item.Description style={ { fontSize: 'large', padding: 0 } }>{this.props.company.description}</Item.Description>
-                <Header as='h3' className='cp-text' style={ { fontSize: 'large', padding: 0 } }>Interest</Header>
+                <Header as='h3' className='cp-text' style={ { fontSize: 'large', paddingBottom: 5 } }>Interest</Header>
                 <Item.Description className='cp-text'>
                   {this.props.tags.map((tags, index) => <Tag
                     key={index}

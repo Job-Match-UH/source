@@ -15,42 +15,43 @@ class ViewJobDescription extends React.Component {
     return (
       <Container id='view-job-description'>
         <Grid celled='internally'>
-          <Grid.Row>
-            <Grid.Column width={12}>
-              <Grid columns='equal'>
-                <Grid.Row>
-                  <Grid.Column width={15}>
-                    <Header as='h1' className='cp-text'>{this.props.job.jobTitle}</Header>
-                  </Grid.Column>
-                </Grid.Row>
-              </Grid>
+          <Grid columns='equal'>
+            <Grid.Row>
+              <Header as='h1' className='cp-text' style={ { fontSize: 'xx-large' } }>{this.props.job.jobTitle}</Header>
+            </Grid.Row>
+            <Grid.Column width={8}>
               <Item>
                 <Item.Content>
                   <Item.Meta className='cp-text'>
-                    <b>Job ID: </b>
+                    <b style={ { fontSize: 'large', paddingBottom: 50 } }>Job ID: </b>
                     <span>{this.props.job.jobID}</span>
                   </Item.Meta>
 
                   <Item.Meta className='cp-text'>
-                    <b>Salary: </b>
+                    <b style={ { fontSize: 'large' } }>Salary: </b>
                     <span>${this.props.job.pay}</span>
                   </Item.Meta>
 
                   <Item.Meta className='cp-text'>
-                    <b>Salary Type: </b>
+                    <b style={ { fontSize: 'large' } }>Salary Type: </b>
                     <span>{this.props.job.payType}</span>
                   </Item.Meta>
 
                   <Item.Meta className='cp-text'>
-                    <b>Job Type: </b>
+                    <b style={ { fontSize: 'large' } }>Job Type: </b>
                     <span>{this.props.job.type}</span>
                   </Item.Meta>
 
                   <Item.Meta className='cp-text'>
-                    <b>Location: </b>
+                    <b style={ { fontSize: 'large' } }>Location: </b>
                     <span>{this.props.job.location}</span>
                   </Item.Meta>
-
+                </Item.Content>
+              </Item>
+            </Grid.Column>
+            <Grid.Column width={8}>
+              <Item>
+                <Item.Content>
                   <Item.Meta className='cp-text'>
                     <b>Contact info: </b>
                     <span>{this.props.job.owner}</span>
@@ -60,11 +61,10 @@ class ViewJobDescription extends React.Component {
                   <Item.Description className='cp-text'>{this.props.job.jobDescription}</Item.Description>
                   <Item.Meta as='h5' className='cp-text'>Qualifications:</Item.Meta>
                   <Item.Description className='cp-text'>{this.props.job.qualifications}</Item.Description>
-
                 </Item.Content>
               </Item>
             </Grid.Column>
-          </Grid.Row>
+          </Grid>
         </Grid>
       </Container>
     );

@@ -4,7 +4,7 @@ import React from 'react';
 class Footer extends React.Component {
   render() {
     const color = '#2d5144';
-    const menuStyle = { topPadding: '30px', color: 'white', textAlign: 'center', fontSize: 'medium', backgroundColor: color, opacity: 1, fontFamily: 'Playfair Display' };
+    const menuStyle = { topPadding: '30px', paddingBottom: '20px', color: 'white', textAlign: 'center', fontSize: 'medium', backgroundColor: color, opacity: 1, fontFamily: 'Playfair Display' };
     const headerStyle = { color: 'white', fontFamily: 'Playfair Display', fontSize: 'medium' };
     const githubLink = 'https://job-match-uh.github.io/';
     const templateLink = 'http://ics-software-engineering.github.io/meteor-application-template-react';

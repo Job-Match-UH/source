@@ -1,9 +1,10 @@
 import React from 'react';
-import { Container, Grid, Header, Item, Loader } from 'semantic-ui-react';
+import { Button, Container, Grid, Header, Item, Loader, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import { Jobs } from '../../api/job/Jobs';
+import { Companies } from '../../api/company/Companies';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ViewJobDescription extends React.Component {
@@ -13,56 +14,62 @@ class ViewJobDescription extends React.Component {
 
   renderPage() {
     return (
-      <Container id='view-job-description'>
+      <Container id='view-job-description' >
         <Grid celled='internally'>
           <Grid columns='equal'>
             <Grid.Row>
               <Header as='h1' className='cp-text' style={ { fontSize: 'xx-large' } }>{this.props.job.jobTitle}</Header>
             </Grid.Row>
-            <Grid.Column width={8}>
+            <Grid.Row>
+              <Button circular primary className='cp-text' size='small' style={{ padding: 10, marginTop: 5, marginBottom: 5, fontSize: 'larger', width: 200 }}><a href={this.props.company.website}/>Click to apply</Button>
+            </Grid.Row>
+            <Grid.Column width={4}>
               <Item>
                 <Item.Content>
-                  <Item.Meta className='cp-text'>
-                    <b style={ { fontSize: 'large', paddingBottom: 50 } }>Job ID: </b>
-                    <span>{this.props.job.jobID}</span>
+                  <Item.Meta className='cp-text' style={ { paddingBottom: 20 } }>
+                    <b style={ { fontSize: 'large' } }>Job ID: </b>
+                    <span style={ { fontSize: 'large' } }>{this.props.job.jobID}</span>
                   </Item.Meta>
 
-                  <Item.Meta className='cp-text'>
+                  <Item.Meta className='cp-text' style={ { paddingBottom: 20 } }>
                     <b style={ { fontSize: 'large' } }>Salary: </b>
-                    <span>${this.props.job.pay}</span>
+                    <span style={ { fontSize: 'large' } }>${this.props.job.pay}</span>
                   </Item.Meta>
 
-                  <Item.Meta className='cp-text'>
+                  <Item.Meta className='cp-text' style={ { paddingBottom: 20 } }>
                     <b style={ { fontSize: 'large' } }>Salary Type: </b>
-                    <span>{this.props.job.payType}</span>
+                    <span style={ { fontSize: 'large' } }>{this.props.job.payType}</span>
                   </Item.Meta>
 
-                  <Item.Meta className='cp-text'>
+                  <Item.Meta className='cp-text' style={ { paddingBottom: 20 } }>
                     <b style={ { fontSize: 'large' } }>Job Type: </b>
-                    <span>{this.props.job.type}</span>
+                    <span style={ { fontSize: 'large' } }>{this.props.job.type}</span>
                   </Item.Meta>
 
-                  <Item.Meta className='cp-text'>
+                  <Item.Meta className='cp-text' style={ { paddingBottom: 20 } }>
                     <b style={ { fontSize: 'large' } }>Location: </b>
-                    <span>{this.props.job.location}</span>
+                    <span style={ { fontSize: 'large' } }>{this.props.job.location}</span>
                   </Item.Meta>
                 </Item.Content>
               </Item>
             </Grid.Column>
-            <Grid.Column width={8}>
+            <Grid.Column width={6}>
               <Item>
                 <Item.Content>
-                  <Item.Meta className='cp-text'>
+                  <Item.Meta className='cp-text' style={ { fontSize: 'large' } }>
                     <b>Contact info: </b>
-                    <span>{this.props.job.owner}</span>
+                    <span style={ { fontSize: 'large' } }>{this.props.job.owner}</span>
                   </Item.Meta>
 
-                  <Item.Meta as='h5' className='cp-text'>Description:</Item.Meta>
-                  <Item.Description className='cp-text'>{this.props.job.jobDescription}</Item.Description>
-                  <Item.Meta as='h5' className='cp-text'>Qualifications:</Item.Meta>
-                  <Item.Description className='cp-text'>{this.props.job.qualifications}</Item.Description>
+                  <Item.Meta as='h5' className='cp-text' style={ { fontSize: 'large' } }>Description:</Item.Meta>
+                  <Item.Description className='cp-text' style={ { fontSize: 'large' } }>{this.props.job.jobDescription}</Item.Description>
+                  <Item.Meta as='h5' className='cp-text' style={ { fontSize: 'large' } }>Qualifications:</Item.Meta>
+                  <Item.Description className='cp-text' style={ { fontSize: 'large' } }>{this.props.job.qualifications}</Item.Description>
                 </Item.Content>
               </Item>
+            </Grid.Column>
+            <Grid.Column width={6}>
+              <Image size='x-large' src='https://media.istockphoto.com/vectors/we-are-hiring-vector-id1327416357?b=1&k=20&m=1327416357&s=170667a&w=0&h=DAtumAM-mkQ53XhsOmXY53iIxD_sG9Df9UaHy19mH2o='/>
             </Grid.Column>
           </Grid>
         </Grid>
@@ -74,6 +81,7 @@ class ViewJobDescription extends React.Component {
 // Require an array of Jobs documents in the props.
 ViewJobDescription.propTypes = {
   job: PropTypes.object.isRequired,
+  company: PropTypes.object.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -82,12 +90,15 @@ export default withTracker(({ match }) => {
   const jobId = match.params._id;
   // Get access to jobs documents.
   const subscription = Meteor.subscribe(Jobs.userPublicationName);
+  const subscription2 = Meteor.subscribe(Companies.userPublicationName);
   // Determine if the subscriptions are ready
-  const ready = subscription.ready();
+  const ready = subscription.ready() && subscription2.ready();
   // Get the Jobs documents
   const job = Jobs.collection.findOne(jobId);
+  const company = Companies.collection.find({ owner: job.owner });
   return {
     job,
     ready,
+    company,
   };
 })(ViewJobDescription);

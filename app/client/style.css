@@ -110,3 +110,9 @@
   font-size: 1em;
   font-family: 'Playfair Display', serif;
 }
+
+.ui.grid {
+  padding-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+  color: #2d5144;
+}

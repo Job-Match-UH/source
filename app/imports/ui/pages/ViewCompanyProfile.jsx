@@ -71,7 +71,7 @@ class ViewCompanyProfile extends React.Component {
 // Require the presence of a Company document in the props object. Uniforms adds 'model' to the props, which we use.
 ViewCompanyProfile.propTypes = {
   company: PropTypes.object,
-  job: PropTypes.array.isRequired,
+  job: PropTypes.array,
   tags: PropTypes.array,
   ready: PropTypes.bool.isRequired,
 };

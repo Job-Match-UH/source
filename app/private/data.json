@@ -349,7 +349,7 @@
       "owner": "info@arcadia.org"
     },
     {
-      "name": "Engineering",
+      "name": "Accounting",
       "owner": "info@armstrongbuilders.com"
     },
     {
@@ -565,6 +565,105 @@
       "jobDescription": "Routers and switches, firewalls",
       "qualifications": "Experience in Networking for at least 1 year",
       "owner": "htc@htc.com"
+    },
+    {
+      "jobTitle": "Registered Nurse",
+      "jobID": "1001",
+      "pay": "20",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": [
+          "hourly",
+          "annually"
+        ]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": [
+          "Full-time",
+          "Part-time",
+          "Internship",
+          "Seasonal"
+        ]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Monitors nursing care and treatment administered to residents",
+      "qualifications": "First AID & CPR certification",
+      "owner": "info@arcadia.org"
+    },
+    { "jobTitle": "Accounting",
+      "jobID": "1002",
+      "pay": "20",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Intensive work with data utilizing various software application: accounting, spreadsheets, word processing, email, and document imaging",
+      "qualifications": "Current student pursuing a Bachelors in Accounting/Finance",
+      "owner": "info@armstrongbuilders.com"
+    },
+    { "jobTitle": "Audit & Accounting Intern",
+      "jobID": "1003",
+      "pay": "15",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Internship",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Responsible for demonstrating analytical skills auditing client financial statements, transactions, and internal control processes",
+      "qualifications": "Basic knowledge of Excel",
+      "owner": "info@gsato.com"
+    },
+    { "jobTitle": "Civil Engineering & Land Surveying",
+      "jobID": "1004",
+      "pay": "15",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Internship",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Performing survey field work, including, setting up and operating land surveying instruments",
+      "qualifications": "Be in the process of obtaining a degree in Civil Engineering or Land Surveying",
+      "owner": "info@fe.com"
+    },
+    { "jobTitle": "Software Development",
+      "jobID": "1005",
+      "pay": "18",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Internship",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Work with digital product team to design, build, and deploy user interfaces in a proof of concept and/or live production",
+      "qualifications": "A current student pursuing a Bachelors in Computer Science",
+      "owner": "info@servco.com"
     }
   ],
 
@@ -706,6 +805,146 @@
       "role": "student",
       "description": "Take care of elderly patients",
       "owner": "achoy@hawaii.edu",
+      "exp_start": { "type": "2022-01-01 00:00:00" },
+      "exp_end": { "type": "2022-05-10 00:00:00" }
+    },
+    {
+      "title": "IT Computer Lab Assistant",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "University of Hawaii",
+      "role": "student",
+      "description": "Troubleshoot customer problems with ITS supported software",
+      "owner": "gailag@hawaii.edu",
+      "exp_start": { "type": "2022-01-01 00:00:00" },
+      "exp_end": { "type": "2022-05-10 00:00:00" }
+    },
+    {
+      "title": "English Tutor",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "University of Hawaii Hilo",
+      "role": "student",
+      "description": "Taught ELC students from Japan basic English language during the school year",
+      "owner": "shaunrk@hawaii.edu",
+      "exp_start": { "type": "2017-08-01 00:00:00" },
+      "exp_end": { "type": "2018-07-01 00:00:00" }
+    },
+    {
+      "title": "Research Student Assistant",
+      "type": {
+        "type": "Internship",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "University of Hawaii",
+      "role": "student",
+      "description": "Collected and verify research, interpret and document findings using research methodologies ",
+      "owner": "taylormh@hawaii.edu",
+      "exp_start": { "type": "2022-01-01 00:00:00" },
+      "exp_end": { "type": "2022-05-10 00:00:00" }
+    },
+    {
+      "title": "Social Worker",
+      "type": {
+        "type": "Internship",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "United Health Group",
+      "role": "student",
+      "description": "Engage with staff and volunteers to provide support, advocacy, and education to survivors of sexual assault",
+      "owner": "dhianem@hawaii.edu",
+      "exp_start": { "type": "2022-01-01 00:00:00" },
+      "exp_end": { "type": "2022-05-10 00:00:00" }
+    },
+    {
+      "title": "Assistant Photographer",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Nagamine Photo Studio Inc",
+      "role": "student",
+      "description": "Assist photographers plan, set up, and complete photoshoots in studios",
+      "owner": "johnlees@hawaii.edu",
+      "exp_start": { "type": "2018-05-01 00:00:00" },
+      "exp_end": { "type": "2019-12-01 00:00:00" }
+    },
+    {
+      "title": "Clinical Assistant",
+      "type": {
+        "type": "Internship",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Queen's Medical Center",
+      "role": "student",
+      "description": "Provide support to doctors, nurses, and lab techs.",
+      "owner": "lkvillan@hawaii.edu",
+      "exp_start": { "type": "2022-01-01 00:00:00" },
+      "exp_end": { "type": "2022-05-10 00:00:00" }
+    },
+    {
+      "title": "Server",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Monsoon Bar & Grill",
+      "role": "student",
+      "description": "Responsible for taking orders from restaurant patrons and delivering their food",
+      "owner": "nreddy@hawaii.edu",
+      "exp_start": { "type": "2021-01-01 00:00:00" },
+      "exp_end": { "type": "2021-12-01 00:00:00" }
+    },
+    {
+      "title": "Library Assistant",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "University of Hawaii",
+      "role": "student",
+      "description": "Assist law students with library services at the school's law library",
+      "owner": "morganf@hawaii.edu",
+      "exp_start": { "type": "2022-01-01 00:00:00" },
+      "exp_end": { "type": "2022-05-10 00:00:00" }
+    },
+    {
+      "title": "Hostess",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Kimos",
+      "role": "student",
+      "description": "Greeted customer and assisted them to their reserved seats",
+      "owner": "samantham@hawaii.edu",
+      "exp_start": { "type": "2021-01-01 00:00:00" },
+      "exp_end": { "type": "2021-12-01 00:00:00" }
+    },
+    {
+      "title": "Development Intern",
+      "type": {
+        "type": "Internship",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Punahou High School",
+      "role": "student",
+      "description": "Managed and maintained records, contributed to research projects, and coordinated with volunteers",
+      "owner": "dtapaoan@hawaii.edu",
       "exp_start": { "type": "2022-01-01 00:00:00" },
       "exp_end": { "type": "2022-05-10 00:00:00" }
     }
@@ -984,6 +1223,136 @@
       "owner": "nespejo@hawaii.edu",
       "startDate": { "type": "2019-08-20 00:00:00" },
       "endDate": { "type": "2023-05-08 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Computer Science",
+      "owner": "gailag@hawaii.edu",
+      "startDate": { "type": "2021-01-07 00:00:00" },
+      "endDate": { "type": "2022-12-17 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Education",
+      "owner": "shaunrk@hawaii.edu",
+      "startDate": { "type": "2018-01-07 00:00:00" },
+      "endDate": { "type": "2022-05-13 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Masters",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Psychology",
+      "owner": "taylormh@hawaii.edu",
+      "startDate": { "type": "2021-08-24 00:00:00" },
+      "endDate": { "type": "2023-05-13 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Masters",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Psychology",
+      "owner": "dhianem@hawaii.edu",
+      "startDate": { "type": "2021-08-20 00:00:00" },
+      "endDate": { "type": "2023-05-13 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Finance",
+      "owner": "johnlees@hawaii.edu",
+      "startDate": { "type": "2019-08-20 00:00:00" },
+      "endDate": { "type": "2022-05-14 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Nursing",
+      "owner": "lkvillan@hawaii.edu",
+      "startDate": { "type": "2019-08-20 00:00:00" },
+      "endDate": { "type": "2023-05-08 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Mechanical Engineering",
+      "owner": "nreddy@hawaii.edu",
+      "startDate": { "type": "2019-08-20 00:00:00" },
+      "endDate": { "type": "2022-12-17 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Language",
+      "owner": "morganf@hawaii.edu",
+      "startDate": { "type": "2019-08-20 00:00:00" },
+      "endDate": { "type": "2023-05-08 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Biology",
+      "owner": "samantham@hawaii.edu",
+      "startDate": { "type": "2022-01-07 00:00:00" },
+      "endDate": { "type": "2024-05-10 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Human Development",
+      "owner": "dtapaoan@hawaii.edu",
+      "startDate": { "type": "2018-08-20 00:00:00" },
+      "endDate": { "type": "2022-05-13 00:00:00" }
     }
   ],
 

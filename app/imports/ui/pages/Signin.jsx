@@ -81,7 +81,7 @@ export default class Signin extends React.Component {
           <Grid columns={2} relaxed='very' stackable>
             <Grid.Column>
               <Header as="h2" textAlign="center" className='cp-text' style={{ fontSize: 'x-large' }}>
-              Student Login
+              Login
               </Header>
               <Form error onSubmit={this.studentSubmit} className='cp-text' style={{ fontSize: 'medium' }}>
                 <Form.Input

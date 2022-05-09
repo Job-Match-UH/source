@@ -8,7 +8,7 @@ class CompanyTagsCollection {
   constructor() {
     // common interest data used between student and company
     const CommonInterestData = {
-      interests: ['Accounting/Fiscal', 'Administrative/Clerical', 'Accounting','Agriculture', 'Architecture', 'Aquaculture', 'Art', 'Automotive', 'Business', 'Child Car', 'Communication',
+      interests: ['Accounting/Fiscal', 'Administrative/Clerical', 'Accounting' ,'Agriculture', 'Architecture', 'Aquaculture', 'Art', 'Automotive', 'Business', 'Child Car', 'Communication',
         'Computer', 'Construction Trades', 'Culinary Arts', 'Education', 'Electrical', 'Electronics', 'Emergency Medical Services', 'Engineering', 'Fashion Tech', 'Finance',
         'Food Service', 'Graphical Arts', 'Groundskeeping/Janitorial', 'Health/Medical', 'Human Resources', 'Human Services', 'Janitorial/Custodial', 'Journalism', 'Laborer',
         'Language', 'Law Enforcement/Judicial', 'Mail Processing', 'Marketing', 'Mathematics Statistics', 'Media', 'Miscellaneous', 'Performing Arts', 'Receptionist', 'Research',

@@ -2,8 +2,8 @@ import React from 'react';
 import { Header, Card, Container, Segment, Loader } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
-import { AutoForm, SubmitField } from 'uniforms-semantic';
 import { _ } from 'meteor/underscore';
+import { AutoForm, SubmitField } from 'uniforms-semantic';
 import PropTypes from 'prop-types';
 import SimpleSchema from 'simpl-schema';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -16,6 +16,10 @@ const makeSchema = (allInterests) => new SimpleSchema({
   name: { type: Array, label: '', optional: true },
   'name.$': { type: String, allowedValues: allInterests },
 });
+
+function alphaSort(tags) {
+  return _.sortBy(tags, function (tag) { return tag.toLowerCase(); });
+}
 
 function getProfile(owner) {
   return Companies.collection.findOne({ owner });
@@ -39,7 +43,8 @@ class ViewCompanyMatches extends React.Component {
 
   renderPage() {
     const allInterests = _.uniq(_.pluck(CompanyTags.collection.find().fetch(), 'name'));
-    const formSchema = makeSchema(allInterests);
+    const allInterestsSorted = alphaSort(allInterests);
+    const formSchema = makeSchema(allInterestsSorted);
     const bridge = new SimpleSchema2Bridge(formSchema);
     const companyEmails = _.pluck(CompanyTags.collection.find({ name: { $in: this.state.interests } }).fetch(), 'owner');
     const companyMatches = _.uniq(companyEmails).map(email => getProfile(email));

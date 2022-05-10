@@ -2,8 +2,8 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Header, Card, Container, Loader, Segment } from 'semantic-ui-react';
-import { AutoForm, SubmitField } from 'uniforms-semantic';
 import { _ } from 'meteor/underscore';
+import { AutoForm, SubmitField } from 'uniforms-semantic';
 import PropTypes from 'prop-types';
 import SimpleSchema from 'simpl-schema';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -16,6 +16,10 @@ const makeSchema = (allInterests) => new SimpleSchema({
   name: { type: Array, label: '', optional: true },
   'name.$': { type: String, allowedValues: allInterests },
 });
+
+function alphaSort(tags) {
+  return _.sortBy(tags, function (tag) { return tag.toLowerCase(); });
+}
 
 function getProfile(owner) {
   return Students.collection.findOne({ owner });
@@ -39,7 +43,8 @@ class ViewStudentMatches extends React.Component {
 
   renderPage() {
     const allInterests = _.uniq(_.pluck(StudentTags.collection.find().fetch(), 'name'));
-    const formSchema = makeSchema(allInterests);
+    const allInterestsSorted = alphaSort(allInterests);
+    const formSchema = makeSchema(allInterestsSorted);
     const bridge = new SimpleSchema2Bridge(formSchema);
     const studentEmails = _.pluck(StudentTags.collection.find({ name: { $in: this.state.interests } }).fetch(), 'owner');
     const studentMatches = _.uniq(studentEmails).map(email => getProfile(email));

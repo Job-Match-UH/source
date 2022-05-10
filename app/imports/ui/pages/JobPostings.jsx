@@ -44,19 +44,19 @@ class JobPostings extends React.Component {
       <Container id='job-postings-page'>
         <Header as='h1' className='cp-text' style={ { padding: 0 } }>Add a Job Posting</Header>
         <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={jobBridge} onSubmit={data => this.submitJob(data, fRef)}>
-          <TextField fluid label='Job Title:' placeholder='Software Development Intern' name='jobTitle'/>
+          <TextField id='job-title' fluid label='Job Title:' placeholder='Software Development Intern' name='jobTitle'/>
           <Form.Group widths='equal'>
-            <TextField fluid label='Job ID:' placeholder='1234567' name='jobID'/>
-            <SelectField fluid="true" placeholder='Select job type' name='jobType' allowedValues={jobTypes}/>
+            <TextField id='job-id' fluid label='Job ID:' placeholder='1234567' name='jobID'/>
+            <SelectField id='job-type' fluid="true" placeholder='Select job type' name='jobType' allowedValues={jobTypes}/>
           </Form.Group>
           <Form.Group widths='equal'>
-            <NumField fluid="true" label='Pay:' placeholder='25' name='pay'/>
-            <SelectField fluid="true" placeholder='Select pay type' name='payType' allowedValues={payTypes}/>
+            <NumField id='job-pay' fluid="true" label='Pay:' placeholder='25' name='pay'/>
+            <SelectField id='pay-type' fluid="true" placeholder='Select pay type' name='payType' allowedValues={payTypes}/>
           </Form.Group>
-          <TextField fluid label='Location:' placeholder='Ex. Honolulu, HI' name='location'/>
-          <LongTextField label='Job Description:' placeholder='Give a small description about the job position...' name='jobDescription'/>
-          <LongTextField label='Qualifications:' placeholder='List the desired interests for this position...' name='qualifications'/>
-          <SubmitField value='Submit Job'/>
+          <TextField id='job-location' fluid label='Location:' placeholder='Ex. Honolulu, HI' name='location'/>
+          <LongTextField id='job-description' label='Job Description:' placeholder='Give a small description about the job position...' name='jobDescription'/>
+          <LongTextField id='job-qualifications' label='Qualifications:' placeholder='List the desired interests for this position...' name='qualifications'/>
+          <SubmitField id='submit-job-posting' value='Submit Job'/>
         </AutoForm>
       </Container>
     );

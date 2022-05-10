@@ -18,7 +18,6 @@ class NavBar {
 
   async gotoViewCompanyMatches(testController) {
     await testController.click('#view-company-matches');
-    await testController.click('#view-company-profile');
   }
 
   async gotoStudentHome(testController) {
@@ -43,7 +42,6 @@ class NavBar {
 
   async gotoViewStudentMatches(testController) {
     await testController.click('#view-student-matches');
-    await testController.click('#view-student-profile');
   }
 
   async gotoJobPostings(testController) {

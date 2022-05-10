@@ -1,8 +1,6 @@
 import { Selector } from 'testcafe';
 import { navBar } from './navbar.component';
 
-const newUser = `user-${new Date().getTime()}@foo.com`;
-
 class SignUpStudentEmailPage {
   constructor() {
     this.pageId = '#signup-student-page';
@@ -20,7 +18,7 @@ class SignUpStudentEmailPage {
   }
 
   /** Signs up a new user, then checks to see that they are logged in by checking the navbar. */
-  async signupStudent(testController, password) {
+  async signupStudent(testController, newUser, password) {
     await this.isDisplayed(testController);
     await testController.typeText('#signup-form-email', newUser);
     await testController.typeText('#signup-form-password', password);

@@ -1,6 +1,6 @@
 import { Selector } from 'testcafe';
 
-class ViewCompanyProfile {
+class ViewCompanyProfilePage {
   constructor() {
     this.pageId = '#view-company-profile';
     this.pageSelector = Selector(this.pageId);
@@ -13,4 +13,4 @@ class ViewCompanyProfile {
   }
 }
 
-export const viewCompanyProfile = new ViewCompanyProfile();
+export const viewCompanyProfilePage = new ViewCompanyProfilePage();

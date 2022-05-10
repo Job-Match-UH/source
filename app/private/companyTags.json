@@ -36,6 +36,20 @@
     { "name":  "Business", "owner":  "doe@gmail.com"},
     { "name":  "Receptionist", "owner":  "doe@gmail.com"},
     { "name":  "Tutoring", "owner":  "doe@gmail.com"},
+    { "name":  "Accounting/Fiscal", "owner":  "xeroxhawaii@gmail.com"},
+    { "name":  "Human Resources", "owner":  "xeroxhawaii@gmail.com"},
+    { "name":  "Mathematics Statistics", "owner":  "tfahawaii@gmail.com"},
+    { "name":  "Science", "owner":  "tfahawaii@gmail.com"},
+    { "name":  "Education", "owner":  "tfahawaii@gmail.com"},
+    { "name":  "Child Care", "owner":  "tfahawaii@gmail.com"},
+    { "name":  "Tourism/Hospitality", "owner":  "hawaiiairlines@gmail.com"},
+    { "name":  "Receptionist", "owner":  "hawaiiairlines@gmail.com"},
+    { "name":  "Human Services", "owner":  "gpllc@gmail.com"},
+    { "name":  "Construction Trades", "owner":  "gpllc@gmail.com"},
+    { "name":  "Marketing", "owner":  "gpllc@gmail.com"},
+    { "name":  "Education", "owner":  "careers@ksbe.edu"},
+    { "name":  "Groundskeeping/Janitorial", "owner":  "careers@ksbe.edu"},
+    { "name":  "Student Activities", "owner":  "careers@ksbe.edu"},
     {"name": "Administrative/Clerical", "owner": "asb@asb.com"},
     {"name": "Finance", "owner": "asb@asb.com"},
     {"name": "Computer", "owner": "asb@asb.com"},
@@ -44,6 +58,11 @@
     {"name": "Human Resources", "owner": "fhb@fhb.com"},
     {"name": "Finance", "owner": "fhb@fhb.com"},
     {"name": "Computer", "owner": "htc@htc.com"},
-    {"name": "Law Enforcement/Judicial", "owner": "tsa@tsa.com"}
+    {"name": "Law Enforcement/Judicial", "owner": "tsa@tsa.com"},
+    {"name": "Health/Medical", "owner": "info@arcadia.org"},
+    {"name": "Accounting/Fiscal", "owner": "info@armstrongbuilders.com"},
+    {"name": "Finance", "owner": "info@gsato.com"},
+    {"name": "Engineering", "owner": "info@fe.com"},
+    {"name": "Computer", "owner": "info@servco.com"}
   ]
 }

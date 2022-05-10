@@ -32,7 +32,7 @@ class EditCompany extends React.Component {
 
     return (
       <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>
-        <Container>
+        <Container id='edit-company-page'>
           <TextField id='company-name' fluid label={'Company Name'} placeholder={'Ex: Company Connector'} name={'companyName'}/>
           <TextField id='company-image' fluid label={'Profile Photo'} placeholder={'Image URL'} name={'image'}/>
           <TextField id='company-website' fluid label={'Website'} placeholder={'Website URL'} name={'website'}/>

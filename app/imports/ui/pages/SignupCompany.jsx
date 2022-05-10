@@ -61,7 +61,7 @@ class SignupCompany extends React.Component {
         <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={companyBridge} onSubmit={data => this.submit(data, fRef)}>
           <Segment>
             <TextField id='company-name' fluid label={'Company Name'} placeholder={'Ex: Company Connector'} name={'companyName'}/>
-            <TextField id='company-image' fluid label={'Profile Photo'} placeholder={'Image URL'} name={'image'}/>
+            <TextField id='company-url' fluid label={'Profile Photo'} placeholder={'Image URL'} name={'image'}/>
             <TextField id='company-website' fluid label={'Website'} placeholder={'Website URL'} name={'website'}/>
             <LongTextField label={'Company Description:'} placeholder={'Tell us a little bit about the company...'} name={'description'}/>
             <Form>

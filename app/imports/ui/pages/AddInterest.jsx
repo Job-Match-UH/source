@@ -66,7 +66,7 @@ class AddInterest extends React.Component {
     return (
       <AutoForm style={ { marginBottom: 10 } } id='add-interest-page' ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => this.submit(data, fRef)} >
         <MultiSelectField name='name' label='Interests' fluid="true" showInlineError={true} placeholder={'Select interests'}/>
-        <SubmitField icon='plus' value='Add Interest'/>
+        <SubmitField id='add-new-interest' icon='plus' value='Add Interest'/>
         <HiddenField name='owner' value={this.props.owner}/>
         <ErrorsField/>
       </AutoForm>

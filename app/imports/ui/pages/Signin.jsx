@@ -105,8 +105,8 @@ export default class Signin extends React.Component {
             </Grid.Column>
 
             <Grid.Column verticalAlign='middle'>
-              <Message as={Link} to="/student_signup" icon='student' header='Student Signup' content='Click here to Register as a Student'/>
-              <Message as={Link} to="/company_signup" icon='briefcase' header='Company Signup' content='Click here to Register as a Company'/>
+              <Message id='view-signup-student' as={Link} to="/student_signup" icon='student' header='Student Signup' content='Click here to Register as a Student'/>
+              <Message id='view-signup-company' as={Link} to="/company_signup" icon='briefcase' header='Company Signup' content='Click here to Register as a Company'/>
             </Grid.Column>
           </Grid>
           <Divider vertical>Or</Divider>

@@ -26,7 +26,7 @@ class JobPostingsPage {
   }
 
   async submitJobPosting(testController) {
-    await testController.click('#jsubmit-job-posting');
+    await testController.click('#submit-job-posting');
   }
 }
 export const jobPostingsPage = new JobPostingsPage();

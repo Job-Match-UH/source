@@ -12,6 +12,11 @@ class CompanyProfilePage {
     await testController.expect(this.pageSelector.exists).ok();
   }
 
+  async hasInputData(testController) {
+    const cardCount = Selector('.ui .card').count;
+    await testController.expect(cardCount).gte(2);
+  }
+
   async gotoEditCompany(testController) {
     await testController.click('#goto-edit-company');
   }

@@ -19,8 +19,8 @@ import { viewStudentProfilePage } from './viewstudentprofile.page';
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
-const credentials = { username: 'john@foo.com', password: 'changeme' };
-const credentials2 = { username: 'facebook@fb.com', password: 'facebook' };
+const credentials = { username: 'peterleo@hawaii.edu', password: 'changeme' };
+const credentials2 = { username: 'apple@gmail.com', password: 'changeme' };
 const credentials3 = { username: 'admin@foo.com', password: 'changeme' };
 const newStudent = `user-${new Date().getTime()}student@foo.com`;
 const newStudent1 = `user-${new Date().getTime()}xstudent@foo.com`;
@@ -31,7 +31,7 @@ const personalData = { firstName: 'Cam', lastName: 'Ara', address: '321 Ala Moan
 const projectData = { projectName: 'job matchuh', projectDescription: 'A job Matchuh\'' };
 const experienceData = { title: 'Manager', companyName: 'UH Manoa', role: 'employee', jobDescription: 'Cleaned the library' };
 const educationData = { nameOfSchool: 'UH Manoa', fieldOfStudy: 'Computer Science' };
-const companyData = { companyName: 'fedex', website: 'fedex.com', address: 'fedex@fedex', state: 'HI', phoneNum: '1234567', established: '1922' };
+const companyData = { companyName: 'fedex', website: 'fedex.com', url: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/95/Rolex_logo.svg/220px-Rolex_logo.svg.png', address: 'fedex@fedex', state: 'HI', phoneNum: '1234567', established: '1922' };
 const jobInputData = { title: 'Chief of Staff', id: '999999', pay: '25.45', location: 'Honolulu', description: 'You will design web apps', qualifications: 'ICS 314' };
 
 fixture('job-match-uh availability tests')
@@ -130,7 +130,7 @@ test('Test viewstudentmatches page displays', async (testController) => {
   await viewStudentMatchesPage.isDisplayed(testController);
 });
 
-test('Test viewstudentprofile page displays', async (testController) => {
+test.only('Test viewstudentprofile page displays', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials2.username, credentials2.password);
   await navBar.isLoggedIn(testController, credentials2.username);
@@ -206,17 +206,17 @@ test('Test signup student forms display on profile', async (testController) => {
   await studentProfilePage.hasInputData(testController);
 });
 
-test.only('Test signup company forms work', async (testController) => {
+test('Test signup company form works', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.gotoSignUpCompany(testController);
   await signupCompanyEmail.signupUser(testController, newCompany1, credentials.password);
-  await companySignup.inputCompanyData(testController, companyData.companyName, companyData.website, companyData.address, companyData.state, companyData.phoneNum, companyData.established);
+  await companySignup.inputCompanyData(testController, companyData.companyName, companyData.website, companyData.url, companyData.address, companyData.state, companyData.phoneNum, companyData.established);
   await companySignup.inputInterestsCompany(testController);
   await signupStudent.clickSweetAlert(testController);
   await companySignup.submitCompanyInput(testController);
 });
 
-test.only('Test job posting forms work', async (testController) => {
+test('Test job posting form works', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, newCompany1, credentials.password);
   await navBar.isLoggedIn(testController, newCompany1);
@@ -224,4 +224,17 @@ test.only('Test job posting forms work', async (testController) => {
   await jobPostingsPage.isDisplayed(testController);
   await jobPostingsPage.inputJobPosting(testController, jobInputData.title, jobInputData.id, jobInputData.pay, jobInputData.location, jobInputData.description, jobInputData.qualifications);
   await jobPostingsPage.submitJobPosting(testController);
+  await signupStudent.clickSweetAlert(testController);
+  await jobPostingsPage.inputJobPosting(testController, jobInputData.title, jobInputData.id, jobInputData.pay, jobInputData.location, jobInputData.description, jobInputData.qualifications);
+  await jobPostingsPage.submitJobPosting(testController);
+  await signupStudent.clickSweetAlert(testController);
+});
+
+test('Test company profile page displays', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, newCompany1, credentials.password);
+  await navBar.isLoggedIn(testController, newCompany1);
+  await navBar.gotoCompanyProfile(testController);
+  await companyProfilePage.isDisplayed(testController);
+  await companyProfilePage.hasInputData(testController);
 });

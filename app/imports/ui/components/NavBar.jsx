@@ -40,7 +40,7 @@ class NavBar extends React.Component {
           [
             // <Menu.Item id='view-company-matches' as={NavLink} activeClassName="active" exact to="/viewcompanymatches" key='student4'>Student Profiles</Menu.Item>,
             // <Menu.Item id='view-student-matches' as={NavLink} activeClassName="active" exact to="/viewstudentmatches" key='company4'>Company Profiles</Menu.Item>,
-            <Menu.Item id='admin-home' as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin Home Page</Menu.Item>,
+            <Menu.Item id='view-admin-home' as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin Home Page</Menu.Item>,
           ]
         ) : ''}
         <Menu.Item position="right">

@@ -14,10 +14,11 @@ class CompanySignupPage {
     await testController.expect(this.pageSelector.exists).ok();
   }
 
-  async inputCompanyData(testController, companyName, website, address, state, phoneNum, established) {
+  async inputCompanyData(testController, companyName, website, url, address, state, phoneNum, established) {
     await this.isDisplayed(testController);
     await testController.typeText('#company-name', companyName);
     await testController.typeText('#company-website', website);
+    await testController.typeText('#company-url', url);
     await testController.typeText('#company-address', address);
     await testController.typeText('#company-state', state);
     await testController.typeText('#company-phone-num', phoneNum);

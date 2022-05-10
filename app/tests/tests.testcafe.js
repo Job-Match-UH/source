@@ -32,6 +32,7 @@ const projectData = { projectName: 'job matchuh', projectDescription: 'A job Mat
 const experienceData = { title: 'Manager', companyName: 'UH Manoa', role: 'employee', jobDescription: 'Cleaned the library' };
 const educationData = { nameOfSchool: 'UH Manoa', fieldOfStudy: 'Computer Science' };
 const companyData = { companyName: 'fedex', website: 'fedex.com', address: 'fedex@fedex', state: 'HI', phoneNum: '1234567', established: '1922' };
+const jobInputData = { title: 'Chief of Staff', id: '999999', pay: '25.45', location: 'Honolulu', description: 'You will design web apps', qualifications: 'ICS 314' };
 
 fixture('job-match-uh availability tests')
   .page('http://localhost:3000');
@@ -176,7 +177,6 @@ test('Test admin page displays', async (testController) => {
  * These tests test form validation.
  */
 
-// Input student data to be tested for display
 test('Test signup student forms work', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.gotoSignUpStudent(testController);
@@ -197,7 +197,6 @@ test('Test signup student forms work', async (testController) => {
   await signupStudent.submitSignUp(testController);
 });
 
-// Test if above input displays.
 test('Test signup student forms display on profile', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, newStudent1, credentials.password);
@@ -215,4 +214,14 @@ test.only('Test signup company forms work', async (testController) => {
   await companySignup.inputInterestsCompany(testController);
   await signupStudent.clickSweetAlert(testController);
   await companySignup.submitCompanyInput(testController);
+});
+
+test.only('Test job posting forms work', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, newCompany1, credentials.password);
+  await navBar.isLoggedIn(testController, newCompany1);
+  await navBar.gotoJobPostings(testController);
+  await jobPostingsPage.isDisplayed(testController);
+  await jobPostingsPage.inputJobPosting(testController, jobInputData.title, jobInputData.id, jobInputData.pay, jobInputData.location, jobInputData.description, jobInputData.qualifications);
+  await jobPostingsPage.submitJobPosting(testController);
 });

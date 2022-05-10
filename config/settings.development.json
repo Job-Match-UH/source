@@ -5,32 +5,6 @@
   },
 
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme", "role": "student"},
-    { "email": "tsai@gmail.com", "password": "changeme", "role": "student"},
-    { "email": "cadiena@gmail.com", "password": "changeme", "role": "student"},
-    { "email": "galano@gmail.com", "password": "changeme", "role": "student"},
-    { "email": "arakaki@gmail.com", "password": "changeme", "role": "student"},
-    { "email": "pear@pear.com", "password": "pear", "role": "company" },
-    { "email": "facebook@fb.com", "password":  "facebook", "role":  "company"},
-    { "email": "peterleo@hawaii.edu", "password": "changeme", "role": "student" },
-    { "email": "ecadiena323@gmail.com", "password": "changeme", "role":  "student"},
-    { "email": "jameschang719@gmail.com", "password": "changeme", "role": "student"},
-    { "email": "miac12323@gmail.com", "password": "changeme", "role": "student"},
-    { "email": "zcadiena@gmail.com", "password": "changeme", "role": "student"},
-    { "email": "rhnakasone3@gmail.com", "password": "changeme", "role": "student"},
-    { "email": "cristianm1148@gmail.com", "password": "changeme", "role": "student"},
-    { "email": "t0mb0ys@gmail.com", "password": "changeme", "role": "student"},
-    { "email": "coltj@gmail.com", "password": "changeme", "role": "student"},
-    { "email": "scarlettb@gmail.com", "password": "changeme", "role": "student"},
-    { "email": "nathanm@gmail.com", "password": "changeme", "role": "student"},
-    { "email": "apple@gmail.com", "password": "changeme", "role": "company"},
-    { "email": "bishop@museum.org", "password": "changeme", "role": "company"},
-    { "email": "ced@gmail.com", "password": "changeme", "role": "company"},
-    { "email": "dia@gmail.com", "password": "changeme", "role": "company"},
-    { "email": "citycounty@gmail.com", "password": "changeme", "role": "company"},
-    { "email": "doe@gmail.com", "password": "changeme", "role": "company"},
-    { "email": "uhonline@uhm.com", "password": "changeme", "role": "company" }
   ],
 
   "defaultClasses": [
@@ -253,7 +227,7 @@
     { "name":  "Technical/Trades", "owner":  "cristianm1148@gmail.com"},
     { "name":  "Automotive", "owner":  "cristianm1148@gmail.com"},
     { "name":  "Computer", "owner":  "t0mb0ys@gmail.com"},
-    { "name":  "Contruction Trades", "owner":  "t0mb0ys@gmail.com"},
+    { "name":  "Construction Trades", "owner":  "t0mb0ys@gmail.com"},
     { "name":  "Law Enforcement/Judicial", "owner":  "t0mb0ys@gmail.com"},
     { "name":  "Education", "owner":  "t0mb0ys@gmail.com"},
     { "name":  "Laborer", "owner":  "t0mb0ys@gmail.com"},
@@ -321,6 +295,7 @@
       "endDate": { "type": "2022-04-20 00:00:00" }
     }
   ],
+
   "defaultJobs": [
     { "jobTitle": "Sales Clerk",
       "jobID": "1234",

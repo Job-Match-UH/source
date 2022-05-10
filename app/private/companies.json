@@ -87,6 +87,61 @@
       "image": "https://www.hawaiitribune-herald.com/wp-content/uploads/2020/07/web1_DOE-logo.jpeg"
     },
     {
+      "companyName": "Xerox Hawaii",
+      "website": "https://hawaii.xeroxbusinesssolutions.com/",
+      "description": "Xerox Hawaii opened its doors in 1961 in downtown Honolulu. Since then we have grown to become the largest office technology and solutions provider in Hawaii. We are a local business technology and services provider to businesses in Hawaii, Guam and Saipan. Our team of local experts use a consultative 360 approach to create a customized solution and uncover opportunities to create process automation. We serve all the major islands - Hawaii Island, Maui, Oahu, and Kauai, with service teams and account managers on each island.",
+      "address": "700 Bishop Suite #1200",
+      "state": "HI",
+      "phone": "8552756055",
+      "year": "1961",
+      "image": "https://hawaii.xeroxbusinesssolutions.com/wp-content/uploads/sites/5/2021/05/xbs-hawaii-horizontal-FULL-COLOR-001.svg",
+      "owner": "xeroxhawaii@gmail.com"
+    },
+    {
+      "companyName": "Teach for America Hawaii",
+      "website": "https://www.teachforamerica.org/careers",
+      "description": "Whether you’re a seasoned professional or right out of college, chances are Teach For America has a staff role to fit your aspirations and career goals. Many of our employees are themselves TFA alumni, while others are new to the organization. Staff positions are available across the country.",
+      "address": "500 Ala Moana Blvd ste 3-580",
+      "state": "HI",
+      "phone": "8085211371",
+      "year": "2015",
+      "image": "https://www.teachforamerica.org/themes/custom/polaris/dist/img/logo-footer.svg",
+      "owner": "tfahawaii@gmail.com"
+    },
+    {
+      "companyName": "Hawaiian Airlines",
+      "website": "https://www.hawaiianairlines.com/careers",
+      "description": "Join Hawaii’s hometown carrier. The future of travel is looking bright. Now it’s your time to shine. Hawaiian Airlines, Hawaii's largest and longest-serving airline, is hiring across the Islands. This is an airline that's going places — and your career can, too.",
+      "address": "3375 Koapaka St G-350",
+      "state": "HI",
+      "phone": "8088353762",
+      "year": "1929",
+      "image": "https://img.s-hawaiianairlines.com/static/images/nativeapp/hanativeapp.png?version=2b7e&sc_lang=en",
+      "owner": "hawaiiairlines@gmail.com"
+    },
+    {
+      "companyName": "Grace Pacific LLC",
+      "website": "https://www.gracepacific.com/employment",
+      "description": "Grace Pacific LLC has grown and evolved since the 1920's to become one of Hawaii's most prominent employers. Along with our affiliated companies, GP offers a vibrant work environment driven by a progressive business strategy in a family-oriented atmosphere. Over 550 employees contribute their talent to make our 'Ohana an employer-of-choice throughout Hawaii.",
+      "address": "949 Kamokila Blvd # 200",
+      "state": "HI",
+      "phone": "8086748383",
+      "year": "1931",
+      "image": "https://img.s-hawaiianairlines.com/static/images/nativeapp/hanativeapp.png?version=2b7e&sc_lang=en",
+      "owner": "gpllc@gmail.com"
+    },
+    {
+      "companyName": "Kamehameha Schools",
+      "website": "https://www.ksbe.edu/about_us/find_a_job_at_ks/",
+      "description": "Kamehameha Schools’ current workforce is comprised of full- and part-time, on-call, and seasonal employees who work in various positions at locations across Hawai‘i pae ‘āina (group of islands), including three K-12 campuses, 29 preschools, and other regional and support offices.",
+      "address": "567 South King St",
+      "state": "HI",
+      "phone": "8085348040",
+      "year": "1884",
+      "image": "https://www.ksbe.edu/assets/rebrand/img/logoFooter.png",
+      "owner": "careers@ksbe.edu"
+    },
+    {
       "companyName": "American Savings Bank",
       "website": "https://www.asbhawaii.com/about-us/join-our-team",
       "description": "At ASB, we like to dream big. We are a great bank making people's dreams possible.",

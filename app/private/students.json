@@ -94,6 +94,96 @@
       "image": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
     },
     {
+      "firstName": "Michelle",
+      "lastName": "Leano",
+      "address": "Waipahu, HI",
+      "phone": "8083865475",
+      "about": "I am studying for a B.S. in Computer Science in the Department of Information and Computer Sciences at the University of Hawaii. I expect to graduate in Spring, 2023.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "leanomc@hawaii.edu"
+    },
+    {
+      "firstName": "Alysha",
+      "lastName": "Leano",
+      "address": "Waipahu, HI",
+      "phone": "8083877597",
+      "about": "I am studying for a B.S. in Applied Science concentrated in Information Security and Assurance at the University of Hawaii, West Oahu. I am graduating in Spring, 2022.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "leanoa@hawaii.edu"
+    },
+    {
+      "firstName": "Kaley",
+      "lastName": "Dang",
+      "address": "Ewa Beach, HI",
+      "phone": "8087992690",
+      "about": "I am studying for a B.S. in Biology at the University of Hawaii, Manoa. I am graduating in Spring, 2022.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "kdang2@hawaii.edu"
+    },
+    {
+      "firstName": "Kiana",
+      "lastName": "Ejercito",
+      "address": "1244 Kaluawaa St",
+      "phone": "8082026967",
+      "about": "I am an Astrophysics major at the University of Hawaii, Manoa. I am in my freshman year and am also interested in engineering and computer science.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "kjee@hawaii.edu"
+    },
+    {
+      "firstName": "Wilson",
+      "lastName": "Lau",
+      "address": "Kapahulu, HI",
+      "phone": "8083897963",
+      "about": "I am a Mechanical Engineering major at the University of Hawaii, Manoa. I am a freshman and will expect to graduate in Spring 2026.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "wlau32@hawaii.edu"
+    },
+    {
+      "firstName": "Margaret",
+      "lastName": "Nakayama",
+      "address": "Honolulu, HI",
+      "phone": "8086730580",
+      "about": "I am graduating with a Civil Engineering degree this Spring 2022.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "mn44@hawaii.edu"
+    },
+    {
+      "firstName": "Elizabeth",
+      "lastName": "Talioaga",
+      "address": "Pearl City, HI",
+      "phone": "8082557884",
+      "about": "I am an Electrical Engineering major. I currently work at Hollister, but I am interested in engineering internships and projects.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "etalioag@hawaii.edu"
+    },
+    {
+      "firstName": "Kahiau",
+      "lastName": "Kahauolopua",
+      "address": "Waipahu, HI",
+      "phone": "8088528246",
+      "about": "I am a junior majoring in Hawaiian Studies and minoring in Hawaiian Language. I work for Hawaiian educations programs that are supported by the University of Hawaii and plan on graduating Spring 2023.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "jesstine@hawaii.edu"
+    },
+    {
+      "firstName": "Chiahua",
+      "lastName": "Lin",
+      "address": "Honnolulu, HI",
+      "phone": "8082029556",
+      "about": "I am an English Graduate student currently based in Taiwan. I work the for English department at UH Manoa and plan on returning to Hawaii soon.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "chiahua7@hawaii.edu"
+    },
+    {
+      "firstName": "Rosemarie",
+      "lastName": "Reyes",
+      "address": "Waipahu, HI",
+      "phone": "8083520274",
+      "about": "I am a Nursing student going into my third and final year. I am expected to graduate in Spring 2023 and hope to further my experience at a medical institution here in Hawaii. ",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "reyesrp@hawaii.edu"
+    },
+    {
       "firstName": "Ereni",
       "lastName": "Nakamura",
       "address": "Kahala, HI",

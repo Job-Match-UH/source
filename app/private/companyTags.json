@@ -35,6 +35,15 @@
     { "name":  "Technical/Trades", "owner":  "doe@gmail.com"},
     { "name":  "Business", "owner":  "doe@gmail.com"},
     { "name":  "Receptionist", "owner":  "doe@gmail.com"},
-    { "name":  "Tutoring", "owner":  "doe@gmail.com"}
+    { "name":  "Tutoring", "owner":  "doe@gmail.com"},
+    {"name": "Administrative/Clerical", "owner": "asb@asb.com"},
+    {"name": "Finance", "owner": "asb@asb.com"},
+    {"name": "Computer", "owner": "asb@asb.com"},
+    {"name": "Administrative/Clerical", "owner": "boh@boh.com"},
+    {"name": "Finance", "owner": "boh@boh.com"},
+    {"name": "Human Resources", "owner": "fhb@fhb.com"},
+    {"name": "Finance", "owner": "fhb@fhb.com"},
+    {"name": "Computer", "owner": "htc@htc.com"},
+    {"name": "Law Enforcement/Judicial", "owner": "tsa@tsa.com"}
   ]
 }

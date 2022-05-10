@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button, Card, Grid, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import { Link, NavLink, withRouter } from 'react-router-dom';
 import { _ } from 'meteor/underscore';
-import { Link, withRouter } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
 import { Meteor } from 'meteor/meteor';
 import { Jobs } from '../../api/job/Jobs';
@@ -19,7 +19,7 @@ class Job extends React.Component {
   render() {
     return (
       <Card>
-        <Card.Content>
+        <Card.Content as={NavLink} exact to={`/jobdescription/${this.props.job._id}`}>
           <Card.Header>
             <Card.Content extra>
               <Grid columns='equal'>
@@ -32,9 +32,11 @@ class Job extends React.Component {
                       <Link to={`/editjob/${this.props.job._id}`}><Icon name='pencil'/></Link>
                     ) : ''}
                     {Roles.userIsInRole(Meteor.userId(), 'company') ? (
-                      <Button icon color='blue' onClick={() => this.deleteJob()}>
-                        <Icon name='trash alternate'/>
-                      </Button>
+                      <NavLink exact to={`/companyprofile/${Meteor.userId()}`}>
+                        <Button icon color='blue' onClick={() => this.deleteJob()}>
+                          <Icon name='trash alternate'/>
+                        </Button>
+                      </NavLink>
                     ) : ''}
                   </Grid.Row>
                 </Grid.Row>

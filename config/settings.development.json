@@ -23,7 +23,22 @@
     { "email": "dia@gmail.com", "password": "changeme", "role": "company"},
     { "email": "citycounty@gmail.com", "password": "changeme", "role": "company"},
     { "email": "doe@gmail.com", "password": "changeme", "role": "company"},
-    { "email": "uhonline@uhm.com", "password": "changeme", "role": "company" }
+    { "email": "uhonline@uhm.com", "password": "changeme", "role": "company" },
+    { "email": "ereninak@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "cmmw@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "ikotsol@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "jtajiri@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "kimurai@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "nespejo@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "rgalanto@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "achoy@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "asantos@gmail.com", "password": "changeme", "role": "student" },
+    { "email": "wildpup@gmail.com", "password": "changeme", "role": "student" },
+    { "email": "asb@asb.com", "password": "changeme", "role": "company" },
+    { "email": "boh@boh.com", "password": "changeme", "role": "company" },
+    { "email": "fhb@fhb.com", "password": "changeme", "role": "company" },
+    { "email": "htc@htc.com", "password": "changeme", "role": "company" },
+    { "email": "tsa@tsa.com", "password": "changeme", "role": "company" }
   ],
 
   "defaultClasses": [

@@ -50,6 +50,18 @@
     { "name":  "Aquaculture", "owner":  "nathanm@gmail.com"},
     { "name":  "Journalism", "owner":  "nathanm@gmail.com"},
     { "name":  "Finance", "owner":  "nathanm@gmail.com"},
-    { "name":  "Electrical", "owner":  "nathanm@gmail.com"}
+    { "name":  "Electrical", "owner":  "nathanm@gmail.com"},
+    {"name": "Education", "owner": "ereninak@hawaii.edu"},
+    {"name": "Health/Medical", "owner": "cmmw@hawaii.edu"},
+    {"name": "Engineering", "owner": "ikotsol@hawaii.edu"},
+    {"name": "Health/Medical", "owner": "jtajiri@hawaii.edu"},
+    {"name": "Computer", "owner": "kimurai@hawaii.edu"},
+    {"name": "Health/Medical", "owner": "nespejo@hawaii.edu"},
+    {"name": "Communication", "owner": "rgalanto@hawaii.edu"},
+    {"name": "Health/Medical", "owner": "achoy@hawaii.edu"},
+    {"name": "Electrical", "owner": "asantos@gmail.com"},
+    {"name": "Engineering", "owner": "asantos@gmail.com"},
+    {"name": "Language", "owner": "wildpup@gmail.com"},
+    {"name": "Education", "owner": "wildpup@gmail.com"}
   ]
 }

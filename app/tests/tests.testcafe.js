@@ -130,7 +130,7 @@ test('Test viewstudentmatches page displays', async (testController) => {
   await viewStudentMatchesPage.isDisplayed(testController);
 });
 
-test.only('Test viewstudentprofile page displays', async (testController) => {
+test('Test viewstudentprofile page displays', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials2.username, credentials2.password);
   await navBar.isLoggedIn(testController, credentials2.username);

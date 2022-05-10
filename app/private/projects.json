@@ -54,6 +54,21 @@
       "name": "Rocket Science",
       "description": "Design and construct a home rocket",
       "owner": "nathanm@gmail.com"
+    },
+    {
+      "name": "Risk Management",
+      "description": "Analysis on risks for Starbucks to enter a foreign market, the Philippines",
+      "owner": "leanoa@hawaii.edu"
+    },
+    {
+      "name": "Fyre Festival 2",
+      "description": "Created a project management plan on a redo of the failed music festival, Fyre Festival",
+      "owner": "leanoa@hawaii.edu"
+    },
+    {
+      "name": "UH Online Marching Band",
+      "description": "Made tutorial videos for future marching members to refer to",
+      "owner": "kdang2@hawaii.edu"
     }
   ]
 }

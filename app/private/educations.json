@@ -142,6 +142,118 @@
       "owner": "nathanm@gmail.com",
       "startDate": { "type": "2020-04-20 00:00:00" },
       "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Bachelors",
+      "field": "Biology",
+      "owner": "kdang2@hawaii.edu",
+      "startDate": "2018-08-23 00:00:00",
+      "endDate": "2022-05-13 00:00:00"
+    },
+    {
+      "school": "Leeward Community College",
+      "degree": "Associates",
+      "field": "Undecided",
+      "owner": "reyesrp@hawaii.edu",
+      "startDate": "2018-08-23 00:00:00",
+      "endDate": "2020-05-10 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Bachelors",
+      "field": "Nursing",
+      "owner": "reyesrp@hawaii.edu",
+      "startDate": "2020-08-22 00:00:00",
+      "endDate": "2022-05-04 00:00:00"
+    },
+    {
+      "school": "Leeward Community College",
+      "degree": "Associates",
+      "field": "Applied Science",
+      "owner": "leanoa@hawaii.edu",
+      "startDate": "2018-08-23 00:00:00",
+      "endDate": "2020-05-10 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Bachelors",
+      "field": "Physics",
+      "owner": "leanoa@hawaii.edu",
+      "startDate": "2017-08-22 00:00:00",
+      "endDate": "2018-05-14 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, West Oahu",
+      "degree": "Bachelors",
+      "field": "Cyber Security",
+      "owner": "leanoa@hawaii.edu",
+      "startDate": "2020-08-20 00:00:00",
+      "endDate": "2022-05-06 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Bachelors",
+      "field": "Astronomy",
+      "owner": "kjee@hawaii.edu",
+      "startDate": "2021-08-23 00:00:00",
+      "endDate": "2022-05-09 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Bachelors",
+      "field": "Mechanical Engineering",
+      "owner": "wlau32@hawaii.edu",
+      "startDate": "2021-08-23 00:00:00",
+      "endDate": "2022-05-09 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Bachelors",
+      "field": "Electrical Engineering",
+      "owner": "etalioag@hawaii.edu",
+      "startDate": "2021-08-23 00:00:00",
+      "endDate": "2022-05-09 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Bachelors",
+      "field": "Civil Engineering",
+      "owner": "mn44@hawaii.edu",
+      "startDate": "2010-08-22 00:00:00",
+      "endDate": "2022-05-09 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Bachelors",
+      "field": "English",
+      "owner": "chiahua7@hawaii.edu",
+      "startDate": "2012-08-22 00:00:00",
+      "endDate": "2016-05-10 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Masters",
+      "field": "English",
+      "owner": "chiahua7@hawaii.edu",
+      "startDate": "2012-08-22 00:00:00",
+      "endDate": "2016-05-10 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Bachelors",
+      "field": "Hawaiian Studies",
+      "owner": "jesstine@hawaii.edu",
+      "startDate": "2019-08-22 00:00:00",
+      "endDate": "2022-05-10 00:00:00"
+    },
+    {
+      "school": "Kapiolani Community College",
+      "degree": "Associates",
+      "field": "Hawaiian Studies",
+      "owner": "jesstine@hawaii.edu",
+      "startDate": "2017-08-22 00:00:00",
+      "endDate": "2019-05-10 00:00:00"
     }
   ]
 }

@@ -11,12 +11,6 @@
     { "email": "jesstine@hawaii.edu", "password": "changeme", "role": "student" },
     { "email": "chiahua7@hawaii.edu", "password": "changeme", "role": "student" },
     { "email": "reyesrp@hawaii.edu", "password": "changeme", "role": "student" },
-    { "email": "uhonline@uhm.com", "password": "changeme", "role": "company" },
-    { "email": "xeroxhawaii@gmail.com", "password": "changeme", "role": "company" },
-    { "email": "tfahawaii@gmail.com", "password": "changeme", "role": "company" },
-    { "email": "hawaiiairlines@gmail.com", "password": "changeme", "role": "company" },
-    { "email": "gpllc@gmail.com", "password": "changeme", "role": "company" },
-    { "email": "careers@ksbe.edu", "password": "changeme", "role": "company" },
     { "email": "ereninak@hawaii.edu", "password": "changeme", "role": "student" },
     { "email": "cmmw@hawaii.edu", "password": "changeme", "role": "student" },
     { "email": "ikotsol@hawaii.edu", "password": "changeme", "role": "student" },
@@ -27,6 +21,12 @@
     { "email": "achoy@hawaii.edu", "password": "changeme", "role": "student" },
     { "email": "asantos@gmail.com", "password": "changeme", "role": "student" },
     { "email": "wildpup@gmail.com", "password": "changeme", "role": "student" },
+    { "email": "uhonline@uhm.com", "password": "changeme", "role": "company" },
+    { "email": "xeroxhawaii@gmail.com", "password": "changeme", "role": "company" },
+    { "email": "tfahawaii@gmail.com", "password": "changeme", "role": "company" },
+    { "email": "hawaiiairlines@gmail.com", "password": "changeme", "role": "company" },
+    { "email": "gpllc@gmail.com", "password": "changeme", "role": "company" },
+    { "email": "careers@ksbe.edu", "password": "changeme", "role": "company" },
     { "email": "asb@asb.com", "password": "changeme", "role": "company" },
     { "email": "boh@boh.com", "password": "changeme", "role": "company" },
     { "email": "fhb@fhb.com", "password": "changeme", "role": "company" },
@@ -35,105 +35,6 @@
   ],
 
   "students": [
-    {
-      "firstName": "Peter",
-      "lastName": "Leong",
-      "address": "123 University Ave",
-      "phone": "1234567",
-      "about": "I am a student",
-      "image": "http://www2.hawaii.edu/~peterleo/Electronic_Portfolio/Cool-guy.jpg",
-      "owner": "peterleo@hawaii.edu"
-    },
-    {
-      "firstName": "Michelle",
-      "lastName": "Leano",
-      "address": "94-472 Hamau St",
-      "phone": "8083865475",
-      "about": "I am studying for a B.S. in Computer Science in the Department of Information and Computer Sciences at the University of Hawaii. I expect to graduate in Spring, 2023.",
-      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
-      "owner": "leanomc@hawaii.edu"
-    },
-    {
-      "firstName": "Alysha",
-      "lastName": "Leano",
-      "address": "94-472 Hamau St",
-      "phone": "8083877597",
-      "about": "I am studying for a B.S. in Cyber-Security at the University of Hawaii, West Oahu. I am graduating in Spring, 2022.",
-      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
-      "owner": "leanoa@hawaii.edu"
-    },
-    {
-      "firstName": "Kaley",
-      "lastName": "Dang",
-      "address": "Ewa Beach, HI",
-      "phone": "8087992690",
-      "about": "I am studying for a B.S. in Biology at the University of Hawaii, Manoa. I am graduating in Spring, 2022.",
-      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
-      "owner": "kdang2@hawaii.edu"
-    },
-    {
-      "firstName": "Kiana",
-      "lastName": "Ejercito",
-      "address": "1244 Kaluawaa St",
-      "phone": "8082026967",
-      "about": "I am an Astrophysics major at the University of Hawaii, Manoa. I am in my freshman year and am also interested in engineering and computer science.",
-      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
-      "owner": "kjee@hawaii.edu"
-    },
-    {
-      "firstName": "Wilson",
-      "lastName": "Lau",
-      "address": "Kapahulu, HI",
-      "phone": "8083897963",
-      "about": "I am a Mechanical Engineering major at the University of Hawaii, Manoa. I am a freshman and will expect to graduate in Spring 2026.",
-      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
-      "owner": "wlau32@hawaii.edu"
-    },
-    {
-      "firstName": "Margaret",
-      "lastName": "Nakayama",
-      "address": "Honolulu, HI",
-      "phone": "8086730580",
-      "about": "I am graduating with a Civil Engineering degree this Spring 2022.",
-      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
-      "owner": "mn44@hawaii.edu"
-    },
-    {
-      "firstName": "Elizabeth",
-      "lastName": "Talioaga",
-      "address": "Pearl City, HI",
-      "phone": "8082557884",
-      "about": "I am an Electrical Engineering major. I currently work at Hollister, but I am interested in engineering internships and projects.",
-      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
-      "owner": "etalioag@hawaii.edu"
-    },
-    {
-      "firstName": "Kahiau",
-      "lastName": "Kahauolopua",
-      "address": "Waipahu, HI",
-      "phone": "8088528246",
-      "about": "I am a junior majoring in Hawaiian Studies and minoring in Hawaiian Language. I work for Hawaiian educations programs that are supported by the University of Hawaii and plan on graduating Spring 2023.",
-      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
-      "owner": "jesstine@hawaii.edu"
-    },
-    {
-      "firstName": "Chiahua",
-      "lastName": "Lin",
-      "address": "Honnolulu, HI",
-      "phone": "8082029556",
-      "about": "I am an English Graduate student currently based in Taiwan. I work the for English department at UH Manoa and plan on returning to Hawaii soon.",
-      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
-      "owner": "chiahua7@hawaii.edu"
-    },
-    {
-      "firstName": "Rosemarie",
-      "lastName": "Reyes",
-      "address": "Waipahu, HI",
-      "phone": "8083520274",
-      "about": "I am a Nursing student going into my third and final year. I am expected to graduate in Spring 2023 and hope to further my experience at a medical institution here in Hawaii. ",
-      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
-      "owner": "reyesrp@hawaii.edu"
-    },
     {
       "firstName": "Ereni",
       "lastName": "Nakamura",
@@ -281,61 +182,6 @@
       "year": "2001",
       "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
       "owner": "tsa@tsa.com"
-    },
-    {
-      "companyName": "Xerox Hawaii",
-      "website": "https://hawaii.xeroxbusinesssolutions.com/",
-      "description": "Xerox Hawaii opened its doors in 1961 in downtown Honolulu. Since then we have grown to become the largest office technology and solutions provider in Hawaii. We are a local business technology and services provider to businesses in Hawaii, Guam and Saipan. Our team of local experts use a consultative 360 approach to create a customized solution and uncover opportunities to create process automation. We serve all the major islands - Hawaii Island, Maui, Oahu, and Kauai, with service teams and account managers on each island.",
-      "address": "700 Bishop Suite #1200",
-      "state": "HI",
-      "phone": "8552756055",
-      "year": "1961",
-      "image": "https://hawaii.xeroxbusinesssolutions.com/wp-content/uploads/sites/5/2021/05/xbs-hawaii-horizontal-FULL-COLOR-001.svg",
-      "owner": "xeroxhawaii@gmail.com"
-    },
-    {
-      "companyName": "Teach for America Hawaii",
-      "website": "https://www.teachforamerica.org/careers",
-      "description": "Whether you’re a seasoned professional or right out of college, chances are Teach For America has a staff role to fit your aspirations and career goals. Many of our employees are themselves TFA alumni, while others are new to the organization. Staff positions are available across the country.",
-      "address": "500 Ala Moana Blvd ste 3-580",
-      "state": "HI",
-      "phone": "8085211371",
-      "year": "2015",
-      "image": "https://www.teachforamerica.org/themes/custom/polaris/dist/img/logo-footer.svg",
-      "owner": "tfahawaii@gmail.com"
-    },
-    {
-      "companyName": "Hawaiian Airlines",
-      "website": "https://www.hawaiianairlines.com/careers",
-      "description": "Join Hawaii’s hometown carrier. The future of travel is looking bright. Now it’s your time to shine. Hawaiian Airlines, Hawaii's largest and longest-serving airline, is hiring across the Islands. This is an airline that's going places — and your career can, too.",
-      "address": "3375 Koapaka St G-350",
-      "state": "HI",
-      "phone": "8088353762",
-      "year": "1929",
-      "image": "https://img.s-hawaiianairlines.com/static/images/nativeapp/hanativeapp.png?version=2b7e&sc_lang=en",
-      "owner": "hawaiiairlines@gmail.com"
-    },
-    {
-      "companyName": "Grace Pacific LLC",
-      "website": "https://www.gracepacific.com/employment",
-      "description": "Grace Pacific LLC has grown and evolved since the 1920's to become one of Hawaii's most prominent employers. Along with our affiliated companies, GP offers a vibrant work environment driven by a progressive business strategy in a family-oriented atmosphere. Over 550 employees contribute their talent to make our 'Ohana an employer-of-choice throughout Hawaii.",
-      "address": "949 Kamokila Blvd # 200",
-      "state": "HI",
-      "phone": "8086748383",
-      "year": "1931",
-      "image": "https://img.s-hawaiianairlines.com/static/images/nativeapp/hanativeapp.png?version=2b7e&sc_lang=en",
-      "owner": "gpllc@gmail.com"
-    },
-    {
-      "companyName": "Kamehameha Schools",
-      "website": "https://www.ksbe.edu/about_us/find_a_job_at_ks/",
-      "description": "Kamehameha Schools’ current workforce is comprised of full- and part-time, on-call, and seasonal employees who work in various positions at locations across Hawai‘i pae ‘āina (group of islands), including three K-12 campuses, 29 preschools, and other regional and support offices.",
-      "address": "567 South King St",
-      "state": "HI",
-      "phone": "8085348040",
-      "year": "1884",
-      "image": "https://www.ksbe.edu/assets/rebrand/img/logoFooter.png",
-      "owner": "careers@ksbe.edu"
     }
   ],
 
@@ -916,109 +762,5 @@
       "startDate": { "type": "2019-08-20 00:00:00" },
       "endDate": { "type": "2023-05-08 00:00:00" }
     }
-  ],
-
-  "projects": [
-    {
-      "name": "Job Match UH",
-      "description": "Create an application for connecting students and companies.",
-      "owner": "john@foo.com"
-    }
-  ],
-  "projects": [
-    {
-      "name": "Risk Management",
-      "description": "Analysis on risks for Starbucks to enter a foreign market, the Philippines",
-      "owner": "leanoa@hawaii.edu"
-    },
-    {
-      "name": "Fyre Festival 2",
-      "description": "Created a project management plan on a redo of the failed music festival, Fyre Festival",
-      "owner": "leanoa@hawaii.edu"
-    },
-    {
-      "name": "UH Online Marching Band",
-      "description": "Made tutorial videos for future marching members to refer to",
-      "owner": "kdang2@hawaii.edu"
-    }
-  ],
-  "education": [
-    {
-      "school": "University of Hawaii, Manoa",
-      "degree": "Bachelors",
-      "field": "Biology",
-      "owner": "kdang2@hawaii.edu",
-      "startDate": "2018-08-23 00:00:00",
-      "endDate": "2022-05-13 00:00:00"
-    },
-    {
-      "school": "Leeward Community College",
-      "degree": "Associates",
-      "field": "Undecided",
-      "owner": "reyesrp@hawaii.edu",
-      "startDate": "2018-08-23 00:00:00",
-      "endDate": "2020-05-10 00:00:00"
-    },
-    {
-      "school": "University of Hawaii, Manoa",
-      "degree": "Bachelors",
-      "field": "Nursing",
-      "owner": "reyesrp@hawaii.edu",
-      "startDate": "2020-08-22 00:00:00",
-      "endDate": "2022-05-04 00:00:00"
-    }
-  ],
-  "experience": [
-    {
-      "title": "Lead Brand Representative",
-      "type": "Part-time",
-      "company": "Hollister",
-      "role": "Lead Sales Associate",
-      "description": "Acts as a supervisor for other associates. Displays the best customer service and knowledge as an associate. Provides customer service by tending to customer needs and wants",
-      "owner": "kdang2@hawaii.edu",
-      "exp_start": "2018-08-01 00:00:00",
-      "exp_end": "2019-08-01 00:00:00"
-    },
-    {
-      "title": "Certified Nurse’s Aide",
-      "type": "Part-time",
-      "company": "Kahala Nui",
-      "role": "CNA",
-      "description": "Worked on the skilled nursing floor to provided residents comfort; transported residents; answered call lights and\nrequests; and reported any observations to the charge nurse. Completed reports and documentation prior to the end of shift",
-      "owner": "kdang2@hawaii.edu",
-      "exp_start": "2021-07-01 00:00:00",
-      "exp_end": "2022-05-04 00:00:00"
-    },
-    {
-      "title": "Administrative Assistant",
-      "type": "Part-time",
-      "company": "University of Hawaii",
-      "role": "STEM Assistant",
-      "description": "College of Natural Sciences STEM Assistant at UH Manoa. Manage the learning emporium tutoring service. Review curriculum forms. Collect raw data and process it into graphs.",
-      "owner": "kdang2@hawaii.edu",
-      "exp_start": "2019-09-01 00:00:00",
-      "exp_end": "2022-05-13 00:00:00"
-    }
-  ],
-  "tags": [
-    { "name": "Health/Medical", "owner": "kdang2@hawaii.edu" },
-    { "name": "Emergency Medical Services", "owner": "kdang2@hawaii.edu" },
-    { "name": "Health/Medical", "owner": "reyesrp@hawaii.edu" },
-    { "name": "Research", "owner": "leanoa@hawaii.edu" },
-    { "name": "Cyber Security", "owner": "leanoa@hawaii.edu" },
-    { "name": "Graphical Arts", "owner": "leanoa@hawaii.edu" },
-    { "name": "Astronomy", "owner": "kjee@hawaii.edu" },
-    { "name": "Performing Arts", "owner": "kjee@hawaii.edu"},
-    { "name": "Education", "owner": "kjee@hawaii.edu" },
-    { "name": "Engineering", "owner": "wlau32@hawaii.edu"},
-    { "name": "Human Resources", "owner": "wlau32@hawaii.edu" },
-    { "name": "Engineering", "owner": "mn44@hawaii.edu"},
-    { "name": "Finance", "owner": "mn44@hawaii.edu"},
-    { "name": "Electrical", "owner": "etalioag@hawaii.edu"},
-    { "name": "Research", "owner": "etalioag@hawaii.edu"},
-    { "name": "Sustainability", "owner": "jesstine@hawaii.edu"},
-    { "name": "Research", "owner": "chiahua7@hawaii.edu"},
-    { "name": "Computer", "owner": "leanomc@hawaii.edu"},
-    { "name": "Education", "owner": "leanomc@hawaii.edu"}
   ]
 }

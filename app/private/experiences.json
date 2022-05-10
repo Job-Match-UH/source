@@ -153,6 +153,36 @@
       "owner": "nathanm@gmail.com",
       "exp_start": { "type": "2020-04-20 00:00:00" },
       "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Lead Brand Representative",
+      "type": "Part-time",
+      "company": "Hollister",
+      "role": "Lead Sales Associate",
+      "description": "Acts as a supervisor for other associates. Displays the best customer service and knowledge as an associate. Provides customer service by tending to customer needs and wants",
+      "owner": "kdang2@hawaii.edu",
+      "exp_start": "2018-08-01 00:00:00",
+      "exp_end": "2019-08-01 00:00:00"
+    },
+    {
+      "title": "Certified Nurse’s Aide",
+      "type": "Part-time",
+      "company": "Kahala Nui",
+      "role": "CNA",
+      "description": "Worked on the skilled nursing floor to provided residents comfort; transported residents; answered call lights and\nrequests; and reported any observations to the charge nurse. Completed reports and documentation prior to the end of shift",
+      "owner": "kdang2@hawaii.edu",
+      "exp_start": "2021-07-01 00:00:00",
+      "exp_end": "2022-05-04 00:00:00"
+    },
+    {
+      "title": "Administrative Assistant",
+      "type": "Part-time",
+      "company": "University of Hawaii",
+      "role": "STEM Assistant",
+      "description": "College of Natural Sciences STEM Assistant at UH Manoa. Manage the learning emporium tutoring service. Review curriculum forms. Collect raw data and process it into graphs.",
+      "owner": "kdang2@hawaii.edu",
+      "exp_start": "2019-09-01 00:00:00",
+      "exp_end": "2022-05-13 00:00:00"
     }
   ]
 }

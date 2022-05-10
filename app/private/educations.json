@@ -1,0 +1,662 @@
+{
+  "education": [
+    {
+      "school": "Stanford",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Women Studies",
+      "owner": "john@foo.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Computer Science",
+      "owner": "ecadiena323@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Industrial Design",
+      "owner": "jameschang719@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Japanese Education",
+      "owner": "miac12323@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Micro Cell Biology",
+      "owner": "zcadiena@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "Moanalua High School",
+      "degree":
+      {
+        "type": "High School Diploma",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "High School GED",
+      "owner": "rhnakasone3@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Computer Engineering",
+      "owner": "cristianm1148@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Mechanical Engineering",
+      "owner": "t0mb0ys@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Physics",
+      "owner": "coltj@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Political Science",
+      "owner": "scarlettb@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Chemistry",
+      "owner": "nathanm@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Bachelors",
+      "field": "Biology",
+      "owner": "kdang2@hawaii.edu",
+      "startDate": "2018-08-23 00:00:00",
+      "endDate": "2022-05-13 00:00:00"
+    },
+    {
+      "school": "Leeward Community College",
+      "degree": "Associates",
+      "field": "Undecided",
+      "owner": "reyesrp@hawaii.edu",
+      "startDate": "2018-08-23 00:00:00",
+      "endDate": "2020-05-10 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Bachelors",
+      "field": "Nursing",
+      "owner": "reyesrp@hawaii.edu",
+      "startDate": "2020-08-22 00:00:00",
+      "endDate": "2022-05-04 00:00:00"
+    },
+    {
+      "school": "Leeward Community College",
+      "degree": "Associates",
+      "field": "Applied Science",
+      "owner": "leanoa@hawaii.edu",
+      "startDate": "2018-08-23 00:00:00",
+      "endDate": "2020-05-10 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Bachelors",
+      "field": "Physics",
+      "owner": "leanoa@hawaii.edu",
+      "startDate": "2017-08-22 00:00:00",
+      "endDate": "2018-05-14 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, West Oahu",
+      "degree": "Bachelors",
+      "field": "Cyber Security",
+      "owner": "leanoa@hawaii.edu",
+      "startDate": "2020-08-20 00:00:00",
+      "endDate": "2022-05-06 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Bachelors",
+      "field": "Astronomy",
+      "owner": "kjee@hawaii.edu",
+      "startDate": "2021-08-23 00:00:00",
+      "endDate": "2022-05-09 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Bachelors",
+      "field": "Mechanical Engineering",
+      "owner": "wlau32@hawaii.edu",
+      "startDate": "2021-08-23 00:00:00",
+      "endDate": "2022-05-09 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Bachelors",
+      "field": "Electrical Engineering",
+      "owner": "etalioag@hawaii.edu",
+      "startDate": "2021-08-23 00:00:00",
+      "endDate": "2022-05-09 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Bachelors",
+      "field": "Civil Engineering",
+      "owner": "mn44@hawaii.edu",
+      "startDate": "2010-08-22 00:00:00",
+      "endDate": "2022-05-09 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Bachelors",
+      "field": "English",
+      "owner": "chiahua7@hawaii.edu",
+      "startDate": "2012-08-22 00:00:00",
+      "endDate": "2016-05-10 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Masters",
+      "field": "English",
+      "owner": "chiahua7@hawaii.edu",
+      "startDate": "2012-08-22 00:00:00",
+      "endDate": "2016-05-10 00:00:00"
+    },
+    {
+      "school": "University of Hawaii, Manoa",
+      "degree": "Bachelors",
+      "field": "Hawaiian Studies",
+      "owner": "jesstine@hawaii.edu",
+      "startDate": "2019-08-22 00:00:00",
+      "endDate": "2022-05-10 00:00:00"
+    },
+    {
+      "school": "Kapiolani Community College",
+      "degree": "Associates",
+      "field": "Hawaiian Studies",
+      "owner": "jesstine@hawaii.edu",
+      "startDate": "2017-08-22 00:00:00",
+      "endDate": "2019-05-10 00:00:00"
+    },
+    {
+      "school": "Stanford",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Women Studies",
+      "owner": "john@foo.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "Kapa'a High School",
+      "degree":
+      {
+        "type": "High School Diploma",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "General",
+      "owner": "kimurai@hawaii.edu",
+      "startDate": { "type": "2014-08-20 00:00:00" },
+      "endDate": { "type": "2018-05-20 00:00:00" }
+    },
+    {
+      "school": "Kapa'a High School",
+      "degree":
+      {
+        "type": "High School Diploma",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "General",
+      "owner": "ikotsol@hawaii.edu",
+      "startDate": { "type": "2014-08-20 00:00:00" },
+      "endDate": { "type": "2018-05-20 00:00:00" }
+    },
+    {
+      "school": "Kapa'a High School",
+      "degree":
+      {
+        "type": "High School Diploma",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "General",
+      "owner": "wildpup@gmail.com",
+      "startDate": { "type": "2014-08-20 00:00:00" },
+      "endDate": { "type": "2018-05-20 00:00:00" }
+    },
+    {
+      "school": "Kapa'a High School",
+      "degree":
+      {
+        "type": "High School Diploma",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "General",
+      "owner": "asantos@gmail.com",
+      "startDate": { "type": "2014-08-20 00:00:00" },
+      "endDate": { "type": "2018-05-20 00:00:00" }
+    },
+    {
+      "school": "Kapa'a High School",
+      "degree":
+      {
+        "type": "High School Diploma",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "General",
+      "owner": "achoy@hawaii.edu",
+      "startDate": { "type": "2015-08-20 00:00:00" },
+      "endDate": { "type": "2019-05-20 00:00:00" }
+    },
+    {
+      "school": "Kailua High School",
+      "degree":
+      {
+        "type": "High School Diploma",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "General",
+      "owner": "nespejo@hawaii.edu",
+      "startDate": { "type": "2015-08-20 00:00:00" },
+      "endDate": { "type": "2019-05-20 00:00:00" }
+    },
+    {
+      "school": "Kalani High School",
+      "degree":
+      {
+        "type": "High School Diploma",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "General",
+      "owner": "cmmw@hawaii.edu",
+      "startDate": { "type": "2014-08-20 00:00:00" },
+      "endDate": { "type": "2018-05-20 00:00:00" }
+    },
+    {
+      "school": "Waiakea High School",
+      "degree":
+      {
+        "type": "High School Diploma",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "General",
+      "owner": "jtajiri@hawaii.edu",
+      "startDate": { "type": "2014-08-20 00:00:00" },
+      "endDate": { "type": "2018-05-20 00:00:00" }
+    },
+    {
+      "school": "Mckinley High School",
+      "degree":
+      {
+        "type": "High School Diploma",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "General",
+      "owner": "rgalanto@hawaii.edu",
+      "startDate": { "type": "2014-08-20 00:00:00" },
+      "endDate": { "type": "2018-05-20 00:00:00" }
+    },
+    {
+      "school": "Portland University",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Electrical Engineering",
+      "owner": "asantos@gmail.com",
+      "startDate": { "type": "2018-08-20 00:00:00" },
+      "endDate": { "type": "2022-05-06 00:00:00" }
+    },
+    {
+      "school": "University of Richmond",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Electrical Engineering",
+      "owner": "wildpup@gmail.com",
+      "startDate": { "type": "2018-08-20 00:00:00" },
+      "endDate": { "type": "2022-05-08 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Mechanical Engineering",
+      "owner": "ikotsol@hawaii.edu",
+      "startDate": { "type": "2018-08-20 00:00:00" },
+      "endDate": { "type": "2022-05-08 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Micro Biology Pre-Med",
+      "owner": "jtajiri@hawaii.edu",
+      "startDate": { "type": "2018-08-20 00:00:00" },
+      "endDate": { "type": "2022-05-08 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Public Health",
+      "owner": "cmmw@hawaii.edu",
+      "startDate": { "type": "2018-08-20 00:00:00" },
+      "endDate": { "type": "2022-05-08 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Computer Science Cyber Security Track",
+      "owner": "kimurai@hawaii.edu",
+      "startDate": { "type": "2018-08-20 00:00:00" },
+      "endDate": { "type": "2022-05-08 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Communications",
+      "owner": "rgalanto@hawaii.edu",
+      "startDate": { "type": "2019-08-20 00:00:00" },
+      "endDate": { "type": "2023-05-08 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Education",
+      "owner": "ereninak@hawaii.edu",
+      "startDate": { "type": "2022-08-20 00:00:00" },
+      "endDate": { "type": "2024-05-08 00:00:00" }
+    },
+    {
+      "school": "Kapiolani Community College",
+      "degree":
+      {
+        "type": "Associates",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Education",
+      "owner": "ereninak@hawaii.edu",
+      "startDate": { "type": "2020-08-20 00:00:00" },
+      "endDate": { "type": "2022-05-08 00:00:00" }
+    },
+    {
+      "school": "Kauai Community College",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "BSN Nursing Program",
+      "owner": "achoy@hawaii.edu",
+      "startDate": { "type": "2019-08-20 00:00:00" },
+      "endDate": { "type": "2023-05-08 00:00:00" }
+    },
+    {
+      "school": "Hawaii Pacific University",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "BSN Nursing Program",
+      "owner": "nespejo@hawaii.edu",
+      "startDate": { "type": "2019-08-20 00:00:00" },
+      "endDate": { "type": "2023-05-08 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Computer Science",
+      "owner": "gailag@hawaii.edu",
+      "startDate": { "type": "2021-01-07 00:00:00" },
+      "endDate": { "type": "2022-12-17 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Education",
+      "owner": "shaunrk@hawaii.edu",
+      "startDate": { "type": "2018-01-07 00:00:00" },
+      "endDate": { "type": "2022-05-13 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Masters",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Psychology",
+      "owner": "taylormh@hawaii.edu",
+      "startDate": { "type": "2021-08-24 00:00:00" },
+      "endDate": { "type": "2023-05-13 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Masters",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Psychology",
+      "owner": "dhianem@hawaii.edu",
+      "startDate": { "type": "2021-08-20 00:00:00" },
+      "endDate": { "type": "2023-05-13 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Finance",
+      "owner": "johnlees@hawaii.edu",
+      "startDate": { "type": "2019-08-20 00:00:00" },
+      "endDate": { "type": "2022-05-14 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Nursing",
+      "owner": "lkvillan@hawaii.edu",
+      "startDate": { "type": "2019-08-20 00:00:00" },
+      "endDate": { "type": "2023-05-08 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Mechanical Engineering",
+      "owner": "nreddy@hawaii.edu",
+      "startDate": { "type": "2019-08-20 00:00:00" },
+      "endDate": { "type": "2022-12-17 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Language",
+      "owner": "morganf@hawaii.edu",
+      "startDate": { "type": "2019-08-20 00:00:00" },
+      "endDate": { "type": "2023-05-08 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Biology",
+      "owner": "samantham@hawaii.edu",
+      "startDate": { "type": "2022-01-07 00:00:00" },
+      "endDate": { "type": "2024-05-10 00:00:00" }
+    },
+    {
+      "school": "University of Hawaii",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Human Development",
+      "owner": "dtapaoan@hawaii.edu",
+      "startDate": { "type": "2018-08-20 00:00:00" },
+      "endDate": { "type": "2022-05-13 00:00:00" }
+    }
+  ]
+}

@@ -72,7 +72,7 @@ class StudentProfile extends React.Component {
                     <Header style={ { fontSize: 'xxx-large', padding: 0 } } className='cp-text'>{this.props.students.firstName} {this.props.students.lastName}</Header>
                   </Grid.Column>
                   <Grid.Column>
-                    <Link to={`/editstudent/${this.props.students._id}`}><Icon size='large' name='pencil'/></Link>
+                    <Link id='goto-edit-student' to={`/editstudent/${this.props.students._id}`}><Icon size='large' name='pencil'/></Link>
                   </Grid.Column>
                 </Grid.Row>
               </Grid>

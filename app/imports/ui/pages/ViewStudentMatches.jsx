@@ -49,13 +49,13 @@ class ViewStudentMatches extends React.Component {
         <AutoForm schema={bridge} onSubmit={data => this.submit(data)}>
           <Segment>
             <MultiSelectField id='name' name='name' showInlineError={true} placeholder={'Search by interests...'}/>
-            <SubmitField value='Submit'/>
+            <SubmitField id='submit-interest-student-filter' value='Submit'/>
           </Segment>
         </AutoForm>
         {_.size(studentMatches) > 0 ? (
           <Header style={ { fontSize: 'xx-large' } } className='cp-text' textAlign='center'>Interested Matches!</Header>
         ) : ''}
-        <Card.Group itemsPerRow={4}>
+        <Card.Group id='student-card-matches' itemsPerRow={4}>
           {studentMatches.map((student, index) => <Student
             key={index}
             student={student}

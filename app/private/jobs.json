@@ -1,0 +1,301 @@
+{
+  "jobs": [
+    { "jobTitle": "Sales Clerk",
+      "jobID": "1234",
+      "pay": "15",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Waikiki",
+      "jobDescription": "Rang customers up for their purchases at a small local shop selling tourist items",
+      "qualifications": "a happy smile",
+      "owner": "uhonline@uhm.com"
+    },
+    { "jobTitle": "Tour Guide",
+      "jobID": "98123",
+      "pay": "21",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Part-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Kaka'ako",
+      "jobDescription": "Provide information about museum artifacts to guests",
+      "qualifications": "1-2 years of customer service",
+      "owner": "bishop@museum.org"
+    },
+    { "jobTitle": "Front Desk Attendant",
+      "jobID": "918273",
+      "pay": "53000",
+      "payType": {
+        "type": "annually",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu, HI",
+      "jobDescription": "Greet guests, arrange appointments.",
+      "qualifications": "3-4 years of customer service",
+      "owner": "ced@gmail.com"
+    },
+    { "jobTitle": "Technical Analyst",
+      "jobID": "21389",
+      "pay": "84000",
+      "payType": {
+        "type": "annually",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Kaneohe, HI",
+      "jobDescription": "Analyze data, compile tests and run times",
+      "qualifications": "3-4 years in data analytics",
+      "owner": "dia@gmail.com"
+    },
+    { "jobTitle": "Cybersecurity Engineer",
+      "jobID": "925632",
+      "pay": "121000",
+      "payType": {
+        "type": "annually",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu, HI",
+      "jobDescription": "Analyze data, compile tests and run times",
+      "qualifications": "3-4 years in cybersecurity",
+      "owner": "citycounty@gmail.com"
+    },
+    { "jobTitle": "High School Science Teacher",
+      "jobID": "32795",
+      "pay": "67000",
+      "payType": {
+        "type": "annually",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Ewa Beach, HI",
+      "jobDescription": "Teach 3-4 classes Physics or Chemistry",
+      "qualifications": "Bachelors in Education",
+      "owner": "doe@gmail.com"
+    },
+    { "jobTitle": "Network Engineer",
+      "jobID": "1234",
+      "pay": "20",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Downtown Honolulu",
+      "jobDescription": "Routers and switches, firewalls",
+      "qualifications": "Experience in Networking for at least 1 year",
+      "owner": "asb@asb.com"
+    },
+    { "jobTitle": "Accountant",
+      "jobID": "1234",
+      "pay": "20",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Managing Money and Customer Bank Accounts",
+      "qualifications": "Experience in Accounting for at least 1 year",
+      "owner": "boh@boh.com"
+    },
+    { "jobTitle": "Accountant",
+      "jobID": "1234",
+      "pay": "20",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Managing Money and Customer Bank Accounts",
+      "qualifications": "Experience in Accounting for at least 1 year",
+      "owner": "fhb@fhb.com"
+    },
+    { "jobTitle": "Airport Security",
+      "jobID": "1234",
+      "pay": "17",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Patrol the area and monitor people entering gates and their items",
+      "qualifications": "Clean background check",
+      "owner": "tsa@tsa.com"
+    },
+    { "jobTitle": "Network Engineer",
+      "jobID": "1234",
+      "pay": "20",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Routers and switches, firewalls",
+      "qualifications": "Experience in Networking for at least 1 year",
+      "owner": "htc@htc.com"
+    },
+    {
+      "jobTitle": "Registered Nurse",
+      "jobID": "1001",
+      "pay": "20",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": [
+          "hourly",
+          "annually"
+        ]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": [
+          "Full-time",
+          "Part-time",
+          "Internship",
+          "Seasonal"
+        ]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Monitors nursing care and treatment administered to residents",
+      "qualifications": "First AID & CPR certification",
+      "owner": "info@arcadia.org"
+    },
+    { "jobTitle": "Accounting",
+      "jobID": "1002",
+      "pay": "20",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Intensive work with data utilizing various software application: accounting, spreadsheets, word processing, email, and document imaging",
+      "qualifications": "Current student pursuing a Bachelors in Accounting/Finance",
+      "owner": "info@armstrongbuilders.com"
+    },
+    { "jobTitle": "Audit & Accounting Intern",
+      "jobID": "1003",
+      "pay": "15",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Internship",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Responsible for demonstrating analytical skills auditing client financial statements, transactions, and internal control processes",
+      "qualifications": "Basic knowledge of Excel",
+      "owner": "info@gsato.com"
+    },
+    { "jobTitle": "Civil Engineering & Land Surveying",
+      "jobID": "1004",
+      "pay": "15",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Internship",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Performing survey field work, including, setting up and operating land surveying instruments",
+      "qualifications": "Be in the process of obtaining a degree in Civil Engineering or Land Surveying",
+      "owner": "info@fe.com"
+    },
+    { "jobTitle": "Software Development",
+      "jobID": "1005",
+      "pay": "18",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Internship",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Work with digital product team to design, build, and deploy user interfaces in a proof of concept and/or live production",
+      "qualifications": "A current student pursuing a Bachelors in Computer Science",
+      "owner": "info@servco.com"
+    }
+  ]
+}

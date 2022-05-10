@@ -1,0 +1,468 @@
+{
+  "experiences": [
+    {
+      "title": "Babysitter",
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Parents",
+      "role": "student",
+      "description": "Worked at home",
+      "owner": "john@foo.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Technical Specialist",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Apple",
+      "role": "student",
+      "description": "Provide technical support to customers",
+      "owner": "ecadiena323@gmail.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Cashier",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Fishers Hawaii",
+      "role": "student",
+      "description": "Rung out customers",
+      "owner": "jameschang719@gmail.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Cashier",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Walgreens",
+      "role": "student",
+      "description": "Rung out customers",
+      "owner": "miac12323@gmail.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Optometry Tech",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "NEX Optical Center",
+      "role": "student",
+      "description": "Rung out customers",
+      "owner": "zcadiena@gmail.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Youtuber",
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Youtube",
+      "role": "student",
+      "description": "Create youtube videos",
+      "owner": "rhnakasone3@gmail.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Bread Cashier",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Brug Bakery",
+      "role": "student",
+      "description": "Ring out customers",
+      "owner": "cristianm1148@gmail.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Software Development Intern",
+      "type": {
+        "type": "Internship",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "IBM",
+      "role": "student",
+      "description": "Assisted in ITK web development",
+      "owner": "t0mb0ys@gmail.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Crew Member",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "McDonalds",
+      "role": "student",
+      "description": "Served food, drinks, and other menu items",
+      "owner": "coltj@gmail.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Sales Associate",
+      "type": {
+        "type": "Seasonal",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Bloomingdales",
+      "role": "student",
+      "description": "Sell handbags, sunglasses, and other accessories",
+      "owner": "scarlettb@gmail.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Team Member",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Poke and Box",
+      "role": "student",
+      "description": "Serve poke",
+      "owner": "nathanm@gmail.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Lead Brand Representative",
+      "type": "Part-time",
+      "company": "Hollister",
+      "role": "Lead Sales Associate",
+      "description": "Acts as a supervisor for other associates. Displays the best customer service and knowledge as an associate. Provides customer service by tending to customer needs and wants",
+      "owner": "kdang2@hawaii.edu",
+      "exp_start": "2018-08-01 00:00:00",
+      "exp_end": "2019-08-01 00:00:00"
+    },
+    {
+      "title": "Certified Nurse’s Aide",
+      "type": "Part-time",
+      "company": "Kahala Nui",
+      "role": "CNA",
+      "description": "Worked on the skilled nursing floor to provided residents comfort; transported residents; answered call lights and\nrequests; and reported any observations to the charge nurse. Completed reports and documentation prior to the end of shift",
+      "owner": "kdang2@hawaii.edu",
+      "exp_start": "2021-07-01 00:00:00",
+      "exp_end": "2022-05-04 00:00:00"
+    },
+    {
+      "title": "Administrative Assistant",
+      "type": "Part-time",
+      "company": "University of Hawaii",
+      "role": "STEM Assistant",
+      "description": "College of Natural Sciences STEM Assistant at UH Manoa. Manage the learning emporium tutoring service. Review curriculum forms. Collect raw data and process it into graphs.",
+      "owner": "kdang2@hawaii.edu",
+      "exp_start": "2019-09-01 00:00:00",
+      "exp_end": "2022-05-13 00:00:00"
+    },
+    {
+      "title": "Babysitter",
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Parents",
+      "role": "student",
+      "description": "Worked at home",
+      "owner": "john@foo.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Dog Salon Groomer",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Dog Salon Kahala",
+      "role": "student",
+      "description": "Grooms dogs and trims nails and fur.",
+      "owner": "ereninak@hawaii.edu",
+      "exp_start": { "type": "2020-05-20 00:00:00" },
+      "exp_end": { "type": "2022-05-07 00:00:00" }
+    },
+    {
+      "title": "Middle School Tutor",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "YMCA",
+      "role": "student",
+      "description": "Tutors middle school kids and help them with their homework.",
+      "owner": "ereninak@hawaii.edu",
+      "exp_start": { "type": "2020-05-20 00:00:00" },
+      "exp_end": { "type": "2022-05-07 00:00:00" }
+    },
+    {
+      "title": "Youth Sports Coordinator",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "YMCA",
+      "role": "student",
+      "description": "Plays with kids, and watches over them.",
+      "owner": "rgalanto@hawaii.edu",
+      "exp_start": { "type": "2020-05-20 00:00:00" },
+      "exp_end": { "type": "2022-05-07 00:00:00" }
+    },
+    {
+      "title": "Teaching Assistant",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "University of Hawaii",
+      "role": "student",
+      "description": "Assists the professor in teaching necessary material in Chemistry ",
+      "owner": "jtajiri@hawaii.edu",
+      "exp_start": { "type": "2020-08-20 00:00:00" },
+      "exp_end": { "type": "2020-12-07 00:00:00" }
+    },
+    {
+      "title": "Pharmacy Technician",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Longs Pharmacist",
+      "role": "student",
+      "description": "Help assist patients with filling prescribed drugs",
+      "owner": "jtajiri@hawaii.edu",
+      "exp_start": { "type": "2020-05-20 00:00:00" },
+      "exp_end": { "type": "2022-05-07 00:00:00" }
+    },
+    {
+      "title": "Sexual Orientation and Gender Identity Health Navigator",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Waikiki Health",
+      "role": "student",
+      "description": "Assist the LGBTQ community with their health needs",
+      "owner": "cmmw@hawaii.edu",
+      "exp_start": { "type": "2022-01-20 00:00:00" },
+      "exp_end": { "type": "2022-03-10 00:00:00" }
+    },
+    {
+      "title": "Health Equity Intern",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Waikiki Health",
+      "role": "student",
+      "description": "Project assistant for a HIV intervention/prevention program for LGBT youth in our community.",
+      "owner": "cmmw@hawaii.edu",
+      "exp_start": { "type": "2020-03-01 00:00:00" },
+      "exp_end": { "type": "2020-07-10 00:00:00" }
+    },
+    {
+      "title": "Groundskeeper",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Kauai Mini Golf Course",
+      "role": "student",
+      "description": "Mow the lawn, pick weeds, pick golf balls out of ponds.",
+      "owner": "wildpup@gmail.com",
+      "exp_start": { "type": "2020-06-01 00:00:00" },
+      "exp_end": { "type": "2020-08-01 00:00:00" }
+    },
+    {
+      "title": "Nurse Aide",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Kauai Wilcox Hospital",
+      "role": "student",
+      "description": "Take care of elderly patients",
+      "owner": "achoy@hawaii.edu",
+      "exp_start": { "type": "2022-01-01 00:00:00" },
+      "exp_end": { "type": "2022-05-10 00:00:00" }
+    },
+    {
+      "title": "IT Computer Lab Assistant",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "University of Hawaii",
+      "role": "student",
+      "description": "Troubleshoot customer problems with ITS supported software",
+      "owner": "gailag@hawaii.edu",
+      "exp_start": { "type": "2022-01-01 00:00:00" },
+      "exp_end": { "type": "2022-05-10 00:00:00" }
+    },
+    {
+      "title": "English Tutor",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "University of Hawaii Hilo",
+      "role": "student",
+      "description": "Taught ELC students from Japan basic English language during the school year",
+      "owner": "shaunrk@hawaii.edu",
+      "exp_start": { "type": "2017-08-01 00:00:00" },
+      "exp_end": { "type": "2018-07-01 00:00:00" }
+    },
+    {
+      "title": "Research Student Assistant",
+      "type": {
+        "type": "Internship",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "University of Hawaii",
+      "role": "student",
+      "description": "Collected and verify research, interpret and document findings using research methodologies ",
+      "owner": "taylormh@hawaii.edu",
+      "exp_start": { "type": "2022-01-01 00:00:00" },
+      "exp_end": { "type": "2022-05-10 00:00:00" }
+    },
+    {
+      "title": "Social Worker",
+      "type": {
+        "type": "Internship",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "United Health Group",
+      "role": "student",
+      "description": "Engage with staff and volunteers to provide support, advocacy, and education to survivors of sexual assault",
+      "owner": "dhianem@hawaii.edu",
+      "exp_start": { "type": "2022-01-01 00:00:00" },
+      "exp_end": { "type": "2022-05-10 00:00:00" }
+    },
+    {
+      "title": "Assistant Photographer",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Nagamine Photo Studio Inc",
+      "role": "student",
+      "description": "Assist photographers plan, set up, and complete photoshoots in studios",
+      "owner": "johnlees@hawaii.edu",
+      "exp_start": { "type": "2018-05-01 00:00:00" },
+      "exp_end": { "type": "2019-12-01 00:00:00" }
+    },
+    {
+      "title": "Clinical Assistant",
+      "type": {
+        "type": "Internship",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Queen's Medical Center",
+      "role": "student",
+      "description": "Provide support to doctors, nurses, and lab techs.",
+      "owner": "lkvillan@hawaii.edu",
+      "exp_start": { "type": "2022-01-01 00:00:00" },
+      "exp_end": { "type": "2022-05-10 00:00:00" }
+    },
+    {
+      "title": "Server",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Monsoon Bar & Grill",
+      "role": "student",
+      "description": "Responsible for taking orders from restaurant patrons and delivering their food",
+      "owner": "nreddy@hawaii.edu",
+      "exp_start": { "type": "2021-01-01 00:00:00" },
+      "exp_end": { "type": "2021-12-01 00:00:00" }
+    },
+    {
+      "title": "Library Assistant",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "University of Hawaii",
+      "role": "student",
+      "description": "Assist law students with library services at the school's law library",
+      "owner": "morganf@hawaii.edu",
+      "exp_start": { "type": "2022-01-01 00:00:00" },
+      "exp_end": { "type": "2022-05-10 00:00:00" }
+    },
+    {
+      "title": "Hostess",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Kimos",
+      "role": "student",
+      "description": "Greeted customer and assisted them to their reserved seats",
+      "owner": "samantham@hawaii.edu",
+      "exp_start": { "type": "2021-01-01 00:00:00" },
+      "exp_end": { "type": "2021-12-01 00:00:00" }
+    },
+    {
+      "title": "Development Intern",
+      "type": {
+        "type": "Internship",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Punahou High School",
+      "role": "student",
+      "description": "Managed and maintained records, contributed to research projects, and coordinated with volunteers",
+      "owner": "dtapaoan@hawaii.edu",
+      "exp_start": { "type": "2022-01-01 00:00:00" },
+      "exp_end": { "type": "2022-05-10 00:00:00" }
+    }
+  ]
+}

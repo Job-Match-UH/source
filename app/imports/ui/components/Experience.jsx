@@ -47,9 +47,6 @@ class Experience extends React.Component {
             {this.props.experiences.company}
           </Card.Description>
           <Card.Description>
-            {this.props.experiences.role}
-          </Card.Description>
-          <Card.Description>
             {this.props.experiences.description}
           </Card.Description>
         </Card.Content>

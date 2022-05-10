@@ -31,7 +31,7 @@ class EditStudent extends React.Component {
 
     return (
       <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>
-        <Container>
+        <Container id='edit-student-page'>
           <Form.Group widths='equal'>
             <TextField id='personal-info-first-name' fluid label='First name' placeholder='First name' name='firstName'/>
             <TextField id='personal-info-last-name' fluid label='Last name' placeholder='Last name' name='lastName'/>

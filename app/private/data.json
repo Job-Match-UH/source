@@ -1,5 +1,16 @@
 {
   "users": [
+    { "email": "peterleo@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "leanomc@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "leanoa@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "kdang2@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "kjee@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "wlau32@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "mn44@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "etalioag@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "jesstine@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "chiahua7@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "reyesrp@hawaii.edu", "password": "changeme", "role": "student" },
     { "email": "ereninak@hawaii.edu", "password": "changeme", "role": "student" },
     { "email": "cmmw@hawaii.edu", "password": "changeme", "role": "student" },
     { "email": "ikotsol@hawaii.edu", "password": "changeme", "role": "student" },
@@ -10,6 +21,12 @@
     { "email": "achoy@hawaii.edu", "password": "changeme", "role": "student" },
     { "email": "asantos@gmail.com", "password": "changeme", "role": "student" },
     { "email": "wildpup@gmail.com", "password": "changeme", "role": "student" },
+    { "email": "uhonline@uhm.com", "password": "changeme", "role": "company" },
+    { "email": "xeroxhawaii@gmail.com", "password": "changeme", "role": "company" },
+    { "email": "tfahawaii@gmail.com", "password": "changeme", "role": "company" },
+    { "email": "hawaiiairlines@gmail.com", "password": "changeme", "role": "company" },
+    { "email": "gpllc@gmail.com", "password": "changeme", "role": "company" },
+    { "email": "careers@ksbe.edu", "password": "changeme", "role": "company" },
     { "email": "asb@asb.com", "password": "changeme", "role": "company" },
     { "email": "boh@boh.com", "password": "changeme", "role": "company" },
     { "email": "fhb@fhb.com", "password": "changeme", "role": "company" },
@@ -744,14 +761,6 @@
       "owner": "nespejo@hawaii.edu",
       "startDate": { "type": "2019-08-20 00:00:00" },
       "endDate": { "type": "2023-05-08 00:00:00" }
-    }
-  ],
-
-  "projects": [
-    {
-      "name": "Job Match UH",
-      "description": "Create an application for connecting students and companies.",
-      "owner": "john@foo.com"
     }
   ]
 }

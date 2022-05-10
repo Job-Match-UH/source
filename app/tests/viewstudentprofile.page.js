@@ -1,6 +1,6 @@
 import { Selector } from 'testcafe';
 
-class ViewStudentProfile {
+class ViewStudentProfilePage {
   constructor() {
     this.pageId = '#view-student-profile';
     this.pageSelector = Selector(this.pageId);
@@ -13,4 +13,4 @@ class ViewStudentProfile {
   }
 }
 
-export const viewStudentProfile = new ViewStudentProfile();
+export const viewStudentProfilePage = new ViewStudentProfilePage();

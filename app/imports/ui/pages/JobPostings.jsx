@@ -37,7 +37,7 @@ class JobPostings extends React.Component {
 
   render() {
     let fRef = null;
-    const payTypes = ['Hourly', 'Annually'];
+    const payTypes = ['hourly', 'annually'];
     const jobTypes = ['Full-time', 'Part-time', 'Internship', 'Seasonal'];
 
     return (

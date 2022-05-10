@@ -39,7 +39,7 @@ class Student extends React.Component {
 
   render() {
     return (
-      <Card>
+      <Card raised={true} link={true}>
         <Card.Content as={NavLink} exact to={`/viewstudent/${this.props.student._id}`}>
           <Image
             floated='right'

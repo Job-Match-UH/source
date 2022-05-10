@@ -86,10 +86,12 @@ ViewJobDescription.propTypes = {
 export default withTracker(({ match }) => {
   const jobId = match.params._id;
   // Get access to jobs documents.
-  const subscription = Meteor.subscribe(Jobs.userPublicationName);
-  const subscription2 = Meteor.subscribe(Companies.userPublicationName);
+  const sub1 = Meteor.subscribe(Jobs.userPublicationName);
+  const sub2 = Meteor.subscribe(Companies.userPublicationName);
+  const sub3 = Meteor.subscribe(Companies.adminPublicationName);
+  const sub4 = Meteor.subscribe(Jobs.adminPublicationName);
   // Determine if the subscriptions are ready
-  const ready = subscription.ready() && subscription2.ready();
+  const ready = sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready();
   // Get the Jobs documents
   const job = Jobs.collection.findOne(jobId);
   const company = Companies.collection.find({ owner: job.owner });

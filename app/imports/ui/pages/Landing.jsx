@@ -22,7 +22,7 @@ class Landing extends React.Component {
                   <br/>
                   <Header className='landing-text' style={ { textAlign: 'center', fontSize: 'x-large', marginRight: 50, marginLeft: 50 } }>
                     Start by logging in or creating a new account.</Header>
-                  <Image src="https://github.com/Job-Match-UH/source/blob/issue-56/images/login-page.png?raw=true" rounded/>
+                  <Image src="https://github.com/Job-Match-UH/source/blob/issue-56/images/login.png?raw=true" rounded/>
                 </div>
                 <div>
                   <br/>

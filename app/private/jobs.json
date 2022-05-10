@@ -201,8 +201,16 @@
     { "jobTitle": "Field Service Technician",
       "jobID": "0001",
       "pay": "15",
-      "payType": "Hourly",
-      "type": "Full-time",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
       "location": "Waipahu",
       "jobDescription": "Provide outstanding service to our clients and use electro-mechanical skills to repair devices. Training Provided.",
       "qualifications": "Valid driver's license and a clean driving. A Motor Vehicle Record (MVR) is included in our technician background check.",
@@ -211,8 +219,16 @@
     { "jobTitle": "Print Room Support",
       "jobID": "0002",
       "pay": "11",
-      "payType": "hourly",
-      "type": "Part-time",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
       "location": "Honolulu",
       "jobDescription": "Responsible for the operational, on-site delivery of print production/facilities management to end-user customers.",
       "qualifications": "High School Diploma or equivalent. Ability to walk large mail routes in outside weather as needed. Basic technical troubleshooting skills",
@@ -221,8 +237,16 @@
     { "jobTitle": "K-12 Teacher, Backgrounds",
       "jobID": "0001",
       "pay": "18",
-      "payType": "annually",
-      "type": "Full-time",
+      "payType": {
+        "type": "annually",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
       "location": "Ewa Gentry",
       "jobDescription": "Work in partnership with parents and other educators to set ambitious goals for your students and support them on their journey.",
       "qualifications": "Minimum cumulative 2.5 GPA or higher. Bachelors degree or higher. Full teaching certification during your two-year commitment.",
@@ -231,8 +255,16 @@
     { "jobTitle": "Operations Specialist",
       "jobID": "0001",
       "pay": "25",
-      "payType": "hourly",
-      "type": "Full-time",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
       "location": "Honolulu",
       "jobDescription": "Respond immediately to production system problems and participate in technical problem resolution",
       "qualifications": "Bachelor’s Degree. 3 years of work experience in Information Technology.",
@@ -241,8 +273,16 @@
     { "jobTitle": "Associate PRM, Labor & Employee Relations",
       "jobID": "0002",
       "pay": "22",
-      "payType": "hourly",
-      "type": "Full-time",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
       "location": "Honolulu",
       "jobDescription": "Performs routine tasks required to administer and execute human resource programs including but not limited to compensation, benefits, and leave.",
       "qualifications": "Bachelors’ degree in Human Resources or 1 year work experience in Human Resources.",
@@ -251,8 +291,16 @@
     { "jobTitle": "Associate Software Developer Engineer",
       "jobID": "0003",
       "pay": "25",
-      "payType": "hourly",
-      "type": "Full-time",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
       "location": "Honolulu",
       "jobDescription": "Write, configure and develop software and code-driven solutions for low-to-medium complexity business problems according to user specifications.",
       "qualifications": "Bachelor’s Degree. Ability to write/configure/develop software code.",
@@ -261,8 +309,16 @@
     { "jobTitle": "Construction Laborer",
       "jobID": "0001",
       "pay": "28",
-      "payType": "hourly",
-      "type": "Full-time",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
       "location": "Aiea",
       "jobDescription": "Removes guardrail, posts and signs for replacement using hand tools and equipment.",
       "qualifications": "High school graduate or equivalent preferred. CDL, Class B (with air brake endorsement) or greater.",
@@ -271,8 +327,16 @@
     { "jobTitle": "Fencing Technician",
       "jobID": "0002",
       "pay": "28",
-      "payType": "hourly",
-      "type": "Full-time",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
       "location": "Honolulu",
       "jobDescription": "Fabricate fence panels, including painting welded areas with primer, stretching fence mesh onto panel frame and cutting pipe.",
       "qualifications": "High school graduate or equivalent. Spot welding experience preferred.",
@@ -281,8 +345,16 @@
     { "jobTitle": "Mechanic",
       "jobID": "0003",
       "pay": "28",
-      "payType": "hourly",
-      "type": "Full-time",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
       "location": "Honolulu",
       "jobDescription": "Diagnoses mechanical, electrical, and hydraulic problems in rolling stock in order to identify and perform necessary repairs.",
       "qualifications": "High school diploma; degree in auto or heavy equipment mechanics preferred; ASE certification preferred.",
@@ -291,8 +363,16 @@
     { "jobTitle": "Middle School Olelo Hawaii Teacher",
       "jobID": "0001",
       "pay": "10",
-      "payType": "annually",
-      "type": "Full-time",
+      "payType": {
+        "type": "annually",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
       "location": "Kapalama Campus",
       "jobDescription": "Demonstrating Academic Competence in their subject area(s), and displaying an inclination for developing integrated and interdisciplinary work across the curriculum",
       "qualifications": "Bachelor’s degree. Previous experience teaching the age levels and subject area(s).",
@@ -302,8 +382,16 @@
       "jobTitle": "Residential Life Advisor",
       "jobID": "0002",
       "pay": "11",
-      "payType": "annually",
-      "type": "Full-time",
+      "payType": {
+        "type": "annually",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
       "location": "Kapalama Campus",
       "jobDescription": "Serves as an educator for students’ development of life skills, social emotional learning, Hawaiian culture, and Christian values",
       "qualifications": "Bachelor’s degree from an accredited institution. Minimum 3 years of experience leading children in an educational environment. Valid Hawaii State Drivers License.",

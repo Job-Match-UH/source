@@ -1,0 +1,112 @@
+{
+  "jobs": [
+    { "jobTitle": "Sales Clerk",
+      "jobID": "1234",
+      "pay": "15",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Waikiki",
+      "jobDescription": "Rang customers up for their purchases at a small local shop selling tourist items",
+      "qualifications": "a happy smile",
+      "owner": "uhonline@uhm.com"
+    },
+    { "jobTitle": "Tour Guide",
+      "jobID": "98123",
+      "pay": "21",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Part-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Kaka'ako",
+      "jobDescription": "Provide information about museum artifacts to guests",
+      "qualifications": "1-2 years of customer service",
+      "owner": "bishop@museum.org"
+    },
+    { "jobTitle": "Front Desk Attendant",
+      "jobID": "918273",
+      "pay": "53000",
+      "payType": {
+        "type": "annually",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu, HI",
+      "jobDescription": "Greet guests, arrange appointments.",
+      "qualifications": "3-4 years of customer service",
+      "owner": "ced@gmail.com"
+    },
+    { "jobTitle": "Technical Analyst",
+      "jobID": "21389",
+      "pay": "84000",
+      "payType": {
+        "type": "annually",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Kaneohe, HI",
+      "jobDescription": "Analyze data, compile tests and run times",
+      "qualifications": "3-4 years in data analytics",
+      "owner": "dia@gmail.com"
+    },
+    { "jobTitle": "Cybersecurity Engineer",
+      "jobID": "925632",
+      "pay": "121000",
+      "payType": {
+        "type": "annually",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu, HI",
+      "jobDescription": "Analyze data, compile tests and run times",
+      "qualifications": "3-4 years in cybersecurity",
+      "owner": "citycounty@gmail.com"
+    },
+    { "jobTitle": "High School Science Teacher",
+      "jobID": "32795",
+      "pay": "67000",
+      "payType": {
+        "type": "annually",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Ewa Beach, HI",
+      "jobDescription": "Teach 3-4 classes Physics or Chemistry",
+      "qualifications": "Bachelors in Education",
+      "owner": "doe@gmail.com"
+    }
+  ]
+}

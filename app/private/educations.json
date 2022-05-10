@@ -145,7 +145,12 @@
     },
     {
       "school": "University of Hawaii, Manoa",
-      "degree": "Bachelors",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
       "field": "Biology",
       "owner": "kdang2@hawaii.edu",
       "startDate": "2018-08-23 00:00:00",
@@ -153,7 +158,12 @@
     },
     {
       "school": "Leeward Community College",
-      "degree": "Associates",
+      "degree":
+      {
+        "type": "Associates",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
       "field": "Undecided",
       "owner": "reyesrp@hawaii.edu",
       "startDate": "2018-08-23 00:00:00",
@@ -161,7 +171,12 @@
     },
     {
       "school": "University of Hawaii, Manoa",
-      "degree": "Bachelors",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
       "field": "Nursing",
       "owner": "reyesrp@hawaii.edu",
       "startDate": "2020-08-22 00:00:00",
@@ -169,7 +184,12 @@
     },
     {
       "school": "Leeward Community College",
-      "degree": "Associates",
+      "degree":
+      {
+        "type": "Associates",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
       "field": "Applied Science",
       "owner": "leanoa@hawaii.edu",
       "startDate": "2018-08-23 00:00:00",
@@ -177,15 +197,38 @@
     },
     {
       "school": "University of Hawaii, Manoa",
-      "degree": "Bachelors",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
       "field": "Physics",
       "owner": "leanoa@hawaii.edu",
       "startDate": "2017-08-22 00:00:00",
       "endDate": "2018-05-14 00:00:00"
     },
     {
+      "school": "University of Hawaii, Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Computer Science",
+      "owner": "leanomc@hawaii.edu",
+      "startDate": "2020-08-22 00:00:00",
+      "endDate": "2023-05-14 00:00:00"
+    },
+    {
       "school": "University of Hawaii, West Oahu",
-      "degree": "Bachelors",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
       "field": "Cyber Security",
       "owner": "leanoa@hawaii.edu",
       "startDate": "2020-08-20 00:00:00",
@@ -193,7 +236,12 @@
     },
     {
       "school": "University of Hawaii, Manoa",
-      "degree": "Bachelors",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
       "field": "Astronomy",
       "owner": "kjee@hawaii.edu",
       "startDate": "2021-08-23 00:00:00",
@@ -201,7 +249,12 @@
     },
     {
       "school": "University of Hawaii, Manoa",
-      "degree": "Bachelors",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
       "field": "Mechanical Engineering",
       "owner": "wlau32@hawaii.edu",
       "startDate": "2021-08-23 00:00:00",
@@ -209,7 +262,12 @@
     },
     {
       "school": "University of Hawaii, Manoa",
-      "degree": "Bachelors",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
       "field": "Electrical Engineering",
       "owner": "etalioag@hawaii.edu",
       "startDate": "2021-08-23 00:00:00",
@@ -217,7 +275,12 @@
     },
     {
       "school": "University of Hawaii, Manoa",
-      "degree": "Bachelors",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
       "field": "Civil Engineering",
       "owner": "mn44@hawaii.edu",
       "startDate": "2010-08-22 00:00:00",
@@ -225,7 +288,12 @@
     },
     {
       "school": "University of Hawaii, Manoa",
-      "degree": "Bachelors",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
       "field": "English",
       "owner": "chiahua7@hawaii.edu",
       "startDate": "2012-08-22 00:00:00",
@@ -233,7 +301,12 @@
     },
     {
       "school": "University of Hawaii, Manoa",
-      "degree": "Masters",
+      "degree":
+      {
+        "type": "Masters",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
       "field": "English",
       "owner": "chiahua7@hawaii.edu",
       "startDate": "2012-08-22 00:00:00",
@@ -241,7 +314,12 @@
     },
     {
       "school": "University of Hawaii, Manoa",
-      "degree": "Bachelors",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
       "field": "Hawaiian Studies",
       "owner": "jesstine@hawaii.edu",
       "startDate": "2019-08-22 00:00:00",
@@ -249,7 +327,12 @@
     },
     {
       "school": "Kapiolani Community College",
-      "degree": "Associates",
+      "degree":
+      {
+        "type": "Associates",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
       "field": "Hawaiian Studies",
       "owner": "jesstine@hawaii.edu",
       "startDate": "2017-08-22 00:00:00",

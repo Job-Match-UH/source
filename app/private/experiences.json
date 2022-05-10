@@ -156,7 +156,11 @@
     },
     {
       "title": "Lead Brand Representative",
-      "type": "Part-time",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
       "company": "Hollister",
       "role": "Lead Sales Associate",
       "description": "Acts as a supervisor for other associates. Displays the best customer service and knowledge as an associate. Provides customer service by tending to customer needs and wants",
@@ -166,7 +170,11 @@
     },
     {
       "title": "Certified Nurse’s Aide",
-      "type": "Part-time",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
       "company": "Kahala Nui",
       "role": "CNA",
       "description": "Worked on the skilled nursing floor to provided residents comfort; transported residents; answered call lights and\nrequests; and reported any observations to the charge nurse. Completed reports and documentation prior to the end of shift",
@@ -176,11 +184,169 @@
     },
     {
       "title": "Administrative Assistant",
-      "type": "Part-time",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
       "company": "University of Hawaii",
       "role": "STEM Assistant",
       "description": "College of Natural Sciences STEM Assistant at UH Manoa. Manage the learning emporium tutoring service. Review curriculum forms. Collect raw data and process it into graphs.",
       "owner": "kdang2@hawaii.edu",
+      "exp_start": "2019-09-01 00:00:00",
+      "exp_end": "2022-05-13 00:00:00"
+    },
+    {
+      "title": "Administrative Assistant",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "University of Hawaii",
+      "role": "STEM Assistant",
+      "description": "College of Natural Sciences STEM Assistant at UH Manoa. Manage the learning emporium tutoring service. Review curriculum forms. Collect raw data and process it into graphs.",
+      "owner": "etalioag@hawaii.edu",
+      "exp_start": "2019-09-01 00:00:00",
+      "exp_end": "2022-05-13 00:00:00"
+    },
+    {
+      "title": "Administrative Assistant",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "University of Hawaii",
+      "role": "STEM Assistant",
+      "description": "College of Natural Sciences STEM Assistant at UH Manoa. Manage the learning emporium tutoring service. Review curriculum forms. Collect raw data and process it into graphs.",
+      "owner": "mn44@hawaii.edu",
+      "exp_start": "2019-09-01 00:00:00",
+      "exp_end": "2022-05-13 00:00:00"
+    },
+    {
+      "title": "Administrative Assistant",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "University of Hawaii",
+      "role": "STEM Assistant",
+      "description": "College of Natural Sciences STEM Assistant at UH Manoa. Manage the learning emporium tutoring service. Review curriculum forms. Collect raw data and process it into graphs.",
+      "owner": "wlau32@hawaii.edu",
+      "exp_start": "2019-09-01 00:00:00",
+      "exp_end": "2022-05-13 00:00:00"
+    },
+    {
+      "title": "Administrative Assistant",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "University of Hawaii",
+      "role": "STEM Assistant",
+      "description": "College of Natural Sciences STEM Assistant at UH Manoa. Manage the learning emporium tutoring service. Review curriculum forms. Collect raw data and process it into graphs.",
+      "owner": "kjee@hawaii.edu",
+      "exp_start": "2019-09-01 00:00:00",
+      "exp_end": "2022-05-13 00:00:00"
+    },
+    {
+      "title": "Administrative Assistant",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "University of Hawaii",
+      "role": "STEM Assistant",
+      "description": "College of Natural Sciences STEM Assistant at UH Manoa. Manage the learning emporium tutoring service. Review curriculum forms. Collect raw data and process it into graphs.",
+      "owner": "leanomc@hawaii.edu",
+      "exp_start": "2019-09-01 00:00:00",
+      "exp_end": "2022-05-13 00:00:00"
+    },
+    {
+      "title": "Student Assistant",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "GEAR UP Manoa",
+      "role": "GUM Student Coordinator",
+      "description": "Provide academic, mentoring, and other assistance to high school students.",
+      "owner": "leanoa@hawaii.edu",
+      "exp_start": "2019-09-01 00:00:00",
+      "exp_end": "2022-05-13 00:00:00"
+    },
+    {
+      "title": "Civil Engineer Intern",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Group 70",
+      "role": "Engineering Inter",
+      "description": "Worked with professional civil engineers to check graphs, go on site reviews, and gain experience.",
+      "owner": "mn44@hawaii.edu",
+      "exp_start": "2019-09-01 00:00:00",
+      "exp_end": "2022-05-13 00:00:00"
+    },
+    {
+      "title": "Lead Brand Representative",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Hollister",
+      "role": "Lead Sales Associate",
+      "description": "Acts as a supervisor for other associates. Displays the best customer service and knowledge as an associate. Provides customer service by tending to customer needs and wants",
+      "owner": "etalioag@hawaii.edu",
+      "exp_start": "2018-08-01 00:00:00",
+      "exp_end": "2019-08-01 00:00:00"
+    },
+    {
+      "title": "Food Server",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Lanies Food Truck",
+      "role": "Food Server and Cashier",
+      "description": "Served at Lanies Food Truck in Campbell industrial. Took order, served food, and was also the cashier.",
+      "owner": "leanoa@hawaii.edu",
+      "exp_start": "2019-09-01 00:00:00",
+      "exp_end": "2022-05-13 00:00:00"
+    },
+    {
+      "title": "Hawaiian Academic Mentor",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "University of Hawaii",
+      "role": "Student Mentor",
+      "description": "Provide support for Hawaiian students by introducing resources and leading social events for Hawaiian student at UHM.",
+      "owner": "jesstine@hawaii.edu",
+      "exp_start": "2019-09-01 00:00:00",
+      "exp_end": "2022-05-13 00:00:00"
+    },
+    {
+      "title": "Writing Center Tutor",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "University of Hawaii",
+      "role": "Tutor",
+      "description": "I proofread student papers at UHM and helped students understand the process of writing an essay, so that they can do it without my help.",
+      "owner": "chiahua7@hawaii.edu",
       "exp_start": "2019-09-01 00:00:00",
       "exp_end": "2022-05-13 00:00:00"
     },

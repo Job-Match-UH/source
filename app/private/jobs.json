@@ -107,6 +107,96 @@
       "jobDescription": "Teach 3-4 classes Physics or Chemistry",
       "qualifications": "Bachelors in Education",
       "owner": "doe@gmail.com"
+    },
+    { "jobTitle": "Network Engineer",
+      "jobID": "1234",
+      "pay": "20",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Downtown Honolulu",
+      "jobDescription": "Routers and switches, firewalls",
+      "qualifications": "Experience in Networking for at least 1 year",
+      "owner": "asb@asb.com"
+    },
+    { "jobTitle": "Accountant",
+      "jobID": "1234",
+      "pay": "20",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Managing Money and Customer Bank Accounts",
+      "qualifications": "Experience in Accounting for at least 1 year",
+      "owner": "boh@boh.com"
+    },
+    { "jobTitle": "Accountant",
+      "jobID": "1234",
+      "pay": "20",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Managing Money and Customer Bank Accounts",
+      "qualifications": "Experience in Accounting for at least 1 year",
+      "owner": "fhb@fhb.com"
+    },
+    { "jobTitle": "Airport Security",
+      "jobID": "1234",
+      "pay": "17",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Patrol the area and monitor people entering gates and their items",
+      "qualifications": "Clean background check",
+      "owner": "tsa@tsa.com"
+    },
+    { "jobTitle": "Network Engineer",
+      "jobID": "1234",
+      "pay": "20",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Routers and switches, firewalls",
+      "qualifications": "Experience in Networking for at least 1 year",
+      "owner": "htc@htc.com"
     }
   ]
 }

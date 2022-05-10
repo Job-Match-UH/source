@@ -183,6 +183,146 @@
       "owner": "kdang2@hawaii.edu",
       "exp_start": "2019-09-01 00:00:00",
       "exp_end": "2022-05-13 00:00:00"
+    },
+    {
+      "title": "Babysitter",
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Parents",
+      "role": "student",
+      "description": "Worked at home",
+      "owner": "john@foo.com",
+      "exp_start": { "type": "2020-04-20 00:00:00" },
+      "exp_end": { "type": "2022-01-10 00:00:00" }
+    },
+    {
+      "title": "Dog Salon Groomer",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Dog Salon Kahala",
+      "role": "student",
+      "description": "Grooms dogs and trims nails and fur.",
+      "owner": "ereninak@hawaii.edu",
+      "exp_start": { "type": "2020-05-20 00:00:00" },
+      "exp_end": { "type": "2022-05-07 00:00:00" }
+    },
+    {
+      "title": "Middle School Tutor",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "YMCA",
+      "role": "student",
+      "description": "Tutors middle school kids and help them with their homework.",
+      "owner": "ereninak@hawaii.edu",
+      "exp_start": { "type": "2020-05-20 00:00:00" },
+      "exp_end": { "type": "2022-05-07 00:00:00" }
+    },
+    {
+      "title": "Youth Sports Coordinator",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "YMCA",
+      "role": "student",
+      "description": "Plays with kids, and watches over them.",
+      "owner": "rgalanto@hawaii.edu",
+      "exp_start": { "type": "2020-05-20 00:00:00" },
+      "exp_end": { "type": "2022-05-07 00:00:00" }
+    },
+    {
+      "title": "Teaching Assistant",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "University of Hawaii",
+      "role": "student",
+      "description": "Assists the professor in teaching necessary material in Chemistry ",
+      "owner": "jtajiri@hawaii.edu",
+      "exp_start": { "type": "2020-08-20 00:00:00" },
+      "exp_end": { "type": "2020-12-07 00:00:00" }
+    },
+    {
+      "title": "Pharmacy Technician",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Longs Pharmacist",
+      "role": "student",
+      "description": "Help assist patients with filling prescribed drugs",
+      "owner": "jtajiri@hawaii.edu",
+      "exp_start": { "type": "2020-05-20 00:00:00" },
+      "exp_end": { "type": "2022-05-07 00:00:00" }
+    },
+    {
+      "title": "Sexual Orientation and Gender Identity Health Navigator",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Waikiki Health",
+      "role": "student",
+      "description": "Assist the LGBTQ community with their health needs",
+      "owner": "cmmw@hawaii.edu",
+      "exp_start": { "type": "2022-01-20 00:00:00" },
+      "exp_end": { "type": "2022-03-10 00:00:00" }
+    },
+    {
+      "title": "Health Equity Intern",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Waikiki Health",
+      "role": "student",
+      "description": "Project assistant for a HIV intervention/prevention program for LGBT youth in our community.",
+      "owner": "cmmw@hawaii.edu",
+      "exp_start": { "type": "2020-03-01 00:00:00" },
+      "exp_end": { "type": "2020-07-10 00:00:00" }
+    },
+    {
+      "title": "Groundskeeper",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Kauai Mini Golf Course",
+      "role": "student",
+      "description": "Mow the lawn, pick weeds, pick golf balls out of ponds.",
+      "owner": "wildpup@gmail.com",
+      "exp_start": { "type": "2020-06-01 00:00:00" },
+      "exp_end": { "type": "2020-08-01 00:00:00" }
+    },
+    {
+      "title": "Nurse Aide",
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal", "Self-employed"]
+      },
+      "company": "Kauai Wilcox Hospital",
+      "role": "student",
+      "description": "Take care of elderly patients",
+      "owner": "achoy@hawaii.edu",
+      "exp_start": { "type": "2022-01-01 00:00:00" },
+      "exp_end": { "type": "2022-05-10 00:00:00" }
     }
   ]
 }

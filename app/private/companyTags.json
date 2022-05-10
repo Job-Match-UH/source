@@ -49,6 +49,15 @@
     { "name":  "Marketing", "owner":  "gpllc@gmail.com"},
     { "name":  "Education", "owner":  "careers@ksbe.edu"},
     { "name":  "Groundskeeping/Janitorial", "owner":  "careers@ksbe.edu"},
-    { "name":  "Student Activities", "owner":  "careers@ksbe.edu"}
+    { "name":  "Student Activities", "owner":  "careers@ksbe.edu"},
+    {"name": "Administrative/Clerical", "owner": "asb@asb.com"},
+    {"name": "Finance", "owner": "asb@asb.com"},
+    {"name": "Computer", "owner": "asb@asb.com"},
+    {"name": "Administrative/Clerical", "owner": "boh@boh.com"},
+    {"name": "Finance", "owner": "boh@boh.com"},
+    {"name": "Human Resources", "owner": "fhb@fhb.com"},
+    {"name": "Finance", "owner": "fhb@fhb.com"},
+    {"name": "Computer", "owner": "htc@htc.com"},
+    {"name": "Law Enforcement/Judicial", "owner": "tsa@tsa.com"}
   ]
 }

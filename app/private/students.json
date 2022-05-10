@@ -182,6 +182,96 @@
       "about": "I am a Nursing student going into my third and final year. I am expected to graduate in Spring 2023 and hope to further my experience at a medical institution here in Hawaii. ",
       "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
       "owner": "reyesrp@hawaii.edu"
+    },
+    {
+      "firstName": "Ereni",
+      "lastName": "Nakamura",
+      "address": "Kahala, HI",
+      "phone": "8085179479",
+      "about": "I am a second year student pursuing a Bachelors in Education",
+      "image": "https://i.pinimg.com/originals/90/ea/48/90ea4802bc9c34bb988031bb05721365.jpg",
+      "owner": "ereninak@hawaii.edu"
+    },
+    {
+      "firstName": "Cameron",
+      "lastName": "Woods",
+      "address": "Aiea, HI",
+      "phone": "8084696160",
+      "about": "I am a senior that will be graduating with a Bachelors in Public Health and Womens Studies",
+      "image": "https://media-exp1.licdn.com/dms/image/C5603AQEnuzRFDCW1FQ/profile-displayphoto-shrink_800_800/0/1644957212509?e=1657756800&v=beta&t=rO0bV55PxhHPqDgKyPJKFhpAY2roUhqSb4ZME6Oa540",
+      "owner": "cmmw@hawaii.edu"
+    },
+    {
+      "firstName": "Isabella",
+      "lastName": "Kotsol",
+      "address": "Princeville, HI",
+      "phone": "8084696160",
+      "about": "I am a senior that will be graduating with a B.S. in Mechanical Engineering",
+      "image": "https://media-exp1.licdn.com/dms/image/C5603AQHINCag3JVzhQ/profile-displayphoto-shrink_800_800/0/1593233304779?e=1657756800&v=beta&t=WHMrnk63Y8RLjSaam-mjBSeFMZdl2qEiU88DT0dwMIc",
+      "owner": "ikotsol@hawaii.edu"
+    },
+    {
+      "firstName": "Jeanette",
+      "lastName": "Tajiri",
+      "address": "Kapuhulu, HI",
+      "phone": "8084696160",
+      "about": "I am a senior graduating this semester with a B.S. in Molecular Cell Biology Pre-Med.",
+      "image": "https://i.pinimg.com/474x/52/f6/cf/52f6cf1aecda4a38c7382931a00bd605.jpg",
+      "owner": "jtajiri@hawaii.edu"
+    },
+    {
+      "firstName": "Ian",
+      "lastName": "Kimura",
+      "address": "Pauloa Valley, HI",
+      "phone": "8084824836",
+      "about": "I am a senior graduating with a B.S. in Computer Science in cyber security",
+      "image": "https://ian-kimura.github.io/images/profile_image.jpg",
+      "owner": "kimurai@hawaii.edu"
+    },
+    {
+      "firstName": "Nohea",
+      "lastName": "Espejo",
+      "address": "Kailua, HI",
+      "phone": "8085179479",
+      "about": "I am a third year pursuing a B.S. in nursing",
+      "image": "https://i.pinimg.com/236x/18/4b/f7/184bf73183b0fbddc65212b27f787d06.jpg",
+      "owner": "nespejo@hawaii.edu"
+    },
+    {
+      "firstName": "Romel",
+      "lastName": "Galanto",
+      "address": "Kalihi, HI",
+      "phone": "8084696160",
+      "about": "I am a third year majoring in Communications",
+      "image": "https://i.pinimg.com/564x/1b/14/34/1b1434c7d78bca9e24bcb89e5126903c.jpg",
+      "owner": "rgalanto@hawaii.edu"
+    },
+    {
+      "firstName": "Anna",
+      "lastName": "Choy",
+      "address": "Kapaa, HI",
+      "phone": "8084696160",
+      "about": "I am a third year pursuing a B.S. in Nursing",
+      "image": "https://www.hinzechiropractic.com/wp-content/uploads/2020/10/050_girl_avatar_profile_woman_suit_student_officer-512.jpg",
+      "owner": "achoy@hawaii.edu"
+    },
+    {
+      "firstName": "Anna-Malia",
+      "lastName": "Santos",
+      "address": "Anahola, HI",
+      "phone": "8084696160",
+      "about": "I am a senior graduating this semester with a B.S. in Electrical Engineering",
+      "image": "https://i.pinimg.com/222x/f5/6b/ae/f56baef86aed6c261c422402aab59065.jpg",
+      "owner": "asantos@gmail.com"
+    },
+    {
+      "firstName": "Sejong",
+      "lastName": "Takenaka",
+      "address": "Kilaeua, HI",
+      "phone": "8084824836",
+      "about": "I am a senior graduating with a B.A. in English",
+      "image": "https://icon-library.com/images/cool-profile-icon/cool-profile-icon-9.jpg",
+      "owner": "wildpup@gmail.com"
     }
   ]
 }

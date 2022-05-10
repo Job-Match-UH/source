@@ -4,8 +4,8 @@ class ViewStudentMatchesPage {
   constructor() {
     this.pageId = '#view-student-matches-page';
     this.multifieldSelector = Selector('#multifield-select');
-    this.option1 = Selector('#multifield-select div').child('span').withText('Graphical Arts');
-    this.card1 = Selector('#student-card-matches div').withText('John');
+    this.option1 = Selector('#multifield-select div').child('span').withText('Computer');
+    this.card1 = Selector('#student-card-matches div').withText('Eda Cadiena');
     this.pageSelector = Selector(this.pageId);
   }
 

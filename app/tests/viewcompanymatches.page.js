@@ -4,8 +4,8 @@ class ViewCompanyMatchesPage {
   constructor() {
     this.pageId = '#view-company-matches-page';
     this.multifieldSelector = Selector('#multifield-select');
-    this.option1 = Selector('#multifield-select div').child('span').withText('Food Service');
-    this.card1 = Selector('#company-card-matches div').withText('Pear Inc');
+    this.option1 = Selector('#multifield-select div').child('span').withText('Computer');
+    this.card1 = Selector('#company-card-matches div').withText('Facebook');
     this.pageSelector = Selector(this.pageId);
   }
 

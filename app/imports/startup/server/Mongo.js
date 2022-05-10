@@ -80,12 +80,35 @@ if (Meteor.settings.loadAssetsFile) {
   const projectData = JSON.parse(Assets.getText(projectFile));
   const jobData = JSON.parse(Assets.getText(jobsFile));
 
-  studentData.students.map(student => addStudent(student));
-  companyData.companies.map(company => addCompanies(company));
-  companyTagData.companyTags.map(tags => addCompanyTags(tags));
-  studentTagData.studentTags.map(tags => addStudentTags(tags));
-  experienceData.experiences.map(experiences => addExperience(experiences));
-  educationData.education.map(education => addEducation(education));
-  projectData.projects.map(projects => addProject(projects));
-  jobData.jobs.map(jobs => addJob(jobs));
+  if (Students.collection.find().count() === 0) {
+    studentData.students.map(student => addStudent(student));
+  }
+
+  if (Companies.collection.find().count() === 0) {
+    companyData.companies.map(company => addCompanies(company));
+  }
+
+  if (CompanyTags.collection.find().count() === 0) {
+    companyTagData.companyTags.map(tags => addCompanyTags(tags));
+  }
+
+  if (StudentTags.collection.find().count() === 0) {
+    studentTagData.studentTags.map(tags => addStudentTags(tags));
+  }
+
+  if (Experiences.collection.find().count() === 0) {
+    experienceData.experiences.map(experiences => addExperience(experiences));
+  }
+
+  if (Education.collection.find().count() === 0) {
+    educationData.education.map(education => addEducation(education));
+  }
+
+  if (Projects.collection.find().count() === 0) {
+    projectData.projects.map(projects => addProject(projects));
+  }
+
+  if (Jobs.collection.find().count() === 0) {
+    jobData.jobs.map(jobs => addJob(jobs));
+  }
 }

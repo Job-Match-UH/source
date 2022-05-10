@@ -11,12 +11,11 @@ import MultiSelectField from '../forms/controllers/MultiSelectField';
 import { CompanyTags } from '../../api/tags/CompanyTags';
 import { StudentTags } from '../../api/tags/StudentTags';
 
-const CommonInterestData = ['Accounting/Fiscal', 'Administrative/Clerical', 'Agriculture', 'Architecture', 'Aquaculture', 'Art', 'Automotive', 'Business', 'Child Car', 'Communication',
+const CommonInterestData = ['Accounting/Fiscal', 'Administrative/Clerical', 'Agriculture', 'Architecture', 'Aquaculture', 'Art', 'Automotive', 'Business', 'Child Care', 'Communication',
   'Computer', 'Construction Trades', 'Culinary Arts', 'Education', 'Electrical', 'Electronics', 'Emergency Medical Services', 'Engineering', 'Fashion Tech', 'Finance',
-  'Food Service', 'Graphical Arts', 'Groundskeeping/Janitorial', 'Health/Medical', 'Human Resources', 'Human Services', 'Janitorial/Custodial', 'Journalism', 'Laborer',
+  'Food Service', 'Graphical Arts', 'Groundskeeping/Janitorial', 'Hawaiian Studies', 'Health/Medical', 'Human Resources', 'Human Services', 'Janitorial/Custodial', 'Journalism', 'Laborer',
   'Language', 'Law Enforcement/Judicial', 'Mail Processing', 'Marketing', 'Mathematics Statistics', 'Media', 'Miscellaneous', 'Performing Arts', 'Receptionist', 'Research',
-  'Retail', 'Science', 'Social Services', 'Sports/Recreation', 'Student Activities', 'Sustainability', 'Switch Board Operator', 'Technical/Trades', 'Tourism/Hospitality', 'Tutoring',
-];
+  'Retail', 'Science', 'Social Services', 'Sports/Recreation', 'Student Activities', 'Sustainability', 'Switch Board Operator', 'Technical/Trades', 'Tourism/Hospitality', 'Tutoring'];
 
 /** Renders the Page for adding a document. */
 class AddInterest extends React.Component {

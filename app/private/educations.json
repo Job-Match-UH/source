@@ -209,6 +209,19 @@
       "endDate": "2018-05-14 00:00:00"
     },
     {
+      "school": "University of Hawaii, Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Computer Science",
+      "owner": "leanomc@hawaii.edu",
+      "startDate": "2020-08-22 00:00:00",
+      "endDate": "2023-05-14 00:00:00"
+    },
+    {
       "school": "University of Hawaii, West Oahu",
       "degree":
       {

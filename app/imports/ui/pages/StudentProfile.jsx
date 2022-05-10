@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, Header, Loader, Container, Item, Image, Card, Icon, Tab } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
+import { _ } from 'meteor/underscore';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -78,6 +79,7 @@ class StudentProfile extends React.Component {
               <Item style={{ padding: 10 }}>
                 <Item.Description className='cp-text' style={ { fontSize: 'large' } }>{this.props.students.owner}</Item.Description>
                 <Item.Description className='cp-text' style={ { fontSize: 'large' } }>{this.props.students.phone}</Item.Description>
+                <Item.Description className='cp-text' style={ { fontSize: 'large' } }>{this.props.students.address}</Item.Description>
                 <Item.Description className='cp-text' style={ { fontSize: 'large' } }>{this.props.students.about}</Item.Description>
                 <Header as='h3' className='cp-text' style={styling}>Interests</Header>
                 <Item.Description className='cp-text'>
@@ -92,18 +94,30 @@ class StudentProfile extends React.Component {
           <Grid.Row>
             <Grid.Column width={9}>
               <Header className='cp-text' style={ { fontSize: 'xx-large', padding: 0 } }>Education</Header>
+              { _.size(_.filter(Education.collection.find().fetch(), (edu) => (edu.owner === this.props.students.owner))) <= 0 ?
+                (
+                  <Header className='cp-text' style={ { fontSize: 'large', padding: 0 } }>Enter your education(s)</Header>
+                ) : ''}
               <Card.Group>
                 {this.props.education.map((educations, index) => <Educations
                   key={index}
                   educations={educations}/>)}
               </Card.Group>
               <Header className='cp-text' style={ { fontSize: 'xx-large', padding: 0 } }>Experience</Header>
+              { _.size(_.filter(Experiences.collection.find().fetch(), (exp) => (exp.owner === this.props.students.owner))) <= 0 ?
+                (
+                  <Header className='cp-text' style={ { fontSize: 'large', padding: 0 } }>Enter your experience(s)</Header>
+                ) : ''}
               <Card.Group>
                 {this.props.experience.map((experiences, index) => <Experience
                   key={index}
                   experiences={experiences}/>)}
               </Card.Group>
               <Header className='cp-text' style={ { fontSize: 'xx-large', padding: 0 } }>Projects</Header>
+              { _.size(_.filter(Projects.collection.find().fetch(), (pro) => (pro.owner === this.props.students.owner))) <= 0 ?
+                (
+                  <Header className='cp-text' style={ { fontSize: 'large', padding: 0 } }>Enter your projects(s)</Header>
+                ) : ''}
               <Card.Group>
                 {this.props.projects.map((project, index) => <Project
                   key={index}

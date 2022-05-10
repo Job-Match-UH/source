@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header, Card, Container, Loader, Grid, Image, Item, Button } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
+import { _ } from 'meteor/underscore';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Job from '../components/Job';
@@ -55,6 +56,10 @@ class ViewCompanyProfile extends React.Component {
           <Grid.Row>
             <Grid.Column width={15}>
               <Header className='cp-text' style={ { fontSize: 'xx-large', padding: 0 } }>Posted Jobs</Header>
+              { _.size(_.filter(Jobs.collection.find().fetch(), (job) => (job.owner === this.props.company.owner))) <= 0 ?
+                (
+                  <Header className='cp-text' style={ { fontSize: 'large', padding: 0 } }>No jobs available</Header>
+                ) : ''}
               <Card.Group centered={false} itemsPerRow={4}>
                 {this.props.job.map((job, index) => <Job
                   key={index}

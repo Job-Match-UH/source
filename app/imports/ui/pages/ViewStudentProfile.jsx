@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header, Card, Container, Loader, Grid, Image, Item } from 'semantic-ui-react';
 import { Meteor } from 'meteor/meteor';
+import { _ } from 'meteor/underscore';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Students } from '../../api/student/Student';
@@ -55,18 +56,30 @@ class ViewStudentProfile extends React.Component {
           <Grid.Row>
             <Grid.Column width={15}>
               <Header className='cp-text' style={ { fontSize: 'xx-large', padding: 0 } }>Education</Header>
+              { _.size(_.filter(Education.collection.find().fetch(), (edu) => (edu.owner === this.props.student.owner))) <= 0 ?
+                (
+                  <Header className='cp-text' style={ { fontSize: 'large', padding: 0 } }>Not available</Header>
+                ) : ''}
               <Card.Group itemsPerRow={4}>
                 {this.props.education.map((educations, index) => <Educations
                   key={index}
                   educations={educations}/>)}
               </Card.Group>
               <Header className='cp-text' style={ { fontSize: 'xx-large', padding: 0 } }>Experience</Header>
+              { _.size(_.filter(Experiences.collection.find().fetch(), (exp) => (exp.owner === this.props.student.owner))) <= 0 ?
+                (
+                  <Header className='cp-text' style={ { fontSize: 'large', padding: 0 } }>Not available</Header>
+                ) : ''}
               <Card.Group itemsPerRow={4}>
                 {this.props.experience.map((experiences, index) => <Experience
                   key={index}
                   experiences={experiences}/>)}
               </Card.Group>
               <Header className='cp-text' style={ { fontSize: 'xx-large', padding: 0 } }>Projects</Header>
+              { _.size(_.filter(Projects.collection.find().fetch(), (pro) => (pro.owner === this.props.student.owner))) <= 0 ?
+                (
+                  <Header className='cp-text' style={ { fontSize: 'large', padding: 0 } }>Not available</Header>
+                ) : ''}
               <Card.Group itemsPerRow={4}>
                 {this.props.projects.map((project, index) => <Project
                   key={index}
@@ -83,7 +96,7 @@ class ViewStudentProfile extends React.Component {
 ViewStudentProfile.propTypes = {
   student: PropTypes.object.isRequired,
   experience: PropTypes.array,
-  education: PropTypes.array,
+  education: PropTypes.array.isRequired,
   projects: PropTypes.array,
   tags: PropTypes.array,
   ready: PropTypes.bool.isRequired,

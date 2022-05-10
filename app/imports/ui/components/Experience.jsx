@@ -1,11 +1,20 @@
 import React from 'react';
-import { Card, Icon, Grid } from 'semantic-ui-react';
+import { Card, Icon, Grid, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import { _ } from 'meteor/underscore';
 import { Link, withRouter } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
 import { Meteor } from 'meteor/meteor';
+import { Experiences } from '../../api/experience/Experience';
 
 class Experience extends React.Component {
+
+  deleteExp() {
+    const title = _.pluck(Experiences.collection.find({ _id: this.props.experiences._id }).fetch(), '_id');
+    _.map(title, function (id) { Experiences.collection.remove({ _id: id }, true); });
+    Experiences.collection.remove({ _id: Meteor.userId() });
+  }
+
   render() {
     return (
       <Card className='cp-text'>
@@ -14,14 +23,19 @@ class Experience extends React.Component {
             <Card.Content extra>
               <Grid columns='equal'>
                 <Grid.Row>
-                  <Grid.Column width={13}>
+                  <Grid.Column width={12}>
                     {this.props.experiences.title}
                   </Grid.Column>
-                  <Grid.Column>
+                  <Grid.Row>
                     {Roles.userIsInRole(Meteor.userId(), 'student') ? (
                       <Link to={`/editexperience/${this.props.experiences._id}`}><Icon name='pencil'/></Link>
                     ) : ''}
-                  </Grid.Column>
+                    {Roles.userIsInRole(Meteor.userId(), 'student') ? (
+                      <Button icon color='blue' onClick={() => this.deleteExp()}>
+                        <Icon name='trash alternate'/>
+                      </Button>
+                    ) : ''}
+                  </Grid.Row>
                 </Grid.Row>
               </Grid>
             </Card.Content>
@@ -33,16 +47,7 @@ class Experience extends React.Component {
             {this.props.experiences.company}
           </Card.Description>
           <Card.Description>
-            {this.props.experiences.role}
-          </Card.Description>
-          <Card.Description>
             {this.props.experiences.description}
-          </Card.Description>
-          <Card.Description>
-            {this.props.experiences.exp_start.type}
-          </Card.Description>
-          <Card.Description>
-            {this.props.experiences.exp_end.type}
           </Card.Description>
         </Card.Content>
       </Card>

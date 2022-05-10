@@ -1,28 +1,44 @@
 import React from 'react';
-import { Card, Grid, Icon } from 'semantic-ui-react';
+import { Button, Card, Grid, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, NavLink, withRouter } from 'react-router-dom';
+import { _ } from 'meteor/underscore';
 import { Roles } from 'meteor/alanning:roles';
 import { Meteor } from 'meteor/meteor';
+import { Jobs } from '../../api/job/Jobs';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Job extends React.Component {
+
+  deleteJob() {
+    const title = _.pluck(Jobs.collection.find({ _id: this.props.job._id }).fetch(), '_id');
+    _.map(title, function (id) { Jobs.collection.remove({ _id: id }, true); });
+    Jobs.collection.remove({ _id: Meteor.userId() });
+  }
+
   render() {
     return (
       <Card>
-        <Card.Content>
+        <Card.Content as={NavLink} exact to={`/jobdescription/${this.props.job._id}`}>
           <Card.Header>
             <Card.Content extra>
               <Grid columns='equal'>
                 <Grid.Row>
-                  <Grid.Column width={12}>
+                  <Grid.Column width={10}>
                     {this.props.job.jobTitle}
                   </Grid.Column>
-                  <Grid.Column>
+                  <Grid.Row>
                     {Roles.userIsInRole(Meteor.userId(), 'company') ? (
                       <Link to={`/editjob/${this.props.job._id}`}><Icon name='pencil'/></Link>
                     ) : ''}
-                  </Grid.Column>
+                    {Roles.userIsInRole(Meteor.userId(), 'company') ? (
+                      <NavLink exact to={`/companyprofile/${Meteor.userId()}`}>
+                        <Button icon color='blue' onClick={() => this.deleteJob()}>
+                          <Icon name='trash alternate'/>
+                        </Button>
+                      </NavLink>
+                    ) : ''}
+                  </Grid.Row>
                 </Grid.Row>
               </Grid>
             </Card.Content>

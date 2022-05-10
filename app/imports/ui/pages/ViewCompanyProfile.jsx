@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import Job from '../components/Job';
 import { Companies } from '../../api/company/Companies';
 import { Jobs } from '../../api/job/Jobs';
+import Tag from '../components/Tag';
+import { CompanyTags } from '../../api/tags/CompanyTags';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ViewCompanyProfile extends React.Component {
@@ -16,13 +18,16 @@ class ViewCompanyProfile extends React.Component {
 
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   renderPage() {
+    const styling = { padding: '0px' };
     return (
       <Container id='view-company-profile'>
         <Grid className='cp-text'>
           <Grid.Row>
             <Grid.Column width={3}>
               <Image centered size='medium' src={this.props.company.image}/>
-              <Button circular fluid className='cp-text'><a href={this.props.company.website}/>{this.props.company.website}</Button>
+              <Button circular fluid className='cp-text'>
+                <a href={this.props.company.website} target='_blank' rel="noreferrer">Company Website</a>
+              </Button>
             </Grid.Column>
             <Grid.Column width={10}>
               <Header as='h1' className='cp-text'>{this.props.company.companyName}</Header>
@@ -33,6 +38,13 @@ class ViewCompanyProfile extends React.Component {
               <Item.Description>{this.props.company.state}</Item.Description>
               <Item.Description>{this.props.company.phone}</Item.Description>
               <Item.Description>{this.props.company.year}</Item.Description>
+              <Header as='h3' className='cp-text' style={styling}>Interests</Header>
+              <Item.Description className='cp-text'>
+                {this.props.tags.map((tags, index) => <Tag
+                  key={index}
+                  tag={tags}
+                />)}
+              </Item.Description>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
@@ -53,8 +65,9 @@ class ViewCompanyProfile extends React.Component {
 // Require the presence of a Company document in the props object. Uniforms adds 'model' to the props, which we use.
 ViewCompanyProfile.propTypes = {
   company: PropTypes.object,
+  job: PropTypes.array,
+  tags: PropTypes.array,
   ready: PropTypes.bool.isRequired,
-  job: PropTypes.array.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
@@ -64,13 +77,20 @@ export default withTracker(({ match }) => {
   // Ensure that minimongo is populated with all collections prior to running render().
   const sub1 = Meteor.subscribe(Companies.userPublicationName);
   const sub2 = Meteor.subscribe(Jobs.userPublicationName);
-  const ready = sub1.ready() && sub2.ready();
+  const sub3 = Meteor.subscribe(CompanyTags.userPublicationName);
+  // Get docuemnts for admin access
+  const sub4 = Meteor.subscribe(Companies.adminPublicationName);
+  const sub5 = Meteor.subscribe(Jobs.adminPublicationName);
+  const sub6 = Meteor.subscribe(CompanyTags.adminPublicationName);
+  const ready = sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready() && sub5.ready() && sub6.ready();
   // Get documents
   const company = Companies.collection.findOne(companyId);
   const job = Jobs.collection.find({ owner: company.owner });
+  const tags = CompanyTags.collection.find({ owner: company.owner });
   return {
     ready,
     company,
     job,
+    tags,
   };
 })(ViewCompanyProfile);

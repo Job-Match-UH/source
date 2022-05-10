@@ -54,6 +54,36 @@
       "name": "Rocket Science",
       "description": "Design and construct a home rocket",
       "owner": "nathanm@gmail.com"
+    },
+    {
+      "name": "Beach Cleanups",
+      "description": "The clean up and care for our land and beaches",
+      "owner": "ereninak@hawaii.edu"
+    },
+    {
+      "name": "Beach Cleanups",
+      "description": "The clean up and care for our land and beaches",
+      "owner": "rgalanto@hawaii.edu"
+    },
+    {
+      "name": "Beach Cleanups",
+      "description": "The clean up and care for our land and beaches",
+      "owner": "ikotsol@hawaii.edu"
+    },
+    {
+      "name": "Beach Cleanups",
+      "description": "The clean up and care for our land and beaches",
+      "owner": "cmmw@hawaii.edu"
+    },
+    {
+      "name": "Taro Patch Cleanups",
+      "description": "The clean up and care for our land and beaches",
+      "owner": "cmmw@hawaii.edu"
+    },
+    {
+      "name": "Homeless Outreach",
+      "description": "Assist with homeless population in Downtown Honolulu by Chinatown",
+      "owner": "jtajiri@hawaii.edu"
     }
   ]
 }

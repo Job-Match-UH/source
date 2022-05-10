@@ -85,6 +85,61 @@
       "phone": "8085863310",
       "year": "1840",
       "image": "https://www.hawaiitribune-herald.com/wp-content/uploads/2020/07/web1_DOE-logo.jpeg"
+    },
+    {
+      "companyName": "American Savings Bank",
+      "website": "https://www.asbhawaii.com/about-us/join-our-team",
+      "description": "At ASB, we like to dream big. We are a great bank making people's dreams possible.",
+      "address": "300 N Beretania St",
+      "state": "State",
+      "phone": "8002722566",
+      "year": "1925",
+      "image": "https://ccbank.us/wp-content/uploads/logo-85.jpg",
+      "owner": "asb@asb.com"
+    },
+    {
+      "companyName": "Bank of Hawaii",
+      "website": "https://www.boh.com/careers",
+      "description": "Live your happy. At Bank of Hawaii, nothing means more to us than helping you pursue your happiness.",
+      "address": "111 South King St.",
+      "state": "Honolulu, HI",
+      "phone": "8086433888",
+      "year": "1897",
+      "image": "https://play-lh.googleusercontent.com/pFvF1NIEFLYFsoz-gYH1y7ZTEVyknRjTpa8HvXQqKOzdXtPx9utMyuQ2ySsca4cJWBKd",
+      "owner": "boh@boh.com"
+    },
+    {
+      "companyName": "First Hawaiian",
+      "website": "https://www.fhb.com/en/careers",
+      "description": "We look forward to serving you. We’re Hawaii's oldest and largest bank, ready to assist you with all your financial needs, be it personal, private, or business banking",
+      "address": "999 Bishop St.",
+      "state": "Honolulu, HI",
+      "phone": "8085257000",
+      "year": "1858",
+      "image": "https://media.mauinow.com/file/mauinow/2011/07/first-hawaiian-bank-logo.jpg",
+      "owner": "fhb@fhb.com"
+    },
+    {
+      "companyName": "Hawaiian Telcom",
+      "website": "https://www.hawaiiantel.com/aboutus/Careers",
+      "description": "When we connect, something beautiful happens. See how we connect.",
+      "address": "1177 Bishop Street",
+      "state": "Honolulu, HI ",
+      "phone": "8086436677",
+      "year": "1883",
+      "image": "https://yt3.ggpht.com/ytc/AKedOLTJ5y6LAfLuQQpHpOK132w7XM4qBC7CatUlG0FA=s900-c-k-c0x00ffffff-no-rj",
+      "owner": "htc@htc.com"
+    },
+    {
+      "companyName": "TSA (Transportation Security Administration)",
+      "website": "https://jobs.tsa.gov/careers-at-tsa",
+      "description": "Ensuring Safe Travels. If you’re looking to build a rewarding career and serve your country, you’ve come to the right place.",
+      "address": "300 Rodgers Blvd #45 4th Fl Tower Admin Bldg",
+      "state": "Honolulu, HI",
+      "phone": "8088314604",
+      "year": "2001",
+      "image": "https://www.tsa.gov/sites/default/files/tsa_insignia_rgb.jpg",
+      "owner": "tsa@tsa.com"
     }
   ]
 }

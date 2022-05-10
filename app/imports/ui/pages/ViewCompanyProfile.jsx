@@ -25,7 +25,9 @@ class ViewCompanyProfile extends React.Component {
           <Grid.Row>
             <Grid.Column width={3}>
               <Image centered size='medium' src={this.props.company.image}/>
-              <Button circular fluid className='cp-text'><a href={this.props.company.website}/>{this.props.company.website}</Button>
+              <Button circular fluid className='cp-text'>
+                <a href={this.props.company.website} target='_blank' rel="noreferrer">Company Website</a>
+              </Button>
             </Grid.Column>
             <Grid.Column width={10}>
               <Header as='h1' className='cp-text'>{this.props.company.companyName}</Header>

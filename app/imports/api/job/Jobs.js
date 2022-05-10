@@ -18,8 +18,8 @@ class JobsCollection {
       pay: Number,
       payType: {
         type: String,
-        defaultValue: 'hourly',
-        allowedValues: ['hourly', 'annually'],
+        defaultValue: 'Hourly',
+        allowedValues: ['Hourly', 'Annually'],
       },
       type: {
         type: String,

@@ -13,7 +13,7 @@ import Company from '../components/Company';
 import MultiSelectField from '../forms/controllers/MultiSelectField';
 
 const makeSchema = (allInterests) => new SimpleSchema({
-  name: { type: Array, label: 'Interests', optional: true },
+  name: { type: Array, label: '', optional: true },
   'name.$': { type: String, allowedValues: allInterests },
 });
 
@@ -45,6 +45,7 @@ class ViewCompanyMatches extends React.Component {
     const companyMatches = _.uniq(companyEmails).map(email => getProfile(email));
     return (
       <Container id='view-company-matches-page'>
+        <Header style={ { fontSize: 'xx-large' } } className='cp-text' textAlign='center'>Filter By Interest</Header>
         <AutoForm schema={bridge} onSubmit={data => this.submit(data)}>
           <Segment>
             <MultiSelectField id='name' name='name' showInlineError={true} placeholder={'Search by interests...'}/>

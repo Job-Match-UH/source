@@ -37,7 +37,7 @@ class JobPostings extends React.Component {
 
   render() {
     let fRef = null;
-    const payTypes = ['hourly', 'annually'];
+    const payTypes = ['Hourly', 'Annually'];
     const jobTypes = ['Full-time', 'Part-time', 'Internship', 'Seasonal'];
 
     return (
@@ -47,7 +47,7 @@ class JobPostings extends React.Component {
           <TextField fluid label='Job Title:' placeholder='Software Development Intern' name='jobTitle' style={ { fontSize: 'large' } }/>
           <Form.Group widths='equal'>
             <TextField fluid label='Job ID:' placeholder='1234567' name='jobID' style={ { fontSize: 'large' } }/>
-            <SelectField fluid="true" placeholder='Select job type' name='jobType' allowedValues={jobTypes}/>
+            <SelectField fluid="true" placeholder='Select job type' name='jobType' allowedValues={jobTypes} style={ { fontSize: 'large' } }/>
           </Form.Group>
           <Form.Group widths='equal'>
             <NumField fluid="true" label='Pay:' placeholder='25' name='pay' style={ { fontSize: 'large' } }/>

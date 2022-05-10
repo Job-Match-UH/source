@@ -51,7 +51,7 @@ class SignUpStudentPage {
   }
 
   async inputInterests(testController) {
-    await testController.click(this.multifieldSelector).click(this.selectInterests).click(this.multifieldSelector).click('#add-new-student-interest');
+    await testController.click(this.multifieldSelector).click(this.selectInterests).click(this.multifieldSelector).click('#add-new-interest');
   }
 
   async clickSweetAlert(testController) {

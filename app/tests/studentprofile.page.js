@@ -12,6 +12,12 @@ class StudentProfilePage {
     await testController.expect(this.pageSelector.exists).ok();
   }
 
+  /** Checks that the current page displays the inputted card data from signupstudent.page.js */
+  async hasInputData(testController) {
+    const cardCount = Selector('.ui .card').count;
+    await testController.expect(cardCount).gte(3);
+  }
+
   async gotoEditStudent(testController) {
     await testController.click('#goto-edit-student');
   }

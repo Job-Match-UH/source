@@ -24,11 +24,14 @@ const credentials2 = { username: 'facebook@fb.com', password: 'facebook' };
 const credentials3 = { username: 'admin@foo.com', password: 'changeme' };
 const newStudent = `user-${new Date().getTime()}student@foo.com`;
 const newStudent1 = `user-${new Date().getTime()}xstudent@foo.com`;
+const newCompany = `user-${new Date().getTime()}company@foo.com`;
+const newCompany1 = `user-${new Date().getTime()}xcompany@foo.com`;
 const personalData = { firstName: 'Cam', lastName: 'Ara', address: '321 Ala Moana Blvd',
   url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Bg-easter-eggs.jpg/1024px-Bg-easter-eggs.jpg', phoneNum: '8088888888', about: 'I was born a baby' };
 const projectData = { projectName: 'job matchuh', projectDescription: 'A job Matchuh\'' };
 const experienceData = { title: 'Manager', companyName: 'UH Manoa', role: 'employee', jobDescription: 'Cleaned the library' };
 const educationData = { nameOfSchool: 'UH Manoa', fieldOfStudy: 'Computer Science' };
+const companyData = { companyName: 'fedex', website: 'fedex.com', address: 'fedex@fedex', state: 'HI', phoneNum: '1234567', established: '1922' };
 
 fixture('job-match-uh availability tests')
   .page('http://localhost:3000');
@@ -79,7 +82,7 @@ test('Test signup student displays', async (testController) => {
 test('Test signup company displays', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.gotoSignUpCompany(testController);
-  await signupCompanyEmail.signupUser(testController, credentials.password);
+  await signupCompanyEmail.signupUser(testController, newCompany, credentials.password);
   await companySignup.isDisplayed(testController);
 });
 
@@ -174,7 +177,7 @@ test('Test admin page displays', async (testController) => {
  */
 
 // Input student data to be tested for display
-test.only('Test signup student forms work', async (testController) => {
+test('Test signup student forms work', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.gotoSignUpStudent(testController);
   await signupStudentEmail.signupStudent(testController, newStudent1, credentials.password);
@@ -195,10 +198,21 @@ test.only('Test signup student forms work', async (testController) => {
 });
 
 // Test if above input displays.
-test.only('Test signup student forms display on profile', async (testController) => {
+test('Test signup student forms display on profile', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, newStudent1, credentials.password);
   await navBar.isLoggedIn(testController, newStudent1);
   await navBar.gotoStudentProfile(testController);
   await studentProfilePage.isDisplayed(testController);
+  await studentProfilePage.hasInputData(testController);
+});
+
+test.only('Test signup company forms work', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.gotoSignUpCompany(testController);
+  await signupCompanyEmail.signupUser(testController, newCompany1, credentials.password);
+  await companySignup.inputCompanyData(testController, companyData.companyName, companyData.website, companyData.address, companyData.state, companyData.phoneNum, companyData.established);
+  await companySignup.inputInterestsCompany(testController);
+  await signupStudent.clickSweetAlert(testController);
+  await companySignup.submitCompanyInput(testController);
 });

@@ -1,11 +1,11 @@
 import { Selector } from 'testcafe';
 
-const companyData = { companyName: 'fedex', website: 'fedex.com', address: 'fedex@fedex', state: 'HI', phoneNum: '1234567', established: '1922' };
-
 class CompanySignupPage {
   constructor() {
     this.pageId = '#company-signup-page';
     this.pageSelector = Selector(this.pageId);
+    this.multifieldSelector = Selector('#multifield-select');
+    this.selectInterests = Selector('#multifield-select div').child('span').withText('Computer');
   }
 
   /** Asserts that this page is currently displayed. */
@@ -14,14 +14,21 @@ class CompanySignupPage {
     await testController.expect(this.pageSelector.exists).ok();
   }
 
-  async inputCompanyData(testController) {
+  async inputCompanyData(testController, companyName, website, address, state, phoneNum, established) {
     await this.isDisplayed(testController);
-    await testController.typeText('#company-name', companyData.companyName);
-    await testController.typeText('#company-website', companyData.website);
-    await testController.typeText('#company-address', companyData.address);
-    await testController.typeText('#company-state', companyData.state);
-    await testController.typeText('#company-phone-num', companyData.phoneNum);
-    await testController.typeText('#year-established', companyData.established);
+    await testController.typeText('#company-name', companyName);
+    await testController.typeText('#company-website', website);
+    await testController.typeText('#company-address', address);
+    await testController.typeText('#company-state', state);
+    await testController.typeText('#company-phone-num', phoneNum);
+    await testController.typeText('#year-established', established);
+  }
+
+  async inputInterestsCompany(testController) {
+    await testController.click(this.multifieldSelector).click(this.selectInterests).click(this.multifieldSelector).click('#add-new-interest');
+  }
+
+  async submitCompanyInput(testController) {
     await testController.click('#submit-company');
   }
 }

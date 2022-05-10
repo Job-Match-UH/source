@@ -3,7 +3,7 @@ import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /** Encapsulates state and variable values for this collection. */
-class TagsCollection {
+class CompanyTagsCollection {
 
   constructor() {
     // common interest data used between student and company
@@ -16,7 +16,7 @@ class TagsCollection {
     };
 
     // The name of this collection.
-    this.name = 'TagsCollection';
+    this.name = 'CompanyTagsCollection';
     // Define the Mongo collection.
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
@@ -32,4 +32,4 @@ class TagsCollection {
   }
 }
 
-export const Tags = new TagsCollection();
+export const CompanyTags = new CompanyTagsCollection();

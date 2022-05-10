@@ -7,7 +7,7 @@ import Job from '../components/Job';
 import { Companies } from '../../api/company/Companies';
 import { Jobs } from '../../api/job/Jobs';
 import Tag from '../components/Tag';
-import { Tags } from '../../api/tags/Tags';
+import { CompanyTags } from '../../api/tags/CompanyTags';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ViewCompanyProfile extends React.Component {
@@ -63,7 +63,7 @@ class ViewCompanyProfile extends React.Component {
 // Require the presence of a Company document in the props object. Uniforms adds 'model' to the props, which we use.
 ViewCompanyProfile.propTypes = {
   company: PropTypes.object,
-  job: PropTypes.array.isRequired,
+  job: PropTypes.array,
   tags: PropTypes.array,
   ready: PropTypes.bool.isRequired,
 };
@@ -75,12 +75,16 @@ export default withTracker(({ match }) => {
   // Ensure that minimongo is populated with all collections prior to running render().
   const sub1 = Meteor.subscribe(Companies.userPublicationName);
   const sub2 = Meteor.subscribe(Jobs.userPublicationName);
-  const sub3 = Meteor.subscribe(Tags.userPublicationName);
-  const ready = sub1.ready() && sub2.ready() && sub3.ready();
+  const sub3 = Meteor.subscribe(CompanyTags.userPublicationName);
+  // Get docuemnts for admin access
+  const sub4 = Meteor.subscribe(Companies.adminPublicationName);
+  const sub5 = Meteor.subscribe(Jobs.adminPublicationName);
+  const sub6 = Meteor.subscribe(CompanyTags.adminPublicationName);
+  const ready = sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready() && sub5.ready() && sub6.ready();
   // Get documents
   const company = Companies.collection.findOne(companyId);
   const job = Jobs.collection.find({ owner: company.owner });
-  const tags = Tags.collection.find({ owner: company.owner });
+  const tags = CompanyTags.collection.find({ owner: company.owner });
   return {
     ready,
     company,

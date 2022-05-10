@@ -11,7 +11,7 @@ import Tag from '../components/Tag';
 import { Experiences } from '../../api/experience/Experience';
 import { Education } from '../../api/education/Education';
 import { Projects } from '../../api/projects/Projects';
-import { Tags } from '../../api/tags/Tags';
+import { StudentTags } from '../../api/tags/StudentTags';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ViewStudentProfile extends React.Component {
@@ -82,9 +82,9 @@ class ViewStudentProfile extends React.Component {
 
 ViewStudentProfile.propTypes = {
   student: PropTypes.object.isRequired,
-  experience: PropTypes.array.isRequired,
-  education: PropTypes.array.isRequired,
-  projects: PropTypes.array.isRequired,
+  experience: PropTypes.array,
+  education: PropTypes.array,
+  projects: PropTypes.array,
   tags: PropTypes.array,
   ready: PropTypes.bool.isRequired,
 };
@@ -94,19 +94,26 @@ export default withTracker(({ match }) => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
   const studentId = match.params._id;
   // Get access to documents.
-  const subscription1 = Meteor.subscribe(Students.userPublicationName);
-  const subscription2 = Meteor.subscribe(Experiences.userPublicationName);
-  const subscription3 = Meteor.subscribe(Education.userPublicationName);
-  const subscription4 = Meteor.subscribe(Projects.userPublicationName);
-  const subscription5 = Meteor.subscribe(Tags.userPublicationName);
+  const sub1 = Meteor.subscribe(Students.userPublicationName);
+  const sub2 = Meteor.subscribe(Experiences.userPublicationName);
+  const sub3 = Meteor.subscribe(Education.userPublicationName);
+  const sub4 = Meteor.subscribe(Projects.userPublicationName);
+  const sub5 = Meteor.subscribe(StudentTags.userPublicationName);
+  // Get access to documents for admin
+  const sub6 = Meteor.subscribe(Students.adminPublicationName);
+  const sub7 = Meteor.subscribe(Experiences.adminPublicationName);
+  const sub8 = Meteor.subscribe(Education.adminPublicationName);
+  const sub9 = Meteor.subscribe(Projects.adminPublicationName);
+  const sub10 = Meteor.subscribe(StudentTags.adminPublicationName);
   // Determine if the subscription is ready
-  const ready = subscription1.ready() && subscription2.ready() && subscription3.ready() && subscription4.ready() && subscription5.ready();
+  const ready = sub1.ready() && sub2.ready() && sub3.ready() && sub4.ready() && sub5.ready() &&
+      sub6.ready() && sub7.ready() && sub8.ready() && sub9.ready() && sub10.ready();
   // Get the documents
   const student = Students.collection.findOne(studentId);
   const education = Education.collection.find({ owner: student.owner });
   const experience = Experiences.collection.find({ owner: student.owner });
   const projects = Projects.collection.find({ owner: student.owner });
-  const tags = Tags.collection.find({ owner: student.owner });
+  const tags = StudentTags.collection.find({ owner: student.owner });
   return {
     student,
     education,

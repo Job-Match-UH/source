@@ -1,0 +1,59 @@
+{
+  "projects": [
+    {
+      "name": "Job Match UH",
+      "description": "Create an application for connecting students and companies.",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "ACE Design Competition",
+      "description": "Participated in national design competition with a focus in architechture, construction, and engineering processes",
+      "owner": "ecadiena323@gmail.com"
+    },
+    {
+      "name": "FRC Robotics",
+      "description": "Design and construct a competition robot to perform tasks according to the game",
+      "owner": "jameschang719@gmail.com"
+    },
+    {
+      "name": "FRC Robotics",
+      "description": "Design and construct a competition robot to perform tasks according to the game",
+      "owner": "miac12323@gmail.com"
+    },
+    {
+      "name": "Events Coordinator",
+      "description": "Plan and coordinate events",
+      "owner": "zcadiena@gmail.com"
+    },
+    {
+      "name": "FRC Robotics",
+      "description": "Design and construct a competition robot to perform tasks according to the game",
+      "owner": "rhnakasone3@gmail.com"
+    },
+    {
+      "name": "FRC Robotics",
+      "description": "Design and construct a competition robot to perform tasks according to the game",
+      "owner": "cristianm1148@gmail.com"
+    },
+    {
+      "name": "FRC Robotics",
+      "description": "Design and construct a competition robot to perform tasks according to the game",
+      "owner": "t0mb0ys@gmail.com"
+    },
+    {
+      "name": "Cleanup Hawaii",
+      "description": "Participated in beach cleanups around Oahu",
+      "owner": "coltj@gmail.com"
+    },
+    {
+      "name": "Car WashUH",
+      "description": "Plan and coordinate car washes for UH students to participate in",
+      "owner": "scarlettb@gmail.com"
+    },
+    {
+      "name": "Rocket Science",
+      "description": "Design and construct a home rocket",
+      "owner": "nathanm@gmail.com"
+    }
+  ]
+}

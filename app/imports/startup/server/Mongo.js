@@ -83,13 +83,6 @@ if (CompanyTags.collection.find().count() === 0) {
   }
 }
 
-if (StudentTags.collection.find().count() === 0) {
-  if (Meteor.settings.defaultStudentTags) {
-    console.log('Creating default student tags.');
-    Meteor.settings.defaultStudentTags.map(data => addStudentTags(data));
-  }
-}
-
 // Initialize the ClassCollection if empty.
 if (Class.collection.find().count() === 0) {
   if (Meteor.settings.defaultClasses) {
@@ -139,17 +132,31 @@ if (Jobs.collection.find().count() === 0) {
  * User count check is to make sure we don't load the file twice, which would generate errors due to duplicate info.
  */
 
-if (Meteor.users.find().count() < 15) {
-  if (Meteor.settings.loadAssetsFile) {
-    const assetsFileName = 'data.json';
-    console.log(`Creating Student/Company from ${assetsFileName}`);
-    const jsonData = JSON.parse(Assets.getText(assetsFileName));
-    jsonData.students.map(student => addStudent(student));
-    jsonData.companies.map(company => addCompanies(company));
-    jsonData.companyTags.map(tags => addCompanyTags(tags));
-    jsonData.studentTags.map(tags => addStudentTags(tags));
-    jsonData.experiences.map(experiences => addExperience(experiences));
-    jsonData.education.map(education => addEducation(education));
-    jsonData.projects.map(projects => addProject(projects));
-  }
+if (Meteor.settings.loadAssetsFile) {
+  const studentFile = 'students.json';
+  const companyFile = 'companies.json';
+  const companyTagFile = 'companyTags.json';
+  const studentTagFile = 'studentTags.json';
+  const experienceFile = 'experiences.json';
+  const educationFile = 'educations.json';
+  const projectFile = 'projects.json';
+  const jobsFile = 'jobs.json';
+
+  const studentData = JSON.parse(Assets.getText(studentFile));
+  const companyData = JSON.parse(Assets.getText(companyFile));
+  const companyTagData = JSON.parse(Assets.getText(companyTagFile));
+  const studentTagData = JSON.parse(Assets.getText(studentTagFile));
+  const experienceData = JSON.parse(Assets.getText(experienceFile));
+  const educationData = JSON.parse(Assets.getText(educationFile));
+  const projectData = JSON.parse(Assets.getText(projectFile));
+  const jobData = JSON.parse(Assets.getText(jobsFile));
+
+  studentData.students.map(student => addStudent(student));
+  companyData.companies.map(company => addCompanies(company));
+  companyTagData.companyTags.map(tags => addCompanyTags(tags));
+  studentTagData.studentTags.map(tags => addStudentTags(tags));
+  experienceData.experiences.map(experiences => addExperience(experiences));
+  educationData.education.map(education => addEducation(education));
+  projectData.projects.map(projects => addProject(projects));
+  jobData.jobs.map(jobs => addJob(jobs));
 }

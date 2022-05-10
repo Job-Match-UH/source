@@ -1,0 +1,147 @@
+{
+  "education": [
+    {
+      "school": "Stanford",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Women Studies",
+      "owner": "john@foo.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Computer Science",
+      "owner": "ecadiena323@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Industrial Design",
+      "owner": "jameschang719@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Japanese Education",
+      "owner": "miac12323@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Micro Cell Biology",
+      "owner": "zcadiena@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "Moanalua High School",
+      "degree":
+      {
+        "type": "High School Diploma",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "High School GED",
+      "owner": "rhnakasone3@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Computer Engineering",
+      "owner": "cristianm1148@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Mechanical Engineering",
+      "owner": "t0mb0ys@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Physics",
+      "owner": "coltj@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Political Science",
+      "owner": "scarlettb@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    },
+    {
+      "school": "UH Manoa",
+      "degree":
+      {
+        "type": "Bachelors",
+        "defaultValue": "High School Diploma",
+        "allowedValues": ["High School Diploma", "Associates", "Bachelors", "Masters"]
+      },
+      "field": "Chemistry",
+      "owner": "nathanm@gmail.com",
+      "startDate": { "type": "2020-04-20 00:00:00" },
+      "endDate": { "type": "2022-04-20 00:00:00" }
+    }
+  ]
+}

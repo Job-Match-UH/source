@@ -28,16 +28,8 @@ function createUser(email, password, role) {
 
 // When running app for first time, pass a settings file to set up a default user account.
 if (Meteor.users.find().count() === 0) {
-  if (Meteor.settings.defaultAccounts) {
+  if (Meteor.settings.defaultUsers) {
     console.log('Creating the default user(s)');
-    Meteor.settings.defaultAccounts.map(({ email, password, role }) => createUser(email, password, role));
-  }
-  if (Meteor.settings.loadAssetsFile) {
-    const assetsFileName = 'data.json';
-    console.log(`Loading data from private/${assetsFileName}`);
-    const jsonData = JSON.parse(Assets.getText(assetsFileName));
-    jsonData.users.map(({ email, password, role }) => createUser(email, password, role));
-  } else {
-    console.log('Cannot initialize the database!  Please invoke meteor with a settings file.');
+    Meteor.settings.defaultUsers.map(({ email, password, role }) => createUser(email, password, role));
   }
 }

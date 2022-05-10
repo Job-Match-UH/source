@@ -22,6 +22,13 @@ import { viewStudentProfilePage } from './viewstudentprofile.page';
 const credentials = { username: 'john@foo.com', password: 'changeme' };
 const credentials2 = { username: 'facebook@fb.com', password: 'facebook' };
 const credentials3 = { username: 'admin@foo.com', password: 'changeme' };
+const newStudent = `user-${new Date().getTime()}student@foo.com`;
+const newStudent1 = `user-${new Date().getTime()}xstudent@foo.com`;
+const personalData = { firstName: 'Cam', lastName: 'Ara', address: '321 Ala Moana Blvd',
+  url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Bg-easter-eggs.jpg/1024px-Bg-easter-eggs.jpg', phoneNum: '8088888888', about: 'I was born a baby' };
+const projectData = { projectName: 'job matchuh', projectDescription: 'A job Matchuh\'' };
+const experienceData = { title: 'Manager', companyName: 'UH Manoa', role: 'employee', jobDescription: 'Cleaned the library' };
+const educationData = { nameOfSchool: 'UH Manoa', fieldOfStudy: 'Computer Science' };
 
 fixture('job-match-uh availability tests')
   .page('http://localhost:3000');
@@ -62,14 +69,14 @@ test('Test signout page displays', async (testController) => {
   await signoutPage.isDisplayed(testController);
 });
 
-test('Test register student displays', async (testController) => {
+test('Test signup student displays', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.gotoSignUpStudent(testController);
-  await signupStudentEmail.signupStudent(testController, credentials.password);
+  await signupStudentEmail.signupStudent(testController, newStudent, credentials.password);
   await signupStudent.isDisplayed(testController);
 });
 
-test('Test register company displays', async (testController) => {
+test('Test signup company displays', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.gotoSignUpCompany(testController);
   await signupCompanyEmail.signupUser(testController, credentials.password);
@@ -119,7 +126,7 @@ test('Test viewstudentmatches page displays', async (testController) => {
   await viewStudentMatchesPage.isDisplayed(testController);
 });
 
-test.only('Test viewstudentprofile page displays', async (testController) => {
+test('Test viewstudentprofile page displays', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials2.username, credentials2.password);
   await navBar.isLoggedIn(testController, credentials2.username);
@@ -160,4 +167,38 @@ test('Test admin page displays', async (testController) => {
   await navBar.isLoggedIn(testController, credentials3.username);
   await navBar.gotoAdminHome(testController);
   await adminHomePage.isDisplayed(testController);
+});
+
+/**
+ * These tests test form validation.
+ */
+
+// Input student data to be tested for display
+test.only('Test signup student forms work', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.gotoSignUpStudent(testController);
+  await signupStudentEmail.signupStudent(testController, newStudent1, credentials.password);
+  await signupStudent.inputPersonalInfo(testController, personalData.firstName, personalData.lastName, personalData.address, personalData.url, personalData.phoneNum, personalData.about);
+  await signupStudent.clickProjectsTab(testController);
+  await signupStudent.inputProject(testController, projectData.projectName, projectData.projectDescription);
+  await signupStudent.clickSweetAlert(testController);
+  await signupStudent.clickExperiencesTab(testController);
+  await signupStudent.inputExperience(testController, experienceData.companyName, experienceData.jobDescription, experienceData.role, experienceData.title);
+  await signupStudent.clickSweetAlert(testController);
+  await signupStudent.clickEducationTab(testController);
+  await signupStudent.inputEducation(testController, educationData.nameOfSchool, educationData.fieldOfStudy);
+  await signupStudent.clickSweetAlert(testController);
+  await signupStudent.clickInterests(testController);
+  await signupStudent.inputInterests(testController);
+  await signupStudent.clickSweetAlert(testController);
+  await signupStudent.submitSignUp(testController);
+});
+
+// Test if above input displays.
+test.only('Test signup student forms display on profile', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, newStudent1, credentials.password);
+  await navBar.isLoggedIn(testController, newStudent1);
+  await navBar.gotoStudentProfile(testController);
+  await studentProfilePage.isDisplayed(testController);
 });

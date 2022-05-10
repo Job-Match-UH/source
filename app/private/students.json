@@ -274,6 +274,105 @@
       "owner": "wildpup@gmail.com"
     },
     {
+      "firstName": "Cameron",
+      "lastName": "Arakaki",
+      "address": "Honolulu, HI",
+      "phone": "8084307477",
+      "about": "I am a junior majoring in Computer Science.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "ca234@hawaii.edu"
+    },
+    {
+      "firstName": "Leititia",
+      "lastName": "Le",
+      "address": "Honolulu, HI",
+      "phone": "8087781882",
+      "about": "I am taking my pre-requisites to enter into the pharmacy program at UH Hilo",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "leititial@hawaii.edu"
+    },
+    {
+      "firstName": "Sherman",
+      "lastName": "Lam",
+      "address": "Honolulu, HI",
+      "phone": "8089274628",
+      "about": "I am majoring in finance. My expected graduation date is Fall 2023.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "slam542@hawaii.edu"
+    },
+    {
+      "firstName": "Jason",
+      "lastName": "Cabe",
+      "address": "Honolulu, HI",
+      "phone": "8082035202",
+      "about": "I want to finish my pre-requisites to enter the P.T. program at Kapiolani Community College during the Fall semester.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "jcabe@hawaii.edu"
+    },
+    {
+      "firstName": "Chance",
+      "lastName": "Arakaki",
+      "address": "Honolulu, HI",
+      "phone": "8089127394",
+      "about": "I am majoring in the culinary art program at Kapiolani Community College.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "carakaki@hawaii.edu"
+    },
+    {
+      "firstName": "McClyde",
+      "lastName": "Gaborno",
+      "address": "Honolulu, HI",
+      "phone": "8082194429",
+      "about": "I am majoring in civil engineering at UH Manoa",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "mgaborno778@hawaii.edu"
+    },
+    {
+      "firstName": "Eric",
+      "lastName": "Cheng",
+      "address": "Honolulu, HI",
+      "phone": "8086672884",
+      "about": "I am taking business classes at UH Manoa. Expected graduation date, Spring 2023.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "echeng22@hawaii.edu"
+    },
+    {
+      "firstName": "Kiana",
+      "lastName": "Whaley",
+      "address": "Honolulu, HI",
+      "phone": "8089220334",
+      "about": "I'm trying to get into the nursing program. Currently working on my pre-reqs.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "kwhaley@hawaii.edu"
+    },
+    {
+      "firstName": "Cy",
+      "lastName": "Cortez",
+      "address": "Honolulu, HI",
+      "phone": "121403428872",
+      "about": "I graduate with a B.A. in psychology this Spring.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "ccortez134@hawaii.edu"
+    },
+    {
+      "firstName": "Hiwa",
+      "lastName": "Manning",
+      "address": "Honolulu, HI",
+      "phone": "80859347792",
+      "about": "I am majoring in communication at Kapiolani Community College.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "hmanning@hawaii.edu"
+    },
+    {
+      "firstName": "Matthew",
+      "lastName": "Hisatake",
+      "address": "Honolulu, HI",
+      "phone": "8082994023",
+      "about": "I am majoring in mechanical engineering at UH Manoa.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "mhisatake@hawaii.edu"
+    },
+    {
       "firstName": "Gaila",
       "lastName": "Galano",
       "address": "Lahaina, HI",

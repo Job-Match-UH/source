@@ -95,7 +95,7 @@ test('Test viewcompanymatches page displays', async (testController) => {
   await viewCompanyMatchesPage.isDisplayed(testController);
 });
 
-test('Test viewcompanyprofile page displays', async (testController) => {
+test.only('Test viewcompanyprofile page displays', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.isLoggedIn(testController, credentials.username);
@@ -130,7 +130,7 @@ test('Test viewstudentmatches page displays', async (testController) => {
   await viewStudentMatchesPage.isDisplayed(testController);
 });
 
-test('Test viewstudentprofile page displays', async (testController) => {
+test.only('Test viewstudentprofile page displays', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials2.username, credentials2.password);
   await navBar.isLoggedIn(testController, credentials2.username);

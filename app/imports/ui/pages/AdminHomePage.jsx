@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Container, Tab, Loader, Header } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
+import { _ } from 'meteor/underscore';
 import { withTracker } from 'meteor/react-meteor-data';
 import Company from '../components/Company';
 import Student from '../components/Student';
@@ -11,6 +12,14 @@ import { CompanyTags } from '../../api/tags/CompanyTags';
 import { StudentTags } from '../../api/tags/StudentTags';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+function alphaSortCompany(profiles) {
+  return _.sortBy(profiles, function (profile) { return profile.companyName.toLowerCase(); });
+}
+
+function alphaSortStudent(profiles) {
+  return _.sortBy(profiles, function (profile) { return profile.firstName.toLowerCase(); });
+}
+
 class AdminHomePage extends React.Component {
 
   render() {
@@ -24,7 +33,7 @@ class AdminHomePage extends React.Component {
           <Card.Group centered>
             {(this.props.companies === '') ?
               <Header className='cp-text'>No companies to display</Header> :
-              (this.props.companies.map((company, index) => <Company
+              ((alphaSortCompany(this.props.companies)).map((company, index) => <Company
                 key={index}
                 company={company}
                 tags={this.props.companyTags.filter(tag => (tag.owner === company.owner))}
@@ -38,7 +47,7 @@ class AdminHomePage extends React.Component {
           <Card.Group centered>
             {(this.props.students === '') ?
               <Header className='cp-text'>No students to display</Header> :
-              (this.props.students.map((student, index) => <Student
+              ((alphaSortStudent(this.props.students)).map((student, index) => <Student
                 key={index}
                 student={student}
                 tags={this.props.studentTags.filter(tag => (tag.owner === student.owner))}
@@ -51,12 +60,12 @@ class AdminHomePage extends React.Component {
       {
         menuItem: 'All Profiles', render: () => <Tab.Pane>
           <Card.Group centered>
-            {this.props.students.map((student, index) => <Student
+            {alphaSortStudent(this.props.students).map((student, index) => <Student
               key={index}
               student={student}
               tags={this.props.studentTags.filter(tag => (tag.owner === student.owner))}
             />)}
-            {this.props.companies.map((company, index) => <Company
+            {alphaSortCompany(this.props.companies).map((company, index) => <Company
               key={index}
               company={company}
               tags={this.props.companyTags.filter(tag => (tag.owner === company.owner))}

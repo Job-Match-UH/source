@@ -6,6 +6,7 @@ import { signupStudentEmail } from './signupstudentemail.page';
 import { signupCompanyEmail } from './signupcompanyemail.page';
 import { studentProfilePage } from './studentprofile.page';
 import { viewCompanyMatchesPage } from './viewcompanymatches.page';
+import { viewCompanyProfilePage } from './viewcompanyprofile.page';
 import { companyProfilePage } from './companyprofile.page';
 import { viewStudentMatchesPage } from './viewstudentmatches.page';
 import { jobPostingsPage } from './jobpostings.page';
@@ -14,6 +15,7 @@ import { signupStudent } from './signupstudent.page';
 import { companySignup } from './signupcompany.page';
 import { editStudentPage } from './editstudent.page';
 import { editCompanyPage } from './editcompany.page';
+import { viewStudentProfilePage } from './viewstudentprofile.page';
 /* global fixture:false, test:false */
 
 /** Credentials for one of the sample users defined in settings.development.json. */
@@ -82,6 +84,16 @@ test('Test viewcompanymatches page displays', async (testController) => {
   await viewCompanyMatchesPage.isDisplayed(testController);
 });
 
+test('Test viewcompanyprofile page displays', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.isLoggedIn(testController, credentials.username);
+  await navBar.gotoViewCompanyMatches(testController);
+  await viewCompanyMatchesPage.selectMultifieldData(testController);
+  await viewCompanyMatchesPage.gotoViewCompanyProfile(testController);
+  await viewCompanyProfilePage.isDisplayed(testController);
+});
+
 test('Test student profile page displays', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
@@ -105,6 +117,16 @@ test('Test viewstudentmatches page displays', async (testController) => {
   await navBar.isLoggedIn(testController, credentials2.username);
   await navBar.gotoViewStudentMatches(testController);
   await viewStudentMatchesPage.isDisplayed(testController);
+});
+
+test('Test viewstudentprofile page displays', async (testController) => {
+  await navBar.gotoSigninPage(testController);
+  await signinPage.signin(testController, credentials2.username, credentials2.password);
+  await navBar.isLoggedIn(testController, credentials2.username);
+  await navBar.gotoViewStudentMatches(testController);
+  await viewStudentMatchesPage.selectMultifieldData(testController);
+  await viewStudentMatchesPage.gotoViewStudentProfile(testController);
+  await viewStudentProfilePage.isDisplayed(testController);
 });
 
 test('Test company profile page displays', async (testController) => {

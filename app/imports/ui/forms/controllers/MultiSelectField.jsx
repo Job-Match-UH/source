@@ -65,7 +65,7 @@ const MultiSelect = ({
   value,
   ...props
 }) => (
-  <div className={classnames({ disabled, error, required }, className, 'field')} {...filterDOMProps(props)}>
+  <div id='multifield-select' className={classnames({ disabled, error, required }, className, 'field')} {...filterDOMProps(props)}>
     {label && <label htmlFor={id}>{label}</label>}
     {renderDropdown({
       allowedValues,

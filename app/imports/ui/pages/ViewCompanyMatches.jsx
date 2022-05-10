@@ -47,14 +47,14 @@ class ViewCompanyMatches extends React.Component {
       <Container id='view-company-matches-page'>
         <AutoForm schema={bridge} onSubmit={data => this.submit(data)}>
           <Segment>
-            <MultiSelectField id='name' name='name' showInlineError={true} placeholder={'Search by interests...'}/>
-            <SubmitField value='Submit'/>
+            <MultiSelectField name='name' showInlineError={true} placeholder={'Search by interests...'}/>
+            <SubmitField id='submit-interest-filter' value='Submit'/>
           </Segment>
         </AutoForm>
         {_.size(companyMatches) > 0 ? (
           <Header as='h2' className='cp-text' textAlign='center'>Interested Matches!</Header>
         ) : ''}
-        <Card.Group itemsPerRow={4}>
+        <Card.Group id='company-card-matches' itemsPerRow={4}>
           {companyMatches.map((company, index) => <Company
             key={index}
             company={company}

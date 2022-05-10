@@ -58,6 +58,11 @@
     {"name": "Human Resources", "owner": "fhb@fhb.com"},
     {"name": "Finance", "owner": "fhb@fhb.com"},
     {"name": "Computer", "owner": "htc@htc.com"},
-    {"name": "Law Enforcement/Judicial", "owner": "tsa@tsa.com"}
+    {"name": "Law Enforcement/Judicial", "owner": "tsa@tsa.com"},
+    {"name": "Health/Medical", "owner": "info@arcadia.org"},
+    {"name": "Accounting/Fiscal", "owner": "info@armstrongbuilders.com"},
+    {"name": "Finance", "owner": "info@gsato.com"},
+    {"name": "Engineering", "owner": "info@fe.com"},
+    {"name": "Computer", "owner": "info@servco.com"}
   ]
 }

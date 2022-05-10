@@ -298,7 +298,8 @@
       "qualifications": "Bachelor’s degree. Previous experience teaching the age levels and subject area(s).",
       "owner": "careers@ksbe.edu"
     },
-    { "jobTitle": "Residential Life Advisor",
+    {
+      "jobTitle": "Residential Life Advisor",
       "jobID": "0002",
       "pay": "11",
       "payType": "annually",
@@ -307,6 +308,105 @@
       "jobDescription": "Serves as an educator for students’ development of life skills, social emotional learning, Hawaiian culture, and Christian values",
       "qualifications": "Bachelor’s degree from an accredited institution. Minimum 3 years of experience leading children in an educational environment. Valid Hawaii State Drivers License.",
       "owner": "careers@ksbe.edu"
+    },
+    {
+      "jobTitle": "Registered Nurse",
+      "jobID": "1001",
+      "pay": "20",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": [
+          "hourly",
+          "annually"
+        ]
+      },
+      "type": {
+        "type": "Full-time",
+        "defaultValue": "Full-time",
+        "allowedValues": [
+          "Full-time",
+          "Part-time",
+          "Internship",
+          "Seasonal"
+        ]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Monitors nursing care and treatment administered to residents",
+      "qualifications": "First AID & CPR certification",
+      "owner": "info@arcadia.org"
+    },
+    { "jobTitle": "Accounting",
+      "jobID": "1002",
+      "pay": "20",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Part-time",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Intensive work with data utilizing various software application: accounting, spreadsheets, word processing, email, and document imaging",
+      "qualifications": "Current student pursuing a Bachelors in Accounting/Finance",
+      "owner": "info@armstrongbuilders.com"
+    },
+    { "jobTitle": "Audit & Accounting Intern",
+      "jobID": "1003",
+      "pay": "15",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Internship",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Responsible for demonstrating analytical skills auditing client financial statements, transactions, and internal control processes",
+      "qualifications": "Basic knowledge of Excel",
+      "owner": "info@gsato.com"
+    },
+    { "jobTitle": "Civil Engineering & Land Surveying",
+      "jobID": "1004",
+      "pay": "15",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Internship",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Performing survey field work, including, setting up and operating land surveying instruments",
+      "qualifications": "Be in the process of obtaining a degree in Civil Engineering or Land Surveying",
+      "owner": "info@fe.com"
+    },
+    { "jobTitle": "Software Development",
+      "jobID": "1005",
+      "pay": "18",
+      "payType": {
+        "type": "hourly",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "Internship",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Honolulu",
+      "jobDescription": "Work with digital product team to design, build, and deploy user interfaces in a proof of concept and/or live production",
+      "qualifications": "A current student pursuing a Bachelors in Computer Science",
+      "owner": "info@servco.com"
     }
   ]
 }

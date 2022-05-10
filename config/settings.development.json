@@ -38,7 +38,22 @@
     { "email": "boh@boh.com", "password": "changeme", "role": "company" },
     { "email": "fhb@fhb.com", "password": "changeme", "role": "company" },
     { "email": "htc@htc.com", "password": "changeme", "role": "company" },
-    { "email": "tsa@tsa.com", "password": "changeme", "role": "company" }
+    { "email": "tsa@tsa.com", "password": "changeme", "role": "company" },
+    { "email": "gailag@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "shaunrk@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "taylormh@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "dhainem@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "johnlees@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "lkvillan@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "nreddy@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "morganf@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "samantham@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "dtapaoan@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "info@arcadia.org", "password": "changeme", "role": "company" },
+    { "email": "info@armstrongbuilders.com", "password": "changeme", "role": "company" },
+    { "email": "info@gsato.com", "password": "changeme", "role": "company" },
+    { "email": "info@fe.com", "password": "changeme", "role": "company" },
+    { "email": "info@servco.com", "password": "changeme", "role": "company" }
   ],
 
   "loadAssetsFile":  true

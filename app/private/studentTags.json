@@ -87,6 +87,16 @@
     {"name": "Electrical", "owner": "asantos@gmail.com"},
     {"name": "Engineering", "owner": "asantos@gmail.com"},
     {"name": "Language", "owner": "wildpup@gmail.com"},
-    {"name": "Education", "owner": "wildpup@gmail.com"}
+    {"name": "Education", "owner": "wildpup@gmail.com"},
+    {"name": "Computer", "owner": "gailag@hawaii.edu"},
+    {"name": "Education", "owner": "shaunrk@hawaii.edu"},
+    {"name": "Social Services", "owner": "taylormh@hawaii.edu"},
+    {"name": "Social Services", "owner": "dhainem@hawaii.edu"},
+    {"name": "Finance", "owner": "johnlees@hawaii.edu"},
+    {"name": "Health/Medical", "owner": "lkvillan@hawaii.edu"},
+    {"name": "Engineering", "owner": "nreddy@hawaii.edu"},
+    {"name": "Language", "owner": "morganf@hawaii.edu"},
+    {"name": "Science", "owner": "samantham@hawaii.edu"},
+    {"name": "Business", "owner": "dtapaoan@hawaii.edu"}
   ]
 }

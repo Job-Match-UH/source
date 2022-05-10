@@ -40,7 +40,7 @@ export class CompanyProfile extends React.Component {
               <Item.Description>{this.props.company.description}</Item.Description>
             </Grid.Column>
             <Grid.Column width={2}>
-              <Link to={`/editcompany/${this.props.company._id}`}><Icon size='large' name='pencil'/></Link>
+              <Link id='goto-edit-company' to={`/editcompany/${this.props.company._id}`}><Icon size='large' name='pencil'/></Link>
             </Grid.Column>
             <Grid.Column width={3}>
               <Item.Description>{this.props.company.address}</Item.Description>

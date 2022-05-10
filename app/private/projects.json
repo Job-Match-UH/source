@@ -121,11 +121,6 @@
       "owner": "ikotsol@hawaii.edu"
     },
     {
-      "name": "Beach Cleanups",
-      "description": "The clean up and care for our land and beaches",
-      "owner": "cmmw@hawaii.edu"
-    },
-    {
       "name": "Taro Patch Cleanups",
       "description": "The clean up and care for our land and beaches",
       "owner": "cmmw@hawaii.edu"
@@ -134,6 +129,56 @@
       "name": "Homeless Outreach",
       "description": "Assist with homeless population in Downtown Honolulu by Chinatown",
       "owner": "jtajiri@hawaii.edu"
+    },
+    {
+      "name": "Beach Cleanups",
+      "description": "The clean up and care for our land and beaches",
+      "owner": "gailag@hawaii.edu"
+    },
+    {
+      "name": "Sports Event Flyer",
+      "description": "Designed a flyer for a basketball community game",
+      "owner": "shaunrk@hawaii.edu"
+    },
+    {
+      "name": "Color Effect",
+      "description": "Conducted an experiment to determine whether colors improve learning",
+      "owner": "taylormh@hawaii.edu"
+    },
+    {
+      "name": "Sheep Social Experiment",
+      "description": "Conducted a social experiment to determine the likelihood of people's sheep behavior",
+      "owner": "dhainem@hawaii.edu"
+    },
+    {
+      "name": "Senior Graduation Poster",
+      "description": "Designed a graduation poster for upcoming graduating seniors",
+      "owner": "johnlees@hawaii.edu"
+    },
+    {
+      "name": "Hospital Code Card",
+      "description": "Designed a card that makes it much more easier to decipher hospital codes",
+      "owner": "lkvillan@hawaii.edu"
+    },
+    {
+      "name": "Claw Machine",
+      "description": "Built a robot with the ability to claw items",
+      "owner": "nreddy@hawaii.edu"
+    },
+    {
+      "name": "Language Learning",
+      "description": "Proposed a writeup with methods that help individuals learn language more efficiently",
+      "owner": "morganf@hawaii.edu"
+    },
+    {
+      "name": "Baby Nursing",
+      "description": "Conducted an experiment to find the most effective way to nurture a baby",
+      "owner": "samantham@hawaii.edu"
+    },
+    {
+      "name": "Mental Health Flyer",
+      "description": "Designed a flyer to advocate for mental health awareness",
+      "owner": "dtapaoan@hawaii.edu"
     }
   ]
 }

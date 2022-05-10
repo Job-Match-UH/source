@@ -37,13 +37,13 @@ class AddExperience extends React.Component {
           <SelectField inline fluid="true" placeholder='Full-time' name='type' allowedValues={employmentType}/>
         </Form.Group>
         <Form.Group widths='equal'>
-          <TextField id='experience-name' fluid="true" label='Name of company' placeholder='Ex.  Walmart' name='company'/>
+          <TextField id='experience-company-name' fluid="true" label='Name of company' placeholder='Ex.  Walmart' name='company'/>
           <TextField id='experience-role' fluid="true" label='Role' placeholder='Crew Member' name='role'/>
         </Form.Group>
-        <LongTextField id='experience-about' label='Job description' placeholder='What were your responsibilities...' name='description'/>
+        <LongTextField id='experience-job-description' label='Job description' placeholder='What were your responsibilities...' name='description'/>
         <DateField name='exp_start' label='Start Date'/>
         <DateField name='exp_end' label='End Date'/>
-        <SubmitField icon='plus' value='Add Experience'/>
+        <SubmitField id='submit-new-experience' icon='plus' value='Add Experience'/>
         <HiddenField name='owner' value={this.props.owner}/>
         <ErrorsField/>
       </AutoForm>

@@ -59,12 +59,12 @@ class Landing extends React.Component {
                   <Header className='landing-text' style={ { textAlign: 'center', fontSize: 'x-large', marginRight: 50, marginLeft: 50 } }>
                     Students can view company profiles, their job listings, and match with them by interests.
                   </Header>
-                  <Image src="https://github.com/Job-Match-UH/source/blob/issue-56/images/studenthomepage.png?raw=true" rounded/>
+                  <Image src="https://github.com/Job-Match-UH/source/blob/issue-56/images/student-matches.png?raw=true" rounded/>
 
                   <Header className='landing-text' style={ { textAlign: 'center', fontSize: 'x-large', marginRight: 50, marginLeft: 50 } }>
                     Companies can view student profiles, add jobs to their listings page, and match with students based on interests.
                   </Header>
-                  <Image src="https://github.com/Job-Match-UH/source/blob/issue-56/images/companyhomepage.png?raw=true" rounded/>
+                  <Image src="https://github.com/Job-Match-UH/source/blob/issue-56/images/company-matches.png?raw=true" rounded/>
                 </div>
               </Grid.Row>
             </Grid.Row>

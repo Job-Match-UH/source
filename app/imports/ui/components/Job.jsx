@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, Grid, Icon } from 'semantic-ui-react';
+import { Card, Grid, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, NavLink, withRouter } from 'react-router-dom';
 import { _ } from 'meteor/underscore';
@@ -24,7 +24,7 @@ class Job extends React.Component {
             <Card.Content extra>
               <Grid columns='equal'>
                 <Grid.Row>
-                  <Grid.Column width={10}>
+                  <Grid.Column width={12}>
                     {this.props.job.jobTitle}
                   </Grid.Column>
                   <Grid.Row>
@@ -33,9 +33,7 @@ class Job extends React.Component {
                     ) : ''}
                     {Roles.userIsInRole(Meteor.userId(), 'company') ? (
                       <NavLink exact to={`/companyprofile/${Meteor.userId()}`}>
-                        <Button icon color='blue' onClick={() => this.deleteJob()}>
-                          <Icon name='trash alternate'/>
-                        </Button>
+                        <Icon name='trash alternate' color='blue' onClick={() => this.deleteJob()}/>
                       </NavLink>
                     ) : ''}
                   </Grid.Row>

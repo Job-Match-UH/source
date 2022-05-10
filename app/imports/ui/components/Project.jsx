@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, Grid, Icon } from 'semantic-ui-react';
+import { Card, Grid, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 import { _ } from 'meteor/underscore';
@@ -23,7 +23,7 @@ class Project extends React.Component {
             <Card.Content extra>
               <Grid columns='equal'>
                 <Grid.Row>
-                  <Grid.Column width={12}>
+                  <Grid.Column width={13}>
                     {this.props.project.name}
                   </Grid.Column>
                   <Grid.Row>
@@ -31,9 +31,7 @@ class Project extends React.Component {
                       <Link to={`/editproject/${this.props.project._id}`}><Icon name='pencil'/></Link>
                     ) : ''}
                     {Roles.userIsInRole(Meteor.userId(), 'student') ? (
-                      <Button icon color='blue' onClick={() => this.deleteProj()}>
-                        <Icon name='trash alternate'/>
-                      </Button>
+                      <Icon name='trash alternate' color='blue' onClick={() => this.deleteProj()}/>
                     ) : ''}
                   </Grid.Row>
                 </Grid.Row>

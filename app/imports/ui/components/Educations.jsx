@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, Grid, Icon } from 'semantic-ui-react';
+import { Card, Grid, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
 import { Link, withRouter } from 'react-router-dom';
@@ -23,7 +23,7 @@ class Educations extends React.Component {
             <Card.Content extra>
               <Grid columns='equal'>
                 <Grid.Row>
-                  <Grid.Column width={12}>
+                  <Grid.Column width={13}>
                     {this.props.educations.school}
                   </Grid.Column>
                   <Grid.Row>
@@ -31,9 +31,7 @@ class Educations extends React.Component {
                       <Link to={`/editeducation/${this.props.educations._id}`}><Icon name='pencil'/></Link>
                     ) : ''}
                     {Roles.userIsInRole(Meteor.userId(), 'student') ? (
-                      <Button icon color='blue' onClick={() => this.deleteEdu()}>
-                        <Icon name='trash alternate'/>
-                      </Button>
+                      <Icon name='trash alternate' color='blue' onClick={() => this.deleteEdu()}/>
                     ) : ''}
                   </Grid.Row>
                 </Grid.Row>

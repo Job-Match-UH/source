@@ -23,7 +23,7 @@ class Experience extends React.Component {
             <Card.Content extra>
               <Grid columns='equal'>
                 <Grid.Row>
-                  <Grid.Column width={12}>
+                  <Grid.Column width={13}>
                     {this.props.experiences.title}
                   </Grid.Column>
                   <Grid.Row>
@@ -31,9 +31,7 @@ class Experience extends React.Component {
                       <Link to={`/editexperience/${this.props.experiences._id}`}><Icon name='pencil'/></Link>
                     ) : ''}
                     {Roles.userIsInRole(Meteor.userId(), 'student') ? (
-                      <Button icon color='blue' onClick={() => this.deleteExp()}>
-                        <Icon name='trash alternate'/>
-                      </Button>
+                      <Icon name='trash alternate' color='blue' onClick={() => this.deleteExp()}/>
                     ) : ''}
                   </Grid.Row>
                 </Grid.Row>

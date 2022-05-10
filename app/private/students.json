@@ -272,6 +272,96 @@
       "about": "I am a senior graduating with a B.A. in English",
       "image": "https://icon-library.com/images/cool-profile-icon/cool-profile-icon-9.jpg",
       "owner": "wildpup@gmail.com"
+    },
+    {
+      "firstName": "Gaila",
+      "lastName": "Galano",
+      "address": "Lahaina, HI",
+      "phone": "8082769148",
+      "about": "I am a senior majoring in computer science. I am interested in technology and I aspire to have a career in the tech industry after college.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "gailag@hawaii.edu"
+    },
+    {
+      "firstName": "Shaun",
+      "lastName": "Kojima",
+      "address": "Hilo, HI",
+      "phone": "8089385343",
+      "about": "Born and raised in Big Island. I plan to be a teacher and administrator in the future.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "shaunrk@hawaii.edu"
+    },
+    {
+      "firstName": "Taylor",
+      "lastName": "Hiraki",
+      "address": "Hilo, HI",
+      "phone": "8089381210",
+      "about": "Pursuing an MSW degree at UH Manoa. Hoping to work as a health social worker and possibly switch to macro work.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "taylormh@hawaii.edu"
+    },
+    {
+      "firstName": "Dhiane",
+      "lastName": "Martinez",
+      "address": "Kahana, HI",
+      "phone": "8082768496",
+      "about": "BA in Psychology (2021); Master's in Social Work in progress. Aspiring to be an agent of change within our community.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "dhainem@hawaii.edu"
+    },
+    {
+      "firstName": "Johnlee",
+      "lastName": "Sumibcay",
+      "address": "Kihei, HI",
+      "phone": "8087401091",
+      "about": "I'm majoring in Finance with an A.S. in business management. I'm a leading assistant at Hawaii national bank and planning to become a financial advisor and wealth manager",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "johnlees@hawaii.edu"
+    },
+    {
+      "firstName": "Kai",
+      "lastName": "Villanueva",
+      "address": "Honolulu, HI",
+      "phone": "8086511073",
+      "about": "I am currently in my fourth semester as a nursing student. Planning to travel as a critical care nurse.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "lkvillan@hawaii.edu"
+    },
+    {
+      "firstName": "Naveen",
+      "lastName": "Pathika",
+      "address": "Honolulu, HI",
+      "phone": "8084454418",
+      "about": "I am majoring in Mechanical Engineering interested in Manufacturing and looking to explore Automotive Safety Engineer as a career option.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "nreddy@hawaii.edu"
+    },
+    {
+      "firstName": "Morgan",
+      "lastName": "Fields",
+      "address": "Honolulu, HI",
+      "phone": "8087264965",
+      "about": "I am student majoring in Spanish and Psychology major. I like traveling to new places and learning different cultures.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "morganf@hawaii.edu"
+    },
+    {
+      "firstName": "Samantha",
+      "lastName": "Moyeda",
+      "address": "Honolulu, HI",
+      "phone": "9095614142",
+      "about": "I am a Biology major with a focus on pre-med. I want to go to medical school and become a reconstructive surgeon. I am also considering on becoming a travel Doctor.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "samantham@hawaii.edu"
+    },
+    {
+      "firstName": "Deanelyn",
+      "lastName": "Tapaoan",
+      "address": "Honolulu, HI",
+      "phone": "8087402042",
+      "about": "I am majoring in Human Development and Family Resources. Desire to earn masters in social work and work with families and children.",
+      "image": "https://i.pinimg.com/custom_covers/222x/85498161615209203_1636332751.jpg",
+      "owner": "dtapaoan@hawaii.edu"
     }
   ]
 }

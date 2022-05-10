@@ -5,7 +5,7 @@ class ViewCompanyMatchesPage {
     this.pageId = '#view-company-matches-page';
     this.multifieldSelector = Selector('#multifield-select');
     this.option1 = Selector('#multifield-select div').child('span').withText('Food Service');
-    this.card1 = Selector('#company-card-matches a').withAttribute('href', '#/viewcompany/qt2WSJLaHbi4SoNyE');
+    this.card1 = Selector('#company-card-matches div').withText('Pear Inc');
     this.pageSelector = Selector(this.pageId);
   }
 

@@ -41,7 +41,7 @@ fixture('job-match-uh availability tests')
  * The following code tests that all pages are explorable from landing page and that all pages render accordingly.
  */
 
-test.only('Test that landing displays', async (testController) => {
+test('Test that landing displays', async (testController) => {
   await landingPage.isDisplayed(testController);
 });
 
@@ -95,7 +95,7 @@ test('Test viewcompanymatches page displays', async (testController) => {
   await viewCompanyMatchesPage.isDisplayed(testController);
 });
 
-test.only('Test viewcompanyprofile page displays', async (testController) => {
+test('Test viewcompanyprofile page displays', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.isLoggedIn(testController, credentials.username);

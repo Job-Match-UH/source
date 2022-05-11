@@ -20,9 +20,6 @@ class ViewJobDescription extends React.Component {
             <Grid.Row>
               <Header as='h1' className='cp-text' style={ { fontSize: 'xx-large' } }>{this.props.job.jobTitle}</Header>
             </Grid.Row>
-            <Grid.Row>
-              <Button circular primary className='cp-text' size='small' style={{ padding: 10, marginTop: 5, marginBottom: 5, fontSize: 'larger', width: 200 }}><a href={this.props.company.website}/>Click to apply</Button>
-            </Grid.Row>
             <Grid.Column width={5}>
               <Item>
                 <Item.Content>

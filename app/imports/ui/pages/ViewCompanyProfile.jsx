@@ -25,9 +25,6 @@ class ViewCompanyProfile extends React.Component {
           <Grid.Row>
             <Grid.Column width={4}>
               <Image centered size='medium' src={this.props.company.image}/>
-              <Button circular fluid className='cp-text'>
-                <a href={this.props.company.website} target='_blank' rel="noreferrer">Company Website</a>
-              </Button>
             </Grid.Column>
             <Grid.Column width={12}>
               <Grid>
@@ -38,7 +35,9 @@ class ViewCompanyProfile extends React.Component {
                 </Grid.Row>
               </Grid>
               <Item>
-                <Button circular primary className='cp-text' size='medium' style={{ padding: 10, marginTop: 10, marginBottom: 10, fontSize: 'larger', width: 200 }}><a href={this.props.company.website}/>Website</Button>
+                <Button basic color='blue' className='cp-text' size='medium' style={{ padding: 10, marginTop: 10, marginBottom: 10, fontSize: 'larger', width: 200 }}><a href={this.props.company.website}/>
+                  <a href={this.props.company.website} target='_blank' rel="noreferrer">Company Website</a>
+                </Button>
                 <Header as='h3' className='cp-text' style={ { fontSize: 'large', margin: 0, paddingBottom: 15 } }>Contact Information</Header>
                 <Item.Description style={ { fontSize: 'large' } }>{this.props.company.address}</Item.Description>
                 <Item.Description style={ { fontSize: 'large' } }>{this.props.company.state}</Item.Description>

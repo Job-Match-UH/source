@@ -111,6 +111,12 @@
   font-family: 'Playfair Display', serif;
 }
 
+.link {
+  color: white;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+}
+
 .ui.grid {
   padding-bottom: 20px;
   font-family: 'Playfair Display', serif;

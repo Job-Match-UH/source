@@ -18,6 +18,24 @@
       "qualifications": "a happy smile",
       "owner": "uhonline@uhm.com"
     },
+    { "jobTitle": "Software Engineering Analyst",
+      "jobID": "1098",
+      "pay": "105000",
+      "payType": {
+        "type": "annually",
+        "defaultValue": "hourly",
+        "allowedValues": ["hourly", "annually"]
+      },
+      "type": {
+        "type": "String",
+        "defaultValue": "Full-time",
+        "allowedValues": ["Full-time", "Part-time", "Internship", "Seasonal"]
+      },
+      "location": "Cupertino",
+      "jobDescription": "Analyze data sets, formulate efficiency probabilities",
+      "qualifications": "Bachelors in Computer Science, Cyber Security, or Data Analytics",
+      "owner": "apple@gmail.com"
+    },
     { "jobTitle": "Tour Guide",
       "jobID": "98123",
       "pay": "21",

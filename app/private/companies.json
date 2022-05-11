@@ -1,17 +1,6 @@
 {
   "companies": [
     {
-      "companyName": "Facebook",
-      "website": "www.facebook.com",
-      "description": "We are the Facebook!",
-      "owner": "facebook@fb.com",
-      "address": "f",
-      "state": "HI",
-      "phone": "8080980909",
-      "year": "2002",
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAbFBMVEU6WJf////29/oeRo4sTpKwudAyU5S6wtV3iLJ7i7MtT5M2VZYYQ40oTJG3v9WIl7tIY57t7/RRaqHN0+Ll6fBid6nDydva3unS1+Rsf6yosstYb6Nne6qGlbmapsTd4eqjrclDX5uRnr8SQIwxY1ZKAAAEQUlEQVR4nO3dUXOiMBSG4dCEVAkBBMRqu7V2//9/XLC1i1OtQUpyDvO9V72pwzMYIIAgon51lq8LwblinWf1mUn0/o4LqbQJvYwjM1rJIr4ojJXlrjtlrIq/CVelDb1cv5otV+fCSs5l/Z0ysuoLmzT0Ak1Q2vwXVnMEtsTqJFzJ0MsyUXL1KSznNgZPmfJDGM9rK9rPxkehCr0cE6Y64YxX4XEliqiY6yjsMkUk6rluSD+StcjmPAzbgZiJXIdeiEnTuVjPeRi2A3EteE94bzd3H0IIIYQQQgh9ZbROEmW75LHjn1aphP3s3ejEyjQpt39ed1lTPW32+7qu9/vN5qlqmizeLTgTW1xaLN+a/UN0vUeuZ0KNtnK7e/qBxluo5eHVQcdVaGzyvnfjsRRq+dw48xgKjVxvhvjYCW3hOPqYCo3cDfXxEqqvu0NmKpT5HT5OwjS7C8hHmA7aRTAU3g3kIpR3fkXZCNV9Gxk+wuNdPbMWyvo2hLXQvo0AchCaYgyQg1AOPthmJtTbUUAGwnTMZoaDUC/HAekL03tmTJyEejESSF4oB56VYSccdbzGQmjvn1MwEcrRQOLC0bsK8kJbzV44HkhbOPhLWje7fPt80N2FYKsP5csif/tD+QqpfRygW8XbRNok0eZ0z7YxRie0r3JL9yO26kUq0paLuU9962fJj9eWvDsCH1OmPyawjmeBX9n+pMdxGL6zBQrtBMwYA51O0NSMf5+cvLoIn5luZLqc9vcV3+9oK3S5Z+aF5X7wM/nT3WqfPTAehW4Ti4byxOFWTqdo3pLQizkip/OIpKdGt3I6KmX969bE5arhgbNQuZxI5LyhcZtZcN7fC+twYfSBt9DhigXvp+a43IDB+3EWLvPfDestjYvwibfQ4cC7gpB0LkLWUws3IesH57gISV9XuhmEXbwf7wRhVwwhjfTl/roI5ZV/7hX+LIBZXm7rsj9cXPnnXuFP5SS3IaMKf9wztTD8PhNCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBDCuQjDX10zy8XFnK6Qbi//by8CV0jnf5X7WjO6U+FKEEJIPwghpB+EENIPQgjpByGE9IMQQvpBCCH9IISQfhBCSD8IIaQfhBDSD0II6QchhPSDEEL6QQgh/SCEkH4QQkg/CCGkH4QQ0g9CCOkHIYT0gxBC+kEI4aCKX/qcQXkUFiLIj/b9Cc1a5CHeMuhPqHMR5DUS/oQqE0Fe/uVPKGsRFQEGojehKSIRxQGegOJNaONWGAUYiN6EKuqEAVaiL2G7CjthVHofiZ6Ex9cOd0L/b4v0JDy+hLATRpXvN2D7EaZVdBJGjWeiF2H68cLaD2FUSa9j0YPQyCrqC6NV6XOLOr3QlqcXgYreJ1pv63FiobHdbuKbsP3Mg1R+HhA2odBoJQ9x73PE2afWWb72MSWeTlis8+z8ZcP/AC0iUZUBTQitAAAAAElFTkSuQmCC"
-    },
-    {
       "companyName": "UH Online",
       "website": "https://www.uhonline.hawaii.edu/",
       "description": "Online learning opportunities at the University of Hawaii.",

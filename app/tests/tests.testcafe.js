@@ -230,7 +230,7 @@ test('Test job posting form works', async (testController) => {
   await signupStudent.clickSweetAlert(testController);
 });
 
-test('Test company profile page displays', async (testController) => {
+test('Test new company profile page displays', async (testController) => {
   await navBar.gotoSigninPage(testController);
   await signinPage.signin(testController, newCompany1, credentials.password);
   await navBar.isLoggedIn(testController, newCompany1);

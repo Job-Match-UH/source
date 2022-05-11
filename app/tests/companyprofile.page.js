@@ -2,7 +2,7 @@ import { Selector } from 'testcafe';
 
 class CompanyProfilePage {
   constructor() {
-    this.pageId = '#company-profile-page';
+    this.pageId = '#company-profile';
     this.pageSelector = Selector(this.pageId);
   }
 

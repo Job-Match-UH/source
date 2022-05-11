@@ -44,19 +44,19 @@ class JobPostings extends React.Component {
       <Container id='job-postings-page'>
         <Header as='h1' className='cp-text' style={ { padding: 0, fontSize: 'xx-large' } }>Add a Job Posting</Header>
         <AutoForm className='cp-text' ref={ref => { fRef = ref; }} schema={jobBridge} onSubmit={data => this.submitJob(data, fRef)}>
-          <TextField fluid label='Job Title:' placeholder='Software Development Intern' name='jobTitle' style={ { fontSize: 'large' } }/>
+          <TextField id='job-title' fluid label='Job Title:' placeholder='Software Development Intern' name='jobTitle' style={ { fontSize: 'large' } }/>
           <Form.Group widths='equal'>
-            <TextField fluid label='Job ID:' placeholder='1234567' name='jobID' style={ { fontSize: 'large' } }/>
-            <SelectField fluid="true" placeholder='Select job type' name='jobType' allowedValues={jobTypes} style={ { fontSize: 'large' } }/>
+            <TextField id='job-id' fluid label='Job ID:' placeholder='1234567' name='jobID' style={ { fontSize: 'large' } }/>
+            <SelectField id='job-type' fluid="true" placeholder='Select job type' name='jobType' allowedValues={jobTypes} style={ { fontSize: 'large' } }/>
           </Form.Group>
           <Form.Group widths='equal'>
-            <NumField fluid="true" label='Pay:' placeholder='25' name='pay' style={ { fontSize: 'large' } }/>
-            <SelectField fluid="true" placeholder='Select pay type' name='payType' allowedValues={payTypes} style={ { fontSize: 'large' } }/>
+            <NumField id='job-pay' fluid="true" label='Pay:' placeholder='25' name='pay' style={ { fontSize: 'large' } }/>
+            <SelectField id='pay-type' fluid="true" placeholder='Select pay type' name='payType' allowedValues={payTypes} style={ { fontSize: 'large' } }/>
           </Form.Group>
-          <TextField fluid label='Location:' placeholder='Ex. Honolulu, HI' name='location' style={ { fontSize: 'large' } }/>
-          <LongTextField label='Job Description:' placeholder='Give a small description about the job position...' name='jobDescription' style={ { fontSize: 'large' } }/>
-          <LongTextField label='Qualifications:' placeholder='List the desired interests for this position...' name='qualifications' style={ { fontSize: 'large' } }/>
-          <SubmitField value='Submit Job'/>
+          <TextField id='job-location' fluid label='Location:' placeholder='Ex. Honolulu, HI' name='location' style={ { fontSize: 'large' } }/>
+          <LongTextField id='job-description' label='Job Description:' placeholder='Give a small description about the job position...' name='jobDescription' style={ { fontSize: 'large' } }/>
+          <LongTextField id='job-qualifications' label='Qualifications:' placeholder='List the desired interests for this position...' name='qualifications' style={ { fontSize: 'large' } }/>
+          <SubmitField id='submit-job-posting' value='Submit Job'/>
         </AutoForm>
       </Container>
     );

@@ -33,7 +33,7 @@ export class CompanyProfile extends React.Component {
                     <Header as='h1' className='cp-text' style={ { fontSize: 'xxx-large', padding: 0, marginBottom: 10 } }>{this.props.company.companyName}</Header>
                   </Grid.Column>
                   <Grid.Column>
-                    <Link to={`/editcompany/${this.props.company._id}`}><Icon size='large' name='pencil'/></Link>
+                    <Link id='goto-edit-company' to={`/editcompany/${this.props.company._id}`}><Icon size='large' name='pencil'/></Link>
                   </Grid.Column>
                 </Grid.Row>
               </Grid>

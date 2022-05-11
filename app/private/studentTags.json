@@ -1,6 +1,5 @@
 {
   "studentTags": [
-    { "name": "Graphical Arts", "owner": "john@foo.com" },
     { "name":  "Computer", "owner":  "ecadiena323@gmail.com"},
     { "name":  "Sports/Recreation", "owner":  "ecadiena323@gmail.com"},
     { "name":  "Electronics", "owner":  "ecadiena323@gmail.com"},

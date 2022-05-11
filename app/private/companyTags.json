@@ -1,8 +1,5 @@
 {
   "companyTags": [
-    { "name": "Food Service", "owner": "pear@pear.com" },
-    { "name": "Food Service", "owner": "facebook@fb.com" },
-    { "name": "Computer", "owner": "facebook@fb.com" },
     { "name":  "Art", "owner":  "bishop@museum.org"},
     { "name":  "Communication", "owner":  "bishop@museum.org"},
     { "name":  "Business", "owner":  "bishop@museum.org"},

@@ -53,7 +53,7 @@ class ViewCompanyMatches extends React.Component {
         <Header style={ { fontSize: 'xx-large' } } className='cp-text' textAlign='center'>Filter By Interest</Header>
         <AutoForm schema={bridge} onSubmit={data => this.submit(data)}>
           <Segment>
-            <MultiSelectField name='name' showInlineError={true} placeholder={'Search by interests...'}/>
+            <MultiSelectField id='company-card-matches' name='name' showInlineError={true} placeholder={'Search by interests...'}/>
             <SubmitField id='submit-interest-filter' value='Submit'/>
           </Segment>
         </AutoForm>

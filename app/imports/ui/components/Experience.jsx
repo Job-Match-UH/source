@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Icon, Grid, Button } from 'semantic-ui-react';
+import { Card, Icon, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { _ } from 'meteor/underscore';
 import { Link, withRouter } from 'react-router-dom';

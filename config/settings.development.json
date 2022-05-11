@@ -34,7 +34,7 @@
     { "email": "johnlees@hawaii.edu", "password": "changeme", "role": "student" },
     { "email": "lkvillan@hawaii.edu", "password": "changeme", "role": "student" },
     { "email": "nreddy@hawaii.edu", "password": "changeme", "role": "student" },
-    { "email": "morganf@hawaii.edu", "password": "changeme", "role": "student" },
+    { "email": "morgan@hawaii.edu", "password": "changeme", "role": "student" },
     { "email": "samantham@hawaii.edu", "password": "changeme", "role": "student" },
     { "email": "dtapaoan@hawaii.edu", "password": "changeme", "role": "student" },
     { "email": "leanomc@hawaii.edu", "password": "changeme", "role": "student" },

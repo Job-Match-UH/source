@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import 'semantic-ui-css/semantic.css';
-import { Roles } from 'meteor/alanning:roles';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
@@ -16,7 +15,6 @@ import SignupCompany from '../pages/SignupCompany';
 import StudentProfile from '../pages/StudentProfile';
 import CompanyProfile from '../pages/CompanyProfile';
 import JobPostings from '../pages/JobPostings';
-import ClassScheduleForm from '../pages/ClassScheduleForm';
 import AddExperience from '../pages/AddExperience';
 import AddEducation from '../pages/AddEducation';
 import AddProject from '../pages/AddProject';
@@ -49,7 +47,6 @@ class App extends React.Component {
             <Route path="/company_signup" component={SignupCompanyEmail}/>
             <Route path="/studentsignup" component={SignupStudent}/>
             <Route path="/companysignup" component={SignupCompany}/>
-            <Route path="/classform" component={ClassScheduleForm}/>
             <ProtectedRoute path="/studentprofile/:_id" component={StudentProfile}/>
             <ProtectedRoute path="/companyprofile/:_id" component={CompanyProfile}/>
             <ProtectedRoute path="/addexp" component={AddExperience}/>
@@ -64,10 +61,6 @@ class App extends React.Component {
             <ProtectedRoute path="/jobdescription/:_id" component={ViewJobDescription}/>
             <ProtectedRoute path="/viewstudent/:_id" component={ViewStudentProfile}/>
             <ProtectedRoute path="/viewcompany/:_id" component={ViewCompanyProfile}/>
-            <ProtectedRoute path="/viewstudent/:_id" component={ViewStudentProfile}/>
-            <ProtectedRoute path="/viewcompany/:_id" component={ViewCompanyProfile}/>
-            {/* <StudentProtectedRoute path="/studenthomepage" component={StudentHomePage}/> */}
-            {/* <CompanyProtectedRoute path="/companyhomepage" component={CompanyHomePage}/> */}
             <ProtectedRoute path="/jobpostings" component={JobPostings}/>
             <ProtectedRoute path="/admin" component={AdminHomePage}/>
             <ProtectedRoute path="/viewstudentmatches" component={ViewStudentMatches}/>
@@ -99,33 +92,8 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
   />
 );
 
-/**
- * AdminProtectedRoute (see React Router v4 sample)
- * Checks for Meteor login and admin role before routing to the requested page, otherwise goes to signin page.
- * @param {any} { component: Component, ...rest }
- */
-const AdminProtectedRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={(props) => {
-      const isLogged = Meteor.userId() !== null;
-      const isAdmin = Roles.userIsInRole(Meteor.userId(), 'admin');
-      return (isLogged && isAdmin) ?
-        (<Component {...props} />) :
-        (<Redirect to={{ pathname: '/signin', state: { from: props.location }, error: 'Unauthorized login' }}/>
-        );
-    }}
-  />
-);
-
 // Require a component and location to be passed to each ProtectedRoute.
 ProtectedRoute.propTypes = {
-  component: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
-  location: PropTypes.object,
-};
-
-// Require a component and location to be passed to each AdminProtectedRoute.
-AdminProtectedRoute.propTypes = {
   component: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
   location: PropTypes.object,
 };
